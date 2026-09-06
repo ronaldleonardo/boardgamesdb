@@ -1,0 +1,62 @@
+:root {
+  --navy: #1a1a2e;
+  --accent: #e65c00;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #777;
+  --border: #e0e0e0;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; font-size: 16px; line-height: 1.5; color: var(--text); background: #f5f5f0; display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; padding: 24px 20px 40px 60px !important; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--accent); }
+a:hover { color: #cc5200; }
+
+.btn-primary { display: inline-block; background: var(--accent); color: white !important; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: all 0.15s; border: none; cursor: pointer; }
+.btn-primary:hover { background: #cc5200; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(230, 92, 0, 0.3); }
+.btn-secondary { display: inline-block; background: var(--surface); color: var(--text); text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 500; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.15s; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(26, 26, 46, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 56px; max-width: 1100px; margin: 0 auto; }
+.logo { color: white; font-weight: 700; font-size: 1.2rem; text-decoration: none; flex-shrink: 0; letter-spacing: -0.3px; }
+.logo:hover { color: var(--accent); }
+
+nav { display: flex; align-items: center; gap: 4px; }
+nav a { padding: 0.5rem 1rem; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 0.9rem; font-weight: 500; border-radius: 6px; transition: all 0.15s; }
+nav a:hover { color: white; background: rgba(255,255,255,0.08); }
+
+.nav-item { position: relative; }
+.nav-trigger { padding: 0.5rem 1rem; cursor: pointer; color: rgba(255,255,255,0.75); font-size: 0.9rem; font-weight: 500; border-radius: 6px; display: flex; align-items: center; gap: 4px; user-select: none; }
+.nav-trigger:hover { color: white; background: rgba(255,255,255,0.08); }
+.nav-item:hover .dropdown { display: flex; }
+.dropdown { display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid var(--border); border-radius: 8px; padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); min-width: 180px; flex-direction: column; z-index: 60; }
+.dropdown a { display: block; padding: 0.5rem 1rem; margin: 0; color: #333; font-size: 0.88rem; font-weight: 400; border-radius: 4px; text-decoration: none; }
+.dropdown a:hover { background: #f1f3f5; }
+
+/* Burger */
+.burger { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 4px 8px; }
+.burger:hover { color: var(--accent); }
+
+/* Footer */
+.site-footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.83rem; text-align: center; }
+.site-footer .affiliate-note { font-size: 0.75rem; opacity: 0.6; margin-top: 4px; }
+
+@media (max-width: 640px) {
+  main { padding: 24px 16px 20px 16px !important; }
+  .header-inner { padding: 0 16px; }
+  nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 12px 16px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 50; }
+  nav.open { display: flex; }
+  .burger { display: block; }
+  .dropdown { position: static; background: rgba(255,255,255,0.05); border: none; box-shadow: none; padding: 4px 0 4px 12px; min-width: auto; }
+  .dropdown a { color: rgba(255,255,255,0.7); }
+  .dropdown a:hover { background: rgba(255,255,255,0.08); }
+  .nav-trigger { color: rgba(255,255,255,0.75); }
+  .nav-item:hover .dropdown { display: none; }
+  .nav-item.open .dropdown { display: flex; }
+  .container { padding: 0 16px; }
+}

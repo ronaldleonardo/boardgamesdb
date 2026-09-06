@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categories, games } from '../lib/data.mjs';
+const catList = Object.entries(categories);
+const popularGames = games.filter(g => g.tag === 'best-seller').slice(0, 6);
+const budgetGames = games.filter(g => g.tag === 'budget').slice(0, 6);
+---
+<BaseLayout title="Board Games DB - Find Your Next Game" description="Board game comparisons, reviews, and buying guides for every type of player.">
+  <section class="hero">
+    <div class="container">
+      <h1>Find Your Next Board Game</h1>
+      <p class="hero-sub">Comparisons, reviews, and honest picks for every type of game night.</p>
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <div class="container">
+      <h2>Browse by Category</h2>
+      <div class="category-grid">
+        {catList.map(([slug, cat]) => (
+          <a href={`/games/${slug}`} class="category-card">
+            <span class="cat-icon">{cat.icon}</span>
+            <span class="cat-name">{cat.name}</span>
+            <span class="cat-desc">{cat.desc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-section">
+    <div class="container">
+      <h2>Popular Picks</h2>
+      <div class="game-grid">
+        {popularGames.map(g => (
+          <div class="game-card">
+            <img src={g.image} alt={g.name} loading="lazy" />
+            <h3>{g.name}</h3>
+            <div class="game-meta">
+              <span>★ {g.rating}</span>
+              <span>{g.players}p</span>
+              <span>{g.playtime}min</span>
+              <span>${g.price}</span>
+            </div>
+            <p class="game-desc">{g.desc.slice(0, 100)}...</p>
+            <a href={`/games/${g.category}#${g.slug}`} class="btn-small">Compare</a>
+            <a href={`https://www.amazon.com/dp/${g.asin}?tag=tabletopharve-20`} class="btn-primary btn-small">Check Price →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="budget-section">
+    <div class="container">
+      <h2>Best Budget Picks (Under $25)</h2>
+      <div class="game-grid">
+        {budgetGames.map(g => (
+          <div class="game-card">
+            <img src={g.image} alt={g.name} loading="lazy" />
+            <h3>{g.name}</h3>
+            <div class="game-meta">
+              <span>★ {g.rating}</span>
+              <span>{g.players}p</span>
+              <span>{g.playtime}min</span>
+              <span class="price">${g.price}</span>
+            </div>
+            <a href={`/games/${g.category}#${g.slug}`} class="btn-small">Compare</a>
+            <a href={`https://www.amazon.com/dp/${g.asin}?tag=tabletopharve-20`} class="btn-primary btn-small">Check Price →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; text-align: center; padding: 64px 24px; }
+.hero h1 { font-size: 2.2rem; margin: 0 0 12px; }
+.hero-sub { font-size: 1.1rem; opacity: 0.8; margin: 0; }
+.categories-section, .featured-section, .budget-section { padding: 48px 0; }
+.categories-section h2, .featured-section h2, .budget-section h2 { text-align: center; margin-bottom: 32px; font-size: 1.5rem; }
+.category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.category-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 16px; text-align: center; text-decoration: none; color: var(--text); transition: all 0.15s; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.category-card:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(230, 92, 0, 0.1); transform: translateY(-2px); }
+.cat-icon { font-size: 2rem; }
+.cat-name { font-weight: 600; font-size: 0.95rem; }
+.cat-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.3; }
+.game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.game-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.game-card img { width: 100%; height: 160px; object-fit: contain; border-radius: 6px; background: #f8f9fa; }
+.game-card h3 { margin: 8px 0 0; font-size: 1rem; }
+.game-meta { display: flex; gap: 10px; font-size: 0.8rem; color: var(--muted); flex-wrap: wrap; }
+.game-desc { font-size: 0.83rem; color: #555; line-height: 1.4; }
+.price { color: var(--accent); font-weight: 600; }
+.btn-small { font-size: 0.82rem; padding: 6px 12px; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: auto; width: fit-content; }
+</style>

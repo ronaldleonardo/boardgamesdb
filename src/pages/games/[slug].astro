@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categories, games } from '../../lib/data.mjs';
+
+export async function getStaticPaths() {
+  return Object.keys(categories).map(slug => ({
+    params: { slug },
+    props: { slug }
+  }));
+}
+
+const { slug } = Astro.props;
+const cat = categories[slug];
+const catGames = games.filter(g => g.category === slug);
+const topPick = catGames.sort((a,b) => (b.rating||0) - (a.rating||0))[0];
+const shortlist = catGames.filter(g => g.slug !== topPick.slug);
+---
+
+<BaseLayout title={`Best ${cat.name} - BoardGamesDB`} description={`Compare the best ${cat.name.toLowerCase()}. ${cat.desc}`}>
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / {cat.name}</div>
+    <h1 class="cat-title">Best {cat.name}</h1>
+    <p class="cat-desc">{cat.desc}</p>
+
+    <!-- TOP PICK -->
+    <div class="top-pick-card">
+      <div class="top-badge">🏆 Top Pick</div>
+      <div class="top-pick-inner">
+        <img src={topPick.image} alt={topPick.name} />
+        <div class="top-pick-content">
+          <h2>{topPick.name}</h2>
+          <div class="game-meta">
+            <span>★ {topPick.rating}</span>
+            <span>{topPick.players} players</span>
+            <span>{topPick.playtime} min</span>
+            <span>Age {topPick.age}+</span>
+            <span>Complexity: {topPick.complexity}/5</span>
+          </div>
+          <p>{topPick.desc}</p>
+          <p class="why-pick"><strong>Why it's our pick:</strong> {topPick.why}</p>
+          <a href={`https://www.amazon.com/dp/${topPick.asin}?tag=tabletopharve-20`} class="btn-primary">Check Price on Amazon →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="document.querySelectorAll('.game-row').forEach(r=>r.style.display=''); this.parentElement.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active')">All</button>
+      {[...new Set(catGames.map(g => g.tag))].map(tag => (
+        <button class="filter-btn" onclick={`
+          var tag='${tag}';
+          document.querySelectorAll('.game-row').forEach(r=>r.style.display=r.dataset.tag===tag?'':'none');
+          this.parentElement.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+          this.classList.add('active');
+        `}>{tag.replace('-',' ')}</button>
+      ))}
+    </div>
+
+    <!-- Game list -->
+    <div class="game-list">
+      {[...topPick ? [topPick] : [], ...shortlist].map(g => (
+        <div class="game-row" data-tag={g.tag} id={g.slug}>
+          <img src={g.image} alt={g.name} class="game-thumb" loading="lazy" />
+          <div class="game-info">
+            <h3 class="game-name">{g.name}</h3>
+            <div class="game-meta">
+              <span>★ {g.rating}</span>
+              <span>{g.players}p</span>
+              <span>{g.playtime}min</span>
+              <span>Age {g.age}+</span>
+              <span>${g.price}</span>
+            </div>
+            <p>{g.desc.slice(0, 120)}</p>
+            {topPick && topPick.slug === g.slug ? <span class="top-badge-sm">🏆 Top Pick</span> : ''}
+          </div>
+          <div class="game-actions">
+            <span class="price-tag">${g.price}</span>
+            <a href={`https://www.amazon.com/dp/${g.asin}?tag=tabletopharve-20`} class="btn-primary btn-sm">Check Price →</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.breadcrumb { padding: 16px 0; font-size: 0.82rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.cat-title { font-size: 1.8rem; margin: 0; }
+.cat-desc { font-size: 1rem; color: var(--muted); margin: 8px 0 32px; }
+
+.top-pick-card { background: linear-gradient(135deg, #fff8f0, #fff); border: 2px solid var(--accent); border-radius: 12px; padding: 0; margin-bottom: 32px; position: relative; }
+.top-badge { background: var(--accent); color: white; font-weight: 700; font-size: 0.85rem; padding: 6px 16px; border-radius: 12px 0 12px 0; display: inline-block; }
+.top-pick-inner { padding: 20px; display: flex; gap: 24px; align-items: start; }
+.top-pick-inner img { width: 200px; height: auto; border-radius: 8px; object-fit: contain; }
+.top-pick-content { flex: 1; }
+.top-pick-content h2 { margin: 0 0 8px; font-size: 1.3rem; }
+.top-pick-content p { font-size: 0.9rem; color: #444; line-height: 1.5; }
+.why-pick { background: #fff8f0; padding: 8px 12px; border-radius: 6px; font-size: 0.88rem; }
+
+.game-meta { display: flex; gap: 12px; font-size: 0.83rem; color: var(--muted); flex-wrap: wrap; margin-bottom: 8px; }
+
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.filter-btn { padding: 6px 16px; border: 1px solid var(--border); border-radius: 20px; background: white; font-size: 0.83rem; cursor: pointer; color: #555; }
+.filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.game-list { display: flex; flex-direction: column; gap: 12px; }
+.game-row { display: flex; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; transition: all 0.15s; }
+.game-row:hover { border-color: #bbb; }
+.game-thumb { width: 80px; height: 80px; object-fit: contain; border-radius: 6px; background: #f8f9fa; flex-shrink: 0; }
+.game-info { flex: 1; min-width: 0; }
+.game-name { margin: 0 0 4px; font-size: 0.95rem; }
+.game-info p { font-size: 0.82rem; color: #666; margin: 4px 0; line-height: 1.3; }
+.game-actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; min-width: 100px; }
+.price-tag { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.top-badge-sm { background: var(--accent); color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; }
+.btn-sm { font-size: 0.8rem; padding: 6px 14px; }
+
+@media (max-width: 640px) {
+  .top-pick-inner { flex-direction: column; }
+  .top-pick-inner img { width: 120px; }
+  .game-row { flex-wrap: wrap; }
+  .game-thumb { width: 60px; height: 60px; }
+  .game-actions { width: 100%; flex-direction: row; justify-content: space-between; }
+}
+</style>

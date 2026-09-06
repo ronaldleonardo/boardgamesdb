@@ -1,0 +1,38 @@
+---
+import { categories } from '../lib/data.mjs';
+const catList = Object.entries(categories);
+const { pathname } = Astro.url;
+---
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">BoardGamesDB</a>
+      <button id="burger" class="burger" aria-label="Menu" onclick="toggleNav()">☰</button>
+      <nav id="nav">
+        <div class="nav-item">
+          <span class="nav-trigger">Games ▾</span>
+          <div class="dropdown">
+            {catList.map(([slug, cat]) => (
+              <a href={`/games/${slug}`}>{cat.name}</a>
+            ))}
+          </div>
+        </div>
+        <a href="/blog">Blog</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+function toggleNav() {
+  document.getElementById('nav')?.classList.toggle('open');
+  document.getElementById('burger')?.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a');
+  if (link && link.href && link.href.indexOf('amazon.com') !== -1) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
+  }
+});
+</script>

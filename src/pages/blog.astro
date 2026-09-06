@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const postModules = import.meta.glob('./blog/*.astro', { eager: true });
+const postPages = Object.values(postModules)
+  .map(m => m.frontmatter ? { ...m, ...m.frontmatter } : m)
+  .sort((a,b) => b.date?.localeCompare(a.date || ''));
+
+// Fallback if import.meta.glob doesn't work
+const postList = postPages.length > 0 ? postPages : [];
+---
+
+<BaseLayout title="Board Game Guides & Reviews" description="Read our board game guides, how-to-play instructions, and honest reviews.">
+  <div class="container">
+    <h1>Board Game Guides</h1>
+    <p class="subtitle">Tips, reviews, and honest advice for your next game night.</p>
+
+    <div class="post-list">
+      {postList.length === 0 && <p>Coming soon. Check back for board game guides and reviews.</p>}
+      {postList.map(post => (
+        <a href={"/blog/" + post.slug?.replace('.astro','')} class="post-card">
+          <div class="post-info">
+            <time>{post.date}</time>
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
+            <span class="cat-tag">{post.category || 'Guide'}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.subtitle { color: var(--muted); font-size: 1rem; margin: 8px 0 32px; }
+.post-list { display: flex; flex-direction: column; gap: 16px; max-width: 700px; }
+.post-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-decoration: none; color: var(--text); transition: all 0.15s; }
+.post-card:hover { border-color: var(--accent); }
+.post-info time { font-size: 0.8rem; color: var(--muted); }
+.post-info h2 { margin: 6px 0; font-size: 1.1rem; color: #111; }
+.post-info p { font-size: 0.88rem; color: #555; margin: 0; }
+.cat-tag { display: inline-block; background: var(--accent); color: white; font-size: 0.7rem; padding: 2px 10px; border-radius: 10px; margin-top: 8px; }
+</style>

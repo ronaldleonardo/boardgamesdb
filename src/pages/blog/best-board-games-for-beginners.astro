@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export const frontmatter = {
+  title: "Best Board Games for Beginners: 5 Games to Start Your Collection",
+  date: "2026-09-06",
+  description: "Just getting into board games? Here are 5 games that are easy to learn, fun to play, and won't empty your wallet.",
+  category: "Guide"
+};
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="container">
+    <article class="post">
+      <h1>{frontmatter.title}</h1>
+      <time>{frontmatter.date}</time>
+      <p class="intro">I bought my first modern board game in 2022. It was a mistake. I picked something called "Terraforming Mars" because Reddit said it was the best game ever. Three hours later, my friends were asleep and I had read 14 pages of rules. The game sat on my shelf for six months.</p>
+
+      <p>So here's what I wish someone told me: start with games that take 30 minutes to learn and 45 minutes to play. Here are 5 games that actually work for beginners.</p>
+
+      <h2>1. Catan — The Gateway That Keeps on Giving</h2>
+      <p><a href="https://www.amazon.com/dp/B0DYK1ZH2D?tag=tabletopharve-20" target="_blank" rel="noopener">Catan</a> is the game that started the modern board game boom. You roll dice, collect resources, trade with neighbors, and build settlements. It takes 75 minutes, but the turns are fast and the trading keeps everyone engaged.</p>
+      <p>What makes it great: you're not just playing against each other — you're bargaining. "I'll give you two sheep if you give me one brick." That interaction keeps even quiet players talking. The <a href="https://www.amazon.com/dp/B0DYK1ZH2D?tag=tabletopharve-20" target="_blank" rel="noopener">6th Edition is $39.99 on Amazon</a> and comes with updated components.</p>
+
+      <h2>2. Ticket to Ride — Simple Routes, Big Fun</h2>
+      <p><a href="https://www.amazon.com/dp/B0FPN4SF88?tag=tabletopharve-20" target="_blank" rel="noopener">Ticket to Ride</a> is about building train routes across America. Draw cards, claim routes, connect cities. That's the whole game. But the tension? That's real.</p>
+      <p>You're watching your friend claim the route you needed. You're deciding between playing safe or going for the long cross-country connection. It plays in 45 minutes and supports 2-5 players. It's been the #1 gateway game for years and you can <a href="https://www.amazon.com/dp/B0FPN4SF88?tag=tabletopharve-20" target="_blank" rel="noopener">get it for $49.99</a>.</p>
+
+      <h2>3. Azul — Beautiful and Brutal</h2>
+      <p><a href="https://www.amazon.com/dp/B0719HFT6H?tag=tabletopharve-20" target="_blank" rel="noopener">Azul</a> might be the most beautiful game on this list. You're drafting colorful tiles and placing them on your board. The components are gorgeous — thick porcelain-like tiles that clack satisfyingly as you pick them up.</p>
+      <p>But don't let the pretty look fool you. Azul is mean. If you take tiles you can't place, they go on the floor line and lose you points. And someone will definitely stick you with a pile of tiles you don't need. It plays in 40 minutes, 2-4 players, and costs <a href="https://www.amazon.com/dp/B0719HFT6H?tag=tabletopharve-20" target="_blank" rel="noopener">$31.99 on Amazon</a>.</p>
+
+      <h2>4. Splendor — The Engine Builder</h2>
+      <p><a href="https://www.amazon.com/dp/B00IZ8BVAO?tag=tabletopharve-20" target="_blank" rel="noopener">Splendor</a> is where you'll learn what "engine building" means. You collect gem tokens, buy development cards, and attract nobles to your court. Early rounds feel slow. By round 10, your engine is humming and you're pulling cards every turn.</p>
+      <p>It's the perfect second game for new players — more strategic than Catan, but still plays in 30 minutes. <a href="https://www.amazon.com/dp/B00IZ8BVAO?tag=tabletopharve-20" target="_blank" rel="noopener">$38.99 on Amazon</a> and supports 2-4 players.</p>
+
+      <h2>5. Love Letter — Tiny Box, Big Decisions</h2>
+      <p><a href="https://www.amazon.com/dp/B0753NP1WM?tag=tabletopharve-20" target="_blank" rel="noopener">Love Letter</a> has 16 cards. That's it. Sixteen cards and a bag of tokens. It costs $12.99. It plays in 20 minutes. And it has more tension than most games with a hundred cards.</p>
+      <p>You're trying to deliver a love letter to the princess while eliminating rival suitors. Each card has a power, and the deduction game is real. It supports 2-4 players and fits in your pocket. This is the game I take to every gathering because someone always wants to play again.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Start with one of these, not the heavy stuff. I learned the hard way that "best game ever on Reddit" and "best game for your group" are very different things. Catan or Ticket to Ride to start, then Azul, then you'll know what kind of games you like. That's how collections grow.</p>
+
+      <p class="cta">Looking for more game recommendations? <a href="/games">Browse our full comparison guides →</a></p>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+.post { max-width: 700px; margin: 0 auto; padding: 0 0 48px; line-height: 1.7; }
+.post h1 { font-size: 1.6rem; margin-bottom: 4px; }
+.post time { font-size: 0.82rem; color: var(--muted); }
+.post .intro { font-size: 1.05rem; color: #444; border-left: 3px solid var(--accent); padding-left: 16px; margin: 24px 0; }
+.post h2 { font-size: 1.2rem; margin-top: 36px; }
+.post p { margin: 12px 0; font-size: 0.95rem; }
+.post .cta { background: #fff8f0; padding: 16px; border-radius: 8px; font-weight: 500; margin-top: 24px; }
+</style>
