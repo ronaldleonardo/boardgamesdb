@@ -10,5 +10,8 @@
   "dependencies": {
     "astro": "^7.2.9",
     "@astrojs/sitemap": "^3.2.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }

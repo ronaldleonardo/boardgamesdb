@@ -16,7 +16,7 @@ const topPick = catGames.sort((a,b) => (b.rating||0) - (a.rating||0))[0];
 const shortlist = catGames.filter(g => g.slug !== topPick.slug);
 ---
 
-<BaseLayout title={`Best ${cat.name} - BoardGamesDB`} description={`Compare the best ${cat.name.toLowerCase()}. ${cat.desc}`}>
+<BaseLayout title={`Best ${cat.name}`} description={`Compare the best ${cat.name.toLowerCase()}. ${cat.desc}`}>
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> / {cat.name}</div>
     <h1 class="cat-title">Best {cat.name}</h1>
