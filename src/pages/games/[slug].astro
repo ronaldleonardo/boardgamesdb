@@ -28,7 +28,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
       <div class="top-pick-inner">
         <img src={topPick.image} alt={topPick.name} />
         <div class="top-pick-content">
-          <h2>{topPick.name}</h2>
+          <h2><a href={`/game/${topPick.slug}`} class="game-name-link">{topPick.name}</a></h2>
           <div class="game-meta">
             <span>★ {topPick.rating}</span>
             <span>{topPick.players} players</span>
@@ -38,7 +38,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
           </div>
           <p>{topPick.desc}</p>
           <p class="why-pick"><strong>Why it's our pick:</strong> {topPick.why}</p>
-          <a href={`https://www.amazon.com/dp/${topPick.asin}?tag=tabletopharve-20`} class="btn-primary">Check Price on Amazon →</a>
+          <a href={`https://www.amazon.com/s?k=${encodeURIComponent(topPick.name)}+board+game&tag=tabletopharve-20`} class="btn-primary">Check Price</a>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
         <div class="game-row" data-tag={g.tag} id={g.slug}>
           <img src={g.image} alt={g.name} class="game-thumb" loading="lazy" />
           <div class="game-info">
-            <h3 class="game-name">{g.name}</h3>
+            <a href={`/game/${g.slug}`} class="game-name-link">{g.name}</a>
             <div class="game-meta">
               <span>★ {g.rating}</span>
               <span>{g.players}p</span>
@@ -75,7 +75,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
           </div>
           <div class="game-actions">
             <span class="price-tag">${g.price}</span>
-            <a href={`https://www.amazon.com/dp/${g.asin}?tag=tabletopharve-20`} class="btn-primary btn-sm">Check Price →</a>
+            <a href={`https://www.amazon.com/s?k=${encodeURIComponent(g.name)}+board+game&tag=tabletopharve-20`} class="btn-primary btn-sm">Check Price</a>
           </div>
         </div>
       ))}
@@ -110,6 +110,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
 .game-row:hover { border-color: #bbb; }
 .game-thumb { width: 80px; height: 80px; object-fit: contain; border-radius: 6px; background: #f8f9fa; flex-shrink: 0; }
 .game-info { flex: 1; min-width: 0; }
+.game-name-link { color: var(--text); text-decoration: none; }
 .game-name { margin: 0 0 4px; font-size: 0.95rem; }
 .game-info p { font-size: 0.82rem; color: #666; margin: 4px 0; line-height: 1.3; }
 .game-actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; min-width: 100px; }

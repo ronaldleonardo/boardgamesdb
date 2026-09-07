@@ -61,6 +61,10 @@ export const games = [
     desc: "A fast-paced card drafting game where you're trying to grab the best combination of sushi dishes before they pass by. Think 7 Wonders, but simpler and cuter.",
     why: "Under $12, plays in 15 minutes, and adorable. Best value in board gaming." },
 
+  { slug: "just-one", name: "Just One", category: "party-games", players: "3-7", playtime: 20, age: 8, rating: 7.8, complexity: 1.1, price: 24.99, asin: "B0DYK1ZH2D", image: "/images/just-one.jpg", tag: "award-winner",
+    desc: "A cooperative word association game where everyone helps one player guess a secret word. The catch? If any two players write the same clue, both clues are discarded. Simple, brilliant, and tense.",
+    why: "Won Spiel des Jahres 2019 for a reason. Cooperative so nobody gets singled out. Best with 5-7." },
+
   // === STRATEGY ===
   { slug: "catan", name: "Catan (6th Edition)", category: "strategy", players: "3-4", playtime: 75, age: 10, rating: 7.2, complexity: 2.0, price: 39.99, asin: "B0DYK1ZH2D", image: "/images/catan.jpg", tag: "best-seller",
     desc: "The game that launched modern board gaming. Trade, build, and settle on the island of Catan. Dice rolls determine resources, but your strategy determines who wins.",
@@ -91,7 +95,7 @@ export const games = [
   { slug: "castle-combo", name: "Castle Combo", category: "family", players: "2-5", playtime: 25, age: 8, rating: 7.6, complexity: 1.5, price: 24.99, asin: "B0D9KGF6ST", image: "/images/castle-combo.jpg", tag: "budget",
     desc: "A charming tableau-building game where you construct medieval castles. Draft cards, build combos, and watch your kingdom grow. Quick to learn, satisfying to play.",
     why: "2026's breakout family hit. Try it on Board Game Arena first." },
-  { slug: "quake", name: "The Quacks of Quedlinburg", category: "family", players: "2-4", playtime: 45, age: 10, rating: 7.8, complexity: 2.0, price: 44.99, asin: "B07M5J6ZBP", image: "/images/quacks.jpg", tag: "award-winner",
+  { slug: "quake", name: "The Quacks of Quedlinburg", category: "family", players: "2-4", playtime: 45, age: 10, rating: 7.8, complexity: 2.0, price: 44.99, asin: "B0F4SRMRG9", image: "/images/quacks.jpg", tag: "award-winner",
     desc: "A push-your-luck bag-building game. Draw ingredients from your bag to brew potions. Draw too many white cherries and your potion explodes. Tense, hilarious, and addictive.",
     why: "Every pull is a gamble. The 'push your luck' mechanic keeps everyone engaged." },
 

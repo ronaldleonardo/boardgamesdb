@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const postModules = import.meta.glob('./blog/*.astro', { eager: true });
-const postPages = Object.values(postModules)
-  .map(m => m.frontmatter ? { ...m, ...m.frontmatter } : m)
+const postPages = Object.entries(postModules)
+  .map(([path, mod]) => ({
+    ...mod.frontmatter,
+    slug: path.replace('./blog/', '').replace('.astro', '')
+  }))
   .sort((a,b) => b.date?.localeCompare(a.date || ''));
-
-// Fallback if import.meta.glob doesn't work
-const postList = postPages.length > 0 ? postPages : [];
 ---
 
 <BaseLayout title="Board Game Guides & Reviews" description="Read our board game guides, how-to-play instructions, and honest reviews.">
@@ -15,9 +15,8 @@ const postList = postPages.length > 0 ? postPages : [];
     <p class="subtitle">Tips, reviews, and honest advice for your next game night.</p>
 
     <div class="post-list">
-      {postList.length === 0 && <p>Coming soon. Check back for board game guides and reviews.</p>}
-      {postList.map(post => (
-        <a href={"/blog/" + post.slug?.replace('.astro','')} class="post-card">
+      {postPages.map(post => (
+        <a href={"/blog/" + post.slug} class="post-card">
           <div class="post-info">
             <time>{post.date}</time>
             <h2>{post.title}</h2>

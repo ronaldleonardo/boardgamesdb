@@ -4,6 +4,7 @@ import { categories, games } from '../lib/data.mjs';
 const catList = Object.entries(categories);
 const popularGames = games.filter(g => g.tag === 'best-seller').slice(0, 6);
 const budgetGames = games.filter(g => g.tag === 'budget').slice(0, 6);
+const amazon = (name) => `https://www.amazon.com/s?k=${encodeURIComponent(name)}+board+game&tag=tabletopharve-20`;
 ---
 <BaseLayout title="Find Your Next Game" description="Board game comparisons, reviews, and buying guides for every type of player.">
   <section class="hero">
@@ -35,16 +36,16 @@ const budgetGames = games.filter(g => g.tag === 'budget').slice(0, 6);
         {popularGames.map(g => (
           <div class="game-card">
             <img src={g.image} alt={g.name} loading="lazy" />
-            <h3>{g.name}</h3>
+            <h3><a href={`/game/${g.slug}`} class="game-name-link">{g.name}</a></h3>
             <div class="game-meta">
               <span>★ {g.rating}</span>
               <span>{g.players}p</span>
               <span>{g.playtime}min</span>
               <span>${g.price}</span>
             </div>
-            <p class="game-desc">{g.desc.slice(0, 100)}...</p>
-            <a href={`/games/${g.category}#${g.slug}`} class="btn-small">Compare</a>
-            <a href={`https://www.amazon.com/dp/${g.asin}?tag=tabletopharve-20`} class="btn-primary btn-small">Check Price →</a>
+            <p class="game-desc">{g.desc.length > 80 ? g.desc.slice(0, 80) + '...' : g.desc}</p>
+            <a href={`/game/${g.slug}`} class="btn-small">View Game</a>
+            <a href={amazon(g.name)} class="btn-primary btn-small">Check Price</a>
           </div>
         ))}
       </div>
@@ -58,15 +59,15 @@ const budgetGames = games.filter(g => g.tag === 'budget').slice(0, 6);
         {budgetGames.map(g => (
           <div class="game-card">
             <img src={g.image} alt={g.name} loading="lazy" />
-            <h3>{g.name}</h3>
+            <h3><a href={`/game/${g.slug}`} class="game-name-link">{g.name}</a></h3>
             <div class="game-meta">
               <span>★ {g.rating}</span>
               <span>{g.players}p</span>
               <span>{g.playtime}min</span>
               <span class="price">${g.price}</span>
             </div>
-            <a href={`/games/${g.category}#${g.slug}`} class="btn-small">Compare</a>
-            <a href={`https://www.amazon.com/dp/${g.asin}?tag=tabletopharve-20`} class="btn-primary btn-small">Check Price →</a>
+            <a href={`/game/${g.slug}`} class="btn-small">View Game</a>
+            <a href={amazon(g.name)} class="btn-primary btn-small">Check Price</a>
           </div>
         ))}
       </div>
@@ -89,6 +90,8 @@ const budgetGames = games.filter(g => g.tag === 'budget').slice(0, 6);
 .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 .game-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
 .game-card img { width: 100%; height: 160px; object-fit: contain; border-radius: 6px; background: #f8f9fa; }
+.game-name-link { color: var(--text); text-decoration: none; }
+.game-name-link:hover { color: var(--accent); }
 .game-card h3 { margin: 8px 0 0; font-size: 1rem; }
 .game-meta { display: flex; gap: 10px; font-size: 0.8rem; color: var(--muted); flex-wrap: wrap; }
 .game-desc { font-size: 0.83rem; color: #555; line-height: 1.4; }

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categories } from '../../lib/data.mjs';
+const catList = Object.entries(categories);
+---
+
+<BaseLayout title="Browse Games by Category" description="Browse all board game categories. Party games, strategy, family, 2-player, card games, co-op, and solo games.">
+  <div class="container">
+    <h1>Browse Games</h1>
+    <p class="subtitle">Pick a category to find your next game.</p>
+
+    <div class="category-grid" style="margin-top:0">
+      {catList.map(([slug, cat]) => (
+        <a href={`/games/${slug}`} class="category-card">
+          <span class="cat-icon">{cat.icon}</span>
+          <span class="cat-name">{cat.name}</span>
+          <span class="cat-desc">{cat.desc}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.subtitle { color: var(--muted); font-size: 1rem; margin: 8px 0 32px; }
+.category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+.category-card { background: var(--surface); border: 2px solid var(--border); border-radius: 12px; padding: 28px 20px; text-align: center; text-decoration: none; color: var(--text); transition: all 0.15s; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.category-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(240, 165, 0, 0.15); }
+.cat-icon { font-size: 2.5rem; }
+.cat-name { font-weight: 700; font-size: 1.05rem; }
+.cat-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.4; }
+</style>
