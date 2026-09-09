@@ -15,7 +15,27 @@ const amazon = `https://www.amazon.com/s?k=${encodeURIComponent(game.name)}+boar
 const sameCat = games.filter(g => g.category === game.category && g.slug !== game.slug).slice(0, 3);
 ---
 
-<BaseLayout title={`${game.name} Review - Tabletop Picks`} description={`${game.name} board game review. ${game.players} players, ${game.playtime} min, age ${game.age}+. ${game.desc.slice(0, 100)}`}>
+<BaseLayout title={`${game.name} Board Game Review: ${game.players} Player ${cat.name}`} description={`${game.name} board game review. ${game.players} players, ${game.playtime} min, age ${game.age}+. ${game.desc.slice(0, 100)}`}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: game.name,
+    description: game.desc,
+    image: `https://tabletoppicks.com${game.image}`,
+    offers: {
+      "@type": "Offer",
+      price: game.price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: amazon
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: game.rating,
+      bestRating: 10,
+      ratingCount: 100
+    }
+  })} />
   <div class="container">
     <div class="breadcrumb">
       <a href="/">Home</a> / <a href={`/games/${game.category}`}>{cat.name}</a> / {game.name}
