@@ -37,6 +37,8 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 nav { display: flex; align-items: center; gap: 4px; }
 nav a { padding: 0.5rem 1rem; text-decoration: none !important; color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 600; border-radius: 10px; transition: all 0.1s; }
 nav a:hover { color: var(--accent) !important; background: rgba(255, 107, 53, 0.15); }
+.nav-finder { background: var(--accent); color: white !important; border-radius: 10px; padding: 0.4rem 1rem !important; border: 2px solid #c94f22; }
+.nav-finder:hover { background: var(--accent-hover) !important; color: white !important; }
 
 .nav-item { position: relative; }
 .nav-trigger { padding: 0.5rem 1rem; cursor: pointer; color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 600; border-radius: 10px; display: flex; align-items: center; gap: 4px; user-select: none; }

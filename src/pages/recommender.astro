@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { games, categories } from '../lib/data.mjs';
+import { writeFileSync } from 'fs';
+const cleanGames = games.map(g => ({
+  slug: g.slug, name: g.name, category: g.category, catName: categories[g.category]?.name,
+  players: g.players, playtime: g.playtime, age: g.age, rating: g.rating, complexity: g.complexity,
+  price: g.price, image: g.image, tag: g.tag,
+  desc: g.desc, why: g.why
+}));
+try { writeFileSync('public/data/games.json', JSON.stringify(cleanGames)); } catch(e) {}
+---
+
+<BaseLayout title="Board Game Recommender - Tabletop Picks" description="Find the perfect board game for your group. Answer a few questions and get personalized recommendations.">
+  <div class="container">
+    <div class="hero">
+      <h1>Find Your Perfect Game</h1>
+      <p class="hero-sub">Answer a few questions and we will recommend the best game for you.</p>
+    </div>
+
+    <div class="recommender-layout">
+      <div class="sidebar">
+        <div class="filter-group">
+          <h3>Players</h3>
+          <div class="btn-group" id="players-filter">
+            <button class="filter-opt active" data-value="any">Any</button>
+            <button class="filter-opt" data-value="2">2</button>
+            <button class="filter-opt" data-value="3-4">3-4</button>
+            <button class="filter-opt" data-value="5+">5+</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Playtime</h3>
+          <div class="btn-group" id="playtime-filter">
+            <button class="filter-opt active" data-value="any">Any</button>
+            <button class="filter-opt" data-value="30">Under 30 min</button>
+            <button class="filter-opt" data-value="45">Under 45 min</button>
+            <button class="filter-opt" data-value="60">Under 60 min</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Category</h3>
+          <div class="btn-group" id="category-filter">
+            <button class="filter-opt active" data-value="any">Any</button>
+            <button class="filter-opt" data-value="party-games">Party</button>
+            <button class="filter-opt" data-value="strategy">Strategy</button>
+            <button class="filter-opt" data-value="family">Family</button>
+            <button class="filter-opt" data-value="two-player">2 Players</button>
+            <button class="filter-opt" data-value="card-games">Card</button>
+            <button class="filter-opt" data-value="cooperative">Co-op</button>
+            <button class="filter-opt" data-value="solo">Solo</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Max Budget</h3>
+          <div class="btn-group" id="budget-filter">
+            <button class="filter-opt active" data-value="0">Any</button>
+            <button class="filter-opt" data-value="20">Under $20</button>
+            <button class="filter-opt" data-value="30">Under $30</button>
+            <button class="filter-opt" data-value="50">Under $50</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Complexity</h3>
+          <div class="btn-group" id="complexity-filter">
+            <button class="filter-opt active" data-value="0">Any</button>
+            <button class="filter-opt" data-value="1">Easy (1-2)</button>
+            <button class="filter-opt" data-value="2">Medium (2-3)</button>
+            <button class="filter-opt" data-value="3">Complex (3+)</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Age</h3>
+          <div class="btn-group" id="age-filter">
+            <button class="filter-opt active" data-value="0">Any</button>
+            <button class="filter-opt" data-value="8">8+</button>
+            <button class="filter-opt" data-value="10">10+</button>
+            <button class="filter-opt" data-value="14">14+</button>
+          </div>
+        </div>
+        <button id="reset-btn" class="btn-secondary" style="width:100%;margin-top:8px">Reset Filters</button>
+      </div>
+      <div class="results-area">
+        <p id="result-count" class="result-count"></p>
+        <div id="results" class="results-grid"></div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+(async function() {
+  const r = await fetch('/data/games.json');
+  const GAMES = await r.json();
+  const results = document.getElementById('results');
+  const count = document.getElementById('result-count');
+
+  function getActive(containerId) {
+    return document.querySelector('#' + containerId + ' .active');
+  }
+
+  function filterGames() {
+    const players = getActive('players-filter').dataset.value;
+    const playtime = parseInt(getActive('playtime-filter').dataset.value);
+    const category = getActive('category-filter').dataset.value;
+    const budget = parseInt(getActive('budget-filter').dataset.value);
+    const complexity = parseInt(getActive('complexity-filter').dataset.value);
+    const age = parseInt(getActive('age-filter').dataset.value);
+
+    let filtered = GAMES.filter(g => {
+      if (category !== 'any' && g.category !== category) return false;
+      if (budget > 0 && g.price > budget) return false;
+      if (age > 0 && g.age < age) return false;
+      if (complexity > 0) {
+        if (complexity === 1 && g.complexity > 2) return false;
+        if (complexity === 2 && (g.complexity < 1.5 || g.complexity > 3.5)) return false;
+        if (complexity === 3 && g.complexity < 3) return false;
+      }
+      if (playtime > 0 && g.playtime > playtime) return false;
+      if (players !== 'any') {
+        const p = g.players.split('-').map(n => parseInt(n));
+        const pMin = p[0];
+        const pMax = p.length > 1 ? p[1] : p[0];
+        if (players === '2' && !(pMin <= 2 && pMax >= 2)) return false;
+        if (players === '3-4' && !(pMin <= 4 && pMax >= 4)) return false;
+        if (players === '5+' && pMax < 5) return false;
+      }
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      results.innerHTML = '<div class="no-results"><p>No games match your filters. Try widening your criteria.</p></div>';
+      count.textContent = '0 games match';
+      return;
+    }
+
+    filtered.sort((a, b) => b.rating - a.rating);
+    results.innerHTML = filtered.map(g => `
+      <div class="rec-card">
+        <div class="rec-img-wrap">
+          <img src="${g.image}" alt="${g.name}" loading="lazy" />
+        </div>
+        <div class="rec-info">
+          <h3><a href="/game/${g.slug}">${g.name}</a></h3>
+          <div class="rec-meta">
+            <span>★ ${g.rating}</span>
+            <span>${g.players}p</span>
+            <span>${g.playtime}min</span>
+            <span>$${g.price}</span>
+          </div>
+          <p>${g.desc.slice(0, 80)}...</p>
+          <a href="https://www.amazon.com/s?k=${encodeURIComponent(g.name)}+board+game&tag=tabletopharve-20" class="btn-primary btn-sm" target="_blank" rel="noopener">Check Price</a>
+        </div>
+      </div>
+    `).join('');
+    count.textContent = `${filtered.length} game${filtered.length > 1 ? 's' : ''} match`;
+  }
+
+  document.querySelectorAll('.filter-opt').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.parentElement.querySelectorAll('.filter-opt').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      filterGames();
+    });
+  });
+
+  document.getElementById('reset-btn').addEventListener('click', function() {
+    document.querySelectorAll('.filter-opt').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-opt[data-value="any"]').forEach(b => b.classList.add('active'));
+    filterGames();
+  });
+
+  filterGames();
+})();
+</script>
+
+<style>
+.hero { background: linear-gradient(135deg, var(--deep) 0%, #3d2b8d 100%); color: white; text-align: center; padding: 48px 24px; border-radius: 14px; margin: 24px 0; border-bottom: 4px solid var(--accent); }
+.hero h1 { font-size: 2rem; margin: 0 0 8px; text-shadow: 3px 3px 0 rgba(255, 107, 53, 0.3); }
+.hero-sub { font-size: 1rem; opacity: 0.9; margin: 0; }
+.recommender-layout { display: flex; gap: 32px; align-items: start; margin-bottom: 48px; }
+.sidebar { width: 260px; flex-shrink: 0; background: var(--surface); border: 3px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: 0 4px 0 var(--border); position: sticky; top: 80px; }
+.filter-group { margin-bottom: 16px; }
+.filter-group h3 { font-size: 0.85rem; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.btn-group { display: flex; flex-wrap: wrap; gap: 4px; }
+.filter-opt { padding: 4px 12px; border: 2px solid var(--border); border-radius: 8px; background: white; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: #555; transition: all 0.1s; }
+.filter-opt.active { background: var(--accent); color: white; border-color: var(--accent); }
+.filter-opt:hover { transform: translateY(-1px); }
+.results-area { flex: 1; min-width: 0; }
+.result-count { font-size: 0.9rem; color: var(--muted); margin: 0 0 16px; }
+.results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.rec-card { display: flex; gap: 12px; background: var(--surface); border: 3px solid var(--border); border-radius: 12px; padding: 14px; box-shadow: 0 3px 0 var(--border); }
+.rec-img-wrap { width: 60px; height: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 6px; background: #f8f9fa; }
+.rec-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.rec-info { flex: 1; min-width: 0; }
+.rec-info h3 { margin: 0 0 4px; font-size: 0.9rem; }
+.rec-info h3 a { color: var(--text); text-decoration: none; }
+.rec-info h3 a:hover { color: var(--accent); }
+.rec-meta { display: flex; gap: 8px; font-size: 0.75rem; color: var(--muted); flex-wrap: wrap; margin-bottom: 4px; }
+.rec-info p { font-size: 0.78rem; color: #666; margin: 0 0 6px; line-height: 1.3; }
+.rec-info .btn-sm { font-size: 0.75rem; padding: 4px 10px; }
+.no-results { grid-column: 1 / -1; text-align: center; padding: 48px; background: var(--surface); border: 3px solid var(--border); border-radius: 14px; }
+@media (max-width: 768px) {
+  .recommender-layout { flex-direction: column; }
+  .sidebar { width: 100%; position: static; }
+}
+</style>
