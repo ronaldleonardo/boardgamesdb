@@ -86,7 +86,7 @@ export const games = [
   { slug: "splendor", name: "Splendor", category: "family", players: "2-4", playtime: 30, age: 10, rating: 7.5, complexity: 1.9, price: 24.97, asin: "B00IZEUFIA", image: "/images/splendor.jpg", tag: "best-seller",
     desc: "Collect gem tokens, buy development cards, and attract nobles to your court. Simple mechanics with satisfying strategic depth.",
     why: "30 minutes, easy rules, but every game feels different. Family favorite." },
-  { slug: "kingdomino", name: "Kingdomino", category: "family", players: "2-4", playtime: 20, age: 8, rating: 7.4, complexity: 1.2, price: 19.99, asin: "B01CWTW8JG", image: "/images/kingdomino.jpg", tag: "budget",
+  { slug: "kingdomino", name: "Kingdomino", category: "family", players: "2-4", playtime: 20, age: 8, rating: 7.4, complexity: 1.2, price: 19.99, asin: "B01N3A4070", image: "/images/kingdomino.jpg", tag: "budget",
     desc: "Draft domino tiles to build your kingdom. Each tile has two terrain types, match them strategically to score big. Quick, clever, and addictive.",
     why: "Gold standard for family games. Cheap, fast, fun for all ages." },
   { slug: "sequence", name: "Sequence", category: "family", players: "2-12", playtime: 30, age: 7, rating: 7.0, complexity: 1.3, price: 19.97, asin: "B00000IVAK", image: "/images/sequence.jpg", tag: "budget",
@@ -100,19 +100,19 @@ export const games = [
     why: "Every pull is a gamble. The 'push your luck' mechanic keeps everyone engaged." },
 
   // === 2-PLAYER ===
-  { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 27.99, asin: "B01AYKKZ4C", image: "/images/patchwork.jpg", tag: "best-seller",
+  { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 29.40, asin: "B0FPXTLZ21", image: "/images/patchwork.jpg", tag: "best-seller",
     desc: "A two-player tetris-like game where you piece together a quilt. Buy patches with buttons, place them strategically, and cover your board efficiently.",
     why: "Best 2-player game ever made. Period. Perfect date night game." },
   { slug: "7-wonders-duel", name: "7 Wonders Duel", category: "two-player", players: "2", playtime: 30, age: 10, rating: 8.2, complexity: 2.2, price: 29.99, asin: "B0150UY2FG", image: "/images/7-wonders-duel.jpg", tag: "best-seller",
     desc: "The two-player version of the classic 7 Wonders. Draft cards in a pyramid formation, build structures, and compete for military and scientific supremacy.",
     why: "Better than the original 7 Wonders. Tense, strategic, and deeply satisfying." },
-  { slug: "fox-in-the-forest", name: "Fox in the Forest", category: "two-player", players: "2", playtime: 20, age: 10, rating: 7.3, complexity: 1.9, price: 14.99, asin: "B01MXBXMZ3", image: "/images/fox-forest.jpg", tag: "budget",
+  { slug: "fox-in-the-forest", name: "Fox in the Forest", category: "two-player", players: "2", playtime: 20, age: 10, rating: 7.3, complexity: 1.9, price: 15.99, asin: "B06XP7ZDH1", image: "/images/fox-forest.jpg", tag: "budget",
     desc: "A trick-taking card game designed specifically for two players. Special powers on every card, and winning too many tricks is just as dangerous as winning too few.",
     why: "Under $15, plays in 20 minutes, and the 'avoid winning' mechanic is brilliant." },
-  { slug: "jaipur", name: "Jaipur", category: "two-player", players: "2", playtime: 20, age: 12, rating: 7.5, complexity: 1.5, price: 24.99, asin: "B0077Q8MHQ", image: "/images/jaipur.jpg", tag: "budget",
+  { slug: "jaipur", name: "Jaipur", category: "two-player", players: "2", playtime: 20, age: 12, rating: 7.5, complexity: 1.5, price: 26.58, asin: "B07SRMXRZB", image: "/images/jaipur.jpg", tag: "budget",
     desc: "A fast-paced trading game set in the bustling city of Jaipur. Buy and sell goods, earn bonuses for sets, and outsmart your opponent in the marketplace.",
     why: "The quintessential 2-player card game. Quick rounds, big decisions." },
-  { slug: "lost-cities", name: "Lost Cities", category: "two-player", players: "2", playtime: 30, age: 10, rating: 7.3, complexity: 1.5, price: 24.99, asin: "B0019L6ULM", image: "/images/lost-cities.jpg", tag: "budget",
+  { slug: "lost-cities", name: "Lost Cities", category: "two-player", players: "2", playtime: 30, age: 10, rating: 7.3, complexity: 1.5, price: 19.95, asin: "B07KLWPHFF", image: "/images/lost-cities.jpg", tag: "budget",
     desc: "A risk-management card game about exploration. Invest in expeditions, manage your hand, and decide when to cut your losses. Push your luck across five ancient cities.",
     why: "Reiner Knizia's masterpiece. Elegant, tense, and endlessly replayable." },
 
@@ -152,6 +152,9 @@ export const games = [
   { slug: "castle-panic", name: "Castle Panic", category: "cooperative", players: "1-6", playtime: 45, age: 7, rating: 7.0, complexity: 1.8, price: 34.95, asin: "B0B3LGW2KH", image: "/images/castle-panic.jpg", tag: "budget",
     desc: "Defend your castle against waves of monsters. Play cards to hit, arrow, and bash approaching threats before they destroy your walls. Made for kids and adults to play together.",
     why: "Great with kids. Co-op so no one gets eliminated. Real tension." },
+  { slug: "the-grizzled", name: "The Grizzled", category: "cooperative", players: "2-5", playtime: 30, age: 14, rating: 7.2, complexity: 2.0, price: 14.99, asin: "B019M6EZ5I", image: "/images/grizzled.jpg", tag: "budget",
+    desc: "A cooperative card game set in World War I. You are soldiers in the trenches. Every round brings new threats and trauma cards. Communication is limited. Survive until the armistice together.",
+    why: "The most thematically rich co-op card game. Hard, emotional, and unique." },
 
   // === SOLO ===
   { slug: "wingspan-solo", name: "Wingspan (Solo Mode)", category: "solo", players: "1", playtime: 45, age: 10, rating: 8.1, complexity: 2.5, price: 54.99, asin: "B07DY644L2", image: "/images/wingspan.jpg", tag: "premium",
