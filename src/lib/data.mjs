@@ -51,7 +51,7 @@ export const games = [
   { slug: "wavelength", name: "Wavelength", category: "party-games", players: "4-8", playtime: 30, age: 14, rating: 7.8, complexity: 1.4, price: 32.00, asin: "B07T446163", image: "/images/wavelength.jpg", tag: "award-winner",
     desc: "A mind-reading party game where you try to guess where your teammate is pointing on a hidden spectrum. Hot to cold, easy to hard, the tension is real.",
     why: "Perfect for groups that love conversation and debate. Every round is different." },
-  { slug: "herd-mentality", name: "Herd Mentality", category: "party-games", players: "4-20", playtime: 20, age: 10, rating: 7.4, complexity: 1.1, price: 18.23, asin: "B093HBBMPT", image: "/images/herd-mentality.jpg", tag: "budget",
+  { slug: "herd-mentality", name: "Herd Mentality", category: "party-games", players: "4-20", playtime: 20, age: 10, rating: 7.4, complexity: 1.1, price: 24.99, asin: "B093HBBMPT", image: "/images/herd-mentality.jpg", tag: "budget",
     desc: "You get points for thinking like the majority. The twist? If your answer is unique, you get nothing. Don't be the pink cow.",
     why: "Hilarious with big groups. The only game where copying answers is the smart play." },
   { slug: "blank-slate", name: "Blank Slate", category: "party-games", players: "3-8", playtime: 25, age: 8, rating: 7.5, complexity: 1.1, price: 22.69, asin: "B07G2VHPRW", image: "/images/blank-slate.jpg", tag: "budget",
@@ -61,7 +61,7 @@ export const games = [
     desc: "A fast-paced card drafting game where you're trying to grab the best combination of sushi dishes before they pass by. Think 7 Wonders, but simpler and cuter.",
     why: "Under $12, plays in 15 minutes, and adorable. Best value in board gaming." },
 
-  { slug: "just-one", name: "Just One", category: "party-games", players: "3-7", playtime: 20, age: 8, rating: 7.8, complexity: 1.1, price: 24.99, asin: "B0DYK1ZH2D", image: "/images/just-one.jpg", tag: "award-winner",
+  { slug: "just-one", name: "Just One (2025 Refresh)", category: "party-games", players: "3-7", playtime: 20, age: 8, rating: 7.8, complexity: 1.1, price: 24.49, asin: "B0FB6MQ3WB", image: "/images/just-one.jpg", tag: "award-winner",
     desc: "A cooperative word association game where everyone helps one player guess a secret word. The catch? If any two players write the same clue, both clues are discarded. Simple, brilliant, and tense.",
     why: "Won Spiel des Jahres 2019 for a reason. Cooperative so nobody gets singled out. Best with 5-7." },
 
@@ -95,7 +95,7 @@ export const games = [
   { slug: "castle-combo", name: "Castle Combo", category: "family", players: "2-5", playtime: 25, age: 8, rating: 7.6, complexity: 1.5, price: 24.99, asin: "B0D9KGF6ST", image: "/images/castle-combo.jpg", tag: "budget",
     desc: "A charming tableau-building game where you construct medieval castles. Draft cards, build combos, and watch your kingdom grow. Quick to learn, satisfying to play.",
     why: "2026's breakout family hit. Try it on Board Game Arena first." },
-  { slug: "quake", name: "The Quacks of Quedlinburg", category: "family", players: "2-4", playtime: 45, age: 10, rating: 7.8, complexity: 2.0, price: 44.99, asin: "B0F4SRMRG9", image: "/images/quacks.jpg", tag: "award-winner",
+  { slug: "quake", name: "Quacks Board Game", category: "family", players: "2-4", playtime: 45, age: 10, rating: 7.8, complexity: 2.0, price: 39.40, asin: "B0F4SRMRG9", image: "/images/quacks.jpg", tag: "award-winner",
     desc: "A push-your-luck bag-building game. Draw ingredients from your bag to brew potions. Draw too many white cherries and your potion explodes. Tense, hilarious, and addictive.",
     why: "Every pull is a gamble. The 'push your luck' mechanic keeps everyone engaged." },
 
