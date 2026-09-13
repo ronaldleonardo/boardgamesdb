@@ -35,7 +35,7 @@ const amazon = (name) => `https://www.amazon.com/s?k=${encodeURIComponent(name)}
       <div class="game-grid">
         {popularGames.map(g => (
           <div class="game-card">
-            <img src={g.image} alt={g.name} loading="lazy" />
+            <img src={g.images[0]} alt={g.name} loading="lazy" />
             <h3><a href={`/game/${g.slug}`} class="game-name-link">{g.name}</a></h3>
             <div class="game-meta">
               <span>★ {g.rating}</span>
@@ -58,7 +58,7 @@ const amazon = (name) => `https://www.amazon.com/s?k=${encodeURIComponent(name)}
       <div class="game-grid">
         {budgetGames.map(g => (
           <div class="game-card">
-            <img src={g.image} alt={g.name} loading="lazy" />
+            <img src={g.images[0]} alt={g.name} loading="lazy" />
             <h3><a href={`/game/${g.slug}`} class="game-name-link">{g.name}</a></h3>
             <div class="game-meta">
               <span>★ {g.rating}</span>

@@ -26,7 +26,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
     <div class="top-pick-card">
       <div class="top-badge">🏆 Top Pick</div>
       <div class="top-pick-inner">
-        <img src={topPick.image} alt={topPick.name} />
+        <img src={topPick.images[0]} alt={topPick.name} />
         <div class="top-pick-content">
           <h2><a href={`/game/${topPick.slug}`} class="game-name-link">{topPick.name}</a></h2>
           <div class="game-meta">
@@ -60,7 +60,7 @@ const shortlist = catGames.filter(g => g.slug !== topPick.slug);
     <div class="game-list">
       {[...topPick ? [topPick] : [], ...shortlist].map(g => (
         <div class="game-row" data-tag={g.tag} id={g.slug}>
-          <img src={g.image} alt={g.name} class="game-thumb" loading="lazy" />
+          <img src={g.images[0]} alt={g.name} class="game-thumb" loading="lazy" />
           <div class="game-info">
             <a href={`/game/${g.slug}`} class="game-name-link">{g.name}</a>
             <div class="game-meta">

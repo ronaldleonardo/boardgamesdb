@@ -13,6 +13,7 @@ const { game } = Astro.props;
 const cat = categories[game.category];
 const amazon = `https://www.amazon.com/s?k=${encodeURIComponent(game.name)}+board+game&tag=tabletopharve-20`;
 const sameCat = games.filter(g => g.category === game.category && g.slug !== game.slug).slice(0, 3);
+const lightboxData = JSON.stringify(game.images);
 ---
 
 <BaseLayout title={`${game.name} Board Game Review: ${game.players} Player ${cat.name}`} description={`${game.name} board game review. ${game.players} players, ${game.playtime} min, age ${game.age}+. ${game.desc.slice(0, 100)}`}>
@@ -21,7 +22,7 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
     "@type": "Product",
     name: game.name,
     description: game.desc,
-    image: `https://tabletoppicks.com${game.image}`,
+    image: `https://tabletoppicks.com${game.images[0]}`,
     offers: {
       "@type": "Offer",
       price: game.price,
@@ -43,8 +44,9 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
 
     <div class="game-header">
       <div class="game-header-img">
+        {game.images.length > 1 && <div class="badge-count">{game.images.length} photos</div>}
         <a href="#lightbox" class="lightbox-trigger">
-          <img src={game.image} alt={game.name} />
+          <img src={game.images[0]} alt={game.name} />
         </a>
       </div>
       <div class="game-header-info">
@@ -84,6 +86,18 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
     </div>
 
     <div class="game-content">
+      {game.images.length > 1 && (
+      <div class="game-section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          {game.images.map((img, i) => (
+            <a href="#lightbox" class="gallery-item" onclick={`switchLightbox(event, ${i})`}>
+              <img src={img} alt={`${game.name} ${i + 1}`} loading="lazy" />
+            </a>
+          ))}
+        </div>
+      </div>
+      )}
       <div class="game-section">
         <h2>About This Game</h2>
         <p>{game.desc}</p>
@@ -122,7 +136,7 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
         <div class="game-row-list">
           {sameCat.map(g => (
             <a href={`/game/${g.slug}`} class="game-row-link">
-              <img src={g.image} alt={g.name} class="game-thumb" />
+              <img src={g.images?.[0] || g.image} alt={g.name} class="game-thumb" />
               <div class="game-row-info">
                 <strong>{g.name}</strong>
                 <span class="game-meta-sm">★ {g.rating}  |  {g.players}p  |  ${g.price}</span>
@@ -136,11 +150,59 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="lightbox">
-    <a href="#" class="lightbox-close">×</a>
+    <a href="#" class="lightbox-close">&times;</a>
     <div class="lightbox-content">
-      <img src={game.image} alt={game.name} />
+      <img id="lightbox-img" src={game.images[0]} alt={game.name} />
+      <div id="lightbox-thumbs" class="lightbox-thumbs">
+        {game.images.map((img, i) => (
+          <img src={img} alt={`${game.name} ${i + 1}`} data-index={i} class={`lightbox-thumb ${i === 0 ? 'active' : ''}`} onclick="switchLightbox(event, this.dataset.index)" />
+        ))}
+      </div>
+      {game.images.length > 1 && (
+        <>
+          <button class="lightbox-prev" onclick="prevLightbox()">&lsaquo;</button>
+          <button class="lightbox-next" onclick="nextLightbox()">&rsaquo;</button>
+        </>
+      )}
     </div>
   </div>
+
+  <div id="lightbox-data" hidden data-images={lightboxData}></div>
+  <script is:inline>
+  let lightboxIndex = 0;
+  let touchStartX = 0;
+  const lightboxImages = JSON.parse(document.getElementById('lightbox-data').dataset.images);
+  const lightboxEl = document.getElementById('lightbox');
+
+  function switchLightbox(e, idx) { lightboxIndex = parseInt(idx); updateLightbox(); }
+  function prevLightbox() { if (lightboxIndex > 0) { lightboxIndex--; updateLightbox(); } }
+  function nextLightbox() { if (lightboxIndex < lightboxImages.length - 1) { lightboxIndex++; updateLightbox(); } }
+  function updateLightbox() {
+    document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
+    document.querySelectorAll('.lightbox-thumb').forEach((t, i) => t.classList.toggle('active', i === lightboxIndex));
+  }
+
+  // Close lightbox by clicking the overlay background (outside lightbox-content)
+  lightboxEl.addEventListener('click', function(e) {
+    if (!e.target.closest('.lightbox-content')) {
+      window.location.hash = '';
+    }
+  });
+
+  // Touch swipe
+  lightboxEl.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+  lightboxEl.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) { diff > 0 ? nextLightbox() : prevLightbox(); }
+  }, {passive: true});
+
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').matches(':target')) return;
+    if (e.key === 'ArrowRight') nextLightbox();
+    if (e.key === 'ArrowLeft') prevLightbox();
+    if (e.key === 'Escape') window.location.hash = '';
+  });
+  </script>
 </BaseLayout>
 
 <style>
@@ -183,14 +245,28 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
   .game-specs { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Lightbox */
-.lightbox { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 999; justify-content: center; align-items: center; }
+/* Lightbox Carousel */
+.lightbox { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.88); z-index: 999; justify-content: center; align-items: center; }
 .lightbox:target { display: flex; }
 .lightbox-close { position: absolute; top: 16px; right: 24px; font-size: 2.5rem; color: white; text-decoration: none; z-index: 1000; font-weight: 300; line-height: 1; }
 .lightbox-close:hover { color: var(--accent); }
-.lightbox-content { max-width: 85vw; max-height: 85vh; }
-.lightbox-content img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
-.lightbox-trigger { cursor: pointer; }
+.lightbox-content { position: relative; display: flex; flex-direction: column; align-items: center; max-width: 85vw; max-height: 85vh; }
+.lightbox-content img:first-child { max-width: 85vw; max-height: 65vh; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+.lightbox-thumbs { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
+.lightbox-thumb { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; border: 2px solid transparent; cursor: pointer; opacity: 0.5; transition: all 0.15s; }
+.lightbox-thumb:hover, .lightbox-thumb.active { opacity: 1; border-color: var(--accent); }
+.lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); color: white; border: none; font-size: 2.5rem; padding: 8px 16px; cursor: pointer; border-radius: 8px; transition: background 0.15s; z-index: 10; }
+.lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.25); }
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+.lightbox-trigger { cursor: pointer; position: relative; display: block; }
 .lightbox-trigger img { transition: transform 0.12s; }
 .lightbox-trigger:hover img { transform: scale(1.02); }
+.badge-count { position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.7); color: white; font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; z-index: 2; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.gallery-item { display: block; border-radius: 10px; overflow: hidden; border: 2px solid var(--border); }
+.gallery-item img { width: 100%; height: 140px; object-fit: cover; display: block; transition: transform 0.15s; }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item:hover { border-color: var(--accent); }
 </style>

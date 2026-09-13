@@ -5,7 +5,7 @@ import { writeFileSync } from 'fs';
 const cleanGames = games.map(g => ({
   slug: g.slug, name: g.name, category: g.category, catName: categories[g.category]?.name,
   players: g.players, playtime: g.playtime, age: g.age, rating: g.rating, complexity: g.complexity,
-  price: g.price, image: g.image, tag: g.tag,
+  price: g.price, image: g.images?.[0] || g.image || '', tag: g.tag,
   desc: g.desc, why: g.why
 }));
 try { writeFileSync('public/data/games.json', JSON.stringify(cleanGames)); } catch(e) {}
