@@ -1,18 +1,18 @@
 {
-	"pid": 28642,
-	"port": 8083,
-	"url": "http://localhost:8083",
+	"pid": 43127,
+	"port": 8086,
+	"url": "http://localhost:8086",
 	"urls": {
 		"local": [
-			"http://localhost:8083/"
+			"http://localhost:8086/"
 		],
 		"network": [
-			"http://192.168.18.182:8083/"
+			"http://192.168.18.182:8086/"
 		],
 		"networkInterfaceNames": [
 			"eth0"
 		]
 	},
 	"background": false,
-	"startedAt": "2026-09-14T02:07:38.243Z"
+	"startedAt": "2026-09-14T09:49:48.801Z"
 }
