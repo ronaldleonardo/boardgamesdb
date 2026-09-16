@@ -118,6 +118,9 @@ export const games = [
   { slug: "lost-cities", name: "Lost Cities", category: "two-player", players: "2", playtime: 30, age: 10, rating: 7.3, complexity: 1.5, price: 19.95, asin: "B07KLWPHFF", images: ["/images/lost-cities.jpg"], tag: "budget",
     desc: "A risk-management card game about exploration. Invest in expeditions, manage your hand, and decide when to cut your losses. Push your luck across five ancient cities.",
     why: "Reiner Knizia's masterpiece. Elegant, tense, and endlessly replayable." },
+  { slug: "hanamikoji", name: "Hanamikoji", category: "two-player", players: "2", playtime: 20, age: 10, rating: 7.5, complexity: 1.7, price: 24.99, asin: "B08FN3V5CD", images: ["/images/hanamikoji.jpg"], tag: "award-winner",
+    desc: "A beautifully crafted card game set in a geisha house. Win the favor of geishas by playing sets of cards. Four action slots but only four moves per round. Every decision is agonizing.",
+    why: "The most elegant 2-player card game ever made. 7 actions per game, infinite depth." },
 
   // === CARD GAMES ===
   { slug: "love-letter", name: "Love Letter", category: "card-games", players: "2-4", playtime: 20, age: 10, rating: 7.4, complexity: 1.2, price: 12.99, asin: "B0753NP1WM", images: ["/images/love-letter.jpg"], tag: "budget",
