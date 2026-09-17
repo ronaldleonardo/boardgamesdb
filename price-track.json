@@ -1,11 +1,13 @@
 {
-  "day": 1,
-  "last_updated": "2026-09-07",
+  "day": 2,
+  "cycle": 2,
+  "last_updated": "2026-09-16",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
     {
       "day": 1,
+      "cycle": 1,
       "date": "2026-09-07",
       "games": [
         {"slug": "7-wonders-duel", "name": "7 Wonders Duel", "old_price": 29.99, "new_price": 29.99, "source": "Walmart $29.59, no Amazon price change", "changed": false},
@@ -14,15 +16,26 @@
         {"slug": "cascadia", "name": "Cascadia", "old_price": 39.99, "new_price": 39.99, "source": "Walmart $39.49, no verified Amazon change", "changed": false},
         {"slug": "castle-combo", "name": "Castle Combo", "old_price": 24.99, "new_price": 24.99, "source": "Target $25.99, current $24.99 already lower", "changed": false}
       ]
+    },
+    {
+      "day": 2,
+      "cycle": 2,
+      "date": "2026-09-16",
+      "games": [
+        {"slug": "castle-panic", "name": "Castle Panic", "old_price": 22.95, "new_price": 22.95, "source": "Amazon SerpAPI $22.95 confirmed", "changed": false},
+        {"slug": "catan", "name": "Catan (6th Edition)", "old_price": 39.99, "new_price": 39.99, "source": "Amazon SerpAPI $39.99 confirmed", "changed": false},
+        {"slug": "codenames", "name": "Codenames", "old_price": 24.97, "new_price": 24.97, "source": "Amazon SerpAPI $24.97 confirmed", "changed": false},
+        {"slug": "final-girl", "name": "Final Girl", "old_price": 24.75, "new_price": 24.73, "source": "Amazon SerpAPI $24.73 (diff < $0.50, kept old)", "changed": false},
+        {"slug": "forbidden-island", "name": "Forbidden Island", "old_price": 20.99, "new_price": 20.99, "source": "Amazon SerpAPI $20.99 confirmed", "changed": false}
+      ]
     }
   ],
   "schedule": {
-    "day2": ["castle-panic", "catan", "codenames", "final-girl", "forbidden-island"],
     "day3": ["fox-in-the-forest", "herd-mentality", "horrified", "jaipur", "just-one"],
     "day4": ["kingdomino", "lost-cities", "love-letter", "mysterium", "patchwork"],
     "day5": ["pandemic", "quake", "sequence", "skull-king", "spirit-island"],
     "day6": ["splendor", "sprawlopolis", "star-realms", "sushi-go", "the-crew"],
     "day7": ["ticket-to-ride", "under-falling-skies", "uno", "wavelength", "wingspan", "wingspan-solo"],
-    "note": "day1 done. Day2 next: Sep 8."
+    "note": "Cycle 1 day1 done Sep 7. Cycle 2 day2 done Sep 16 (no price changes). Day3 next: fox-in-the-forest, herd-mentality, horrified, jaipur, just-one."
   }
 }
