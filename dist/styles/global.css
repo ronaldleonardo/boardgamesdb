@@ -110,6 +110,42 @@ nav a:hover { color: var(--accent) !important; background: rgba(255, 107, 53, 0.
 .price, .price-tag { color: var(--accent); font-weight: 800; }
 .price-tag { font-size: 1.2rem; }
 
+/* ── Tables in Articles ── */
+.post figure { margin: 1.5rem 0; max-width: 100%; overflow-x: auto; }
+.post figure figcaption { font-size: 0.82rem; color: var(--muted); text-align: center; padding-top: 0.5rem; }
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.post thead th {
+  background: var(--deep) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 0.65rem 0.85rem !important;
+  text-align: left;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.post thead th:first-child { border-radius: 10px 0 0 0; }
+.post thead th:last-child { border-radius: 0 10px 0 0; }
+.post tbody td {
+  padding: 0.65rem 0.85rem !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.post tbody tr:nth-child(even) td { background: var(--tag-bg) !important; }
+.post tbody td:first-child { font-weight: 600 !important; color: var(--deep) !important; }
+.post tbody tr:last-child td {
+  font-weight: 700 !important;
+  background: #f0e6d3 !important;
+  border-bottom: 3px solid var(--accent) !important;
+  color: var(--deep) !important;
+}
+.post tbody tr:hover td { background: #e8dcc9 !important; }
+
 @media (max-width: 640px) {
   main { padding: 20px 16px 20px 16px !important; }
   .header-inner { padding: 0 16px; }
