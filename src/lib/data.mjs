@@ -65,6 +65,10 @@ export const games = [
     desc: "A cooperative word association game where everyone helps one player guess a secret word. The catch? If any two players write the same clue, both clues are discarded. Simple, brilliant, and tense.",
     why: "Won Spiel des Jahres 2019 for a reason. Cooperative so nobody gets singled out. Best with 5-7." },
 
+  { slug: "decrypto", name: "Decrypto", category: "party-games", players: "3-8", playtime: 30, age: 12, rating: 8.0, complexity: 2.0, price: 24.99, asin: "B07BB4ND6J", images: ["/images/decrypto.jpg"], tag: "award-winner",
+    desc: "A word deduction game where two teams encrypt secret words while trying to intercept the other team's clues. Each clue must stay subtle enough that your partner gets it, but loose enough that the enemy cannot crack your code.",
+    why: "The deeper sibling of Codenames. More tension, no instant elimination, and the best pick for groups that want to actually think." },
+
   // === STRATEGY ===
   { slug: "catan", name: "Catan (6th Edition)", category: "strategy", players: "3-4", playtime: 75, age: 10, rating: 7.2, complexity: 2.0, price: 39.99, asin: "B0DYK1ZH2D", images: ["/images/catan.jpg", "/images/catan-2.png", "/images/catan-3.png", "/images/catan-4.png"], tag: "best-seller",
     desc: "The game that launched modern board gaming. Trade, build, and settle on the island of Catan. Dice rolls determine resources, but your strategy determines who wins.",
