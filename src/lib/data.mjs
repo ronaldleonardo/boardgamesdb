@@ -68,6 +68,9 @@ export const games = [
   { slug: "decrypto", name: "Decrypto", category: "party-games", players: "3-8", playtime: 30, age: 12, rating: 8.0, complexity: 2.0, price: 24.99, asin: "B07BB4ND6J", images: ["/images/decrypto.jpg"], tag: "award-winner",
     desc: "A word deduction game where two teams encrypt secret words while trying to intercept the other team's clues. Each clue must stay subtle enough that your partner gets it, but loose enough that the enemy cannot crack your code.",
     why: "The deeper sibling of Codenames. More tension, no instant elimination, and the best pick for groups that want to actually think." },
+  { slug: "telestrations", name: "Telestrations (6 Player 2nd Edition)", category: "party-games", players: "4-6", playtime: 30, age: 11, rating: 7.1, complexity: 1.0, price: 24.99, asin: "B0055DGXA8", images: ["/images/telestrations.jpg", "/images/telestrations-2.jpg", "/images/telestrations-3.jpg"], tag: "best-seller",
+    desc: "A friendly drawing and guessing game, essentially telephone with doodles. Every player starts with a word, secretly draws it, passes the sketch, guesses what it is, then passes again. By the time the book comes around, the original word is a distant memory and everyone is laughing.",
+    why: "The best big-group icebreaker. Nobody gets singled out, every player is busy every round, and terrible drawing skills make it funnier, not worse." },
 
   // === STRATEGY ===
   { slug: "catan", name: "Catan (6th Edition)", category: "strategy", players: "3-4", playtime: 75, age: 10, rating: 7.2, complexity: 2.0, price: 39.99, asin: "B0DYK1ZH2D", images: ["/images/catan.jpg", "/images/catan-2.png", "/images/catan-3.png", "/images/catan-4.png"], tag: "best-seller",
