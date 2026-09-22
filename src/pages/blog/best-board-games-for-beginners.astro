@@ -12,9 +12,17 @@ export const frontmatter = {
 <BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
-<figure class="hero-fig">
-  <img src="/images/hero-best-board-games-for-beginners.jpg" alt="Box art of beginner-friendly board games including Catan and Ticket to Ride" loading="eager" width="1344" height="768" />
-</figure>
+
+<div class="blog-carousel">
+  <div class="bc-viewport">
+    <img class="bc-slide" loading="eager" />
+  </div>
+  <button class="bc-prev" type="button" aria-label="Previous game">&#8249;</button>
+  <button class="bc-next" type="button" aria-label="Next game">&#8250;</button>
+  <div class="bc-dots"></div>
+  <script type="application/json" class="bc-data">[{"src": "/images/catan.jpg", "alt": "Catan (6th Edition) box art"}, {"src": "/images/ticket-to-ride.jpg", "alt": "Ticket to Ride box art"}, {"src": "/images/azul.jpg", "alt": "Azul box art"}, {"src": "/images/splendor.jpg", "alt": "Splendor box art"}, {"src": "/images/love-letter.jpg", "alt": "Love Letter box art"}]</script>
+</div>
+
 
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>

@@ -12,9 +12,17 @@ export const frontmatter = {
 <BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
-<figure class="hero-fig">
-  <img src="/images/hero-best-2-player-board-games.jpg" alt="Box art of top two-player board games including Patchwork and 7 Wonders Duel" loading="eager" width="1344" height="768" />
-</figure>
+
+<div class="blog-carousel">
+  <div class="bc-viewport">
+    <img class="bc-slide" loading="eager" />
+  </div>
+  <button class="bc-prev" type="button" aria-label="Previous game">&#8249;</button>
+  <button class="bc-next" type="button" aria-label="Next game">&#8250;</button>
+  <div class="bc-dots"></div>
+  <script type="application/json" class="bc-data">[{"src": "/images/patchwork.jpg", "alt": "Patchwork box art"}, {"src": "/images/7-wonders-duel.jpg", "alt": "7 Wonders Duel box art"}, {"src": "/images/jaipur.jpg", "alt": "Jaipur box art"}, {"src": "/images/fox-in-the-forest.jpg", "alt": "Fox in the Forest box art"}, {"src": "/images/lost-cities.jpg", "alt": "Lost Cities box art"}]</script>
+</div>
+
 
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>

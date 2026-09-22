@@ -12,9 +12,17 @@ export const frontmatter = {
 <BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
-<figure class="hero-fig">
-  <img src="/images/hero-best-games-for-6-players.jpg" alt="Box art of board games for six or more players including Telestrations and Wavelength" loading="eager" width="1344" height="768" />
-</figure>
+
+<div class="blog-carousel">
+  <div class="bc-viewport">
+    <img class="bc-slide" loading="eager" />
+  </div>
+  <button class="bc-prev" type="button" aria-label="Previous game">&#8249;</button>
+  <button class="bc-next" type="button" aria-label="Next game">&#8250;</button>
+  <div class="bc-dots"></div>
+  <script type="application/json" class="bc-data">[{"src": "/images/telestrations.jpg", "alt": "Telestrations (6 Player 2nd Edition) box art"}, {"src": "/images/herd-mentality.jpg", "alt": "Herd Mentality box art"}, {"src": "/images/wavelength.jpg", "alt": "Wavelength box art"}, {"src": "/images/sequence.jpg", "alt": "Sequence box art"}, {"src": "/images/mysterium.jpg", "alt": "Mysterium box art"}]</script>
+</div>
+
 
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
