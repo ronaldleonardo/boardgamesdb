@@ -1,7 +1,7 @@
 {
-  "day": 3,
+  "day": 4,
   "cycle": 2,
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-21",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
@@ -40,14 +40,25 @@
         {"slug": "jaipur", "name": "Jaipur", "old_price": 26.58, "new_price": 26.58, "source": "Walmart $26.58 confirmed", "changed": false},
         {"slug": "just-one", "name": "Just One", "old_price": 24.00, "new_price": 24.00, "source": "GameNerdz MSRP $24.99 (Amazon bot-walled), kept $24.00", "changed": false}
       ]
+    },
+    {
+      "day": 4,
+      "cycle": 2,
+      "date": "2026-09-21",
+      "games": [
+        {"slug": "kingdomino", "name": "Kingdomino", "old_price": 19.99, "new_price": 19.99, "source": "GameNerdz $19.99 (MSRP $24.99). SerpAPI exhausted, Amazon bot-walled.", "changed": false},
+        {"slug": "lost-cities", "name": "Lost Cities", "old_price": 19.95, "new_price": 19.95, "source": "GameNerdz MSRP $19.95 (sale $14.97). Matches current.", "changed": false},
+        {"slug": "love-letter", "name": "Love Letter", "old_price": 12.99, "new_price": 12.99, "source": "GameNerdz Eco Box $12.79 sale/$15.99 MSRP. 2025 Refresh B0F2J8DVHH exists on Amazon; current price retained.", "changed": false},
+        {"slug": "mysterium", "name": "Mysterium", "old_price": 47.99, "new_price": 47.99, "source": "Asmodee store 2025 Refresh $49.99 MSRP. Current 47.99 below MSRP, no verified Amazon drop.", "changed": false},
+        {"slug": "patchwork", "name": "Patchwork", "old_price": 29.40, "new_price": 29.40, "source": "GameNerdz Revised Ed $23.99 sale/$29.99 MSRP (OOS). Current matches MSRP zone.", "changed": false}
+      ]
     }
   ],
   "schedule": {
-    "day3": ["fox-in-the-forest", "herd-mentality", "horrified", "jaipur", "just-one"],
     "day4": ["kingdomino", "lost-cities", "love-letter", "mysterium", "patchwork"],
     "day5": ["pandemic", "quake", "sequence", "skull-king", "spirit-island"],
     "day6": ["splendor", "sprawlopolis", "star-realms", "sushi-go", "the-crew"],
     "day7": ["ticket-to-ride", "under-falling-skies", "uno", "wavelength", "wingspan", "wingspan-solo"],
-    "note": "Cycle 2 day3 done Sep 20 (no price changes). Day4 next: kingdomino, lost-cities, love-letter, mysterium, patchwork."
+    "note": "Cycle 2 day4 done Sep 21 (no price changes). Day5 next: pandemic, quake, sequence, skull-king, spirit-island."
   }
 }
