@@ -52,6 +52,18 @@
         {"slug": "mysterium", "name": "Mysterium", "old_price": 47.99, "new_price": 47.99, "source": "Asmodee store 2025 Refresh $49.99 MSRP. Current 47.99 below MSRP, no verified Amazon drop.", "changed": false},
         {"slug": "patchwork", "name": "Patchwork", "old_price": 29.40, "new_price": 29.40, "source": "GameNerdz Revised Ed $23.99 sale/$29.99 MSRP (OOS). Current matches MSRP zone.", "changed": false}
       ]
+    },
+    {
+      "day": 5,
+      "cycle": 2,
+      "date": "2026-09-22",
+      "games": [
+        {"slug": "pandemic", "name": "Pandemic", "old_price": 49.99, "new_price": 44.99, "source": "Amazon direct $44.99 (10% off, list $49.99)", "changed": true},
+        {"slug": "quake", "name": "Quacks Board Game", "old_price": 39.40, "new_price": 39.40, "source": "Amazon/CMYK $39.99 confirmed, kept current", "changed": false},
+        {"slug": "sequence", "name": "Sequence", "old_price": 19.97, "new_price": 19.97, "source": "Amazon direct $19.97 confirmed", "changed": false},
+        {"slug": "skull-king", "name": "Skull King", "old_price": 19.99, "new_price": 19.99, "source": "Amazon direct $19.99 confirmed", "changed": false},
+        {"slug": "spirit-island", "name": "Spirit Island", "old_price": 64.99, "new_price": 64.99, "source": "Amazon direct $64.99 confirmed", "changed": false}
+      ]
     }
   ],
   "schedule": {
@@ -59,6 +71,6 @@
     "day5": ["pandemic", "quake", "sequence", "skull-king", "spirit-island"],
     "day6": ["splendor", "sprawlopolis", "star-realms", "sushi-go", "the-crew"],
     "day7": ["ticket-to-ride", "under-falling-skies", "uno", "wavelength", "wingspan", "wingspan-solo"],
-    "note": "Cycle 2 day4 done Sep 21 (no price changes). Day5 next: pandemic, quake, sequence, skull-king, spirit-island."
+    "note": "Cycle 2 day5 done Sep 22 (pandemic 49.99 to 44.99). Day6 next: splendor, sprawlopolis, star-realms, sushi-go, the-crew."
   }
 }

@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best Party Games for Game Night: 5 That Actually Get Played",
   date: "2026-09-07",
   description: "Tired of party games that flop after one round? Here are 5 that actually survive game night. Honest picks from real play sessions.",
+  image: "/images/hero-best-party-games-for-game-night.jpg",
   category: "Party Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-party-games-for-game-night.jpg" alt="Box art of party games including Codenames and Wavelength" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">I bought Monopoly for my first adult game night. It was a disaster. Three hours of arguing, one broken friendship, and the game still was not done. I swore off board games for two years after that.</p>

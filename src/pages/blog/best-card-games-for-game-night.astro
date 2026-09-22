@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best Card Games for Game Night: 5 Small Box Games That Punch Above Their Weight",
   date: "2026-09-09",
   description: "Big board games are fun. Small card games get played. Here are 5 tiny box games that actually survive game night. Most are under $15.",
+  image: "/images/hero-best-card-games-for-game-night.jpg",
   category: "Card Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-card-games-for-game-night.jpg" alt="Box art of small box card games including Love Letter and The Crew" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">I spent $60 on a board game once. It came in a box the size of a microwave. We played it twice in two years. It now lives under my bed with the Christmas decorations.</p>

@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best 2-Player Board Games: 5 Games That Survive Date Night",
   date: "2026-09-16",
   description: "Not all board games work at 2 players. Some are terrible at 2. These 5 are designed for it. Tested on date nights, rainy weekends, and competitive couples.",
+  image: "/images/hero-best-2-player-board-games.jpg",
   category: "2-Player Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-2-player-board-games.jpg" alt="Box art of top two-player board games including Patchwork and 7 Wonders Duel" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">I bought Catan for date night once. Three players minimum. We needed a third person to play a game meant for two people. My girlfriend was not impressed. The game went back in the box.</p>

@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best Cooperative Board Games: 5 Games Where You Win Together or Not at All",
   date: "2026-09-11",
   description: "Cooperative games where everyone wins or loses together. No elimination, no sore losers. Just teamwork and panic. Here are 5 that actually survive game night.",
+  image: "/images/hero-best-cooperative-board-games.jpg",
   category: "Cooperative Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-cooperative-board-games.jpg" alt="Box art of cooperative board games including Pandemic and Forbidden Island" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">I was new to board games. I had a competitive group. One guy always won. Another guy always got mad. I bought Pandemic thinking it would just be a different game. It changed how we played together.</p>

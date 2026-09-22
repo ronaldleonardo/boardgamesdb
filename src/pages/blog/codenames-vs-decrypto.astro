@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Codenames vs Decrypto: Which Word Game Wins Game Night",
   date: "2026-09-18",
   description: "Codenames and Decrypto both rule the party word game table, but they feel completely different. Here is which one your group should buy, tested on real game nights.",
+  image: "/images/hero-codenames-vs-decrypto.jpg",
   category: "Party Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-codenames-vs-decrypto.jpg" alt="Box art of Codenames and Decrypto, the two word-based party games compared" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">You narrowed it down to two games. Codenames and Decrypto. Both are word games. Both run on teams. Both show up on every "best party game" list you can find. But they feel completely different. I own both. I have played each more than 20 times. And I will tell you straight: there is no single winner. There is a right pick for your exact group.</p>

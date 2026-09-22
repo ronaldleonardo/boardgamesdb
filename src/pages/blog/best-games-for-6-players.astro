@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best Games for 6+ Players: 5 That Survive Big Game Night",
   date: "2026-09-21",
   description: "Need a board game that actually works when 8 people crowd the table? Here are 5 games that survive big groups, from someone who hosts game nights every week.",
+  image: "/images/hero-best-games-for-6-players.jpg",
   category: "Party Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-games-for-6-players.jpg" alt="Box art of board games for six or more players including Telestrations and Wavelength" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">My first 6+ game night was a disaster. I grabbed the games everyone knows. Monopoly, then Pictionary. Monopoly lasted 40 minutes before two people stopped talking to each other. Pictionary had one guy sketching a horse for five minutes while the whole room yelled. We never finished a single game.</p>

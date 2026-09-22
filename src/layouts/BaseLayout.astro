@@ -1,7 +1,10 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const { title, description } = Astro.props;
+const { title, description, image = '/images/logo-og.png' } = Astro.props;
+const isHero = image.includes('hero-');
+const ogW = isHero ? 1344 : 512;
+const ogH = isHero ? 768 : 512;
 const path = Astro.url.pathname.replace(/\.html$/, "").replace(/\/index$/, "");
 const canonical = "https://tabletoppicks.com" + (path || "/");
 ---
@@ -15,9 +18,9 @@ const canonical = "https://tabletoppicks.com" + (path || "/");
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/images/logo-apple.png" />
-  <meta property="og:image" content="https://tabletoppicks.com/images/logo-og.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
+  <meta property="og:image" content={"https://tabletoppicks.com" + image} />
+  <meta property="og:image:width" content={ogW} />
+  <meta property="og:image:height" content={ogH} />
   <meta property="og:site_name" content="Tabletop Picks" />
   <link rel="canonical" href={canonical} />
   <link rel="stylesheet" href="/styles/global.css" />

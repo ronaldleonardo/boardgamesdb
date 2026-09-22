@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best Board Games for Beginners: 5 Games to Start Your Collection",
   date: "2026-09-06",
   description: "Just getting into board games? Here are 5 games that are easy to learn, fun to play, and won't empty your wallet.",
+  image: "/images/hero-best-board-games-for-beginners.jpg",
   category: "Guide"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-board-games-for-beginners.jpg" alt="Box art of beginner-friendly board games including Catan and Ticket to Ride" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">I bought my first modern board game in 2022. It was a mistake. I picked something called "Terraforming Mars" because Reddit said it was the best game ever. Three hours later, my friends were asleep and I had read 14 pages of rules. The game sat on my shelf for six months.</p>

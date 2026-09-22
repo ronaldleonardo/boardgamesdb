@@ -150,7 +150,7 @@ export const games = [
     why: "The ultimate bluffing game. Pocket-sized, fast, and every round ends in betrayal." },
 
   // === COOPERATIVE ===
-  { slug: "pandemic", name: "Pandemic", category: "cooperative", players: "2-4", playtime: 45, age: 8, rating: 7.6, complexity: 2.5, price: 49.99, asin: "B00A2HD40E", images: ["/images/pandemic.jpg"], tag: "best-seller",
+  { slug: "pandemic", name: "Pandemic", category: "cooperative", players: "2-4", playtime: 45, age: 8, rating: 7.6, complexity: 2.5, price: 44.99, asin: "B00A2HD40E", images: ["/images/pandemic.jpg"], tag: "best-seller",
     desc: "Work together to stop global outbreaks. Each player has a unique role: medic, scientist, dispatcher. You must cure four diseases before time runs out.",
     why: "The gateway co-op game. Tension, teamwork, and that 'one more game' feeling." },
   { slug: "forbidden-island", name: "Forbidden Island", category: "cooperative", players: "2-4", playtime: 30, age: 10, rating: 7.1, complexity: 1.7, price: 20.99, asin: "B003D7F4YY", images: ["/images/forbidden-island.jpg", "/images/forbidden-island-2.jpg", "/images/forbidden-island-3.jpg", "/images/forbidden-island-4.jpg"], tag: "budget",

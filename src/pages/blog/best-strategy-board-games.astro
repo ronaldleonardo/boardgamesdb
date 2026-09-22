@@ -4,13 +4,18 @@ export const frontmatter = {
   title: "Best Strategy Board Games: 5 That Hooked a Catan Player Into a Collector",
   date: "2026-09-16",
   description: "Strategy games can be overwhelming. Here are 5 that start simple but get deeper the more you play. From Catan to Wingspan, tested on real game nights.",
+  image: "/images/hero-best-strategy-board-games.jpg",
   category: "Strategy Games"
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image}>
   <div class="container">
     <article class="post">
+<figure class="hero">
+  <img src="/images/hero-best-strategy-board-games.jpg" alt="Box art of strategy board games including Catan and Wingspan" loading="eager" width="1344" height="768" />
+</figure>
+
       <h1>{frontmatter.title}</h1>
       <time>{frontmatter.date}</time>
       <p class="intro">I bought Catan in 2022 and thought I peaked. One strategy game. That was all I needed. Then someone brought Ticket to Ride to game night and I realized Catan was just the appetizer. The best strategy board games do not require a PhD to play. I just did not know that yet.</p>
