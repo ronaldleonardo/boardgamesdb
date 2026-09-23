@@ -1,13 +1,13 @@
 {
-  "day": 4,
+  "day": 6,
   "cycle": 2,
-  "last_updated": "2026-09-21",
+  "last_updated": "2026-09-23",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
     {
       "day": 1,
-      "cycle": 1,
+      "cycle": 2,
       "date": "2026-09-07",
       "games": [
         {"slug": "7-wonders-duel", "name": "7 Wonders Duel", "old_price": 29.99, "new_price": 29.99, "source": "Walmart $29.59, no Amazon price change", "changed": false},
@@ -64,6 +64,18 @@
         {"slug": "skull-king", "name": "Skull King", "old_price": 19.99, "new_price": 19.99, "source": "Amazon direct $19.99 confirmed", "changed": false},
         {"slug": "spirit-island", "name": "Spirit Island", "old_price": 64.99, "new_price": 64.99, "source": "Amazon direct $64.99 confirmed", "changed": false}
       ]
+    },
+    {
+      "day": 6,
+      "cycle": 2,
+      "date": "2026-09-23",
+      "games": [
+        {"slug": "splendor", "name": "Splendor", "old_price": 24.97, "new_price": 24.97, "source": "GameNerdz $31.99 (MSRP $39.99), Walmart ~$37.99. Amazon bot-walled, no verified change. Kept $24.97.", "changed": false},
+        {"slug": "sprawlopolis", "name": "Sprawlopolis", "old_price": 12.99, "new_price": 12.99, "source": "Button Shy MSRP $15.00. Amazon ASIN B07QHPWMN1 dead/404. No verified change. Kept $12.99.", "changed": false},
+        {"slug": "star-realms", "name": "Star Realms", "old_price": 17.95, "new_price": 17.95, "source": "Retailers blocked (camel/miniaturemarket antibot). 10th Anniversary ref $14.95. No verified change. Kept $17.95.", "changed": false},
+        {"slug": "sushi-go", "name": "Sushi Go!", "old_price": 11.99, "new_price": 11.99, "source": "Ceaco list $16.99, Walmart Refresh $11.97. Matches MSRP $11.99. Kept.", "changed": false},
+        {"slug": "the-crew", "name": "The Crew", "old_price": 14.99, "new_price": 14.99, "source": "Thames & Kosmos $14.95 (2-pack $29.90). Matches ~$14.99 MSRP. Kept.", "changed": false}
+      ]
     }
   ],
   "schedule": {
@@ -71,6 +83,6 @@
     "day5": ["pandemic", "quake", "sequence", "skull-king", "spirit-island"],
     "day6": ["splendor", "sprawlopolis", "star-realms", "sushi-go", "the-crew"],
     "day7": ["ticket-to-ride", "under-falling-skies", "uno", "wavelength", "wingspan", "wingspan-solo"],
-    "note": "Cycle 2 day5 done Sep 22 (pandemic 49.99 to 44.99). Day6 next: splendor, sprawlopolis, star-realms, sushi-go, the-crew."
+    "note": "Cycle 2 day6 done Sep 23 (all 5 kept, no Amazon-verified >10% moves). Day7 next (6 games), then cycle 3 starts at day1."
   }
 }
