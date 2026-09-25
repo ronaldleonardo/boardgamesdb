@@ -1,7 +1,7 @@
 {
-  "day": 6,
+  "day": 7,
   "cycle": 2,
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
@@ -10,11 +10,46 @@
       "cycle": 2,
       "date": "2026-09-07",
       "games": [
-        {"slug": "7-wonders-duel", "name": "7 Wonders Duel", "old_price": 29.99, "new_price": 29.99, "source": "Walmart $29.59, no Amazon price change", "changed": false},
-        {"slug": "azul", "name": "Azul", "old_price": 31.99, "new_price": 31.99, "source": "Walmart/Target $31.99 confirmed", "changed": false},
-        {"slug": "blank-slate", "name": "Blank Slate", "old_price": 22.69, "new_price": 22.69, "source": "Amazon page $22.69 confirmed", "changed": false},
-        {"slug": "cascadia", "name": "Cascadia", "old_price": 39.99, "new_price": 39.99, "source": "Walmart $39.49, no verified Amazon change", "changed": false},
-        {"slug": "castle-combo", "name": "Castle Combo", "old_price": 24.99, "new_price": 24.99, "source": "Target $25.99, current $24.99 already lower", "changed": false}
+        {
+          "slug": "7-wonders-duel",
+          "name": "7 Wonders Duel",
+          "old_price": 29.99,
+          "new_price": 29.99,
+          "source": "Walmart $29.59, no Amazon price change",
+          "changed": false
+        },
+        {
+          "slug": "azul",
+          "name": "Azul",
+          "old_price": 31.99,
+          "new_price": 31.99,
+          "source": "Walmart/Target $31.99 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "blank-slate",
+          "name": "Blank Slate",
+          "old_price": 22.69,
+          "new_price": 22.69,
+          "source": "Amazon page $22.69 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "cascadia",
+          "name": "Cascadia",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "Walmart $39.49, no verified Amazon change",
+          "changed": false
+        },
+        {
+          "slug": "castle-combo",
+          "name": "Castle Combo",
+          "old_price": 24.99,
+          "new_price": 24.99,
+          "source": "Target $25.99, current $24.99 already lower",
+          "changed": false
+        }
       ]
     },
     {
@@ -22,11 +57,46 @@
       "cycle": 2,
       "date": "2026-09-16",
       "games": [
-        {"slug": "castle-panic", "name": "Castle Panic", "old_price": 22.95, "new_price": 22.95, "source": "Amazon SerpAPI $22.95 confirmed", "changed": false},
-        {"slug": "catan", "name": "Catan (6th Edition)", "old_price": 39.99, "new_price": 39.99, "source": "Amazon SerpAPI $39.99 confirmed", "changed": false},
-        {"slug": "codenames", "name": "Codenames", "old_price": 24.97, "new_price": 24.97, "source": "Amazon SerpAPI $24.97 confirmed", "changed": false},
-        {"slug": "final-girl", "name": "Final Girl", "old_price": 24.75, "new_price": 24.73, "source": "Amazon SerpAPI $24.73 (diff < $0.50, kept old)", "changed": false},
-        {"slug": "forbidden-island", "name": "Forbidden Island", "old_price": 20.99, "new_price": 20.99, "source": "Amazon SerpAPI $20.99 confirmed", "changed": false}
+        {
+          "slug": "castle-panic",
+          "name": "Castle Panic",
+          "old_price": 22.95,
+          "new_price": 22.95,
+          "source": "Amazon SerpAPI $22.95 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "catan",
+          "name": "Catan (6th Edition)",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "Amazon SerpAPI $39.99 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "codenames",
+          "name": "Codenames",
+          "old_price": 24.97,
+          "new_price": 24.97,
+          "source": "Amazon SerpAPI $24.97 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "final-girl",
+          "name": "Final Girl",
+          "old_price": 24.75,
+          "new_price": 24.73,
+          "source": "Amazon SerpAPI $24.73 (diff < $0.50, kept old)",
+          "changed": false
+        },
+        {
+          "slug": "forbidden-island",
+          "name": "Forbidden Island",
+          "old_price": 20.99,
+          "new_price": 20.99,
+          "source": "Amazon SerpAPI $20.99 confirmed",
+          "changed": false
+        }
       ]
     },
     {
@@ -34,11 +104,46 @@
       "cycle": 2,
       "date": "2026-09-20",
       "games": [
-        {"slug": "fox-in-the-forest", "name": "Fox in the Forest", "old_price": 15.99, "new_price": 15.99, "source": "GameNerdz MSRP $15.99 confirmed (Amazon bot-walled, SerpAPI exhausted)", "changed": false},
-        {"slug": "herd-mentality", "name": "Herd Mentality", "old_price": 24.99, "new_price": 24.99, "source": "Big Potato publisher $24.99 confirmed (GameNerdz sale $18.97 OOS, not Amazon)", "changed": false},
-        {"slug": "horrified", "name": "Horrified", "old_price": 44.89, "new_price": 44.89, "source": "Amazon direct $44.89 confirmed", "changed": false},
-        {"slug": "jaipur", "name": "Jaipur", "old_price": 26.58, "new_price": 26.58, "source": "Walmart $26.58 confirmed", "changed": false},
-        {"slug": "just-one", "name": "Just One", "old_price": 24.00, "new_price": 24.00, "source": "GameNerdz MSRP $24.99 (Amazon bot-walled), kept $24.00", "changed": false}
+        {
+          "slug": "fox-in-the-forest",
+          "name": "Fox in the Forest",
+          "old_price": 15.99,
+          "new_price": 15.99,
+          "source": "GameNerdz MSRP $15.99 confirmed (Amazon bot-walled, SerpAPI exhausted)",
+          "changed": false
+        },
+        {
+          "slug": "herd-mentality",
+          "name": "Herd Mentality",
+          "old_price": 24.99,
+          "new_price": 24.99,
+          "source": "Big Potato publisher $24.99 confirmed (GameNerdz sale $18.97 OOS, not Amazon)",
+          "changed": false
+        },
+        {
+          "slug": "horrified",
+          "name": "Horrified",
+          "old_price": 44.89,
+          "new_price": 44.89,
+          "source": "Amazon direct $44.89 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "jaipur",
+          "name": "Jaipur",
+          "old_price": 26.58,
+          "new_price": 26.58,
+          "source": "Walmart $26.58 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "just-one",
+          "name": "Just One",
+          "old_price": 24.0,
+          "new_price": 24.0,
+          "source": "GameNerdz MSRP $24.99 (Amazon bot-walled), kept $24.00",
+          "changed": false
+        }
       ]
     },
     {
@@ -46,11 +151,46 @@
       "cycle": 2,
       "date": "2026-09-21",
       "games": [
-        {"slug": "kingdomino", "name": "Kingdomino", "old_price": 19.99, "new_price": 19.99, "source": "GameNerdz $19.99 (MSRP $24.99). SerpAPI exhausted, Amazon bot-walled.", "changed": false},
-        {"slug": "lost-cities", "name": "Lost Cities", "old_price": 19.95, "new_price": 19.95, "source": "GameNerdz MSRP $19.95 (sale $14.97). Matches current.", "changed": false},
-        {"slug": "love-letter", "name": "Love Letter", "old_price": 12.99, "new_price": 12.99, "source": "GameNerdz Eco Box $12.79 sale/$15.99 MSRP. 2025 Refresh B0F2J8DVHH exists on Amazon; current price retained.", "changed": false},
-        {"slug": "mysterium", "name": "Mysterium", "old_price": 47.99, "new_price": 47.99, "source": "Asmodee store 2025 Refresh $49.99 MSRP. Current 47.99 below MSRP, no verified Amazon drop.", "changed": false},
-        {"slug": "patchwork", "name": "Patchwork", "old_price": 29.40, "new_price": 29.40, "source": "GameNerdz Revised Ed $23.99 sale/$29.99 MSRP (OOS). Current matches MSRP zone.", "changed": false}
+        {
+          "slug": "kingdomino",
+          "name": "Kingdomino",
+          "old_price": 19.99,
+          "new_price": 19.99,
+          "source": "GameNerdz $19.99 (MSRP $24.99). SerpAPI exhausted, Amazon bot-walled.",
+          "changed": false
+        },
+        {
+          "slug": "lost-cities",
+          "name": "Lost Cities",
+          "old_price": 19.95,
+          "new_price": 19.95,
+          "source": "GameNerdz MSRP $19.95 (sale $14.97). Matches current.",
+          "changed": false
+        },
+        {
+          "slug": "love-letter",
+          "name": "Love Letter",
+          "old_price": 12.99,
+          "new_price": 12.99,
+          "source": "GameNerdz Eco Box $12.79 sale/$15.99 MSRP. 2025 Refresh B0F2J8DVHH exists on Amazon; current price retained.",
+          "changed": false
+        },
+        {
+          "slug": "mysterium",
+          "name": "Mysterium",
+          "old_price": 47.99,
+          "new_price": 47.99,
+          "source": "Asmodee store 2025 Refresh $49.99 MSRP. Current 47.99 below MSRP, no verified Amazon drop.",
+          "changed": false
+        },
+        {
+          "slug": "patchwork",
+          "name": "Patchwork",
+          "old_price": 29.4,
+          "new_price": 29.4,
+          "source": "GameNerdz Revised Ed $23.99 sale/$29.99 MSRP (OOS). Current matches MSRP zone.",
+          "changed": false
+        }
       ]
     },
     {
@@ -58,11 +198,46 @@
       "cycle": 2,
       "date": "2026-09-22",
       "games": [
-        {"slug": "pandemic", "name": "Pandemic", "old_price": 49.99, "new_price": 44.99, "source": "Amazon direct $44.99 (10% off, list $49.99)", "changed": true},
-        {"slug": "quake", "name": "Quacks Board Game", "old_price": 39.40, "new_price": 39.40, "source": "Amazon/CMYK $39.99 confirmed, kept current", "changed": false},
-        {"slug": "sequence", "name": "Sequence", "old_price": 19.97, "new_price": 19.97, "source": "Amazon direct $19.97 confirmed", "changed": false},
-        {"slug": "skull-king", "name": "Skull King", "old_price": 19.99, "new_price": 19.99, "source": "Amazon direct $19.99 confirmed", "changed": false},
-        {"slug": "spirit-island", "name": "Spirit Island", "old_price": 64.99, "new_price": 64.99, "source": "Amazon direct $64.99 confirmed", "changed": false}
+        {
+          "slug": "pandemic",
+          "name": "Pandemic",
+          "old_price": 49.99,
+          "new_price": 44.99,
+          "source": "Amazon direct $44.99 (10% off, list $49.99)",
+          "changed": true
+        },
+        {
+          "slug": "quake",
+          "name": "Quacks Board Game",
+          "old_price": 39.4,
+          "new_price": 39.4,
+          "source": "Amazon/CMYK $39.99 confirmed, kept current",
+          "changed": false
+        },
+        {
+          "slug": "sequence",
+          "name": "Sequence",
+          "old_price": 19.97,
+          "new_price": 19.97,
+          "source": "Amazon direct $19.97 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "skull-king",
+          "name": "Skull King",
+          "old_price": 19.99,
+          "new_price": 19.99,
+          "source": "Amazon direct $19.99 confirmed",
+          "changed": false
+        },
+        {
+          "slug": "spirit-island",
+          "name": "Spirit Island",
+          "old_price": 64.99,
+          "new_price": 64.99,
+          "source": "Amazon direct $64.99 confirmed",
+          "changed": false
+        }
       ]
     },
     {
@@ -70,19 +245,126 @@
       "cycle": 2,
       "date": "2026-09-23",
       "games": [
-        {"slug": "splendor", "name": "Splendor", "old_price": 24.97, "new_price": 24.97, "source": "GameNerdz $31.99 (MSRP $39.99), Walmart ~$37.99. Amazon bot-walled, no verified change. Kept $24.97.", "changed": false},
-        {"slug": "sprawlopolis", "name": "Sprawlopolis", "old_price": 12.99, "new_price": 12.99, "source": "Button Shy MSRP $15.00. Amazon ASIN B07QHPWMN1 dead/404. No verified change. Kept $12.99.", "changed": false},
-        {"slug": "star-realms", "name": "Star Realms", "old_price": 17.95, "new_price": 17.95, "source": "Retailers blocked (camel/miniaturemarket antibot). 10th Anniversary ref $14.95. No verified change. Kept $17.95.", "changed": false},
-        {"slug": "sushi-go", "name": "Sushi Go!", "old_price": 11.99, "new_price": 11.99, "source": "Ceaco list $16.99, Walmart Refresh $11.97. Matches MSRP $11.99. Kept.", "changed": false},
-        {"slug": "the-crew", "name": "The Crew", "old_price": 14.99, "new_price": 14.99, "source": "Thames & Kosmos $14.95 (2-pack $29.90). Matches ~$14.99 MSRP. Kept.", "changed": false}
+        {
+          "slug": "splendor",
+          "name": "Splendor",
+          "old_price": 24.97,
+          "new_price": 24.97,
+          "source": "GameNerdz $31.99 (MSRP $39.99), Walmart ~$37.99. Amazon bot-walled, no verified change. Kept $24.97.",
+          "changed": false
+        },
+        {
+          "slug": "sprawlopolis",
+          "name": "Sprawlopolis",
+          "old_price": 12.99,
+          "new_price": 12.99,
+          "source": "Button Shy MSRP $15.00. Amazon ASIN B07QHPWMN1 dead/404. No verified change. Kept $12.99.",
+          "changed": false
+        },
+        {
+          "slug": "star-realms",
+          "name": "Star Realms",
+          "old_price": 17.95,
+          "new_price": 17.95,
+          "source": "Retailers blocked (camel/miniaturemarket antibot). 10th Anniversary ref $14.95. No verified change. Kept $17.95.",
+          "changed": false
+        },
+        {
+          "slug": "sushi-go",
+          "name": "Sushi Go!",
+          "old_price": 11.99,
+          "new_price": 11.99,
+          "source": "Ceaco list $16.99, Walmart Refresh $11.97. Matches MSRP $11.99. Kept.",
+          "changed": false
+        },
+        {
+          "slug": "the-crew",
+          "name": "The Crew",
+          "old_price": 14.99,
+          "new_price": 14.99,
+          "source": "Thames & Kosmos $14.95 (2-pack $29.90). Matches ~$14.99 MSRP. Kept.",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "cycle": 2,
+      "date": "2026-09-24",
+      "games": [
+        {
+          "slug": "ticket-to-ride",
+          "name": "Ticket to Ride",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "Asmodee/DOW 403, BGG/Target/Walmart bot-walled, SerpAPI exhausted; no move.",
+          "changed": false
+        },
+        {
+          "slug": "under-falling-skies",
+          "name": "Under Falling Skies",
+          "old_price": 29.99,
+          "new_price": 29.99,
+          "source": "GameNerdz MSRP $29.95 OOS; matches current.",
+          "changed": false
+        },
+        {
+          "slug": "uno",
+          "name": "Uno",
+          "old_price": 11.73,
+          "new_price": 7.47,
+          "source": "GameNerdz in-stock $7.47 + Target $5.59; real >10% drop, Amazon bot-walled.",
+          "changed": true
+        },
+        {
+          "slug": "wavelength",
+          "name": "Wavelength",
+          "old_price": 32.0,
+          "new_price": 32.0,
+          "source": "GameNerdz $34.99; +9% under threshold; kept.",
+          "changed": false
+        },
+        {
+          "slug": "wingspan",
+          "name": "Wingspan",
+          "old_price": 55.0,
+          "new_price": 55.0,
+          "source": "Stonemaster official $55 confirmed.",
+          "changed": false
+        }
       ]
     }
   ],
   "schedule": {
-    "day4": ["kingdomino", "lost-cities", "love-letter", "mysterium", "patchwork"],
-    "day5": ["pandemic", "quake", "sequence", "skull-king", "spirit-island"],
-    "day6": ["splendor", "sprawlopolis", "star-realms", "sushi-go", "the-crew"],
-    "day7": ["ticket-to-ride", "under-falling-skies", "uno", "wavelength", "wingspan", "wingspan-solo"],
-    "note": "Cycle 2 day6 done Sep 23 (all 5 kept, no Amazon-verified >10% moves). Day7 next (6 games), then cycle 3 starts at day1."
+    "day4": [
+      "kingdomino",
+      "lost-cities",
+      "love-letter",
+      "mysterium",
+      "patchwork"
+    ],
+    "day5": [
+      "pandemic",
+      "quake",
+      "sequence",
+      "skull-king",
+      "spirit-island"
+    ],
+    "day6": [
+      "splendor",
+      "sprawlopolis",
+      "star-realms",
+      "sushi-go",
+      "the-crew"
+    ],
+    "day7": [
+      "ticket-to-ride",
+      "under-falling-skies",
+      "uno",
+      "wavelength",
+      "wingspan",
+      "wingspan-solo"
+    ],
+    "note": "Cycle 2 day7 done Sep24 (uno updated $11.73->$7.47). Wingspan-solo shares wingspan ASIN (checked). Cycle 3 starts day1 next."
   }
 }
