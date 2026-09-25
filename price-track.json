@@ -1,10 +1,57 @@
 {
-  "day": 7,
-  "cycle": 2,
-  "last_updated": "2026-09-24",
+  "day": 1,
+  "cycle": 3,
+  "last_updated": "2026-09-25",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 1,
+      "cycle": 3,
+      "date": "2026-09-25",
+      "games": [
+        {
+          "slug": "7-wonders-duel",
+          "name": "7 Wonders Duel",
+          "old_price": 29.99,
+          "new_price": 29.99,
+          "source": "GameNerdz $29.59 in-stock (-1.3%), Amazon list higher. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "azul",
+          "name": "Azul",
+          "old_price": 31.99,
+          "new_price": 31.99,
+          "source": "GameNerdz $31.99 confirmed.",
+          "changed": false
+        },
+        {
+          "slug": "blank-slate",
+          "name": "Blank Slate",
+          "old_price": 22.69,
+          "new_price": 22.69,
+          "source": "Amazon $22.90. Keep (diff <10%).",
+          "changed": false
+        },
+        {
+          "slug": "cascadia",
+          "name": "Cascadia",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "Amazon $37.45 (-6.4%), under 10% threshold. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "castle-combo",
+          "name": "Castle Combo",
+          "old_price": 24.99,
+          "new_price": 19.97,
+          "source": "GameNerdz in-stock $19.97 (-20%). ASIN fixed B0D9KGF6ST->B0DHWGS11S (old dead).",
+          "changed": true
+        }
+      ]
+    },
     {
       "day": 1,
       "cycle": 2,
@@ -365,6 +412,6 @@
       "wingspan",
       "wingspan-solo"
     ],
-    "note": "Cycle 2 day7 done Sep24 (uno updated $11.73->$7.47). Wingspan-solo shares wingspan ASIN (checked). Cycle 3 starts day1 next."
+    "note": "Cycle 3 day1 done Sep25 (castle-combo $24.99->$19.97 + ASIN fix to B0DHWGS11S). Day2 next: castle-panic, catan, codenames, final-girl, forbidden-island."
   }
 }

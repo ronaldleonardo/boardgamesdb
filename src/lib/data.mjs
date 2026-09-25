@@ -102,7 +102,7 @@ export const games = [
   { slug: "sequence", name: "Sequence", category: "family", players: "2-12", playtime: 30, age: 7, rating: 7.0, complexity: 1.3, price: 19.97, asin: "B00000IVAK", images: ["/images/sequence.jpg"], tag: "budget",
     desc: "A classic strategy game combining cards and board. Play a card, place a chip. Get five in a row and you win. Simple tension that keeps everyone engaged.",
     why: "Plays up to 12. Grandma-friendly. Proven for 40+ years." },
-  { slug: "castle-combo", name: "Castle Combo", category: "family", players: "2-5", playtime: 25, age: 8, rating: 7.6, complexity: 1.5, price: 24.99, asin: "B0D9KGF6ST", images: ["/images/castle-combo.jpg"], tag: "budget",
+  { slug: "castle-combo", name: "Castle Combo", category: "family", players: "2-5", playtime: 25, age: 8, rating: 7.6, complexity: 1.5, price: 19.97, asin: "B0DHWGS11S", images: ["/images/castle-combo.jpg"], tag: "budget",
     desc: "A charming tableau-building game where you construct medieval castles. Draft cards, build combos, and watch your kingdom grow. Quick to learn, satisfying to play.",
     why: "2026's breakout family hit. Try it on Board Game Arena first." },
   { slug: "quake", name: "Quacks Board Game", category: "family", players: "2-4", playtime: 45, age: 10, rating: 7.8, complexity: 2.0, price: 39.40, asin: "B0F4SRMRG9", images: ["/images/quacks.jpg"], tag: "award-winner",
