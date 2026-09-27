@@ -1,10 +1,57 @@
 {
-  "day": 2,
+  "day": 3,
   "cycle": 3,
-  "last_updated": "2026-09-26",
+  "last_updated": "2026-09-27",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 3,
+      "cycle": 3,
+      "date": "2026-09-27",
+      "games": [
+        {
+          "slug": "fox-in-the-forest",
+          "name": "Fox in the Forest",
+          "old_price": 15.99,
+          "new_price": 15.99,
+          "source": "Amazon live $11.19 (Limited Prime deal, list $15.99); deal too volatile, kept $15.99 regular price.",
+          "changed": false
+        },
+        {
+          "slug": "herd-mentality",
+          "name": "Herd Mentality",
+          "old_price": 24.99,
+          "new_price": 24.99,
+          "source": "Amazon Big Potato $22.79 (-9%, typical $24.99), under 10% threshold. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "horrified",
+          "name": "Horrified",
+          "old_price": 44.89,
+          "new_price": 44.89,
+          "source": "Amazon direct $44.89 confirmed (Ravensburger, in stock). Keep.",
+          "changed": false
+        },
+        {
+          "slug": "jaipur",
+          "name": "Jaipur",
+          "old_price": 26.58,
+          "new_price": 26.58,
+          "source": "Amazon Asmodee $26.58 confirmed. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "just-one",
+          "name": "Just One",
+          "old_price": 24.0,
+          "new_price": 24.0,
+          "source": "Amazon bot-walled (B0FB6MQ3WB gate), Target empty. Prior GameNerdz MSRP $24.99. No verified move. Keep $24.00.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 2,
       "cycle": 3,
@@ -459,6 +506,6 @@
       "wingspan",
       "wingspan-solo"
     ],
-    "note": "Cycle 3 day2 done Sep26 all stable. Day3 next: fox-in-the-forest, herd-mentality, horrified, jaipur, just-one."
+    "note": "Cycle 3 day3 done Sep27 all stable. Day4 next: kingdomino, lost-cities, love-letter, mysterium, patchwork."
   }
 }
