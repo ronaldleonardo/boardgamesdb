@@ -1,10 +1,57 @@
 {
-  "day": 1,
+  "day": 2,
   "cycle": 3,
-  "last_updated": "2026-09-25",
+  "last_updated": "2026-09-26",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 2,
+      "cycle": 3,
+      "date": "2026-09-26",
+      "games": [
+        {
+          "slug": "castle-panic",
+          "name": "Castle Panic",
+          "old_price": 22.95,
+          "new_price": 22.95,
+          "source": "Fireside official MSRP $34.95; no verified Amazon change. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "catan",
+          "name": "Catan (6th Edition)",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "CATAN official shop $49.99 MSRP; current $39.99 below list. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "codenames",
+          "name": "Codenames",
+          "old_price": 24.97,
+          "new_price": 24.97,
+          "source": "Czech Games US store $24.99; matches current. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "final-girl",
+          "name": "Final Girl",
+          "old_price": 24.75,
+          "new_price": 24.75,
+          "source": "Van Ryder core box ~$31 direct; prior cycle Amazon verified ~$24.73. No move. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "forbidden-island",
+          "name": "Forbidden Island",
+          "old_price": 20.99,
+          "new_price": 20.99,
+          "source": "Ceaco official (Gamewright) $25.99 sold-out; current below unofficial. Keep.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 1,
       "cycle": 3,
@@ -412,6 +459,6 @@
       "wingspan",
       "wingspan-solo"
     ],
-    "note": "Cycle 3 day1 done Sep25 (castle-combo $24.99->$19.97 + ASIN fix to B0DHWGS11S). Day2 next: castle-panic, catan, codenames, final-girl, forbidden-island."
+    "note": "Cycle 3 day2 done Sep26 all stable. Day3 next: fox-in-the-forest, herd-mentality, horrified, jaipur, just-one."
   }
 }
