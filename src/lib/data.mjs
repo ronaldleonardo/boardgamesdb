@@ -91,6 +91,9 @@ export const games = [
   { slug: "wingspan", name: "Wingspan", category: "strategy", players: "1-5", playtime: 55, age: 10, rating: 8.1, complexity: 2.5, price: 55.00, asin: "B07YQ641NQ", images: ["/images/wingspan.jpg", "/images/wingspan-1.jpg", "/images/wingspan-2.jpg", "/images/wingspan-3.jpg"], tag: "premium",
     desc: "An engine-building game where you attract birds to your preserve. Each bird has unique abilities and habitat requirements. Stunning artwork, relaxing vibe.",
     why: "The most beautiful game on this list. Deep enough for veterans, inviting for newcomers." },
+  { slug: "7-wonders", name: "7 Wonders (New Edition)", category: "strategy", players: "3-7", playtime: 30, age: 10, rating: 7.7, complexity: 2.3, price: 47.99, asin: "B08F65MX4L", images: ["/images/7-wonders.jpg"], tag: "best-seller",
+    desc: "The legendary card-drafting game. 3 to 7 players build their ancient civilization from a passing hand of cards, each round picking one to keep and sending the rest around the table. Three ages of build, trade, and quiet denial. Won the 2011 Kennerspiel des Jahres.",
+    why: "The game that made drafting mainstream. 30 minutes, everyone plays at once, nobody waits. The step up from casual to real strategy." },
 
   // === FAMILY ===
   { slug: "splendor", name: "Splendor", category: "family", players: "2-4", playtime: 30, age: 10, rating: 7.5, complexity: 1.9, price: 24.97, asin: "B00IZEUFIA", images: ["/images/splendor.jpg", "/images/splendor-2.png", "/images/splendor-3.png"], tag: "best-seller",
