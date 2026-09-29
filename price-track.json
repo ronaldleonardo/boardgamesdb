@@ -1,10 +1,57 @@
 {
-  "day": 3,
+  "day": 4,
   "cycle": 3,
-  "last_updated": "2026-09-27",
+  "last_updated": "2026-09-28",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 4,
+      "cycle": 3,
+      "date": "2026-09-28",
+      "games": [
+        {
+          "slug": "kingdomino",
+          "name": "Kingdomino",
+          "old_price": 19.99,
+          "new_price": 19.99,
+          "source": "Amazon bot-walled (B01N3A4070). BGO lowest Cardhaus $18.99 (-5%), MSRP $24.99. Under threshold. Keep $19.99.",
+          "changed": false
+        },
+        {
+          "slug": "lost-cities",
+          "name": "Lost Cities",
+          "old_price": 19.95,
+          "new_price": 19.95,
+          "source": "Amazon live $19.95 confirmed (Kosmos, in stock, direct). Keep.",
+          "changed": false
+        },
+        {
+          "slug": "love-letter",
+          "name": "Love Letter",
+          "old_price": 12.99,
+          "new_price": 12.99,
+          "source": "Amazon bot-walled (B0753NP1WM). BGO 2019 ed Game Nerdz $12.79 (-1.5%). Keep $12.99.",
+          "changed": false
+        },
+        {
+          "slug": "mysterium",
+          "name": "Mysterium",
+          "old_price": 47.99,
+          "new_price": 47.99,
+          "source": "Asmodee 2025 Refresh MSRP $49.99, current below list. BGO original ed from $39.99 (not refresh ASIN). Keep $47.99.",
+          "changed": false
+        },
+        {
+          "slug": "patchwork",
+          "name": "Patchwork",
+          "old_price": 29.4,
+          "new_price": 29.4,
+          "source": "Amazon bot-walled (B0FPXTLZ21). BGO base $27.99 (-4.8%), MSRP $29.99. Under 10% threshold. Keep $29.40.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 3,
       "cycle": 3,
@@ -506,6 +553,6 @@
       "wingspan",
       "wingspan-solo"
     ],
-    "note": "Cycle 3 day3 done Sep27 all stable. Day4 next: kingdomino, lost-cities, love-letter, mysterium, patchwork."
+    "note": "Cycle 3 day4 done Sep28 all stable. Day5 next: pandemic, quake, sequence, skull-king, spirit-island."
   }
 }
