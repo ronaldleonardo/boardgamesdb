@@ -1,10 +1,57 @@
 {
-  "day": 4,
+  "day": 5,
   "cycle": 3,
-  "last_updated": "2026-09-28",
+  "last_updated": "2026-09-29",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 5,
+      "cycle": 3,
+      "date": "2026-09-29",
+      "games": [
+        {
+          "slug": "pandemic",
+          "name": "Pandemic",
+          "old_price": 44.99,
+          "new_price": 44.99,
+          "source": "Amazon CLP live -10% $44.99 (list $49.99), in stock. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "quake",
+          "name": "Quacks Board Game",
+          "old_price": 39.4,
+          "new_price": 39.4,
+          "source": "BGO Amazon $38.85 (-1.4%) vs current $39.40, under 10% threshold. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "sequence",
+          "name": "Sequence",
+          "old_price": 19.97,
+          "new_price": 19.97,
+          "source": "Amazon live $19.97 confirmed (Jax, -17% list $23.99, in stock). Keep.",
+          "changed": false
+        },
+        {
+          "slug": "skull-king",
+          "name": "Skull King",
+          "old_price": 19.99,
+          "new_price": 19.99,
+          "source": "Amazon CLP live $19.99 confirmed (Grandpa Beck's, 100+ bought/wk). Keep.",
+          "changed": false
+        },
+        {
+          "slug": "spirit-island",
+          "name": "Spirit Island",
+          "old_price": 64.99,
+          "new_price": 64.99,
+          "source": "BGO Amazon $64.99 (matches list $64.99). Keep.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 4,
       "cycle": 3,
@@ -553,6 +600,6 @@
       "wingspan",
       "wingspan-solo"
     ],
-    "note": "Cycle 3 day4 done Sep28 all stable. Day5 next: pandemic, quake, sequence, skull-king, spirit-island."
+    "note": "Cycle 3 day5 done Sep29 all stable. Day6 next: splendor, sprawlopolis, star-realms, sushi-go, the-crew."
   }
 }
