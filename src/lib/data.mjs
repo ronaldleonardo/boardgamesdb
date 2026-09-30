@@ -71,6 +71,9 @@ export const games = [
   { slug: "telestrations", name: "Telestrations (6 Player 2nd Edition)", category: "party-games", players: "4-6", playtime: 30, age: 11, rating: 7.1, complexity: 1.0, price: 24.99, asin: "B0055DGXA8", images: ["/images/telestrations.jpg", "/images/telestrations-2.jpg", "/images/telestrations-3.jpg"], tag: "best-seller",
     desc: "A friendly drawing and guessing game, essentially telephone with doodles. Every player starts with a word, secretly draws it, passes the sketch, guesses what it is, then passes again. By the time the book comes around, the original word is a distant memory and everyone is laughing.",
     why: "The best big-group icebreaker. Nobody gets singled out, every player is busy every round, and terrible drawing skills make it funnier, not worse." },
+  { slug: "king-of-tokyo", name: "King of Tokyo (New Edition)", category: "party-games", players: "2-6", playtime: 30, age: 8, rating: 7.6, complexity: 1.4, price: 43.47, asin: "B01F46RPS4", images: ["/images/king-of-tokyo.jpg"], tag: "best-seller",
+    desc: "A Yahtzee-style dice game where giant monsters battle for control of Tokyo. Roll six dice three times, punch the monster in the city, heal outside it, and hoard energy to buy power cards. First to 20 victory points or last monster standing wins.",
+    why: "The gateway dice game. Ten minute teach, huge laughs, and it never wears out its welcome at a full table." },
 
   // === STRATEGY ===
   { slug: "catan", name: "Catan (6th Edition)", category: "strategy", players: "3-4", playtime: 75, age: 10, rating: 7.2, complexity: 2.0, price: 39.99, asin: "B0DYK1ZH2D", images: ["/images/catan.jpg", "/images/catan-2.png", "/images/catan-3.png", "/images/catan-4.png"], tag: "best-seller",
