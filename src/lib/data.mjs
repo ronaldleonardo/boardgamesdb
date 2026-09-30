@@ -142,7 +142,7 @@ export const games = [
   { slug: "love-letter", name: "Love Letter", category: "card-games", players: "2-4", playtime: 20, age: 10, rating: 7.4, complexity: 1.2, price: 12.99, asin: "B0753NP1WM", images: ["/images/love-letter.jpg"], tag: "budget",
     desc: "A deduction game of risk and luck with only 16 cards. Deliver a love letter to the princess while eliminating rival suitors. Tiny box, huge fun.",
     why: "16 cards. $13. 20 minutes. The best game-per-dollar ratio in board gaming." },
-  { slug: "the-crew", name: "The Crew: The Quest for Planet Nine", category: "card-games", players: "2-5", playtime: 20, age: 10, rating: 7.8, complexity: 2.0, price: 14.99, asin: "B0832F2Y56", images: ["/images/the-crew.jpg", "/images/the-crew-2.jpg", "/images/the-crew-3.jpg", "/images/the-crew-4.jpg"], tag: "award-winner",
+  { slug: "the-crew", name: "The Crew: The Quest for Planet Nine", category: "card-games", players: "2-5", playtime: 20, age: 10, rating: 7.8, complexity: 2.0, price: 11.97, asin: "B0832F2Y56", images: ["/images/the-crew.jpg", "/images/the-crew-2.jpg", "/images/the-crew-3.jpg", "/images/the-crew-4.jpg"], tag: "award-winner",
     desc: "A cooperative trick-taking game set in space. Each mission has unique objectives, you must communicate without talking and win the right tricks together.",
     why: "The game that redefined trick-taking. Co-op, campaign-based, and incredibly clever." },
   { slug: "uno", name: "Uno", category: "card-games", players: "2-10", playtime: 15, age: 7, rating: 6.0, complexity: 1.0, price: 7.47, asin: "B07P6MZPK3", images: ["/images/uno.jpg"], tag: "budget",
