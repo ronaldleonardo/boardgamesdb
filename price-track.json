@@ -1,10 +1,57 @@
 {
-  "day": 6,
+  "day": 7,
   "cycle": 3,
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 7,
+      "cycle": 3,
+      "date": "2026-10-01",
+      "games": [
+        {
+          "slug": "ticket-to-ride",
+          "name": "Ticket to Ride",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "BGO: Walmart/Miniature Market $39.99 in-stock (Refresh, Sep 30). Matches current. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "under-falling-skies",
+          "name": "Under Falling Skies",
+          "old_price": 29.99,
+          "new_price": 29.99,
+          "source": "Amazon live $29.99 (CGE, in stock). GameNerdz $24.95 deal is secondary, not Amazon. Keep $29.99.",
+          "changed": false
+        },
+        {
+          "slug": "uno",
+          "name": "Uno",
+          "old_price": 7.47,
+          "new_price": 7.47,
+          "source": "GameNerdz live $7.47 confirmed (SKU MTT42003). Amazon bot-walled. Matches current. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "wavelength",
+          "name": "Wavelength",
+          "old_price": 32.00,
+          "new_price": 32.00,
+          "source": "BGO $34.99 across Amazon/Target/Walmart (updated Sep 30, in stock). +9.3% vs $32.00, under 10%. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "wingspan",
+          "name": "Wingspan",
+          "old_price": 55.00,
+          "new_price": 55.00,
+          "source": "BGO $55.00 Amazon/Cardhaus/Miniature Market (in stock). Matches current. Keep.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 6,
       "cycle": 3,
@@ -647,6 +694,6 @@
       "wingspan",
       "wingspan-solo"
     ],
-    "note": "Cycle 3 day6 done Sep30. The Crew updated $14.99->$11.97 (GameNerdz). Next: day7 = ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo."
+    "note": "Cycle 3 COMPLETE Oct 1 (day7 all stable, no >10% moves). Next run starts Cycle 4 day1: 7-wonders-duel, azul, blank-slate, cascadia, castle-combo."
   }
 }
