@@ -1,10 +1,57 @@
 {
-  "day": 1,
+  "day": 2,
   "cycle": 4,
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-03",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 2,
+      "cycle": 4,
+      "date": "2026-10-03",
+      "games": [
+        {
+          "slug": "castle-panic",
+          "name": "Castle Panic",
+          "old_price": 22.95,
+          "new_price": 22.95,
+          "source": "BGO daily price drop: 11 offers, lowest $25.99, Amazon $22.95 in-stock. Matches current. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "catan",
+          "name": "Catan (6th Edition)",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "BGO Catan 6th ed: Tabletop Merchant $39.99, Target $43.99 in-stock. Amazon listing shows 5th-ed $78.68 (not comparable ASIN). No verified >10% move. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "codenames",
+          "name": "Codenames",
+          "old_price": 24.97,
+          "new_price": 24.97,
+          "source": "BGO Codenames: Target $24.99 + GameNerdz/Miniature Market $24.99 (2nd ed) in-stock. +0.1% vs current. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "final-girl",
+          "name": "Final Girl",
+          "old_price": 24.75,
+          "new_price": 24.75,
+          "source": "BGO Final Girl Core Box: Amazon $24.57 + Walmart $24.63 in-stock (-0.7% vs current). Boardtopia $18.99 clearance-style niche listing, not representative street price. Under 10% threshold. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "forbidden-island",
+          "name": "Forbidden Island",
+          "old_price": 20.99,
+          "new_price": 20.99,
+          "source": "BGO Forbidden Island: most in-stock $21.99+ (Tabletop Merchant/Cardhaus). Books-A-Million $19.99 (-4.8%), under 10% threshold. Keep.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 1,
       "cycle": 4,
