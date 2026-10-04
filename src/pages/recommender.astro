@@ -139,7 +139,7 @@ try { writeFileSync('public/data/games.json', JSON.stringify(cleanGames)); } cat
       <div class="rec-card">
         <a href="/game/${g.slug}" class="rec-img-link">
           <div class="rec-img-wrap">
-            <img src="${g.image}" alt="${g.name}" loading="lazy" />
+            ${g.image ? `<img src="${g.image}" alt="${g.name}" loading="lazy" />` : ''}
           </div>
         </a>
         <div class="rec-info">

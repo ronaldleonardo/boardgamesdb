@@ -15,7 +15,7 @@ document.addEventListener('click', function(e) {
       <div class="rec-card">
         <a href="/game/${e.slug}" class="rec-img-link">
           <div class="rec-img-wrap">
-            <img src="${e.image}" alt="${e.name}" loading="lazy" />
+            ${e.image?`<img src="${e.image}" alt="${e.name}" loading="lazy" />`:``}
           </div>
         </a>
         <div class="rec-info">
