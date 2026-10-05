@@ -1,10 +1,57 @@
 {
-  "day": 3,
+  "day": 4,
   "cycle": 4,
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-05",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 4,
+      "cycle": 4,
+      "date": "2026-10-05",
+      "games": [
+        {
+          "slug": "kingdomino",
+          "name": "Kingdomino",
+          "old_price": 19.99,
+          "new_price": 19.99,
+          "source": "GameNerdz live $19.99 (compare $24.99); BGO lowest Cardhaus $18.99 (-5%). No >10% move. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "lost-cities",
+          "name": "Lost Cities",
+          "old_price": 19.95,
+          "new_price": 19.95,
+          "source": "BGO Amazon live $19.95 in stock (upd 10/03); Thames & Kosmos official $19.95 = match. GameNerdz sale $14.97 / Miniature Market $14.99 are discounter promos, not street. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "love-letter",
+          "name": "Love Letter",
+          "old_price": 12.99,
+          "new_price": 12.99,
+          "source": "GameNerdz Love Letter Classic (Eco Box) live $12.79 (-1.5%, in stock). Under 10% threshold. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "mysterium",
+          "name": "Mysterium",
+          "old_price": 47.99,
+          "new_price": 47.99,
+          "source": "Target live $47.99 (exact match); Asmodee store $49.99. GameNerdz $39.99 OOS (unreliable). Keep.",
+          "changed": false
+        },
+        {
+          "slug": "patchwork",
+          "name": "Patchwork",
+          "old_price": 29.4,
+          "new_price": 29.4,
+          "source": "BGO street $27.99 (Detective Hawk/Gamezenter/Miniature Market, -4.8%); GameNerdz $27.99 OOS. Under 10% threshold. Keep.",
+          "changed": false
+        }
+      ]
+    },
     {
       "day": 3,
       "cycle": 4,
@@ -45,8 +92,8 @@
         {
           "slug": "just-one",
           "name": "Just One (2025 Refresh)",
-          "old_price": 24.00,
-          "new_price": 24.00,
+          "old_price": 24.0,
+          "new_price": 24.0,
           "source": "Amazon CLP live $24.49 (+2%, 200+ bought/wk). Walmart $19.97 snippet ambiguous (adjacent Family Feud listing), Target no price. Under threshold. Keep $24.00.",
           "changed": false
         }
