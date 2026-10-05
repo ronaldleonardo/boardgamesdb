@@ -98,6 +98,10 @@ export const games = [
     desc: "The legendary card-drafting game. 3 to 7 players build their ancient civilization from a passing hand of cards, each round picking one to keep and sending the rest around the table. Three ages of build, trade, and quiet denial. Won the 2011 Kennerspiel des Jahres.",
     why: "The game that made drafting mainstream. 30 minutes, everyone plays at once, nobody waits. The step up from casual to real strategy." },
 
+  { slug: "dominion", name: "Dominion (Second Edition)", category: "strategy", players: "2-4", playtime: 30, age: 13, rating: 7.7, complexity: 2.2, price: 44.99, asin: "B00KLQPU3O", images: ["/images/dominion.jpg"], tag: "award-winner",
+    desc: "The game that invented deck-building. Every player starts with the same ten cards and buys more from the kingdom row, thinning and upgrading their deck each turn. First to the most victory points when the piles run dry wins. An entire genre grew from this one box.",
+    why: "The purest deck-builder ever made. Two minutes to teach, a lifetime to fail at, and it hits perfectly at three players." },
+
   { slug: "everdell", name: "Everdell (3rd Edition)", category: "strategy", players: "1-4", playtime: 80, age: 13, rating: 8.0, complexity: 2.8, price: 69.99, asin: "B09ZWQTTNR", images: ["/images/everdell.jpg"], tag: "premium",
     desc: "A breathtaking worker placement game set in a woodland valley. Through the four seasons of a single year, place your critter workers to gather resources, build a city of creatures and constructions, and prepare for the hard winter before the moon rises.",
     why: "The prettiest heavy-ish game on the shelf. You are done learning it fast, then the combos pull you back every single game. Best at exactly 4." },
