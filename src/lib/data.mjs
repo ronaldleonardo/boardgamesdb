@@ -206,3 +206,35 @@ export const games = [
     desc: "The ultimate solo puzzle. Play as a nature spirit defending your island from colonizers. Unique powers, deep strategy, and every game is a brain-burning challenge.",
     why: "The most respected solo game on BGG (8.5 rating). Not for beginners, but unmatched depth." }
 ];
+
+// --- Image safety (added Oct 5): only keep image paths whose file actually exists.
+// Prevents broken <img> on live pages when an image was never generated.
+import fs from "node:fs";
+import path from "node:path";
+
+const PUBLIC_ROOT = path.join(process.cwd(), "public");
+
+function fileExists(p) {
+  if (typeof p !== "string" || !p.startsWith("/")) return false;
+  try {
+    return fs.existsSync(path.join(PUBLIC_ROOT, p));
+  } catch {
+    return false;
+  }
+}
+
+for (const g of games) {
+  if (Array.isArray(g.images)) {
+    g.images = g.images.filter(fileExists);
+  }
+  if (g.image && !fileExists(g.image)) {
+    g.image = "";
+  }
+}
+
+/** First usable image for a game, or "" when none exists. */
+export const imgOf = (g) => {
+  if (!g) return "";
+  if (Array.isArray(g.images) && g.images.length) return g.images[0];
+  return g.image || "";
+};

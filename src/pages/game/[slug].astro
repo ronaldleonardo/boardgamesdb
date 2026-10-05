@@ -22,7 +22,7 @@ const lightboxData = JSON.stringify(game.images);
     "@type": "Product",
     name: game.name,
     description: game.desc,
-    image: `https://tabletoppicks.com${game.images[0]}`,
+    image: game.images[0] ? `https://tabletoppicks.com${game.images[0]}` : undefined,
     offers: {
       "@type": "Offer",
       price: game.price,
@@ -46,7 +46,7 @@ const lightboxData = JSON.stringify(game.images);
       <div class="game-header-img">
         {game.images.length > 1 && <div class="badge-count">{game.images.length} photos</div>}
         <a href="#lightbox" class="lightbox-trigger">
-          <img src={game.images[0]} alt={game.name} />
+          {game.images[0] && <img src={game.images[0]} alt={game.name} />}
         </a>
       </div>
       <div class="game-header-info">
@@ -136,7 +136,7 @@ const lightboxData = JSON.stringify(game.images);
         <div class="game-row-list">
           {sameCat.map(g => (
             <a href={`/game/${g.slug}`} class="game-row-link">
-              <img src={g.images?.[0] || g.image} alt={g.name} class="game-thumb" />
+              {(g.images?.[0] || g.image) && <img src={g.images?.[0] || g.image} alt={g.name} class="game-thumb" />}
               <div class="game-row-info">
                 <strong>{g.name}</strong>
                 <span class="game-meta-sm">★ {g.rating}  |  {g.players}p  |  ${g.price}</span>
@@ -152,7 +152,7 @@ const lightboxData = JSON.stringify(game.images);
   <div id="lightbox" class="lightbox">
     <a href="#" class="lightbox-close">&times;</a>
     <div class="lightbox-content">
-      <img id="lightbox-img" src={game.images[0]} alt={game.name} />
+      {game.images[0] && <img id="lightbox-img" src={game.images[0]} alt={game.name} />}
       <div id="lightbox-thumbs" class="lightbox-thumbs">
         {game.images.map((img, i) => (
           <img src={img} alt={`${game.name} ${i + 1}`} data-index={i} class={`lightbox-thumb ${i === 0 ? 'active' : ''}`} onclick="switchLightbox(event, this.dataset.index)" />
