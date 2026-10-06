@@ -113,7 +113,7 @@ export const games = [
   { slug: "kingdomino", name: "Kingdomino", category: "family", players: "2-4", playtime: 20, age: 8, rating: 7.4, complexity: 1.2, price: 19.99, asin: "B01N3A4070", images: ["/images/kingdomino.jpg"], tag: "budget",
     desc: "Draft domino tiles to build your kingdom. Each tile has two terrain types, match them strategically to score big. Quick, clever, and addictive.",
     why: "Gold standard for family games. Cheap, fast, fun for all ages." },
-  { slug: "sequence", name: "Sequence", category: "family", players: "2-12", playtime: 30, age: 7, rating: 7.0, complexity: 1.3, price: 19.97, asin: "B00000IVAK", images: ["/images/sequence.jpg"], tag: "budget",
+  { slug: "sequence", name: "Sequence", category: "family", players: "2-12", playtime: 30, age: 7, rating: 7.0, complexity: 1.3, price: 14.97, asin: "B00000IVAK", images: ["/images/sequence.jpg"], tag: "budget",
     desc: "A classic strategy game combining cards and board. Play a card, place a chip. Get five in a row and you win. Simple tension that keeps everyone engaged.",
     why: "Plays up to 12. Grandma-friendly. Proven for 40+ years." },
   { slug: "castle-combo", name: "Castle Combo", category: "family", players: "2-5", playtime: 25, age: 8, rating: 7.6, complexity: 1.5, price: 19.97, asin: "B0DHWGS11S", images: ["/images/castle-combo.jpg"], tag: "budget",
@@ -167,7 +167,7 @@ export const games = [
     why: "The ultimate bluffing game. Pocket-sized, fast, and every round ends in betrayal." },
 
   // === COOPERATIVE ===
-  { slug: "pandemic", name: "Pandemic", category: "cooperative", players: "2-4", playtime: 45, age: 8, rating: 7.6, complexity: 2.5, price: 44.99, asin: "B00A2HD40E", images: ["/images/pandemic.jpg"], tag: "best-seller",
+  { slug: "pandemic", name: "Pandemic", category: "cooperative", players: "2-4", playtime: 45, age: 8, rating: 7.6, complexity: 2.5, price: 49.99, asin: "B00A2HD40E", images: ["/images/pandemic.jpg"], tag: "best-seller",
     desc: "Work together to stop global outbreaks. Each player has a unique role: medic, scientist, dispatcher. You must cure four diseases before time runs out.",
     why: "The gateway co-op game. Tension, teamwork, and that 'one more game' feeling." },
   { slug: "forbidden-island", name: "Forbidden Island", category: "cooperative", players: "2-4", playtime: 30, age: 10, rating: 7.1, complexity: 1.7, price: 20.99, asin: "B003D7F4YY", images: ["/images/forbidden-island.jpg", "/images/forbidden-island-2.jpg", "/images/forbidden-island-3.jpg", "/images/forbidden-island-4.jpg"], tag: "budget",
