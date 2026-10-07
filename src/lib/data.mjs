@@ -106,6 +106,10 @@ export const games = [
     desc: "A breathtaking worker placement game set in a woodland valley. Through the four seasons of a single year, place your critter workers to gather resources, build a city of creatures and constructions, and prepare for the hard winter before the moon rises.",
     why: "The prettiest heavy-ish game on the shelf. You are done learning it fast, then the combos pull you back every single game. Best at exactly 4." },
 
+  { slug: "sagrada", name: "Sagrada", category: "strategy", players: "1-4", playtime: 40, age: 10, rating: 7.5, complexity: 1.9, price: 43.49, asin: "B0GL8SJRFC", images: [], tag: "award-winner",
+    desc: "A dice-drafting puzzle where you build a stained glass window out of colored dice. Every space on your board restricts what fits, and public plus secret objectives decide the most beautiful window.",
+    why: "The dice take on Azul. Sharp, quiet, and gorgeous on the table. My pick for the nights Azul starts to feel solved." },
+
   // === FAMILY ===
   { slug: "splendor", name: "Splendor", category: "family", players: "2-4", playtime: 30, age: 10, rating: 7.5, complexity: 1.9, price: 24.97, asin: "B00IZEUFIA", images: ["/images/splendor.jpg", "/images/splendor-2.png", "/images/splendor-3.png"], tag: "best-seller",
     desc: "Collect gem tokens, buy development cards, and attract nobles to your court. Simple mechanics with satisfying strategic depth.",
