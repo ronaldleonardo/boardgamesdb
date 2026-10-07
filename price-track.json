@@ -1,10 +1,57 @@
 {
-  "day": 5,
+  "day": 6,
   "cycle": 4,
-  "last_updated": "2026-10-06",
+  "last_updated": "2026-10-07",
   "total_games": 35,
   "games_per_day": 5,
   "log": [
+    {
+      "day": 6,
+      "cycle": 4,
+      "date": "2026-10-07",
+      "games": [
+        {
+          "slug": "splendor",
+          "name": "Splendor",
+          "old_price": 24.97,
+          "new_price": 24.97,
+          "source": "Amazon /dp B00IZEUFIA live during Prime Big Deal Days: 'Deal price' $23.99 (Prime-only) vs 'Regular Price' $31.99 (list $39.99). Effective price $23.99 is -3.9% vs current (under 10%); the $31.99 'regular' is an event-inflated anchor, not steady street (~$25). Keep $24.97; recheck after the event ends.",
+          "changed": false
+        },
+        {
+          "slug": "sprawlopolis",
+          "name": "Sprawlopolis",
+          "old_price": 12.99,
+          "new_price": 12.99,
+          "source": "Tracked ASIN B07QHPWMN1 is now 404 (listing removed). Current Amazon listing B0DP3H8S4N ('Sprawlopolis Button Shy Wallet Game') shows $29.95 3rd-party, only 5 left = reseller markup, not street (Button Shy direct MSRP ~$12). Kept $12.99; ASIN updated to B0DP3H8S4N so future refreshes have a live target.",
+          "changed": false
+        },
+        {
+          "slug": "star-realms",
+          "name": "Star Realms",
+          "old_price": 17.95,
+          "new_price": 17.95,
+          "source": "Amazon /dp B00HRGMPIU live $17.95, In Stock (no deal badge). Exact match. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "sushi-go",
+          "name": "Sushi Go!",
+          "old_price": 11.99,
+          "new_price": 11.99,
+          "source": "Amazon /dp B00J57VU44: 'Deal price' $11.37 (Prime-only) vs 'Regular Price' $11.99 (= stored) vs typical $14.50. Regular matches exactly. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "the-crew",
+          "name": "The Crew: The Quest for Planet Nine",
+          "old_price": 11.97,
+          "new_price": 14.95,
+          "source": "Tracked ASIN B0832F2Y56 is now 404. Correct ASIN B084GP7X3P (Thames & Kosmos, verified title) live $14.95, In Stock (list $15.95). Stored $11.97 was a GameNerdz discounter promo (cycle 3) the site treats as non-street; Amazon street + site's own article ($14.99) => +24.9% > 10% -> update. ASIN fixed.",
+          "changed": true
+        }
+      ]
+    },
     {
       "day": 5,
       "cycle": 4,
@@ -95,53 +142,6 @@
           "old_price": 29.4,
           "new_price": 29.4,
           "source": "BGO street $27.99 (Detective Hawk/Gamezenter/Miniature Market, -4.8%); GameNerdz $27.99 OOS. Under 10% threshold. Keep.",
-          "changed": false
-        }
-      ]
-    },
-    {
-      "day": 3,
-      "cycle": 4,
-      "date": "2026-10-04",
-      "games": [
-        {
-          "slug": "fox-in-the-forest",
-          "name": "Fox in the Forest",
-          "old_price": 15.99,
-          "new_price": 15.99,
-          "source": "Amazon CLP live $15.99 (100+ bought/wk, in stock). GameNerdz OOS $12.77 (unreliable). Matches current. Keep.",
-          "changed": false
-        },
-        {
-          "slug": "herd-mentality",
-          "name": "Herd Mentality",
-          "old_price": 24.99,
-          "new_price": 24.99,
-          "source": "Amazon CLP live -9% $22.79 (typical $24.99, 700+ bought/wk). GameNerdz OOS $18.97 (unreliable). Under 10% threshold. Keep $24.99.",
-          "changed": false
-        },
-        {
-          "slug": "horrified",
-          "name": "Horrified",
-          "old_price": 44.89,
-          "new_price": 44.89,
-          "source": "Amazon CLP live $44.89 (50+ bought/wk, in stock). GameNerdz OOS $39.97. Matches current. Keep.",
-          "changed": false
-        },
-        {
-          "slug": "jaipur",
-          "name": "Jaipur",
-          "old_price": 26.58,
-          "new_price": 26.58,
-          "source": "Asmodee store live $26.99 (+1.5% vs current). No verified >10% move. Keep $26.58.",
-          "changed": false
-        },
-        {
-          "slug": "just-one",
-          "name": "Just One (2025 Refresh)",
-          "old_price": 24.0,
-          "new_price": 24.0,
-          "source": "Amazon CLP live $24.49 (+2%, 200+ bought/wk). Walmart $19.97 snippet ambiguous (adjacent Family Feud listing), Target no price. Under threshold. Keep $24.00.",
           "changed": false
         }
       ]
