@@ -1,10 +1,77 @@
 {
-  "day": 6,
+  "day": 7,
   "cycle": 4,
-  "last_updated": "2026-10-07",
-  "total_games": 35,
+  "last_updated": "2026-10-08",
+  "total_games": 36,
   "games_per_day": 5,
+  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
+  "next": {"day": 1, "cycle": 5, "games": ["7-wonders-duel", "azul", "blank-slate", "cascadia", "castle-combo"]},
+  "schedule": {
+    "day1": ["7-wonders-duel", "azul", "blank-slate", "cascadia", "castle-combo"],
+    "day2": ["castle-panic", "catan", "codenames", "final-girl", "forbidden-island"],
+    "day3": ["fox-in-the-forest", "herd-mentality", "horrified", "jaipur", "just-one"],
+    "day4": ["kingdomino", "lost-cities", "love-letter", "mysterium", "patchwork"],
+    "day5": ["pandemic", "quake", "sequence", "skull-king", "spirit-island"],
+    "day6": ["splendor", "sprawlopolis", "star-realms", "sushi-go", "the-crew"],
+    "day7": ["ticket-to-ride", "under-falling-skies", "uno", "wavelength", "wingspan", "wingspan-solo"]
+  },
   "log": [
+    {
+      "day": 7,
+      "cycle": 4,
+      "date": "2026-10-08",
+      "games": [
+        {
+          "slug": "ticket-to-ride",
+          "name": "Ticket to Ride",
+          "old_price": 39.99,
+          "new_price": 39.99,
+          "source": "Amazon /dp B0F8PKN4B7 (Asmodee 2025 Refresh): 'Deal price' $29.99 (49% claimed lightning deal) vs 'Regular Price' $39.99 and 'Typical price' $39.99. Regular/Typical match stored $39.99 -> 0%. Kept; event promo ignored.",
+          "changed": false
+        },
+        {
+          "slug": "under-falling-skies",
+          "name": "Under Falling Skies",
+          "old_price": 29.99,
+          "new_price": 29.99,
+          "source": "Amazon /dp B08HGS1QYT: $29.99 buybox (sold by CGE Czech Games Edition, ships Amazon Fulfillment), In Stock, 'Only 16 left'. Exact match. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "uno",
+          "name": "Uno",
+          "old_price": 7.47,
+          "new_price": 11.82,
+          "source": "Amazon /dp B07P6MZPK3 (Mattel classic, 2-10p): $11.82 'Buy New' buybox (sold/ships Amazon.com), In Stock. Confirmed twice (dp + dp?th=1&psc=1); reseller offer $10.93. Stored $7.47 was an old promo -> +58.2% > 10% -> update. UNO Flip! $11.99 / Teams $11.74 corroborate the ~$11.8 street level. Also fixed stale on-site copy 'Under $10' -> 'Under $12'.",
+          "changed": true
+        },
+        {
+          "slug": "wavelength",
+          "name": "Wavelength",
+          "old_price": 32.0,
+          "new_price": 32.0,
+          "source": "Amazon /dp B07T446163 (CMYK): buybox $34.99 (List $39.99), In Stock; Firecrawl /clp cross-check agreed $34.99. +9.3% vs stored $32.00 = just under the 10% threshold -> keep. BORDERLINE: reconcile next cycle.",
+          "changed": false
+        },
+        {
+          "slug": "wingspan",
+          "name": "Wingspan",
+          "old_price": 55.0,
+          "new_price": 55.0,
+          "source": "Amazon /dp B07YQ641NQ (Stonemaier): $55.00 buybox (List $65.00), In Stock. Exact match. Keep.",
+          "changed": false
+        },
+        {
+          "slug": "wingspan-solo",
+          "name": "Wingspan (Solo Mode)",
+          "old_price": 55.0,
+          "new_price": 55.0,
+          "source": "Same product/ASIN as wingspan (B07YQ641NQ) -> $55.00 carried over. No separate listing. Keep.",
+          "changed": false
+        }
+      ],
+      "note": "Cycle 4 complete (all 7 day-groups swept). 1 change (uno). Next run starts cycle 5 day 1."
+    },
     {
       "day": 6,
       "cycle": 4,
@@ -95,53 +162,6 @@
           "old_price": 64.99,
           "new_price": 64.99,
           "source": "Amazon /dp: labeled 'Deal price' $44.99 vs 'Regular Price' $61.40 (list $64.99). Prime promo, not street; regular is -5.5% vs current. Keep.",
-          "changed": false
-        }
-      ]
-    },
-    {
-      "day": 4,
-      "cycle": 4,
-      "date": "2026-10-05",
-      "games": [
-        {
-          "slug": "kingdomino",
-          "name": "Kingdomino",
-          "old_price": 19.99,
-          "new_price": 19.99,
-          "source": "GameNerdz live $19.99 (compare $24.99); BGO lowest Cardhaus $18.99 (-5%). No >10% move. Keep.",
-          "changed": false
-        },
-        {
-          "slug": "lost-cities",
-          "name": "Lost Cities",
-          "old_price": 19.95,
-          "new_price": 19.95,
-          "source": "BGO Amazon live $19.95 in stock (upd 10/03); Thames & Kosmos official $19.95 = match. GameNerdz sale $14.97 / Miniature Market $14.99 are discounter promos, not street. Keep.",
-          "changed": false
-        },
-        {
-          "slug": "love-letter",
-          "name": "Love Letter",
-          "old_price": 12.99,
-          "new_price": 12.99,
-          "source": "GameNerdz Love Letter Classic (Eco Box) live $12.79 (-1.5%, in stock). Under 10% threshold. Keep.",
-          "changed": false
-        },
-        {
-          "slug": "mysterium",
-          "name": "Mysterium",
-          "old_price": 47.99,
-          "new_price": 47.99,
-          "source": "Target live $47.99 (exact match); Asmodee store $49.99. GameNerdz $39.99 OOS (unreliable). Keep.",
-          "changed": false
-        },
-        {
-          "slug": "patchwork",
-          "name": "Patchwork",
-          "old_price": 29.4,
-          "new_price": 29.4,
-          "source": "BGO street $27.99 (Detective Hawk/Gamezenter/Miniature Market, -4.8%); GameNerdz $27.99 OOS. Under 10% threshold. Keep.",
           "changed": false
         }
       ]
