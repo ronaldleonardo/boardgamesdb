@@ -82,7 +82,7 @@ export const games = [
   { slug: "carcassonne", name: "Carcassonne", category: "strategy", players: "2-5", playtime: 35, age: 7, rating: 7.4, complexity: 1.9, price: 34.99, asin: "B00NX627HW", images: ["/images/carcassonne.jpg"], tag: "best-seller",
     desc: "Draw a tile, place it, claim it with a meeple. The classic tile-laying game where one quiet decision per turn builds a shared medieval world of cities, roads, and fields.",
     why: "The purest gateway game. Ten seconds to learn, a lifetime to master, and it never overstays its welcome." },
-  { slug: "ticket-to-ride", name: "Ticket to Ride (2025 Refresh)", category: "strategy", players: "2-5", playtime: 45, age: 8, rating: 7.5, complexity: 1.9, price: 29.99, asin: "B0F8PKN4B7", images: ["/images/ticket-to-ride.jpg"], tag: "best-seller",
+  { slug: "ticket-to-ride", name: "Ticket to Ride (2025 Refresh)", category: "strategy", players: "2-5", playtime: 45, age: 8, rating: 7.5, complexity: 1.9, price: 39.99, asin: "B0F8PKN4B7", images: ["/images/ticket-to-ride.jpg"], tag: "best-seller",
     desc: "Build train routes across America. Connect cities, complete destination tickets, and block your opponents. Simple to learn, impossible to master.",
     why: "The most successful modern board game for a reason. Routes, risk, and rail-building fun. Refreshed in 2025 with new art, bigger cards, and 33 destination tickets." },
 
