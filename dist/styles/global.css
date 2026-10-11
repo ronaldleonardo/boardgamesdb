@@ -114,7 +114,6 @@ nav a:hover { color: var(--accent) !important; background: rgba(255, 107, 53, 0.
 
 /* ── Tables in Articles ── */
 .post figure { margin: 1.5rem 0; max-width: 100%; overflow-x: auto; }
-.post figure figcaption { font-size: 0.82rem; color: var(--muted); text-align: center; padding-top: 0.5rem; }
 /* Blog hero carousel */
 .post table {
   width: 100%;
@@ -166,3 +165,5 @@ nav a:hover { color: var(--accent) !important; background: rgba(255, 107, 53, 0.
 
 .post figure.post-hero { margin: 1.5rem 0; }
 .post figure.post-hero img { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+
+.img-credit { font-family: var(--font-sans); font-size: 0.7rem; line-height: 1.55; letter-spacing: 0.01em; color: var(--muted); margin-top: 2.5rem; }

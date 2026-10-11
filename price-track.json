@@ -1,19 +1,19 @@
 {
- "day": 1,
+ "day": 2,
  "cycle": 5,
- "last_updated": "2026-10-09",
+ "last_updated": "2026-10-10",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 2,
+  "day": 3,
   "cycle": 5,
   "games": [
-   "castle-panic",
-   "catan",
-   "codenames",
-   "final-girl",
-   "forbidden-island"
+   "fox-in-the-forest",
+   "herd-mentality",
+   "horrified",
+   "jaipur",
+   "just-one"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 2,
+   "cycle": 5,
+   "date": "2026-10-10",
+   "games": [
+    {
+     "slug": "castle-panic",
+     "name": "Castle Panic",
+     "old_price": 22.95,
+     "new_price": 22.95,
+     "changed": false,
+     "source": "Amazon /dp B0B3LGW2KH (Fireside Games Castle Panic 2nd Edition, title match): buybox $22.95 (List $34.95, -34%), In Stock, Ships from and sold by Amazon, Amazon's Choice 1K+ bought. Exact match. Keep."
+    },
+    {
+     "slug": "catan",
+     "name": "Catan (6th Edition)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /dp B0DYK1ZH2D ('CATAN Board Game (6th Edition)', title match): buybox $39.99 (List $49.99, -20%), In Stock, Ships from and sold by Amazon, 20K+ bought. Exact match. Keep."
+    },
+    {
+     "slug": "codenames",
+     "name": "Codenames",
+     "old_price": 24.97,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "Amazon /dp B0FJMQB63N ('CGE Codenames Board Game (2nd Edition)', title match): buybox $24.97, In Stock, Sold by CGE Czech Games Edition, 5K+ bought. Exact match. Keep."
+    },
+    {
+     "slug": "final-girl",
+     "name": "Final Girl",
+     "old_price": 24.75,
+     "new_price": 24.75,
+     "changed": false,
+     "source": "Amazon /dp B09N8R6296 ('Van Ryder Games - Final Girl - Core Box', title match): buybox $24.27 (Ships from Amazon, Sold by Buckeye Trading, Only 7 left, Amazon's Choice 100+ bought); secondary offer $23.99 (Best WH). -1.9% vs stored $24.75 -> under 10% -> keep."
+    },
+    {
+     "slug": "forbidden-island",
+     "name": "Forbidden Island",
+     "old_price": 20.99,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "Amazon /dp B003D7F4YY ('Gamewright Forbidden Island, 1st Edition', title match): buybox $20.99, In Stock, 300+ bought. Exact match. Keep."
+    }
+   ],
+   "note": "Cycle 5 day 2. 0 price changes. All 5 ASINs verified live (titles matched, US egress 'The Dalles 97058' confirmed). No data.mjs edit -> no rebuild needed. Next run: cycle 5 day 3."
+  },
   {
    "day": 1,
    "cycle": 5,
