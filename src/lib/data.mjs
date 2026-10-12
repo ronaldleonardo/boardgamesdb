@@ -157,6 +157,9 @@ export const games = [
   { slug: "hanamikoji", name: "Hanamikoji", category: "two-player", players: "2", playtime: 20, age: 10, rating: 7.5, complexity: 1.7, price: 24.99, asin: "B08FN3V5CD", images: ["/images/hanamikoji.jpg"], tag: "award-winner",
     desc: "A beautifully crafted card game set in a geisha house. Win the favor of geishas by playing sets of cards. Four action slots but only four moves per round. Every decision is agonizing.",
     why: "The most elegant 2-player card game ever made. 7 actions per game, infinite depth." },
+  { slug: "splendor-duel", name: "Splendor Duel", category: "two-player", players: "2", playtime: 30, age: 10, rating: 7.7, complexity: 2.0, price: 32.99, asin: "B0BF57RNPC", images: [], tag: "best-seller",
+    desc: "The two-player rebuild of Splendor, remade from the ground up by Marc Andre and Bruno Cathala. Same gems and engine-building core, tighter board, and three separate ways to win instead of one.",
+    why: "Fixes the thing the base game does worst: two-player Splendor has no tension. This one has plenty." },
 
   // === CARD GAMES ===
   { slug: "love-letter", name: "Love Letter", category: "card-games", players: "2-4", playtime: 20, age: 10, rating: 7.4, complexity: 1.2, price: 12.99, asin: "B0753NP1WM", images: ["/images/love-letter.jpg"], tag: "budget",
