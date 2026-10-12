@@ -1,19 +1,19 @@
 {
- "day": 2,
+ "day": 3,
  "cycle": 5,
- "last_updated": "2026-10-10",
+ "last_updated": "2026-10-12",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 3,
+  "day": 4,
   "cycle": 5,
   "games": [
-   "fox-in-the-forest",
-   "herd-mentality",
-   "horrified",
-   "jaipur",
-   "just-one"
+   "kingdomino",
+   "lost-cities",
+   "love-letter",
+   "mysterium",
+   "patchwork"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 3,
+   "cycle": 5,
+   "date": "2026-10-12",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 15.99,
+     "changed": false,
+     "source": "Amazon /dp B06XP7ZDH1 (Renegade Foxtrot): buybox $15.99, In Stock, 4.6 stars. Exact match. Keep."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /dp B093HBBMPT (Asmodee): buybox $24.99, In Stock, 4.7 stars. Exact match. First fetch returned a variant page lacking the buybox JSON; retried OK."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /dp B07QQHTD4Q (Ravensburger): buybox $44.99, In Stock, 4.8 stars. +0.22% vs stored $44.89 -> under 10% -> keep (stored value is the odd $44.89, normalize to $44.99 when next edited)."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /dp B07SRMXRZB (Space Cowboys): buybox $26.58, In Stock, 4.8 stars. Exact match. Keep."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /dp B0FB6MQ3WB (Repos/Asmodee 2025 Refresh): buybox $24.99, In Stock, 4.6 stars. +4.12% vs stored $24.00 -> under 10% -> keep."
+    }
+   ],
+   "note": "Cycle 5 day 3. 0 price changes (>10%). All 5 ASINs verified live (titles matched, US egress). herd-mentality needed a retry on the first fetch; hardened /root/garagetoolsdb/price_fetch.py buybox regex to accept zero-or-more backslashes. No data.mjs edit -> no rebuild. Next run: cycle 5 day 4."
+  },
   {
    "day": 2,
    "cycle": 5,
