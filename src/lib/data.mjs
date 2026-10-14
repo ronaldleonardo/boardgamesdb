@@ -74,6 +74,9 @@ export const games = [
   { slug: "king-of-tokyo", name: "King of Tokyo (New Edition)", category: "party-games", players: "2-6", playtime: 30, age: 8, rating: 7.6, complexity: 1.4, price: 43.47, asin: "B01F46RPS4", images: ["/images/king-of-tokyo.jpg"], tag: "best-seller",
     desc: "A Yahtzee-style dice game where giant monsters battle for control of Tokyo. Roll six dice three times, punch the monster in the city, heal outside it, and hoard energy to buy power cards. First to 20 victory points or last monster standing wins.",
     why: "The gateway dice game. Ten minute teach, huge laughs, and it never wears out its welcome at a full table." },
+  { slug: "camel-up", name: "Camel Up (Second Edition)", category: "party-games", players: "2-8", playtime: 30, age: 8, rating: 7.3, complexity: 1.4, price: 41.98, asin: "B09KWZMXLX", images: [], tag: "award-winner",
+    desc: "A betting and racing party game where camels stack on top of each other and nobody can predict the finish. Roll a die to move a camel, place a bet, or drop a tile, then watch the whole table react. Spiel des Jahres winner.",
+    why: "The best game for a mixed group of five or more. Everyone stays involved every round, and the chaos is the point." },
 
   // === STRATEGY ===
   { slug: "catan", name: "Catan (6th Edition)", category: "strategy", players: "3-4", playtime: 75, age: 10, rating: 7.2, complexity: 2.0, price: 39.99, asin: "B0DYK1ZH2D", images: ["/images/catan.jpg", "/images/catan-2.png", "/images/catan-3.png", "/images/catan-4.png"], tag: "best-seller",
@@ -139,7 +142,7 @@ export const games = [
     why: "Spiel des Jahres winner. Works with creative kids and adults alike. Every game is different." },
 
   // === 2-PLAYER ===
-  { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 29.40, asin: "B0FPXTLZ21", images: ["/images/patchwork.jpg", "/images/patchwork-2.jpg"], tag: "best-seller",
+  { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 34.95, asin: "B0FPXTLZ21", images: ["/images/patchwork.jpg", "/images/patchwork-2.jpg"], tag: "best-seller",
     desc: "A two-player tetris-like game where you piece together a quilt. Buy patches with buttons, place them strategically, and cover your board efficiently.",
     why: "Best 2-player game ever made. Period. Perfect date night game." },
   { slug: "7-wonders-duel", name: "7 Wonders Duel", category: "two-player", players: "2", playtime: 30, age: 10, rating: 8.2, complexity: 2.2, price: 29.99, asin: "B014DMSTXK", images: ["/images/7-wonders-duel.jpg", "/images/7-wonders-duel-2.png", "/images/7-wonders-duel-3.png"], tag: "best-seller",
@@ -162,7 +165,7 @@ export const games = [
     why: "Fixes the thing the base game does worst: two-player Splendor has no tension. This one has plenty." },
 
   // === CARD GAMES ===
-  { slug: "love-letter", name: "Love Letter", category: "card-games", players: "2-4", playtime: 20, age: 10, rating: 7.4, complexity: 1.2, price: 12.99, asin: "B0753NP1WM", images: ["/images/love-letter.jpg"], tag: "budget",
+  { slug: "love-letter", name: "Love Letter", category: "card-games", players: "2-4", playtime: 20, age: 10, rating: 7.4, complexity: 1.2, price: 12.99, asin: "B0F2J8DVHH", images: ["/images/love-letter.jpg"], tag: "budget",
     desc: "A deduction game of risk and luck with only 16 cards. Deliver a love letter to the princess while eliminating rival suitors. Tiny box, huge fun.",
     why: "16 cards. $13. 20 minutes. The best game-per-dollar ratio in board gaming." },
   { slug: "the-crew", name: "The Crew: The Quest for Planet Nine", category: "card-games", players: "2-5", playtime: 20, age: 10, rating: 7.8, complexity: 2.0, price: 14.95, asin: "B084GP7X3P", images: ["/images/the-crew.jpg", "/images/the-crew-2.jpg", "/images/the-crew-3.jpg", "/images/the-crew-4.jpg"], tag: "award-winner",

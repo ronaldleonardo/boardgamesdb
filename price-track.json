@@ -1,19 +1,19 @@
 {
- "day": 3,
+ "day": 5,
  "cycle": 5,
- "last_updated": "2026-10-12",
+ "last_updated": "2026-10-13",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 4,
+  "day": 5,
   "cycle": 5,
   "games": [
-   "kingdomino",
-   "lost-cities",
-   "love-letter",
-   "mysterium",
-   "patchwork"
+   "pandemic",
+   "quake",
+   "sequence",
+   "skull-king",
+   "spirit-island"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 4,
+   "cycle": 5,
+   "date": "2026-10-13",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.96,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01N3A4070 (lp_asin confirmed): buybox $19.96, List $24.99, In Stock, 4.8 stars. -0.15% vs stored $19.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 19.95,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF: first fetch returned a PDP variant with no buybox JSON; a retry resolved $19.95 (buybox_json), In Stock, 4.8 stars, lp_asin confirmed. Exact match. Keep."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "STORED ASIN B0753NP1WM is DEAD (mobile PDP returns Amazon 'We couldn't find that page', len 439). Repointed to the live B0F2J8DVHH ('Love Letter Card Game (2025 Refresh)', 4.7/307 ratings, 1K+ bought/mo): buybox $11.86, List $15.99 -> -8.7% vs stored $12.99 -> under 10% -> price kept, ASIN fixed. Flagged for re-ASIN decision this cycle."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 47.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed): buybox $47.99, In Stock, 4.1 stars. Exact match. Keep."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 29.4,
+     "new_price": 34.95,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 ('Patchwork Board Game (Revised Edition)', Lookout Games brand-store lp_asin confirmed, also the #1 organic result for 'patchwork board game'): buybox $34.95, 4.8 stars (27), Other sellers New (2) from $34.95, 'Available to ship in 1-2 days' (buyable, quantity selector live). Same $34.95 on two independent fetches. +18.88% vs stored $29.40 -> >=10% -> UPDATE. Also synced stale on-site blog copy in best-2-player-board-games.astro ($29.40 -> $34.95, combo '$45' -> '$51')."
+    }
+   ],
+   "note": "Cycle 5 day 4. 1 price change (patchwork 29.40 -> 34.95). 1 dead-ASIN fix (love-letter B0753NP1WM -> B0F2J8DVHH). 2 ASINs needed a retry (lost-cities returned a variant PDP with no buybox JSON on the first attempt). Firecrawl egress showed 'Deliver to Indonesia' this run instead of the usual US 'The Dalles 97058'; 3 of 5 ASINs matched stored prices exactly, so no destination-driven price distortion observed. data.mjs edited -> gen_gamesjson.mjs, rm -rf dist, astro build, cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb (verified live HTTP 200 on /game/patchwork with schema price 34.95). Next run: cycle 5 day 5."
+  },
   {
    "day": 3,
    "cycle": 5,
