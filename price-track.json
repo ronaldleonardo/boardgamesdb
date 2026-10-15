@@ -1,19 +1,19 @@
 {
  "day": 5,
  "cycle": 5,
- "last_updated": "2026-10-13",
+ "last_updated": "2026-10-14",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 5,
+  "day": 6,
   "cycle": 5,
   "games": [
-   "pandemic",
-   "quake",
-   "sequence",
-   "skull-king",
-   "spirit-island"
+   "splendor",
+   "sprawlopolis",
+   "star-realms",
+   "sushi-go",
+   "the-crew"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 5,
+   "cycle": 5,
+   "date": "2026-10-14",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 49.99,
+     "new_price": 49.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed): buybox $49.99, In Stock, 4.8 stars. Exact match. Keep."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed): buybox $39.99 (List $44.99), In Stock, 4.6 stars. +1.50% vs stored $39.40 -> under 10% -> keep (stored $39.40 is the odd value; normalize to $39.99 when next edited)."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 14.97,
+     "new_price": 13.29,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00000IVAK (Jax Store lp_asin confirmed, 4.8/45,748 ratings, Amazon's Choice, 5K+ bought/mo): buybox $13.29, Typical price $13.99 (5% savings line), In Stock, no deal/lightning badge -> regular street price. -11.22% vs stored $14.97 -> >=10% -> UPDATE. Also synced stale on-site blog copy: best-family-board-games.astro ($14.97 -> $13.29, two spots) and best-games-for-6-players.astro ($14.97 -> $13.29)."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed): buybox $19.99, In Stock, 4.9 stars. Exact match. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 64.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed): buybox $64.99, In Stock, 4.8 stars. Exact match. Keep."
+    }
+   ],
+   "note": "Cycle 5 day 5. 1 price change (sequence 14.97 -> 13.29, -11.22%). All 5 ASINs fetched first try with asin_confirmed true, In Stock, title/brand matched. Firecrawl egress again showed 'Deliver to Indonesia' rather than a US location; 3 of 5 matched stored exactly and quake moved only +1.5%, so no destination-driven distortion observed. data.mjs edited -> node gen_gamesjson.mjs, rm -rf dist, npx astro build (83 pages), cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb; verified live HTTP 200 on :8083 /game/sequence with schema price 13.29 InStock and both blog pages showing $13.29. Next run: cycle 5 day 6."
+  },
   {
    "day": 4,
    "cycle": 5,
