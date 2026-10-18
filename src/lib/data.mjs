@@ -122,7 +122,7 @@ export const games = [
     why: "The dice take on Azul. Sharp, quiet, and gorgeous on the table. My pick for the nights Azul starts to feel solved." },
 
   // === FAMILY ===
-  { slug: "splendor", name: "Splendor", category: "family", players: "2-4", playtime: 30, age: 10, rating: 7.5, complexity: 1.9, price: 24.97, asin: "B00IZEUFIA", images: ["/images/splendor.jpg", "/images/splendor-2.png", "/images/splendor-3.png"], tag: "best-seller",
+  { slug: "splendor", name: "Splendor", category: "family", players: "2-4", playtime: 30, age: 10, rating: 7.5, complexity: 1.9, price: 31.99, asin: "B00IZEUFIA", images: ["/images/splendor.jpg", "/images/splendor-2.png", "/images/splendor-3.png"], tag: "best-seller",
     desc: "Collect gem tokens, buy development cards, and attract nobles to your court. Simple mechanics with satisfying strategic depth.",
     why: "30 minutes, easy rules, but every game feels different. Family favorite." },
   { slug: "kingdomino", name: "Kingdomino", category: "family", players: "2-4", playtime: 20, age: 8, rating: 7.4, complexity: 1.2, price: 19.99, asin: "B01N3A4070", images: ["/images/kingdomino.jpg"], tag: "budget",

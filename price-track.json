@@ -1,19 +1,20 @@
 {
- "day": 5,
+ "day": 6,
  "cycle": 5,
- "last_updated": "2026-10-14",
+ "last_updated": "2026-10-17",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 6,
+  "day": 7,
   "cycle": 5,
   "games": [
-   "splendor",
-   "sprawlopolis",
-   "star-realms",
-   "sushi-go",
-   "the-crew"
+   "ticket-to-ride",
+   "under-falling-skies",
+   "uno",
+   "wavelength",
+   "wingspan",
+   "wingspan-solo"
   ]
  },
  "schedule": {
@@ -69,6 +70,54 @@
   ]
  },
  "log": [
+  {
+   "day": 6,
+   "cycle": 5,
+   "date": "2026-10-17",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 24.97,
+     "new_price": 31.99,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00IZEUFIA (Asmodee brand-store lp_asin confirmed, 4.9/15,040 ratings, Amazon's Choice, 7K+ bought/mo): buybox $31.99, 'with 20 percent savings' off List $39.99, In Stock, buyingOptionType NEW, NO Deal/Prime-only promotion line -> regular street price, not an event promo. +28.11% vs stored $24.97 (the stored value was a below-list promo level) -> >=10% -> UPDATE. Note: $31.99 was labelled 'Regular Price' during the Oct 1-8 Prime Big Deal Days promo and is still the standing price 9 days after it ended, so it is the steady street price now, not an inflated anchor. No on-site copy edit needed (splendor blog copy uses ranges '$25 to $32' / 'under $28', no hard-coded price)."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DP3H8S4N resolves to the live listing (4.8 stars, related-items block present) but the PDP shows 'Currently unavailable. We don't know when or if this item will be back in stock.' with 'List unavailable.' -> no buybox, no price, asin_confirmed false, in_stock false. Price kept at $12.99 (Button Shy wallet-game MSRP level). FLAGGED FOR RE-ASIN DECISION: this ASIN was already the 3rd-party reseller listing ($29.95 markup, cycle 4) and is now unbuyable. Need the current Button Shy / Amazon first-party listing ASIN next cycle."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed): buybox $17.95 (buybox_json), In Stock, 4.8 stars. Exact match. Keep."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed): buybox $11.99 (buybox_json), In Stock, 4.7 stars. Exact match (Oct 7-8 deal price $11.37 has ended, regular back to $11.99). Keep."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 14.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (Thames & Kosmos, lp_asin confirmed): buybox $14.95 (buybox_json), In Stock, 4.7 stars. Exact match vs the cycle-4 re-ASIN fix value. Keep."
+    }
+   ],
+   "note": "Cycle 5 day 6. 1 price change (splendor 24.97 -> 31.99, +28.11%). All 5 ASINs fetched on the first Firecrawl attempt (no retries needed); egress still showed 'Deliver to Indonesia' but 3 of 5 matched stored exactly and splendor/star-realms match their US street levels, so no destination distortion observed. jina fallback returned len 0 on 2 probes this run (anonymous r.jina.ai appears rate-limited/blocked from this LXC right now) - not needed since Firecrawl covered all 5. 1 game flagged for re-ASIN (sprawlopolis B0DP3H8S4N unbuyable, no buybox). data.mjs edited -> node gen_gamesjson.mjs (53 games), rm -rf dist, npx astro build (83 pages), cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb; verified live HTTP 200 on :8083 /game/splendor with schema price 31.99 and /data/games.json showing splendor 31.99 In stock. Next run: cycle 5 day 7 (last day of cycle 5) - ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo (6 games)."
+  },
   {
    "day": 5,
    "cycle": 5,
