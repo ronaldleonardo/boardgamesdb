@@ -1,12 +1,50 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const { title, description, image = '/images/logo-og.png' } = Astro.props;
+const { title, description, image = '/images/logo-og.png', date, category } = Astro.props;
 const isHero = image.includes('hero-');
 const ogW = isHero ? 1344 : 512;
 const ogH = isHero ? 768 : 512;
 const path = Astro.url.pathname.replace(/\.html$/, "").replace(/\/index$/, "");
 const canonical = "https://tabletoppicks.com" + (path || "/");
+
+const siteJson = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tabletop Picks",
+  "url": "https://tabletoppicks.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tabletoppicks.com/recommender?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const orgJson = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tabletop Picks",
+  "url": "https://tabletoppicks.com/",
+  "logo": "https://tabletoppicks.com/images/logo.png"
+};
+
+const articleJson = date ? {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": "https://tabletoppicks.com" + image,
+  "datePublished": date,
+  "dateModified": date,
+  "author": { "@type": "Person", "name": "Tabletop Picks" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tabletop Picks",
+    "logo": { "@type": "ImageObject", "url": "https://tabletoppicks.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
+  ...(category ? { "articleSection": category } : {})
+} : null;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +61,9 @@ const canonical = "https://tabletoppicks.com" + (path || "/");
   <meta property="og:image:height" content={ogH} />
   <meta property="og:site_name" content="Tabletop Picks" />
   <link rel="canonical" href={canonical} />
+  <script type="application/ld+json" set:html={JSON.stringify(siteJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(orgJson)} />
+  {articleJson && <script type="application/ld+json" set:html={JSON.stringify(articleJson)} />}
   <link rel="stylesheet" href="/styles/global.css" />
   <!-- Analytics -->
   <script>(function(){var p=window.location.pathname;var r=document.referrer||'';(new Image()).src='http://localhost:8085/track?s=tabletoppicks&p='+encodeURIComponent(p)+'&r='+encodeURIComponent(r)})();</script>
