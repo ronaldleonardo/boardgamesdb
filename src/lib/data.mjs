@@ -99,6 +99,10 @@ export const games = [
   { slug: "azul", name: "Azul", category: "strategy", players: "2-4", playtime: 40, age: 8, rating: 7.9, complexity: 1.8, price: 31.99, asin: "B0719HFT6H", images: ["/images/azul.jpg", "/images/azul-2.png", "/images/azul-3.png", "/images/azul-4.png"], tag: "award-winner",
     desc: "A stunning tile-laying game inspired by Portuguese azulejo tiles. Draft beautiful ceramic tiles and place them on your board. Gorgeous components, sharp strategy.",
     why: "Looks amazing on the table, plays fast, and the 'take that' moments are brutal." },
+  { slug: "azul-summer-pavilion", name: "Azul: Summer Pavilion", category: "strategy", players: "2-4", playtime: 45, age: 8, rating: 7.5, complexity: 2.0, price: 39.99, asin: "B07XPSBCPD", images: [], tag: "premium",
+    desc: "The third Azul, and the most forgiving one. Same pick and place bones as the original, but the board is looser, the wild tiles let you finish more rows, and a bad round is a scratch instead of a knockout.",
+    why: "The best Azul for two players. It keeps the tension and drops the knockout blows, so a bad round is a scratch instead of a lost game." },
+
   { slug: "cascadia", name: "Cascadia", category: "strategy", players: "1-4", playtime: 35, age: 10, rating: 8.0, complexity: 1.9, price: 39.99, asin: "B08ZLBJ45S", images: ["/images/cascadia.jpg"], tag: "award-winner",
     desc: "A captivating tile-laying game about building ecosystems. Place habitat tiles and wildlife tokens to create the most harmonious Pacific Northwest environment.",
     why: "The definition of 'easy to learn, hard to master.' Also plays solo." },
