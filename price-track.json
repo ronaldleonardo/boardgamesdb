@@ -1,19 +1,19 @@
 {
- "day": 7,
- "cycle": 5,
- "last_updated": "2026-10-18",
+ "day": 1,
+ "cycle": 6,
+ "last_updated": "2026-10-19",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 1,
+  "day": 2,
   "cycle": 6,
   "games": [
-   "7-wonders-duel",
-   "azul",
-   "blank-slate",
-   "cascadia",
-   "castle-combo"
+   "castle-panic",
+   "catan",
+   "codenames",
+   "final-girl",
+   "forbidden-island"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 1,
+   "cycle": 6,
+   "date": "2026-10-19",
+   "games": [
+    {
+     "slug": "7-wonders-duel",
+     "name": "7 Wonders Duel",
+     "old_price": 29.99,
+     "new_price": 29.59,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B014DMSTXK (lp_asin confirmed): buybox $29.59 (buybox_json), In Stock, 4.8 stars. -1.33% vs stored $29.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "azul",
+     "name": "Azul",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "STORED ASIN B0719HFT6H again yielded no page on both routes (firecrawl fail + jina fail) - recurring Amazon bot wall on /gp/aw/d, same as cycle 5 day 1. Verified via the live first-party listing B077MZ2MPW (lp_asin confirmed): buybox $31.99 (buybox_json), In Stock, 4.8 stars -> exact match vs stored $31.99 -> keep. FLAGGED: repoint data.mjs asin B0719HFT6H -> B077MZ2MPW (bot-walled every cycle) on next edit."
+    },
+    {
+     "slug": "blank-slate",
+     "name": "Blank Slate",
+     "old_price": 22.69,
+     "new_price": 21.34,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07G2VHPRW via jina fallback (firecrawl route failed this run): buybox $21.34 (buybox_json), In Stock, 4.8/13,511 ratings, prime. -5.95% vs stored $22.69 -> under 10% -> keep."
+    },
+    {
+     "slug": "cascadia",
+     "name": "Cascadia",
+     "old_price": 39.99,
+     "new_price": 37.4,
+     "changed": false,
+     "source": "STORED ASIN B08ZLBJ45S yielded no page on both routes (firecrawl fail + jina fail) - recurring bot wall. Verified via live AEG listing B093H8RGXX (lp_asin confirmed): buybox $37.40 (buybox_json), In Stock, 4.9 stars. -6.5% vs stored $39.99 -> under 10% -> keep. FLAGGED: asin B08ZLBJ45S bot-walled every cycle; repoint to B093H8RGXX on next edit."
+    },
+    {
+     "slug": "castle-combo",
+     "name": "Castle Combo",
+     "old_price": 25.99,
+     "new_price": 25.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DHWGS11S (lp_asin confirmed): buybox $25.99 (buybox_json), In Stock, 4.8 stars. Exact match vs the cycle-5 update value. Keep."
+    }
+   ],
+   "note": "Cycle 6 day 1. 0 price changes (all within the 10% band). 3 of 5 verified directly on their stored ASIN (7-wonders-duel -1.33%, castle-combo exact, blank-slate -5.95% via jina since firecrawl failed); azul and cascadia stored ASINs both returned nothing on firecrawl AND jina (recurring Amazon bot wall on /gp/aw/d for B0719HFT6H and B08ZLBJ45S) and were verified via their known live alternate listings (B077MZ2MPW $31.99 exact, B093H8RGXX $37.40 = -6.5%). Both flagged for re-ASIN repoint (not dead products, just walled ASINs). jina worked for blank-slate so the anonymous route is not globally blocked this run. No data.mjs price edits -> no build/restart. Next run: cycle 6 day 2 (castle-panic, catan, codenames, final-girl, forbidden-island)."
+  },
   {
    "day": 7,
    "cycle": 5,
