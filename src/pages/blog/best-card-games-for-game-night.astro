@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "Best Card Games for Game Night: 5 Small Box Games That Punch Above Their Weight",
+  seoTitle: "Best Card Games for Game Night (Under $18)",
   date: "2026-09-09",
   description: "Big board games are fun. Small card games get played. Here are 5 tiny box games that actually survive game night. Most are under $18.",
   image: "/images/hero-art-best-card-games-for-game-night.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "How to Play Splendor in 2026: Rules and How to Win",
+  seoTitle: "How to Play Splendor: Rules and Setup",
   date: "2026-10-12",
   description: "How to play Splendor in 2026: setup, the three turn actions, how gem bonuses make cards free, nobles, scoring, and the tiebreaker rule nobody mentions.",
   image: "/images/hero-how-to-play-splendor.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

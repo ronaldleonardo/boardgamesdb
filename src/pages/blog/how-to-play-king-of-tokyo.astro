@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "How to Play King of Tokyo: Rules That Click in One Round",
+  seoTitle: "How to Play King of Tokyo: Rules",
   date: "2026-09-30",
   description: "How to play King of Tokyo in one sitting: the six dice, the three rerolls, what Tokyo means, why you cannot heal inside it, and the scoring that decides the game.",
   image: "/images/king-of-tokyo.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "Best Board Games for Beginners: 5 Games to Start Your Collection",
+  seoTitle: "Best Board Games for Beginners (5 Picks)",
   date: "2026-09-06",
   description: "Just getting into board games? Here are 5 games that are easy to learn, fun to play, and won't empty your wallet.",
   image: "/images/hero-art-best-board-games-for-beginners.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

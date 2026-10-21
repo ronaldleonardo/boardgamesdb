@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "Best Games for 6+ Players: 5 That Survive Big Game Night",
+  seoTitle: "Best Games for 6+ Players: Big Night",
   date: "2026-09-21",
   description: "Need a board game that actually works when 8 people crowd the table? Here are 5 games that survive big groups, from someone who hosts game nights every week.",
   image: "/images/hero-art-best-games-for-6-players.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

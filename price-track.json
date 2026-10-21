@@ -1,19 +1,19 @@
 {
- "day": 1,
+ "day": 2,
  "cycle": 6,
- "last_updated": "2026-10-19",
+ "last_updated": "2026-10-20",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 2,
+  "day": 3,
   "cycle": 6,
   "games": [
-   "castle-panic",
-   "catan",
-   "codenames",
-   "final-girl",
-   "forbidden-island"
+   "fox-in-the-forest",
+   "herd-mentality",
+   "horrified",
+   "jaipur",
+   "just-one"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 2,
+   "cycle": 6,
+   "date": "2026-10-20",
+   "games": [
+    {
+     "slug": "castle-panic",
+     "name": "Castle Panic",
+     "old_price": 22.95,
+     "new_price": 34.95,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B0B3LGW2KH (Fireside Games Castle Panic 2nd Edition, lp_asin confirmed, 4.8/428 ratings): buybox $34.95 (buybox_json), In Stock, quantity selector live. +52.29% vs stored $22.95 -> >=10% -> UPDATE. Cross-checked on the independent jina route (US egress 'Delivering to The Dalles 97058'): same $34.95 buybox, In Stock, no Deal/lightning badge and no '$22.95' anywhere on the page, so this is the regular price at list level ($34.95 = the List price seen in cycle 5) - the -34% promo that produced $22.95 has ended. Variant table on the same page lists expansions separately ($19.95-$29.95) and Castle Panic Big Box $95.99; the main buybox is the base 2nd Edition. Also synced stale on-site copy: blog/best-cooperative-board-games.astro ($22.95 price -> $34.95 price)."
+    },
+    {
+     "slug": "catan",
+     "name": "Catan (6th Edition)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DYK1ZH2D (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock. Exact match. Keep."
+    },
+    {
+     "slug": "codenames",
+     "name": "Codenames",
+     "old_price": 24.97,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FJMQB63N (2nd Edition, lp_asin confirmed, 4.8 stars): buybox $24.97 (buybox_json), In Stock. Exact match. Keep."
+    },
+    {
+     "slug": "final-girl",
+     "name": "Final Girl",
+     "old_price": 24.75,
+     "new_price": 24.28,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B09N8R6296 (Van Ryder, lp_asin confirmed, 4.8 stars): buybox $24.28 (buybox_json), Ships from Amazon / Sold by Buckeye Trading, quantity selector live. -1.90% vs stored $24.75 -> under 10% -> keep. (Same third-party seller as cycle 5.)"
+    },
+    {
+     "slug": "forbidden-island",
+     "name": "Forbidden Island",
+     "old_price": 20.99,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B003D7F4YY (Gamewright, lp_asin confirmed, 4.8/428-ish ratings): buybox $20.99 (buybox_json), 'Only 1 left in stock - order soon.' (buyable, low stock; the 'In Stock' label string is absent but there is no OOS/unavailable marker). $6.99 delivery offer. Exact match vs stored $20.99 -> keep."
+    }
+   ],
+   "note": "Cycle 6 day 2. 1 price change: castle-panic 22.95 -> 34.95 (+52.29%, promo ended, back at list). All 5 ASINs fetched on the first Firecrawl attempt, asin_confirmed true for all 5; jina used only as an independent cross-check on castle-panic (agreed $34.95). catan/codenames exact matches; final-girl -1.90% (third-party seller, unchanged); forbidden-island exact match but only 1 unit left (watch for OOS next cycle). No dead ASINs this run. data.mjs edited -> node gen_gamesjson.mjs (54 games), rm -rf dist, npx astro build (85 pages), cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb; verified live HTTP 200 on :8083 /game/castle-panic with schema price 34.95, blog copy '$34.95 price', and /data/games.json castle-panic 34.95 (54 games). Next run: cycle 6 day 3 (fox-in-the-forest, herd-mentality, horrified, jaipur, just-one)."
+  },
   {
    "day": 1,
    "cycle": 6,

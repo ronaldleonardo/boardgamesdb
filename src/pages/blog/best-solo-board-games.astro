@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "Best Solo Board Games: 5 Picks for a Quiet Night In",
+  seoTitle: "Best Solo Board Games for One Player",
   date: "2026-09-23",
   description: "Solo board games are not sad. They are gaming's best kept secret. Here are 5 I actually play alone and recommend, from a $13 wallet game to a $65 classic.",
   image: "/images/hero-art-best-solo-board-games.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

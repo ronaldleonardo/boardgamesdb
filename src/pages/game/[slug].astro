@@ -16,7 +16,7 @@ const sameCat = games.filter(g => g.category === game.category && g.slug !== gam
 const lightboxData = JSON.stringify(game.images);
 ---
 
-<BaseLayout title={`${game.name} Board Game Review: ${game.players} Player Games`} description={`${game.name} board game review. ${game.players} players, ${game.playtime} min, age ${game.age}+. ${game.desc.slice(0, 100)}`}>
+<BaseLayout title={`${game.name}`} description={`${game.name} board game review. ${game.players} players, ${game.playtime} min, age ${game.age}+. ${game.desc.slice(0, 100)}`}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",

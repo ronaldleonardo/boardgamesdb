@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "Best Party Games for Game Night: 5 That Actually Get Played",
+  seoTitle: "Best Party Games for Game Night (5 Picks)",
   date: "2026-09-07",
   description: "Tired of party games that flop after one round? Here are 5 that actually survive game night. Honest picks from real play sessions.",
   image: "/images/hero-art-best-party-games-for-game-night.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 

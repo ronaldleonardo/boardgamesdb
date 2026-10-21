@@ -144,6 +144,9 @@ export const games = [
   { slug: "dixit", name: "Dixit", category: "family", players: "3-6", playtime: 30, age: 8, rating: 7.4, complexity: 1.2, price: 29.99, asin: "B005PX1L2I", images: ["/images/dixit.jpg"], tag: "award-winner",
     desc: "A storytelling game of imagination. One player gives a cryptic clue about a dreamlike card, others play cards that match the clue, and everyone guesses which card belongs to the storyteller. Beautiful art, infinite creativity.",
     why: "Spiel des Jahres winner. Works with creative kids and adults alike. Every game is different." },
+  { slug: "wingspan-pocket", name: "Wingspan Pocket", category: "family", players: "1-5", playtime: 30, age: 8, rating: 7.9, complexity: 2.0, price: 20.00, asin: "B0H7YNXCYG", images: [], tag: "budget",
+    desc: "Wingspan shrunk into a small box. You activate a single row of cards per turn, and the bird powers are printed as icons instead of sentences. Stand-alone game, and its cards do not mix with the base box.",
+    why: "The version that lives in a bag. Same bird-collecting feeling in 30 minutes, for about $20." },
 
   // === 2-PLAYER ===
   { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 34.95, asin: "B0FPXTLZ21", images: ["/images/patchwork.jpg", "/images/patchwork-2.jpg"], tag: "best-seller",
@@ -201,7 +204,7 @@ export const games = [
   { slug: "mysterium", name: "Mysterium", category: "cooperative", players: "2-7", playtime: 45, age: 10, rating: 7.5, complexity: 1.8, price: 47.99, asin: "B0F4YNPYQM", images: ["/images/mysterium.jpg"], tag: "award-winner",
     desc: "One player is a ghost communicating through surreal dream cards. The others are psychics trying to solve a murder. Beautiful art, unique mechanics, no two games are alike.",
     why: "The cooperative Clue. Gorgeous components, great for creative groups." },
-  { slug: "castle-panic", name: "Castle Panic", category: "cooperative", players: "1-6", playtime: 45, age: 7, rating: 7.0, complexity: 1.8, price: 22.95, asin: "B0B3LGW2KH", images: ["/images/castle-panic.jpg"], tag: "budget",
+  { slug: "castle-panic", name: "Castle Panic", category: "cooperative", players: "1-6", playtime: 45, age: 7, rating: 7.0, complexity: 1.8, price: 34.95, asin: "B0B3LGW2KH", images: ["/images/castle-panic.jpg"], tag: "budget",
     desc: "Defend your castle against waves of monsters. Play cards to hit, arrow, and bash approaching threats before they destroy your walls. Made for kids and adults to play together.",
     why: "Great with kids. Co-op so no one gets eliminated. Real tension." },
   { slug: "the-grizzled", name: "The Grizzled", category: "cooperative", players: "2-5", playtime: 30, age: 14, rating: 7.2, complexity: 2.0, price: 24.98, asin: "B013PZYV3S", images: ["/images/grizzled.jpg"], tag: "budget",

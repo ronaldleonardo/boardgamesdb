@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const frontmatter = {
   title: "How to Play 7 Wonders: Rules in the Order That Clicks",
+  seoTitle: "How to Play 7 Wonders: Rules",
   date: "2026-09-28",
   description: "How to play 7 Wonders in one sitting: the draft, the passing direction, the resource math, the wonder board, and the scoring that trips up every first game.",
   image: "/images/7-wonders.jpg",
@@ -9,7 +10,7 @@ export const frontmatter = {
 };
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
   <div class="container">
     <article class="post">
 
