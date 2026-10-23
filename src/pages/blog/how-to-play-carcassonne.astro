@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export const frontmatter = {
+  title: "How to Play Carcassonne: Rules and Scoring",
+  date: "2026-10-23",
+  description: "How to play Carcassonne: tile placement, follower placement, city and road scoring, plus the farm rule most groups skip. The full rules in about 15 minutes.",
+  image: "/images/hero-how-to-play-carcassonne.jpg",
+  category: "How To Play"
+};
+---
+
+<BaseLayout title={frontmatter.seoTitle ?? frontmatter.title} description={frontmatter.description} image={frontmatter.image} date={frontmatter.date} category={frontmatter.category}>
+  <div class="container">
+    <article class="post">
+
+      <figure class="post-hero"><img src="/images/hero-how-to-play-carcassonne.jpg" alt="A game of Carcassonne in progress, with square land tiles showing cities, roads and cloisters laid out across a table" loading="eager" width="1344" height="768" /></figure>
+
+      <h1>{frontmatter.title}</h1>
+      <time>{frontmatter.date}</time>
+
+      <p class="intro">How to play Carcassonne: draw one tile, place it so every edge matches, then decide whether to put a follower on the part you just built. Cities pay 2 points per tile, roads pay 1, a cloister pays 9, and the player with the most followers in a finished feature collects. The rule that decides most games sits on the last page of the rulebook, and nearly every group skips it: farms.</p>
+
+      <p>I learned that the slow way. Two weeks ago I lost 112 to 98 in a two-player game, and 21 of my friend's points came from a single farmer he dropped on turn three and never touched again. I had more cities on the table. I had more knights. I still lost, and I did not understand why until I counted the score sheet afterwards.</p>
+
+      <p>I have played Carcassonne somewhere north of 80 times in five years, on a shelf that holds 40 games. My first ten games were a mess of wasted followers. The rules themselves take 15 minutes to teach. The score takes a lot longer to understand, and the farms are the last thing anyone bothers to learn.</p>
+
+      <h2>What Comes in the Box</h2>
+      <p>72 land tiles, one of them with a dark back that marks it as the starting tile. 40 wooden followers in five colors, eight per color. One of your eight sits on the score track as your scoring marker, so you actually play with seven. One scoreboard that laps at 50, one rule booklet, and one separate supplement.</p>
+
+      <p>That supplement is where the farm rules live. In most copies I have owned, farming is explained after everything else, as an appendix. It reads like a footnote. It scores more points than anything else in the box.</p>
+
+      <p>The followers are the same little wooden figure no matter what you call them. A knight in a city, a thief on a road, a monk in a cloister, and a farmer in a field are all one meeple doing a different job. That is the whole game.</p>
+
+      <h2>Setup Takes Three Minutes</h2>
+      <p>Put the starting tile in the middle of the table. Shuffle the other 71 face down in two or three stacks within everyone's reach. Each player takes eight followers in one color and places one on the 0 space of the scoreboard as a scoring marker. The other seven stay in your supply. The youngest player decides who goes first.</p>
+
+      <p>One thing that surprises people coming from newer games: there is no hand. You never hold tiles. You draw one and place it on the same turn, so there is nothing to plan between turns except where the map is thin. The only hidden information in the game is the order of the deck.</p>
+
+      <h2>Your Turn Is Always Three Steps</h2>
+      <p><strong>1. Place a tile.</strong> Draw one and put it down. It has to touch at least one tile already in play, edge to edge. Corner to corner does not count as a connection. Every edge of the new tile must continue the same terrain: road to road, city to city, field to field. If a tile genuinely cannot go anywhere and the table agrees, it leaves the game and you draw another.</p>
+
+      <p><strong>2. Place a follower, or don't.</strong> One per turn, from your supply, on the tile you just placed. It can go on a road, a city, a cloister, or a field. It must go on a feature that has no other follower on it, yours or anyone else's, and it does not matter how far away that follower is. Placing nothing is often the right move.</p>
+
+      <p><strong>3. Score whatever you completed.</strong> If your tile closed a road, a city, or a cloister, the points are counted now, in this order, by the player who just placed the tile.</p>
+
+      <p>Here is the key insight most first games miss: you can finish a feature and claim it on the same turn. Place the tile, put your knight in the city you just closed, collect the points, and the knight comes straight back to your supply. That loop is free points, and beginners skip it because it feels too good to be allowed.</p>
+
+      <h2>How Every Feature Scores</h2>
+      <p><strong>Cities.</strong> 2 points for every tile in the city, plus 2 extra for every pennant. A city is complete when the walls close with no gaps. Seven tiles and two pennants is 18 points, which is a big swing in a game that usually ends in the low hundreds.</p>
+
+      <p><strong>Roads.</strong> 1 point per tile. A road ends at a crossing, a city gate, a cloister, or when it loops back on itself. Roads are the cheapest points on the board, which is exactly why it is so easy to waste followers on them.</p>
+
+      <p><strong>Cloisters.</strong> 9 points the moment all eight spaces around it are filled. You do not need to own the tiles around it. You just need someone at the table to fill them.</p>
+
+      <p><strong>Majority rules.</strong> If more than one player has a follower in a finished feature, only the player with the most followers scores. A tie means everyone tied scores the full amount. Two of your own followers in the same city never double anything, the count only decides who collects.</p>
+
+      <p><strong>Followers come home.</strong> As soon as a feature is scored, the followers on it return to their owners. Your supply refills, and next turn you can spend that knight as a farmer if you want.</p>
+
+      <h2>The Farm Rule Nobody Teaches</h2>
+      <p>A follower on a field is not a knight. A farm follower lies on his side, and he stays there for the rest of the game. Farmers never come home. That is the entire cost of farming, and it is why so many groups never touch it.</p>
+
+      <p>A farm is every field segment connected to every other field segment. Roads cut fields apart. Cities cut fields apart. Rivers cut fields apart. The edge of the table cuts fields apart.</p>
+
+      <p>Pay attention to this number: 3. When the last tile is placed, each farm belongs to the player with the most farmers in it, and that player scores 3 points for every completed city that touches the farm. Not 3 per tile. 3 per city, and one fat farm can touch five or six cities.</p>
+
+      <p>Completed cities count for the farm even when the farm itself is wide open and never closes, which is nearly every farm you will build. Incomplete cities are worth nothing to it. And if a city sits between two farms, both farms collect the 3 points.</p>
+
+      <p>You can ignore farms for your first game and still have fun. Just know you are playing a different game than the person across the table.</p>
+
+      <h2>This Is Where It Gets Interesting</h2>
+      <p>Here is the contradiction that fooled me for years, and it still starts arguments at game nights. The first edition of Carcassonne scored farms from the city's point of view, at 4 points per city, and a city only ever paid once no matter how many fields fed it. The rules were rewritten into the version above, where each farm collects 3 points per city and a city can pay several farms at once. Ask two groups who learned in different decades how farms work and you will get two confident, completely different answers.</p>
+
+      <p>For my first year I chased cities. Then I counted ten games on paper. Farms produced 17 to 27 points each, and the player with the biggest farm won eight of those ten games. Cities pay early and fast, which is why they feel important. Farms pay at the end, in a lump, and that lump decides the game.</p>
+
+      <p>But the real lesson is not about farms. You have seven followers and 72 tiles. Every follower you place is spent until that feature finishes, and a farmer is spent until the game ends. Carcassonne looks like a tile game. It is a budget game. The board is the quiet part.</p>
+
+      <h2>The Four Mistakes I Made in My First Ten Games</h2>
+      <p><strong>I spent all seven followers by turn 20.</strong> Two knights in small cities, two thieves on short roads, a monk. When a monster city showed up in the last third of the game, my supply was empty and I could only watch. The rulebook says a shortage of followers is intentional. It is right, and it hurts.</p>
+
+      <p><strong>I dropped a farmer into a field that got sealed off.</strong> Turn two, one farmer, a small field between two roads and a city gate. By the time the map grew, that field touched zero cities. Zero points, for the whole game, from one of my seven pieces. I have done this more than once.</p>
+
+      <p><strong>I stacked two knights in one city, thinking it doubled the score.</strong> It does not. The second follower only matters when somebody else is standing in there with you.</p>
+
+      <p><strong>I fought for a 6 point city while the player next to me connected two fields.</strong> Six points is a round of applause. The farm he built that turn touched four cities and paid 12 at the end, and it cost him one follower he could never use again. That trade is the game.</p>
+
+      <h2>How the End of the Game Scores</h2>
+      <p>The game ends the moment the last tile is placed and scored. Then everything unfinished pays out. Incomplete cities and roads give 1 point per tile, and pennants drop to 1 point each. An unfinished cloister gives 1 point for itself plus 1 for every tile around it.</p>
+
+      <p>Then the farms are counted, and in most of my games the lead changes hands right there. Here is why that matters: if you are tracking the scoreboard during the game and somebody is 15 points behind with two farmers in one huge field, you have not seen the real score yet. Watch the fields, not the tracker.</p>
+
+      <p>The scoreboard laps at 50, and past 50 you mark the lap so everyone can see it. It is a small thing that prevents a lot of confusion in a game where a single farm can pay out 21.</p>
+
+      <h2>Which Carcassonne Should You Buy</h2>
+      <p>So now you know the rules. The next question is which box, because the base game is one of three things worth owning. Prices below are what I found the week I checked, and they move with every sale.</p>
+
+      <table>
+        <thead>
+          <tr><th>Box</th><th>Players</th><th>Time</th><th>Best for</th><th>Typical price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Carcassonne (base)</td><td>2-5</td><td>35-45 min</td><td>Your first copy</td><td>$31.99 to $39.99</td></tr>
+          <tr><td>Inns &amp; Cathedrals</td><td>2-6</td><td>35-45 min</td><td>The first expansion</td><td>$15 to $20</td></tr>
+          <tr><td>Hunters and Gatherers</td><td>2-5</td><td>35-40 min</td><td>Stone Age stand-alone</td><td>about $32</td></tr>
+        </tbody>
+      </table>
+
+      <p>Start with the base <a href="https://www.amazon.com/s?k=Carcassonne+board+game&tag=tabletopharve-20" target="_blank" rel="nofollow sponsored">Carcassonne</a>. I found it at $31.99 at Target, Walmart, Game Nerdz and Miniature Market the week I checked, against a $39.99 list price. Under $35 is normal, and under $32 is a good day. Every rule in this article refers to that box. Full stats live on my <a href="/game/carcassonne">Carcassonne page</a>.</p>
+
+      <p>One honest warning. At five players the map gets thin, the tile draw starts to matter more than your decisions, and a game can drag to 50 minutes. It is a 2 to 4 player game wearing a 2 to 5 label.</p>
+
+      <p><a href="https://www.amazon.com/s?k=Carcassonne+Inns+and+Cathedrals+expansion&tag=tabletopharve-20" target="_blank" rel="nofollow sponsored">Inns &amp; Cathedrals</a> is the first expansion I would add, and it is cheap for how much it changes: I saw it between $15 and $20. It brings the big follower, worth two followers for majority purposes, plus inns that double the value of a road and a cathedral that doubles the value of a city. It also adds a sixth player. That one box fixes the five player warning above, mostly.</p>
+
+      <p>One honest warning. The big follower makes majority fights nastier, and a cathedral that never gets finished is a dead tile. Expect one argument per game.</p>
+
+      <p><a href="https://www.amazon.com/s?k=Carcassonne+Hunters+and+Gatherers+board+game&tag=tabletopharve-20" target="_blank" rel="nofollow sponsored">Hunters and Gatherers</a> is a stand-alone game, not an expansion, and its tiles do not mix with the base box. Same engine, Stone Age setting: hunters lie down in the meadows the way farmers lie down in the original, gatherers stand in the forests, fishers stand on the rivers, and huts score off the fish in a river system instead of cloisters. Each player gets 5 tribe members and 2 huts instead of 7 followers, which makes the follower shortage sharper, and the box has 79 tiles with a volcano as the starting tile. It runs about $32, and I have seen it near $32 at gift and hobby shops. Its community rating sits lower than the original, 7.1 against 7.4, and for good reason: it is the same game with a new skin. Buy it after 50 plays of the base box, not before. Stats are on my <a href="/game/carcassonne-hunters-and-gatherers">Hunters and Gatherers page</a>.</p>
+
+      <p>There is also a Big Box that bundles the base game with several expansions. Skip it on your first purchase. It costs more than the base game plus the one expansion you actually need, and half of it will sit sealed on the shelf for a year. That was my $70 lesson.</p>
+
+      <h2>The Shelf Test</h2>
+      <p>Here is the Shelf Test. Would this game survive 10 plays on a shelf that already holds 40 boxes? Carcassonne passes, and it passes for a reason I did not expect: the rules stop being the game after night one. Ten plays in, you are not asking where the tile goes. You are asking whether you can afford another follower, and that question has not gotten old in five years.</p>
+
+      <p>The flaw is real, though. Farm counting at the end is fiddly, and you will have one argument per game about which field touches which city. If your group hates end-game math, this is the wrong tile game for you. I have had that argument at least 20 times and I still bring the box out.</p>
+
+      <p>If you want a game that plays cleaner at two players, my <a href="/blog/best-2-player-board-games">two player list</a> covers the ones that hold up. If you want the wider field of gateway games that live next to Carcassonne on my shelf, the <a href="/blog/best-strategy-board-games">strategy picks</a> and the <a href="/blog/best-board-games-for-beginners">beginner list</a> are where I would start, and the full <a href="/games/strategy">strategy lineup</a> covers what to buy after this.</p>
+
+      <p class="cta">Here is the part that matters. Get the base <a href="https://www.amazon.com/s?k=Carcassonne+board+game&tag=tabletopharve-20" target="_blank" rel="nofollow sponsored">Carcassonne</a> first, play it knowing that the last two minutes of counting decide the game, and keep one follower in reserve for the fields. It was $31.99 the week I checked, list price $39.99, so under $32 is a solid deal. If your group already plays it twice a week, add <a href="https://www.amazon.com/s?k=Carcassonne+Inns+and+Cathedrals+expansion&tag=tabletopharve-20" target="_blank" rel="nofollow sponsored">Inns &amp; Cathedrals</a> for $15 to $20 before you buy any other box. Let my wallet take the hit on the Big Box instead of yours.</p>
+
+      <p class="img-credit">Image: Tom &amp; Katrien, CC BY-SA 2.0, via Wikimedia Commons.</p>
+
+      <p class="disclaimer">As an Amazon Associate I earn from qualifying purchases. Links above are affiliate links, and they cost you nothing extra.</p>
+
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+.post { max-width: 700px; margin: 0 auto; padding: 0 0 48px; line-height: 1.7; }
+.post h1 { font-size: 1.6rem; margin-bottom: 4px; }
+.post time { font-size: 0.82rem; color: var(--muted); }
+.post .intro { font-size: 1.05rem; color: #444; border-left: 3px solid var(--accent); padding-left: 16px; margin: 24px 0; }
+.post h2 { font-size: 1.2rem; margin-top: 36px; }
+.post p { margin: 12px 0; font-size: 0.95rem; }
+.post a { color: var(--accent); }
+.post-hero { margin: 0 0 24px; }
+.post-hero img { width: 100%; height: auto; border-radius: 10px; display: block; }
+.post .cta { background: #fff8f0; padding: 16px; border-radius: 8px; font-weight: 500; margin-top: 24px; }
+.post .cta a { font-weight: 600; }
+.post table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+.post th, .post td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.post th { background: #fff8f0; }
+.disclaimer { font-size: 0.78rem; color: var(--muted); margin-top: 28px; }
+</style>

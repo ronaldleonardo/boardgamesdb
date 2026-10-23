@@ -1,19 +1,19 @@
 {
- "day": 3,
+ "day": 4,
  "cycle": 6,
- "last_updated": "2026-10-21",
+ "last_updated": "2026-10-22",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 4,
+  "day": 5,
   "cycle": 6,
   "games": [
-   "kingdomino",
-   "lost-cities",
-   "love-letter",
-   "mysterium",
-   "patchwork"
+   "pandemic",
+   "quake",
+   "sequence",
+   "skull-king",
+   "spirit-island"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 4,
+   "cycle": 6,
+   "date": "2026-10-22",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01N3A4070 (lp_asin confirmed, 4.6 stars): buybox $19.99 ('with 20 percent savings' off List $24.99), In Stock. Exact match. Keep. (Buybox JSON blob not rendered this fetch; price read from the savings line, cross-checked on the jina route which showed the same $19.99 listing block.)"
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 19.95,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Firecrawl /gp/aw/d/B07KLWPHFF reported $25.74 (+29.02%) BUT that render was destination-distorted: the page was 'Deliver to Indonesia' and showed '$21.06 Shipping & Import Charges to Indonesia' plus 'Compare New (2) from $19.95 + $28.89 shipping', i.e. the $25.74 offer (with $6.99 intl delivery) is an export marketplace offer, not the US street price. Independent jina route with a real US ZIP ('Delivering to The Dalles 97058') shows the NEW featured offer = $19.95, 'Ships from/Sold by Game Theory Optimal', In stock, 'Usually ships within 2 to 3 days', Amazon's Choice, 4.8/1,972 ratings, New Condition Price $19.95 (the $17.95 is Amazon Resale 'Used - Like New'). US price matches stored $19.95 -> no edit. RE-ASIN/fetch note: this ASIN's firecrawl render is unreliable whenever the egress location is non-US; prefer the jina route for it next cycle."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 11.86,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F2J8DVHH (2025 Refresh, lp_asin confirmed, 4.7 stars): buybox $11.86 (buybox_json), In Stock. -8.70% vs stored $12.99 -> under 10% -> keep. Second cycle running at $11.86 (cycle 5 day 4 was also $11.86); reconcile to $11.86 on the next edit."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 47.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed, 4.1 stars): buybox $47.99 (buybox_json), In Stock. Exact match. Keep."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 34.95,
+     "new_price": 34.5,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 (Revised Edition, lp_asin confirmed, 4.6 stars): buybox $34.50 (buybox_json), In Stock. -1.29% vs stored $34.95 -> under 10% -> keep."
+    }
+   ],
+   "note": "Cycle 6 day 4. 0 price changes (all within the 10% band). All 5 ASINs fetched on the first Firecrawl attempt, asin_confirmed true for all 5, In Stock for all 5, no ship-block on the stored-ASIN pages; jina used as an independent cross-check on lost-cities and kingdomino (firecrawl egress was 'Deliver to Indonesia' again this run). The only >10% reading was lost-cities $25.74 (+29.02%) on firecrawl, rejected as a destination-distorted export offer: the US-destination jina render shows the featured NEW offer at $19.95 (Game Theory Optimal) = stored. kingdomino exact $19.99 (savings-line read, savings are off List $24.99, not an event promo); mysterium exact $47.99; patchwork -1.29% ($34.50 vs $34.95); love-letter -8.70% ($11.86 vs $12.99, second consecutive cycle at $11.86 -> normalize on next edit). No dead ASINs, no OOS. No data.mjs price edits -> NO build and NO restart this run. Carry-forward flags unchanged (none in today's block): azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled on firecrawl every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit; sprawlopolis B0DP3H8S4N unbuyable, needs a re-ASIN decision; forbidden-island B003D7F4YY had only 1 unit left on cycle 6 day 2; under-falling-skies B08HGS1QYT unverified on cycle 5 day 7 (ship-block, jina blocked) - recheck; normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99 when they next move. Next run: cycle 6 day 5 (pandemic, quake, sequence, skull-king, spirit-island)."
+  },
   {
    "day": 3,
    "cycle": 6,
