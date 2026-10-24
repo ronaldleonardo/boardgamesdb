@@ -1,19 +1,19 @@
 {
- "day": 4,
+ "day": 5,
  "cycle": 6,
- "last_updated": "2026-10-22",
+ "last_updated": "2026-10-23",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 5,
+  "day": 6,
   "cycle": 6,
   "games": [
-   "pandemic",
-   "quake",
-   "sequence",
-   "skull-king",
-   "spirit-island"
+   "splendor",
+   "sprawlopolis",
+   "star-realms",
+   "sushi-go",
+   "the-crew"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 5,
+   "cycle": 6,
+   "date": "2026-10-23",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 49.99,
+     "new_price": 49.62,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed, 4.8 stars): buybox $49.62 (buybox_json), In Stock. -0.74% vs stored $49.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock. +1.50% vs stored $39.40 -> under 10% -> keep. Third cycle running at $39.99 vs the odd stored $39.40; normalize to $39.99 on next edit."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 13.29,
+     "new_price": 13.29,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00000IVAK (Jax Store lp_asin confirmed, 4.8 stars): buybox $13.29 (buybox_json), In Stock. Exact match (cycle-5 update value holding). Keep."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed, 4.9 stars): buybox $19.99 (buybox_json), In Stock. Exact match. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 64.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars): buybox $64.99 (buybox_json), In Stock. Exact match. Keep."
+    }
+   ],
+   "note": "Cycle 6 day 5. 0 price changes (all within the 10% band). All 5 ASINs fetched on the FIRST Firecrawl attempt: asin_confirmed true for all 5, In Stock for all 5, no ship-block, no jina fallback, no retries. 3 exact matches (sequence $13.29, skull-king $19.99, spirit-island $64.99); pandemic -0.74% ($49.62 vs $49.99); quake +1.50% ($39.99 vs odd stored $39.40, third cycle at $39.99). No dead ASINs, no OOS, no re-ASIN cases. No data.mjs price edits -> NO build and NO restart this run (git status clean). Carry-forward flags unchanged (none in today's block): azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled on firecrawl every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit; sprawlopolis B0DP3H8S4N unbuyable, needs a re-ASIN decision (tomorrow's block); forbidden-island B003D7F4YY had only 1 unit left on cycle 6 day 2 - recheck; under-falling-skies B08HGS1QYT unverified on cycle 5 day 7 (ship-block, jina blocked) - recheck on day 7; normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99 when they next move. Next run: cycle 6 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew)."
+  },
   {
    "day": 4,
    "cycle": 6,
