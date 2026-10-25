@@ -1,19 +1,20 @@
 {
- "day": 5,
+ "day": 6,
  "cycle": 6,
- "last_updated": "2026-10-23",
+ "last_updated": "2026-10-24",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
  "next": {
-  "day": 6,
+  "day": 7,
   "cycle": 6,
   "games": [
-   "splendor",
-   "sprawlopolis",
-   "star-realms",
-   "sushi-go",
-   "the-crew"
+   "ticket-to-ride",
+   "under-falling-skies",
+   "uno",
+   "wavelength",
+   "wingspan",
+   "wingspan-solo"
   ]
  },
  "schedule": {
@@ -69,6 +70,54 @@
   ]
  },
  "log": [
+  {
+   "day": 6,
+   "cycle": 6,
+   "date": "2026-10-24",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): buybox $31.99 (buybox_json), In Stock. Exact match vs the cycle-5 update value. Keep."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DP3H8S4N: buybox route returned the 344-byte 'continue shopping' stub at first (asin_confirmed false, rating 4.3/4.8 from the degraded render); jina fallback resolved the real 39,280-char US page which shows 'Currently unavailable. We don't know when or if this item will be back in stock.' with no buybox, no 'Add to Cart', no lp_asin -> genuinely unbuyable, INVALID price, not edited. FLAG for re-ASIN decision (2nd consecutive cycle unbuyable)."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): buybox $17.95 (buybox_json), In Stock. Exact match. Keep."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): buybox $11.99 (buybox_json), In Stock. Exact match. Keep."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 14.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): buybox $14.95 (buybox_json), In Stock. Exact match. Keep."
+    }
+   ],
+   "note": "Cycle 6 day 6. 0 price changes. 4 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, exact price match: splendor $31.99, star-realms $17.95, sushi-go $11.99, the-crew $14.95. sprawlopolis B0DP3H8S4N verified UNBUYABLE: firecrawl gave the 344-byte stub, jina resolved the real page with 'Currently unavailable. We don't know when or if this item will be back in stock.' and no price -> price left at $12.99 per policy, FLAGGED for re-ASIN decision (2nd cycle running; cycle 4 had a $29.95 3rd-party reseller, cycle 5+6 unavailable). Attempted to find a replacement listing: Amazon /s?k= via firecrawl returns the 503 'something went wrong' stub and via jina returns a cached 305-byte snapshot; web_search returned only Circle the Wagons (B0DYKWBQS9, different game) - no live Sprawlopolis ASIN found this run. Needs a manual re-ASIN next cycle (Button Shy storefront or a live /dp/). No data.mjs edits -> NO astro build, NO systemctl restart this run. Carry-forward flags: sprawlopolis re-ASIN (top priority); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled, repoint to B077MZ2MPW / B093H8RGXX on next edit; forbidden-island B003D7F4YY had only 1 unit left on day 2; under-falling-skies B08HGS1QYT unverified on cycle 5 day 7 (ship-block, jina blocked) - RETEST TOMORROW; normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86 when they next move. Next run: cycle 6 day 7 (ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo - 6 games)."
+  },
   {
    "day": 5,
    "cycle": 6,
