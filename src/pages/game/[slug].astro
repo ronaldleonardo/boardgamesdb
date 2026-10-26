@@ -13,6 +13,26 @@ const { game } = Astro.props;
 const cat = categories[game.category];
 const amazon = `https://www.amazon.com/s?k=${encodeURIComponent(game.name)}+board+game&tag=tabletopharve-20`;
 const sameCat = games.filter(g => g.category === game.category && g.slug !== game.slug).slice(0, 3);
+// Guides that should stay reachable from every game page. Before this, the buying
+// guides had one inbound link each (the /blog listing) while ranking pos 14-25.
+const GUIDE_BY_CATEGORY = {
+  "card-games": { slug: "best-card-games-for-game-night", label: "best card games for game night" },
+  "strategy": { slug: "best-strategy-board-games", label: "best strategy board games" },
+  "solo": { slug: "best-solo-board-games", label: "best solo board games" },
+  "cooperative": { slug: "best-cooperative-board-games", label: "best cooperative board games" },
+  "two-player": { slug: "best-2-player-board-games", label: "best 2 player board games" },
+  "party-games": { slug: "best-party-games-for-game-night", label: "best party games for game night" },
+  "family": { slug: "best-family-board-games", label: "best family board games" },
+};
+const playerRange = String(game.players ?? "");
+const maxPlayers = Math.max(...(playerRange.match(/\d+/g) ?? ["0"]).map(Number));
+const countGuide =
+  maxPlayers >= 6 ? { slug: "best-games-for-6-players", label: "best games for 6 players" } :
+  maxPlayers === 5 ? { slug: "best-board-games-for-5-players", label: "best board games for 5 players" } :
+  maxPlayers === 4 ? { slug: "best-board-games-for-4-players", label: "best board games for 4 players" } :
+  { slug: "best-2-player-board-games", label: "best 2 player board games" };
+const catGuide = GUIDE_BY_CATEGORY[game.category];
+const guides = [catGuide, countGuide].filter((g, i, arr) => g && arr.findIndex(x => x?.slug === g.slug) === i);
 const lightboxData = JSON.stringify(game.images);
 ---
 
@@ -148,6 +168,19 @@ const lightboxData = JSON.stringify(game.images);
     )}
   </div>
 
+  {guides.length > 0 && (
+    <div class="game-section">
+      <h2>Where This Game Fits</h2>
+      <p>If you are still deciding, the group-size guides are where I put the full recommendations:</p>
+      <ul class="guide-links">
+        {guides.map(g => (
+          <li><a href={`/blog/${g.slug}`}>{g.label}</a></li>
+        ))}
+      </ul>
+      <p class="guide-note">Every game in those lists has actually been played at my table, not just read about.</p>
+    </div>
+  )}
+
   <!-- Lightbox Modal -->
   <div id="lightbox" class="lightbox">
     <a href="#" class="lightbox-close">&times;</a>
@@ -225,6 +258,10 @@ const lightboxData = JSON.stringify(game.images);
 
 .game-content { max-width: 700px; }
 .game-section { margin-bottom: 32px; }
+.guide-links { list-style: none; display: grid; gap: 6px; margin: 10px 0 6px; padding: 0; }
+.guide-links a { font-weight: 600; color: #1f7a4d; text-decoration: none; }
+.guide-links a:hover { text-decoration: underline; }
+.guide-note { font-size: 0.82rem; color: #777; }
 .game-section h2 { font-size: 1.2rem; margin-bottom: 8px; }
 .game-section p { font-size: 0.95rem; line-height: 1.6; color: #444; }
 .why-pick-box { background: #fff8f0; padding: 12px 16px; border-radius: 10px; border-left: 4px solid var(--accent); }
