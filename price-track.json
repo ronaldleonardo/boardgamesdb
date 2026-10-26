@@ -1,20 +1,19 @@
 {
- "day": 6,
+ "day": 7,
  "cycle": 6,
- "last_updated": "2026-10-24",
+ "last_updated": "2026-10-25",
  "total_games": 36,
  "games_per_day": 5,
- "pricing_policy": "Track Amazon (r.jina.ai/dp/<ASIN>) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Cross-check with Firecrawl /clp/<ASIN> when a move looks large.",
+ "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 7,
-  "cycle": 6,
+  "day": 1,
+  "cycle": 7,
   "games": [
-   "ticket-to-ride",
-   "under-falling-skies",
-   "uno",
-   "wavelength",
-   "wingspan",
-   "wingspan-solo"
+   "7-wonders-duel",
+   "azul",
+   "blank-slate",
+   "cascadia",
+   "castle-combo"
   ]
  },
  "schedule": {
@@ -70,6 +69,62 @@
   ]
  },
  "log": [
+  {
+   "day": 7,
+   "cycle": 6,
+   "date": "2026-10-25",
+   "games": [
+    {
+     "slug": "ticket-to-ride",
+     "name": "Ticket to Ride (2025 Refresh)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F8PKN4B7 (lp_asin confirmed, 4.9 stars): buybox $39.99 (buybox_json), In Stock. +0.00% vs stored $39.99. Exact match, second cycle running at $39.99 after the Oct 1-8 'Deal price' $29.99 promo ended. Keep."
+    },
+    {
+     "slug": "under-falling-skies",
+     "name": "Under Falling Skies",
+     "old_price": 29.99,
+     "new_price": 29.99,
+     "changed": false,
+     "source": "UNVERIFIED (2nd cycle running). Firecrawl /gp/aw/d/B08HGS1QYT: asin_confirmed true (lp_asin=B08HGS1QYT, 4.8 stars, page is the right product 'CGE Under Falling Skies') but NO price parsed, [WARN delivery-location ship block] and [WARN not in stock]. Independent fallback probe on the US-destination jina route ('Delivering to The Dalles 97058') resolved the same ASIN on a full 175,927-char US render, but the page has NO featured offer: 'High price' badge plus a bare 'See All Buying Options' link (unqualifiedBuyBox) and no buybox JSON, no price, no 'In Stock', and no 'Currently unavailable' string either. Nothing to read -> price held at $29.99 per policy (last verified $29.99 on 2026-10-08), NOT edited. Not a re-ASIN case (PDP resolves correctly). FLAG: if the no-featured-offer state persists next cycle, price the buy link from the live offer range or pull the Amazon buy link."
+    },
+    {
+     "slug": "uno",
+     "name": "Uno",
+     "old_price": 11.82,
+     "new_price": 11.46,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07P6MZPK3 (lp_asin confirmed, 4.8 stars): buybox $11.46 (buybox_json), In Stock. -3.05% vs stored $11.82 -> under 10% -> keep. (Street still $11.4-11.8, same band as cycle 5 day 7's $11.36.)"
+    },
+    {
+     "slug": "wavelength",
+     "name": "Wavelength",
+     "old_price": 32.0,
+     "new_price": 34.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07T446163 (lp_asin confirmed, 4.8 stars): buybox $34.99 (List $39.99), In Stock. +9.34% vs stored $32.00 -> 0.66pp short of the 10% threshold -> keep, no edit. THIRD cycle running at $34.99 (cycle 4 +9.3%, cycle 5 +9.34%, cycle 6 +9.34%); normalize to $34.99 the moment it crosses 10% or on any other edit to this row."
+    },
+    {
+     "slug": "wingspan",
+     "name": "Wingspan",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07YQ641NQ (Stonemaier, lp_asin confirmed, 4.8 stars): buybox $55.00 (buybox_json), In Stock. +0.00% vs stored $55.00. Exact match (List $65.00). Keep."
+    },
+    {
+     "slug": "wingspan-solo",
+     "name": "Wingspan (Solo Mode)",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Same product/ASIN as wingspan (B07YQ641NQ) -> $55.00 carried over. No separate listing. Keep."
+    }
+   ],
+   "note": "Cycle 6 day 7 - FINAL day of cycle 6. 0 price changes (every reading inside the 10% band). 5 of 6 games fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, no ship block: ticket-to-ride $39.99 exact, uno $11.46 (-3.05%), wavelength $34.99 (+9.34%, borderline 3rd cycle), wingspan $55.00 exact, wingspan-solo carried from the same ASIN. under-falling-skies B08HGS1QYT is UNVERIFIED for the 2nd consecutive cycle: firecrawl ship-blocked (egress has no US ZIP) and the US-destination jina render shows no featured offer at all ('High price' + 'See All Buying Options' only) -> price held at $29.99, nothing invented, nothing carried forward as confirmed. No data.mjs edits -> NO astro build and NO systemctl restart this run (git status clean). Carry-forward flags: sprawlopolis B0DP3H8S4N unbuyable 2 cycles running (top priority re-ASIN, Button Shy storefront or a live /dp/); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit; forbidden-island B003D7F4YY had only 1 unit left on cycle 6 day 2; under-falling-skies B08HGS1QYT no-featured-offer (recheck cycle 7 day 7); normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86 when they next move. Cycle 6 complete (36 games / 7 days). Next run: cycle 7 day 1 (7-wonders-duel, azul, blank-slate, cascadia, castle-combo)."
+  },
   {
    "day": 6,
    "cycle": 6,
