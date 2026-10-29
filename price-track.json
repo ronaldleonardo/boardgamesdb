@@ -1,19 +1,19 @@
 {
- "day": 2,
+ "day": 3,
  "cycle": 7,
- "last_updated": "2026-10-27",
+ "last_updated": "2026-10-28",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 3,
+  "day": 4,
   "cycle": 7,
   "games": [
-   "fox-in-the-forest",
-   "herd-mentality",
-   "horrified",
-   "jaipur",
-   "just-one"
+   "kingdomino",
+   "lost-cities",
+   "love-letter",
+   "mysterium",
+   "patchwork"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 3,
+   "cycle": 7,
+   "date": "2026-10-28",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 15.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B06XP7ZDH1 (lp_asin confirmed, 4.6 stars): buybox $15.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $15.99 (2nd cycle running at this value). Keep."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $24.99. Keep."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed, 4.8 stars): buybox $44.99 (buybox_json), In Stock, prime, no ship block. +0.22% vs stored $44.89 -> under 10% -> keep. Third consecutive cycle at $44.99; stored $44.89 is the odd value, normalize to $44.99 on next edit."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars): buybox $26.58 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $26.58 (2nd cycle running). Keep."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block. +4.12% vs stored $24.00 -> under 10% -> keep. Third cycle running at $24.99 vs stored $24.00; reconcile to $24.99 on next edit."
+    }
+   ],
+   "note": "Cycle 7 day 3. 0 price changes - all five readings sit inside the 10% band, so data.mjs was NOT edited (git status clean before and after; NO astro build and NO systemctl restart this run). Cleanest run in weeks: all 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls. 3 exact matches (fox-in-the-forest $15.99, herd-mentality $24.99, jaipur $26.58); horrified $44.99 (+0.22% vs odd stored $44.89, third cycle at $44.99); just-one $24.99 (+4.12% vs stored $24.00, third cycle at $24.99). No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (unchanged, none in today's block): forbidden-island B003D7F4YY was OOS/'Currently unavailable' on cycle 7 day 2 -> top-priority re-ASIN decision (point the buy link at a live listing); sprawlopolis B0DP3H8S4N unbuyable 3 cycles running (Button Shy storefront or a live /dp/); final-girl B09N8R6296 lost its featured offer on cycle 7 day 2 -> recheck the offer state when it comes up on cycle 8 day 2; azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit; under-falling-skies B08HGS1QYT no-featured-offer (recheck cycle 8 day 7, next cycle); normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30 when they next move. Next run: cycle 7 day 4 (kingdomino, lost-cities, love-letter, mysterium, patchwork)."
+  },
   {
    "day": 2,
    "cycle": 7,
