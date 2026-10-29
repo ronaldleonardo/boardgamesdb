@@ -155,7 +155,7 @@ export const games = [
     why: "The version that lives in a bag. Same bird-collecting feeling in 30 minutes, for about $20." },
 
   // === 2-PLAYER ===
-  { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 34.95, asin: "B0FPXTLZ21", images: ["/images/patchwork.jpg", "/images/patchwork-2.jpg"], tag: "best-seller",
+  { slug: "patchwork", name: "Patchwork", category: "two-player", players: "2", playtime: 25, age: 8, rating: 7.7, complexity: 1.5, price: 29.85, asin: "B0FPXTLZ21", images: ["/images/patchwork.jpg", "/images/patchwork-2.jpg"], tag: "best-seller",
     desc: "A two-player tetris-like game where you piece together a quilt. Buy patches with buttons, place them strategically, and cover your board efficiently.",
     why: "Best 2-player game ever made. Period. Perfect date night game." },
   { slug: "7-wonders-duel", name: "7 Wonders Duel", category: "two-player", players: "2", playtime: 30, age: 10, rating: 8.2, complexity: 2.2, price: 29.99, asin: "B014DMSTXK", images: ["/images/7-wonders-duel.jpg", "/images/7-wonders-duel-2.png", "/images/7-wonders-duel-3.png"], tag: "best-seller",
