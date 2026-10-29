@@ -1,19 +1,19 @@
 {
- "day": 3,
+ "day": 4,
  "cycle": 7,
- "last_updated": "2026-10-28",
+ "last_updated": "2026-10-29",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 4,
+  "day": 5,
   "cycle": 7,
   "games": [
-   "kingdomino",
-   "lost-cities",
-   "love-letter",
-   "mysterium",
-   "patchwork"
+   "pandemic",
+   "quake",
+   "sequence",
+   "skull-king",
+   "spirit-island"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 4,
+   "cycle": 7,
+   "date": "2026-10-29",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "UNVERIFIED. Firecrawl /gp/aw/d/B01N3A4070: resolved the right PDP (title 'Blue Orange Games Kingdomino Award Winning Family Strategy Board Game') but NO price parsed and [WARN not in stock], no buybox JSON. Independent jina probe on the same ASIN returned a 52,418-char render whose first content block is a 'High price / Learn more' badge with NO featured offer at all: zero hits for buybox/displayPrice/priceAmount/'Add to Cart'/'See All Buying Options', and no 'Currently unavailable' string either. Nothing to read -> price held at $19.99 per policy, NOT edited, NOT carried forward as confirmed (last verified reading $19.96 on 2026-10-13). Not a re-ASIN case: the PDP resolves to the correct product. Same no-featured-offer pattern already carried by under-falling-skies and final-girl; the stored Amazon buy link should be reviewed if this persists next cycle."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 19.95,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF (lp_asin confirmed, 4.8 stars): buybox $19.95 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $19.95. Keep."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 11.86,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F2J8DVHH (2025 Refresh, lp_asin confirmed, 4.7 stars): buybox $11.86 (buybox_json), In Stock, prime, no ship block. -8.70% vs stored $12.99 -> under 10% -> keep. Same $11.86 as the cycle-5 day-4 re-ASIN reading, so the live listing is stable; normalize $12.99 -> $11.86 on the next edit to this row."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 47.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed, 4.1 stars): buybox $47.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $47.99. Keep."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 34.95,
+     "new_price": 29.85,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 ('Patchwork Board Game (Revised Edition)', Lookout Games brand-store lp_asin confirmed, 4.5 stars): buybox $29.85 (buybox_json), In Stock, prime, no ship block. -14.59% vs stored $34.95 -> >=10% -> UPDATE. Cross-checked independently on the jina route: same $29.85 buybox, In Stock, prime, and NO 'Deal price' / lightning badge and NO 'percent savings' promo line -> this is the regular buybox, not a timeboxed event promo. Natural walk-back from the Oct 13 $34.95 (which had been +18.88% up from $29.40 that same cycle); $29.85 is right at the old $29.40 street level. Also synced stale on-site copy: blog/best-2-player-board-games.astro ($34.95 -> $29.85 in two spots, combo '$51' -> '$46' = $29.85 + $15.99 Fox in the Forest)."
+    }
+   ],
+   "note": "Cycle 7 day 4. 1 price change: patchwork 34.95 -> 29.85 (-14.59%, confirmed on two independent routes, no promo badge) -> data.mjs edited, node gen_gamesjson.mjs (58 games), astro build (93 pages via ./node_modules/.bin/astro build, index.html 06:02), cp public/data/games.json dist/data/games.json. No systemctl restart was needed: boardgamesdb runs `astro preview`, which serves dist straight from disk, and the live server returned the new content immediately (HTTP 200 /game/patchwork, schema price 29.85; blog page shows $29.85 twice and zero '$34.95'; /data/games.json 58 games, patchwork 29.85). git commit d38f06a pushed. 4 of 5 games read cleanly on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block: lost-cities $19.95 exact, mysterium $47.99 exact, love-letter $11.86 (-8.70%, inside band), patchwork $29.85 (edited). kingdomino B01N3A4070 is the one UNVERIFIED row: firecrawl parsed no price, and the independent jina render shows a 'High price' badge with no featured offer at all -> held at $19.99, nothing invented; NEW no-featured-offer flag, different from the usual azul/cascadia bot-wall pair. Carry-forward flags (unchanged, none in today's block beyond kingdomino): forbidden-island B003D7F4YY OOS/'Currently unavailable' -> top-priority re-ASIN decision; sprawlopolis B0DP3H8S4N unbuyable 4 cycles running (Button Shy storefront or a live /dp/); final-girl B09N8R6296 and under-falling-skies B08HGS1QYT no-featured-offer (recheck when they next come up: final-girl cycle 8 day 2, under-falling-skies cycle 7 day 7); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30. Next run: cycle 7 day 5 (pandemic, quake, sequence, skull-king, spirit-island)."
+  },
   {
    "day": 3,
    "cycle": 7,
@@ -708,348 +756,6 @@
     }
    ],
    "note": "Cycle 5 day 5. 1 price change (sequence 14.97 -> 13.29, -11.22%). All 5 ASINs fetched first try with asin_confirmed true, In Stock, title/brand matched. Firecrawl egress again showed 'Deliver to Indonesia' rather than a US location; 3 of 5 matched stored exactly and quake moved only +1.5%, so no destination-driven distortion observed. data.mjs edited -> node gen_gamesjson.mjs, rm -rf dist, npx astro build (83 pages), cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb; verified live HTTP 200 on :8083 /game/sequence with schema price 13.29 InStock and both blog pages showing $13.29. Next run: cycle 5 day 6."
-  },
-  {
-   "day": 4,
-   "cycle": 5,
-   "date": "2026-10-13",
-   "games": [
-    {
-     "slug": "kingdomino",
-     "name": "Kingdomino",
-     "old_price": 19.99,
-     "new_price": 19.96,
-     "changed": false,
-     "source": "Amazon /gp/aw/d/B01N3A4070 (lp_asin confirmed): buybox $19.96, List $24.99, In Stock, 4.8 stars. -0.15% vs stored $19.99 -> under 10% -> keep."
-    },
-    {
-     "slug": "lost-cities",
-     "name": "Lost Cities",
-     "old_price": 19.95,
-     "new_price": 19.95,
-     "changed": false,
-     "source": "Amazon /gp/aw/d/B07KLWPHFF: first fetch returned a PDP variant with no buybox JSON; a retry resolved $19.95 (buybox_json), In Stock, 4.8 stars, lp_asin confirmed. Exact match. Keep."
-    },
-    {
-     "slug": "love-letter",
-     "name": "Love Letter",
-     "old_price": 12.99,
-     "new_price": 12.99,
-     "changed": false,
-     "source": "STORED ASIN B0753NP1WM is DEAD (mobile PDP returns Amazon 'We couldn't find that page', len 439). Repointed to the live B0F2J8DVHH ('Love Letter Card Game (2025 Refresh)', 4.7/307 ratings, 1K+ bought/mo): buybox $11.86, List $15.99 -> -8.7% vs stored $12.99 -> under 10% -> price kept, ASIN fixed. Flagged for re-ASIN decision this cycle."
-    },
-    {
-     "slug": "mysterium",
-     "name": "Mysterium",
-     "old_price": 47.99,
-     "new_price": 47.99,
-     "changed": false,
-     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed): buybox $47.99, In Stock, 4.1 stars. Exact match. Keep."
-    },
-    {
-     "slug": "patchwork",
-     "name": "Patchwork",
-     "old_price": 29.4,
-     "new_price": 34.95,
-     "changed": true,
-     "source": "Amazon /gp/aw/d/B0FPXTLZ21 ('Patchwork Board Game (Revised Edition)', Lookout Games brand-store lp_asin confirmed, also the #1 organic result for 'patchwork board game'): buybox $34.95, 4.8 stars (27), Other sellers New (2) from $34.95, 'Available to ship in 1-2 days' (buyable, quantity selector live). Same $34.95 on two independent fetches. +18.88% vs stored $29.40 -> >=10% -> UPDATE. Also synced stale on-site blog copy in best-2-player-board-games.astro ($29.40 -> $34.95, combo '$45' -> '$51')."
-    }
-   ],
-   "note": "Cycle 5 day 4. 1 price change (patchwork 29.40 -> 34.95). 1 dead-ASIN fix (love-letter B0753NP1WM -> B0F2J8DVHH). 2 ASINs needed a retry (lost-cities returned a variant PDP with no buybox JSON on the first attempt). Firecrawl egress showed 'Deliver to Indonesia' this run instead of the usual US 'The Dalles 97058'; 3 of 5 ASINs matched stored prices exactly, so no destination-driven price distortion observed. data.mjs edited -> gen_gamesjson.mjs, rm -rf dist, astro build, cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb (verified live HTTP 200 on /game/patchwork with schema price 34.95). Next run: cycle 5 day 5."
-  },
-  {
-   "day": 3,
-   "cycle": 5,
-   "date": "2026-10-12",
-   "games": [
-    {
-     "slug": "fox-in-the-forest",
-     "name": "Fox in the Forest",
-     "old_price": 15.99,
-     "new_price": 15.99,
-     "changed": false,
-     "source": "Amazon /dp B06XP7ZDH1 (Renegade Foxtrot): buybox $15.99, In Stock, 4.6 stars. Exact match. Keep."
-    },
-    {
-     "slug": "herd-mentality",
-     "name": "Herd Mentality",
-     "old_price": 24.99,
-     "new_price": 24.99,
-     "changed": false,
-     "source": "Amazon /dp B093HBBMPT (Asmodee): buybox $24.99, In Stock, 4.7 stars. Exact match. First fetch returned a variant page lacking the buybox JSON; retried OK."
-    },
-    {
-     "slug": "horrified",
-     "name": "Horrified",
-     "old_price": 44.89,
-     "new_price": 44.99,
-     "changed": false,
-     "source": "Amazon /dp B07QQHTD4Q (Ravensburger): buybox $44.99, In Stock, 4.8 stars. +0.22% vs stored $44.89 -> under 10% -> keep (stored value is the odd $44.89, normalize to $44.99 when next edited)."
-    },
-    {
-     "slug": "jaipur",
-     "name": "Jaipur",
-     "old_price": 26.58,
-     "new_price": 26.58,
-     "changed": false,
-     "source": "Amazon /dp B07SRMXRZB (Space Cowboys): buybox $26.58, In Stock, 4.8 stars. Exact match. Keep."
-    },
-    {
-     "slug": "just-one",
-     "name": "Just One (2025 Refresh)",
-     "old_price": 24.0,
-     "new_price": 24.99,
-     "changed": false,
-     "source": "Amazon /dp B0FB6MQ3WB (Repos/Asmodee 2025 Refresh): buybox $24.99, In Stock, 4.6 stars. +4.12% vs stored $24.00 -> under 10% -> keep."
-    }
-   ],
-   "note": "Cycle 5 day 3. 0 price changes (>10%). All 5 ASINs verified live (titles matched, US egress). herd-mentality needed a retry on the first fetch; hardened /root/garagetoolsdb/price_fetch.py buybox regex to accept zero-or-more backslashes. No data.mjs edit -> no rebuild. Next run: cycle 5 day 4."
-  },
-  {
-   "day": 2,
-   "cycle": 5,
-   "date": "2026-10-10",
-   "games": [
-    {
-     "slug": "castle-panic",
-     "name": "Castle Panic",
-     "old_price": 22.95,
-     "new_price": 22.95,
-     "changed": false,
-     "source": "Amazon /dp B0B3LGW2KH (Fireside Games Castle Panic 2nd Edition, title match): buybox $22.95 (List $34.95, -34%), In Stock, Ships from and sold by Amazon, Amazon's Choice 1K+ bought. Exact match. Keep."
-    },
-    {
-     "slug": "catan",
-     "name": "Catan (6th Edition)",
-     "old_price": 39.99,
-     "new_price": 39.99,
-     "changed": false,
-     "source": "Amazon /dp B0DYK1ZH2D ('CATAN Board Game (6th Edition)', title match): buybox $39.99 (List $49.99, -20%), In Stock, Ships from and sold by Amazon, 20K+ bought. Exact match. Keep."
-    },
-    {
-     "slug": "codenames",
-     "name": "Codenames",
-     "old_price": 24.97,
-     "new_price": 24.97,
-     "changed": false,
-     "source": "Amazon /dp B0FJMQB63N ('CGE Codenames Board Game (2nd Edition)', title match): buybox $24.97, In Stock, Sold by CGE Czech Games Edition, 5K+ bought. Exact match. Keep."
-    },
-    {
-     "slug": "final-girl",
-     "name": "Final Girl",
-     "old_price": 24.75,
-     "new_price": 24.75,
-     "changed": false,
-     "source": "Amazon /dp B09N8R6296 ('Van Ryder Games - Final Girl - Core Box', title match): buybox $24.27 (Ships from Amazon, Sold by Buckeye Trading, Only 7 left, Amazon's Choice 100+ bought); secondary offer $23.99 (Best WH). -1.9% vs stored $24.75 -> under 10% -> keep."
-    },
-    {
-     "slug": "forbidden-island",
-     "name": "Forbidden Island",
-     "old_price": 20.99,
-     "new_price": 20.99,
-     "changed": false,
-     "source": "Amazon /dp B003D7F4YY ('Gamewright Forbidden Island, 1st Edition', title match): buybox $20.99, In Stock, 300+ bought. Exact match. Keep."
-    }
-   ],
-   "note": "Cycle 5 day 2. 0 price changes. All 5 ASINs verified live (titles matched, US egress 'The Dalles 97058' confirmed). No data.mjs edit -> no rebuild needed. Next run: cycle 5 day 3."
-  },
-  {
-   "day": 1,
-   "cycle": 5,
-   "date": "2026-10-09",
-   "games": [
-    {
-     "slug": "7-wonders-duel",
-     "name": "7 Wonders Duel",
-     "old_price": 29.99,
-     "new_price": 29.99,
-     "changed": false,
-     "source": "STORED ASIN B0150UY2FG is DEAD (r.jina.ai US egress /dp -> 404; ASIN search returns no match). Repointed to live base-game listing B014DMSTXK ('Asmodee 7 Wonders Duel BASE GAME', Amazon's Choice, 4.8/9,740 ratings, Ships from Amazon): buybox $29.19, List $34.99. -2.7% vs stored -> under 10% -> price kept."
-    },
-    {
-     "slug": "azul",
-     "name": "Azul",
-     "old_price": 31.99,
-     "new_price": 31.99,
-     "changed": false,
-     "source": "Stored ASIN B0719HFT6H hit Amazon bot wall on /dp (r.jina.ai and Firecrawl both returned 'Continue shopping'). Verified via live listing B077MZ2MPW ('Azul Mosaic Tile-Placement Strategy Board Game', 7K+ bought): buybox $31.99, List $39.99, sold/ships Amazon.com, In Stock -> exact match. Keep."
-    },
-    {
-     "slug": "blank-slate",
-     "name": "Blank Slate",
-     "old_price": 22.69,
-     "new_price": 22.69,
-     "changed": false,
-     "source": "Amazon /dp B07G2VHPRW: buybox $22.69, List $24.99 (-9%), In Stock, sold/ships Amazon.com, Amazon's Choice. Exact match. Keep."
-    },
-    {
-     "slug": "cascadia",
-     "name": "Cascadia",
-     "old_price": 39.99,
-     "new_price": 39.99,
-     "changed": false,
-     "source": "Stored ASIN B08ZLBJ45S hit Amazon bot wall on /dp. Verified via live AEG listing B093H8RGXX ('Cascadia, Award-Winning Cozy Nature Board Game'): buybox $37.40, List $39.99 (-6%), Amazon's Choice, 800+ bought, In Stock. -6.5% vs stored -> under 10% -> keep."
-    },
-    {
-     "slug": "castle-combo",
-     "name": "Castle Combo",
-     "old_price": 19.97,
-     "new_price": 25.99,
-     "changed": true,
-     "source": "Amazon /dp B0DHWGS11S (Pandasaurus): buybox $25.99, List $29.95 (-13%), In Stock, sold/ships Amazon.com. +30.1% vs stored $19.97 (old promo) -> update. Also synced on-site blog copy $24.99 -> $25.99."
-    }
-   ],
-   "note": "Cycle 5 day 1. 1 price change (castle-combo 19.97->25.99). 1 dead-ASIN fix (7-wonders-duel B0150UY2FG -> B014DMSTXK). azul + cascadia /dp blocked by Amazon bot wall; verified via live search listings (prices unchanged). Next run: cycle 5 day 2."
-  },
-  {
-   "day": 7,
-   "cycle": 4,
-   "date": "2026-10-08",
-   "games": [
-    {
-     "slug": "ticket-to-ride",
-     "name": "Ticket to Ride",
-     "old_price": 39.99,
-     "new_price": 39.99,
-     "source": "Amazon /dp B0F8PKN4B7 (Asmodee 2025 Refresh): 'Deal price' $29.99 (49% claimed lightning deal) vs 'Regular Price' $39.99 and 'Typical price' $39.99. Regular/Typical match stored $39.99 -> 0%. Kept; event promo ignored.",
-     "changed": false
-    },
-    {
-     "slug": "under-falling-skies",
-     "name": "Under Falling Skies",
-     "old_price": 29.99,
-     "new_price": 29.99,
-     "source": "Amazon /dp B08HGS1QYT: $29.99 buybox (sold by CGE Czech Games Edition, ships Amazon Fulfillment), In Stock, 'Only 16 left'. Exact match. Keep.",
-     "changed": false
-    },
-    {
-     "slug": "uno",
-     "name": "Uno",
-     "old_price": 7.47,
-     "new_price": 11.82,
-     "source": "Amazon /dp B07P6MZPK3 (Mattel classic, 2-10p): $11.82 'Buy New' buybox (sold/ships Amazon.com), In Stock. Confirmed twice (dp + dp?th=1&psc=1); reseller offer $10.93. Stored $7.47 was an old promo -> +58.2% > 10% -> update. UNO Flip! $11.99 / Teams $11.74 corroborate the ~$11.8 street level. Also fixed stale on-site copy 'Under $10' -> 'Under $12'.",
-     "changed": true
-    },
-    {
-     "slug": "wavelength",
-     "name": "Wavelength",
-     "old_price": 32.0,
-     "new_price": 32.0,
-     "source": "Amazon /dp B07T446163 (CMYK): buybox $34.99 (List $39.99), In Stock; Firecrawl /clp cross-check agreed $34.99. +9.3% vs stored $32.00 = just under the 10% threshold -> keep. BORDERLINE: reconcile next cycle.",
-     "changed": false
-    },
-    {
-     "slug": "wingspan",
-     "name": "Wingspan",
-     "old_price": 55.0,
-     "new_price": 55.0,
-     "source": "Amazon /dp B07YQ641NQ (Stonemaier): $55.00 buybox (List $65.00), In Stock. Exact match. Keep.",
-     "changed": false
-    },
-    {
-     "slug": "wingspan-solo",
-     "name": "Wingspan (Solo Mode)",
-     "old_price": 55.0,
-     "new_price": 55.0,
-     "source": "Same product/ASIN as wingspan (B07YQ641NQ) -> $55.00 carried over. No separate listing. Keep.",
-     "changed": false
-    }
-   ],
-   "note": "Cycle 4 complete (all 7 day-groups swept). 1 change (uno). Next run starts cycle 5 day 1."
-  },
-  {
-   "day": 6,
-   "cycle": 4,
-   "date": "2026-10-07",
-   "games": [
-    {
-     "slug": "splendor",
-     "name": "Splendor",
-     "old_price": 24.97,
-     "new_price": 24.97,
-     "source": "Amazon /dp B00IZEUFIA live during Prime Big Deal Days: 'Deal price' $23.99 (Prime-only) vs 'Regular Price' $31.99 (list $39.99). Effective price $23.99 is -3.9% vs current (under 10%); the $31.99 'regular' is an event-inflated anchor, not steady street (~$25). Keep $24.97; recheck after the event ends.",
-     "changed": false
-    },
-    {
-     "slug": "sprawlopolis",
-     "name": "Sprawlopolis",
-     "old_price": 12.99,
-     "new_price": 12.99,
-     "source": "Tracked ASIN B07QHPWMN1 is now 404 (listing removed). Current Amazon listing B0DP3H8S4N ('Sprawlopolis Button Shy Wallet Game') shows $29.95 3rd-party, only 5 left = reseller markup, not street (Button Shy direct MSRP ~$12). Kept $12.99; ASIN updated to B0DP3H8S4N so future refreshes have a live target.",
-     "changed": false
-    },
-    {
-     "slug": "star-realms",
-     "name": "Star Realms",
-     "old_price": 17.95,
-     "new_price": 17.95,
-     "source": "Amazon /dp B00HRGMPIU live $17.95, In Stock (no deal badge). Exact match. Keep.",
-     "changed": false
-    },
-    {
-     "slug": "sushi-go",
-     "name": "Sushi Go!",
-     "old_price": 11.99,
-     "new_price": 11.99,
-     "source": "Amazon /dp B00J57VU44: 'Deal price' $11.37 (Prime-only) vs 'Regular Price' $11.99 (= stored) vs typical $14.50. Regular matches exactly. Keep.",
-     "changed": false
-    },
-    {
-     "slug": "the-crew",
-     "name": "The Crew: The Quest for Planet Nine",
-     "old_price": 11.97,
-     "new_price": 14.95,
-     "source": "Tracked ASIN B0832F2Y56 is now 404. Correct ASIN B084GP7X3P (Thames & Kosmos, verified title) live $14.95, In Stock (list $15.95). Stored $11.97 was a GameNerdz discounter promo (cycle 3) the site treats as non-street; Amazon street + site's own article ($14.99) => +24.9% > 10% -> update. ASIN fixed.",
-     "changed": true
-    }
-   ]
-  },
-  {
-   "day": 5,
-   "cycle": 4,
-   "date": "2026-10-06",
-   "games": [
-    {
-     "slug": "pandemic",
-     "name": "Pandemic",
-     "old_price": 44.99,
-     "new_price": 49.99,
-     "source": "Amazon /dp live $49.99 NEW buybox (list $49.99). The Sep29 $44.99 was itself a -10% promo that has ended (+11.1% > 10% -> update).",
-     "changed": true
-    },
-    {
-     "slug": "quake",
-     "name": "Quacks Board Game",
-     "old_price": 39.4,
-     "new_price": 39.4,
-     "source": "Amazon /dp live $38.85 buybox (regular $39.99) vs current $39.40 = -1.4%. Under 10% threshold. Keep.",
-     "changed": false
-    },
-    {
-     "slug": "sequence",
-     "name": "Sequence",
-     "old_price": 19.97,
-     "new_price": 14.97,
-     "source": "Amazon /dp live $14.97 NEW buybox (Jax, list $23.99, 38% off, Amazon's Choice, no deal badge). -25% > 10% -> update. Walmart street $19.97.",
-     "changed": true
-    },
-    {
-     "slug": "skull-king",
-     "name": "Skull King",
-     "old_price": 19.99,
-     "new_price": 19.99,
-     "source": "Amazon /dp live $19.99 buybox (Grandpa Beck's) = exact match. Keep.",
-     "changed": false
-    },
-    {
-     "slug": "spirit-island",
-     "name": "Spirit Island",
-     "old_price": 64.99,
-     "new_price": 64.99,
-     "source": "Amazon /dp: labeled 'Deal price' $44.99 vs 'Regular Price' $61.40 (list $64.99). Prime promo, not street; regular is -5.5% vs current. Keep.",
-     "changed": false
-    }
-   ]
   }
  ]
 }
