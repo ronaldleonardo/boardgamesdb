@@ -1,19 +1,19 @@
 {
- "day": 4,
+ "day": 5,
  "cycle": 7,
- "last_updated": "2026-10-29",
+ "last_updated": "2026-10-30",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 5,
+  "day": 6,
   "cycle": 7,
   "games": [
-   "pandemic",
-   "quake",
-   "sequence",
-   "skull-king",
-   "spirit-island"
+   "splendor",
+   "sprawlopolis",
+   "star-realms",
+   "sushi-go",
+   "the-crew"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 5,
+   "cycle": 7,
+   "date": "2026-10-30",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 49.99,
+     "new_price": 44.43,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (Z-Man Games, lp_asin confirmed, 4.8 stars, 18,848 ratings): buybox $44.43 (buybox_json), In Stock, prime, no ship block, '400+ bought in past month'. -11.12% vs stored $49.99 -> >=10% -> UPDATE. Cross-checked independently on the jina route (190,163-char US render): same $44.43 buybox, In Stock, prime; price line reads '$44.43 with 11 percent savings' off List Price $49.99 and 'One-time purchase: $44.43 11% Savings / List Price: $49.99' -> this is the standard savings-vs-list line (regular street price), NOT a timeboxed event promo: zero hits for 'Deal price' / 'Lightning Deal' / 'Limited time deal'. Also synced stale on-site copy: blog/best-cooperative-board-games.astro ('$49.99 on Amazon' -> '$44.43'; twist-box 'most expensive game on this list is $49.99' -> '$44.89', now Horrified, since Pandemic is no longer the max) and blog/how-to-play-sky-team.astro (table row $49.99 -> $44.43, and 'Pandemic at $49.99' -> '$44.43')."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block. +1.50% vs stored $39.40 -> under 10% -> keep. Fourth consecutive cycle at $39.99 vs the odd stored $39.40; normalize to $39.99 on next edit."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 13.29,
+     "new_price": 13.29,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): buybox $13.29 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $13.29 (cycle-5 update value holding). Keep."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed, 4.9 stars): buybox $19.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $19.99. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 64.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars): buybox $64.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $64.99. Keep."
+    }
+   ],
+   "note": "Cycle 7 day 5. 1 price change: pandemic 49.99 -> 44.43 (-11.12%, confirmed on two independent routes as a regular savings-vs-list price with no deal/lightning badge) -> data.mjs edited, node gen_gamesjson.mjs (60 games), astro build (96 pages), cp public/data/games.json dist/data/games.json. No systemctl restart needed: boardgamesdb runs `astro preview` off dist and served the new content immediately (HTTP 200 /game/pandemic, schema price 44.43; blog/how-to-play-sky-team shows $44.43 twice and zero '$49.99'; /data/games.json 60 games, pandemic 44.43). All 5 ASINs fetched on the FIRST Firecrawl attempt, asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries. 3 exact matches (sequence $13.29, skull-king $19.99, spirit-island $64.99); quake $39.99 (+1.50% vs odd stored $39.40, fourth cycle at $39.99). No unwalled/dead ASIN, no OOS, no re-ASIN case in today's block. NOTE: repo carries a sibling agent's commit 1074b8d (Calico vs Cascadia article, +Calico/+Knitting Circle -> 60 games), so the fresh build regenerated those dist pages too. Carry-forward flags (unchanged, none in today's block beyond pandemic's copy sync): forbidden-island B003D7F4YY OOS/'Currently unavailable' on cycle 7 day 2 -> top-priority re-ASIN decision; final-girl B09N8R6296 no-featured-offer (cycle 7 day 2) -> recheck cycle 8 day 2; kingdomino B01N3A4070 no-featured-offer (cycle 7 day 4, new) -> recheck cycle 8 day 4; sprawlopolis B0DP3H8S4N unbuyable 4 cycles running (Button Shy storefront or a live /dp/); under-falling-skies B08HGS1QYT no-featured-offer -> recheck cycle 7 day 7; azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30. Next run: cycle 7 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew)."
+  },
   {
    "day": 4,
    "cycle": 7,

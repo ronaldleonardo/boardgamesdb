@@ -207,7 +207,7 @@ export const games = [
   { slug: "sky-team", name: "Sky Team", category: "cooperative", players: "2", playtime: 20, age: 12, rating: 7.9, complexity: 2.0, price: 32.99, asin: "B0CHD8RCSJ", images: [], tag: "award-winner",
     desc: "A two-player cooperative dice game about landing an airliner. Pilot and co-pilot each roll four dice behind a screen, then place them in silence on a cockpit panel: axis, engines, flaps, gear, radio and brakes. Seven rounds, twenty airports.",
     why: "Spiel des Jahres 2024 and the first strictly two-player winner. Tense, quick, and it teaches you to read a partner instead of talking over them." },
-  { slug: "pandemic", name: "Pandemic", category: "cooperative", players: "2-4", playtime: 45, age: 8, rating: 7.6, complexity: 2.5, price: 49.99, asin: "B00A2HD40E", images: ["/images/pandemic.jpg"], tag: "best-seller",
+  { slug: "pandemic", name: "Pandemic", category: "cooperative", players: "2-4", playtime: 45, age: 8, rating: 7.6, complexity: 2.5, price: 44.43, asin: "B00A2HD40E", images: ["/images/pandemic.jpg"], tag: "best-seller",
     desc: "Work together to stop global outbreaks. Each player has a unique role: medic, scientist, dispatcher. You must cure four diseases before time runs out.",
     why: "The gateway co-op game. Tension, teamwork, and that 'one more game' feeling." },
   { slug: "forbidden-island", name: "Forbidden Island", category: "cooperative", players: "2-4", playtime: 30, age: 10, rating: 7.1, complexity: 1.7, price: 20.99, asin: "B003D7F4YY", images: ["/images/forbidden-island.jpg", "/images/forbidden-island-2.jpg", "/images/forbidden-island-3.jpg", "/images/forbidden-island-4.jpg"], tag: "budget",
