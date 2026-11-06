@@ -1,19 +1,19 @@
 {
- "day": 3,
+ "day": 5,
  "cycle": 8,
- "last_updated": "2026-11-04",
+ "last_updated": "2026-11-05",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 4,
+  "day": 5,
   "cycle": 8,
   "games": [
-   "kingdomino",
-   "lost-cities",
-   "love-letter",
-   "mysterium",
-   "patchwork"
+   "pandemic",
+   "quake",
+   "sequence",
+   "skull-king",
+   "spirit-island"
   ]
  },
  "schedule": {
@@ -1052,6 +1052,53 @@
     }
    ],
    "note": "Cycle 5 day 5. 1 price change (sequence 14.97 -> 13.29, -11.22%). All 5 ASINs fetched first try with asin_confirmed true, In Stock, title/brand matched. Firecrawl egress again showed 'Deliver to Indonesia' rather than a US location; 3 of 5 matched stored exactly and quake moved only +1.5%, so no destination-driven distortion observed. data.mjs edited -> node gen_gamesjson.mjs, rm -rf dist, npx astro build (83 pages), cp public/data/games.json dist/data/games.json, systemctl restart boardgamesdb; verified live HTTP 200 on :8083 /game/sequence with schema price 13.29 InStock and both blog pages showing $13.29. Next run: cycle 5 day 6."
+  },
+  {
+   "day": 4,
+   "cycle": 8,
+   "date": "2026-11-05",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01N3A4070 (asin_confirmed, 4.8 stars): buybox $19.95 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. -0.20% vs stored $19.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 19.95,
+     "new_price": 25.33,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF (asin_confirmed, 4.8 stars): buybox $25.33 (buybox_json), In Stock, no ship block, first Firecrawl attempt. +26.97% vs stored $19.95 -> EDIT applied to data.mjs, rebuilt."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 11.86,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F2J8DVHH (asin_confirmed, 4.8 stars): buybox $11.86 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. -8.70% vs stored $12.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 47.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (asin_confirmed, 4.1 stars): buybox $47.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. 0.00% vs stored -> keep."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 29.85,
+     "new_price": 29.4,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 (asin_confirmed, 4.5 stars): buybox $29.40 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. -1.51% vs stored $29.85 -> under 10% -> keep."
+    }
+   ]
   }
  ]
 }

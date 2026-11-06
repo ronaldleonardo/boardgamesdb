@@ -173,7 +173,7 @@ export const games = [
   { slug: "jaipur", name: "Jaipur", category: "two-player", players: "2", playtime: 20, age: 12, rating: 7.5, complexity: 1.5, price: 26.58, asin: "B07SRMXRZB", images: ["/images/jaipur.jpg"], tag: "budget",
     desc: "A fast-paced trading game set in the bustling city of Jaipur. Buy and sell goods, earn bonuses for sets, and outsmart your opponent in the marketplace.",
     why: "The quintessential 2-player card game. Quick rounds, big decisions." },
-  { slug: "lost-cities", name: "Lost Cities", category: "two-player", players: "2", playtime: 30, age: 10, rating: 7.3, complexity: 1.5, price: 19.95, asin: "B07KLWPHFF", images: ["/images/lost-cities.jpg"], tag: "budget",
+  { slug: "lost-cities", name: "Lost Cities", category: "two-player", players: "2", playtime: 30, age: 10, rating: 7.3, complexity: 1.5, price: 25.33, asin: "B07KLWPHFF", images: ["/images/lost-cities.jpg"], tag: "budget",
     desc: "A risk-management card game about exploration. Invest in expeditions, manage your hand, and decide when to cut your losses. Push your luck across five ancient cities.",
     why: "Reiner Knizia's masterpiece. Elegant, tense, and endlessly replayable." },
   { slug: "hanamikoji", name: "Hanamikoji", category: "two-player", players: "2", playtime: 20, age: 10, rating: 7.5, complexity: 1.7, price: 24.99, asin: "B08FN3V5CD", images: [], tag: "award-winner",
