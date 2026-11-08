@@ -1,19 +1,20 @@
 {
  "day": 6,
  "cycle": 8,
- "last_updated": "2026-11-06",
+ "last_updated": "2026-11-07",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 6,
+  "day": 7,
   "cycle": 8,
   "games": [
-   "splendor",
-   "sprawlopolis",
-   "star-realms",
-   "sushi-go",
-   "the-crew"
+   "ticket-to-ride",
+   "under-falling-skies",
+   "uno",
+   "wavelength",
+   "wingspan",
+   "wingspan-solo"
   ]
  },
  "schedule": {
@@ -69,6 +70,54 @@
   ]
  },
  "log": [
+  {
+   "day": 6,
+   "cycle": 8,
+   "date": "2026-11-07",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): buybox $31.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $31.99 (3rd cycle running at this value). Keep."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "UNBUYABLE AGAIN (6th consecutive cycle). Firecrawl /gp/aw/d/B0DP3H8S4N: no price parsed, asin_confirmed false, [WARN not in stock], degraded stub render (rating 5.0 only). Script's automatic jina retry also produced no parsable price. Nothing valid to read -> price held at $12.99 per policy, NOT edited, NOT carried forward as confirmed. FLAGGED for re-ASIN decision: B0DP3H8S4N still yields no buyable PDP (prior web_search found no live Amazon ASIN - only the Button Shy storefront buttonshygames.com/products/sprawlopolis)."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): buybox $17.95 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $17.95. Keep."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): buybox $11.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $11.99. Keep."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 15.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): buybox $15.95 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. +6.69% vs stored $14.95 -> under 10% -> keep. First move off the long-stable $14.95; normalize $14.95 -> $15.95 on the next edit to this row."
+    }
+   ],
+   "note": "Cycle 8 day 6. 0 price changes - all four readable readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 4 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no retries, no jina fallback: splendor $31.99 exact (3rd cycle), star-realms $17.95 exact, sushi-go $11.99 exact, the-crew $15.95 (+6.69% vs stored $14.95 - first move off that value, still inside band). The one problem is the chronic sprawlopolis B0DP3H8S4N: firecrawl parsed no price (asin_confirmed false, not in stock, degraded stub) and the automatic jina retry was empty too -> 6th consecutive cycle unbuyable, price held at $12.99, nothing invented, still the top re-ASIN decision. No dead/wrong-product ASIN, no new OOS, no new re-ASIN case in today's block. Carry-forward flags (none of them in today's block except sprawlopolis): forbidden-island B003D7F4YY OOS/'Currently unavailable' 2 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing or live listing); final-girl B09N8R6296 no-featured-offer 2 cycles -> decide the buy link next cycle (not in cycle 8 schedule again, recheck cycle 9 day 2); under-falling-skies B08HGS1QYT no-featured-offer 3 cycles running (recheck TOMORROW cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95. Next run: cycle 8 day 7 (ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo - 6 games) - watch the under-falling-skies no-featured-offer recheck and decide the buy link if it is still empty."
+  },
   {
    "day": 5,
    "cycle": 8,
