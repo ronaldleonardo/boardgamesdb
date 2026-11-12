@@ -61,6 +61,10 @@ export const games = [
     desc: "A fast-paced card drafting game where you're trying to grab the best combination of sushi dishes before they pass by. Think 7 Wonders, but simpler and cuter.",
     why: "Under $12, plays in 15 minutes, and adorable. Best value in board gaming." },
 
+  { slug: "sushi-go-party", name: "Sushi Go Party!", category: "party-games", players: "2-8", playtime: 20, age: 8, rating: 7.4, complexity: 1.4, price: 21.99, asin: "B01CETNKE2", images: [], tag: "best-seller",
+    desc: "The deluxe Sushi Go! with a menu you build before each game. Choose from 20+ card types, keep the same pick-and-pass draft, and play up to 8 people out of one big tin.",
+    why: "The upgrade for game nights that run six or more. The menu changes between sessions, so it never plays the same way twice." },
+
   { slug: "just-one", name: "Just One (2025 Refresh)", category: "party-games", players: "3-7", playtime: 20, age: 8, rating: 7.8, complexity: 1.1, price: 24.00, asin: "B0FB6MQ3WB", images: ["/images/just-one.jpg"], tag: "award-winner",
     desc: "A cooperative word association game where everyone helps one player guess a secret word. The catch? If any two players write the same clue, both clues are discarded. Simple, brilliant, and tense.",
     why: "Won Spiel des Jahres 2019 for a reason. Cooperative so nobody gets singled out. Best with 5-7." },
