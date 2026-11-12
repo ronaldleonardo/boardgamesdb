@@ -42,6 +42,15 @@ const countGuide =
 const catGuide = GUIDE_BY_CATEGORY[game.category];
 const guides = [catGuide, countGuide].filter((g, i, arr) => g && arr.findIndex(x => x?.slug === g.slug) === i);
 const lightboxData = JSON.stringify(game.images);
+// Head-to-head comparisons for the games that have one.
+const VS_BY_GAME = {
+  "pandemic": { slug: "pandemic-vs-forbidden-island", label: "Pandemic vs Forbidden Island" },
+  "forbidden-island": { slug: "pandemic-vs-forbidden-island", label: "Pandemic vs Forbidden Island" },
+  "7-wonders": { slug: "7-wonders-vs-splendor", label: "7 Wonders vs Splendor" },
+  "splendor": { slug: "7-wonders-vs-splendor", label: "7 Wonders vs Splendor" },
+};
+const vsGame = VS_BY_GAME[game.slug] ?? null;
+
 ---
 
 <BaseLayout title={`${game.name}`} description={clampDesc(`${game.name} board game review. ${game.players} players, ${game.playtime} min, age ${game.age}+. ${game.desc}`)}>
@@ -244,6 +253,9 @@ const lightboxData = JSON.stringify(game.images);
     if (e.key === 'Escape') window.location.hash = '';
   });
   </script>
+{vsGame && (
+        <p class="hub-link">How does it hold up against its closest rival? <a href={`/blog/${vsGame.slug}`}>{vsGame.label}</a> covers the head-to-head, the shelf test, and which table each one belongs on.</p>
+      )}
 </BaseLayout>
 
 <style>
