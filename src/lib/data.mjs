@@ -148,7 +148,7 @@ export const games = [
   { slug: "knitting-circle", name: "Knitting Circle", category: "family", players: "1-4", playtime: 35, age: 10, rating: 7.4, complexity: 1.8, price: 31.00, asin: "B0F8LNR6K8", images: ["/images/knitting-circle.jpg"], tag: "budget",
     desc: "A standalone follow-up to Calico. Players are knitters laying yarn tiles into patterns, chasing the coziest project on the table. Same cozy spatial puzzle, easier scoring, cheaper box.",
     why: "The gentlest way into the Calico family of tile puzzles, and the cheapest." },
-  { slug: "sequence", name: "Sequence", category: "family", players: "2-12", playtime: 30, age: 7, rating: 7.0, complexity: 1.3, price: 13.29, asin: "B00000IVAK", images: ["/images/sequence.jpg"], tag: "budget",
+  { slug: "sequence", name: "Sequence", category: "family", players: "2-12", playtime: 30, age: 7, rating: 7.0, complexity: 1.3, price: 14.97, asin: "B00000IVAK", images: ["/images/sequence.jpg"], tag: "budget",
     desc: "A classic strategy game combining cards and board. Play a card, place a chip. Get five in a row and you win. Simple tension that keeps everyone engaged.",
     why: "Plays up to 12. Grandma-friendly. Proven for 40+ years." },
   { slug: "castle-combo", name: "Castle Combo", category: "family", players: "2-5", playtime: 25, age: 8, rating: 7.6, complexity: 1.5, price: 25.99, asin: "B0DHWGS11S", images: ["/images/castle-combo.jpg"], tag: "budget",
@@ -249,7 +249,7 @@ export const games = [
   { slug: "under-falling-skies", name: "Under Falling Skies", category: "solo", players: "1", playtime: 30, age: 10, rating: 8.1, complexity: 2.3, price: 29.99, asin: "B08HGS1QYT", images: ["/images/under-falling-skies.jpg", "/images/under-falling-skies-2.png", "/images/under-falling-skies-3.png", "/images/under-falling-skies-4.png"], tag: "award-winner",
     desc: "A dice placement game where you defend Earth from alien invasion. Each dice pip becomes a ship or research action. Campaign mode adds persistent upgrades and story.",
     why: "Best pure solo game. Dice placement meets tower defense. Campaign is brilliant." },
-  { slug: "spirit-island", name: "Spirit Island", category: "solo", players: "1-4", playtime: 90, age: 13, rating: 8.5, complexity: 4.0, price: 64.99, asin: "B01MUHP51S", images: ["/images/spirit-island.jpg", "/images/spirit-island-2.jpg", "/images/spirit-island-3.jpg", "/images/spirit-island-4.jpg"], tag: "premium",
+  { slug: "spirit-island", name: "Spirit Island", category: "solo", players: "1-4", playtime: 90, age: 13, rating: 8.5, complexity: 4.0, price: 44.99, asin: "B01MUHP51S", images: ["/images/spirit-island.jpg", "/images/spirit-island-2.jpg", "/images/spirit-island-3.jpg", "/images/spirit-island-4.jpg"], tag: "premium",
     desc: "The ultimate solo puzzle. Play as a nature spirit defending your island from colonizers. Unique powers, deep strategy, and every game is a brain-burning challenge.",
     why: "The most respected solo game on BGG (8.5 rating). Not for beginners, but unmatched depth." }
 ];

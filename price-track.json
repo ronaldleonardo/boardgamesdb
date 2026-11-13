@@ -1,19 +1,19 @@
 {
- "day": 4,
+ "day": 5,
  "cycle": 9,
- "last_updated": "2026-11-12",
+ "last_updated": "2026-11-13",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 5,
+  "day": 6,
   "cycle": 9,
   "games": [
-   "pandemic",
-   "quake",
-   "sequence",
-   "skull-king",
-   "spirit-island"
+   "splendor",
+   "sprawlopolis",
+   "star-realms",
+   "sushi-go",
+   "the-crew"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 5,
+   "cycle": 9,
+   "date": "2026-11-13",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 44.43,
+     "new_price": 42.33,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed, 4.8 stars): buybox $42.33 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -4.73% vs stored $44.43 -> under 10% -> keep, no edit."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. +1.50% vs stored $39.40 -> under 10% -> keep. 6th consecutive cycle at $39.99 vs the odd stored $39.40; normalize to $39.99 on the next edit."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 13.29,
+     "new_price": 14.97,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): buybox $14.97 (buybox_json + mobile_buybox_group_1 displayPrice), Ships from Amazon.com, Sold by Amazon.com, In Stock, prime, no ship block, FIRST Firecrawl attempt. +12.64% vs stored $13.29 -> ABOVE 10% -> data.mjs EDITED 13.29 -> 14.97. Re-fetched the PDP independently to double-check: $14.97 buybox, sold by Amazon.com, In Stock, no promo badge; 1 stray 'Currently unavailable' string belongs to the 'other options' block, not the featured offer."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed, 4.9 stars): buybox $19.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $19.99. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 44.99,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars, Greater Than Games storefront): buybox $44.99 (buybox_json + mobile_buybox_group_1 displayPrice with offerListingId), In Stock, prime, no ship block, FIRST Firecrawl attempt. -30.77% vs stored $64.99 -> ABOVE 10% -> data.mjs EDITED 64.99 -> 44.99. Re-fetched the PDP independently: Style 'Base Game' $44.99 'with 31 percent savings', List Price $64.99, offerListingId present, In Stock; zero hits for 'Limited time deal'/'Prime Deal'/'lightning'/'Black Friday'/'Deal of the Day', so this is the ongoing Amazon discount off list, not a timeboxed event promo. Stored $64.99 was the list price."
+    }
+   ],
+   "note": "Cycle 9 day 5. 2 price changes -> data.mjs WAS edited (sequence $13.29->$14.97, spirit-island $64.99->$44.99), so an astro build WAS run (`./node_modules/.bin/astro build`, 102 pages, 1.77s) and dist/ was refreshed; NO systemctl restart was needed because boardgamesdb runs `astro preview` and serves dist straight from disk (verified live: /game/sequence.html and /games/family.html now render $14.97, /game/spirit-island.html and /games/solo.html render $44.99). Both edits are real: SEQUENCE B00000IVAK +12.64% ($14.97 buybox, Ships from Amazon.com, Sold by Amazon.com, In Stock) - a genuine move up from the long-stable $13.29, so it gets a real price edit rather than a normalize note. SPIRIT ISLAND B01MUHP51S -30.77% ($44.99 buybox with 31% savings off the $64.99 List Price, offerListingId present, In Stock) - checked for promo/deal badges and found none, so the base game's effective street price has fallen a third and the stored $64.99 (the old list price) had to move. The other three all fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls: skull-king $19.99 exact match; quake $39.99 (+1.50% vs the odd stored $39.40, now the 6th consecutive cycle at $39.99 - normalize $39.40->$39.99 on the next edit); pandemic $42.33 (-4.73% vs stored $44.43, drifting back down off the cycle-8-day-5 reading of $45.13, still inside band). No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (none of them in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 3 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found) - IN TOMORROW'S BLOCK; under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED decision item (price the buy link from the live offer range or pull the Amazon buy link; recheck cycle 9 day 7); final-girl B09N8R6296 flag CLEARED on cycle 9 day 2 (real buybox $24.97; pending normalise $24.75 -> $24.97 on the next edit of that row); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95, final-girl $24.75->$24.97. Next run: cycle 9 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew) - watch the sprawlopolis unbuyable case."
+  },
   {
    "day": 4,
    "cycle": 9,
