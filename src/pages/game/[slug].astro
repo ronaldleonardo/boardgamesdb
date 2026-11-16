@@ -78,12 +78,12 @@ const vsGame = VS_BY_GAME[game.slug] ?? null;
         shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" }
       }
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: game.rating,
-      bestRating: 10,
-      ratingCount: 100
-    }
+    // No aggregateRating here on purpose. The star shown on the page is BoardGameGeek's
+    // community average (out of 10), not a review count we own, and the block used to
+    // claim a hardcoded ratingCount of 100 that nobody ever measured. Google wants a real
+    // reviewCount and forbids aggregating another site's ratings as your own, so the honest
+    // move is to leave the number in the visible text with its source named and keep it out
+    // of the structured data.
   })} />
   <div class="container">
     <div class="breadcrumb">
@@ -117,8 +117,8 @@ const vsGame = VS_BY_GAME[game.slug] ?? null;
             <span class="spec-value">{game.age}+</span>
           </div>
           <div class="spec">
-            <span class="spec-label">Rating</span>
-            <span class="spec-value">★ {game.rating}</span>
+            <span class="spec-label">BGG rating</span>
+            <span class="spec-value">★ {game.rating}/10</span>
           </div>
           <div class="spec">
             <span class="spec-label">Complexity</span>
