@@ -65,7 +65,18 @@ const vsGame = VS_BY_GAME[game.slug] ?? null;
       price: game.price,
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      url: amazon
+      url: amazon,
+      // Mirrors the GarageToolsDB offers block. These two fields are what
+      // Merchant listings reports as missing when they are absent.
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted"
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+        shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" }
+      }
     },
     aggregateRating: {
       "@type": "AggregateRating",
