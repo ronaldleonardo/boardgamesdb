@@ -1,19 +1,19 @@
 {
- "day": 3,
+ "day": 4,
  "cycle": 10,
- "last_updated": "2026-11-18",
+ "last_updated": "2026-11-19",
  "total_games": 36,
  "games_per_day": 5,
- "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
+ "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. A deal badge ON THE MAIN PDP (Early Black Friday Deal / Limited time deal + countdown + 'with N percent savings' off a List Price) means the visible buybox is a PROMO: do NOT edit off it - record the List Price in the log and hold the stored value until the promo ends, then decide the regular price. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 3,
+  "day": 4,
   "cycle": 10,
   "games": [
-   "fox-in-the-forest",
-   "herd-mentality",
-   "horrified",
-   "jaipur",
-   "just-one"
+   "kingdomino",
+   "lost-cities",
+   "love-letter",
+   "mysterium",
+   "patchwork"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 3,
+   "cycle": 10,
+   "date": "2026-11-19",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 11.19,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B06XP7ZDH1 (title 'Renegade Game Studios Fox in the Forest, 2 Player Card Games, Trick-Taking Strategy Game', 4.6 stars): firecrawl failed, jina route (independent x-no-cache re-fetch), buybox $11.19 (desktop_buybox_group_1 displayPrice + offerListingId), In Stock, prime, no ship block. -30.02% vs stored $15.99 would trip the 10% rule, BUT the main PDP carries a 'Limited time deal' badge with a countdown plus '$11.19 with 30 percent savings' off 'List Price: $15.99' -> the visible price is a timeboxed promo, not the regular street price, and the List Price ($15.99) exactly equals stored. asin_confirmed FALSE on this render (no lp_asin guard; the render was only 46k chars vs the usual 150k+), so the price is not positively tied to the ASIN either. Per policy: no edit, stored $15.99 held. WATCH NEXT CYCLE: if $11.19 outlives the promo it becomes a real edit."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars, 5,716 ratings): firecrawl failed, jina route, buybox $24.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $24.99 (5th consecutive cycle at this value). Keep, no edit."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 27.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed, title 'Ravensburger Horrified Games - Universal Monsters', 4.8 stars, 4,252 ratings): firecrawl failed, jina route plus an independent x-no-cache re-fetch (196,517 chars), buybox $27.99 (desktop_buybox_group_1 displayPrice with offerListingId), In Stock, prime, no ship block. -37.65% vs stored $44.89 would trip the 10% rule, BUT the main PDP carries an 'Early Black Friday Deal' badge (line 421, with NO_OF_HOURS/NO_OF_MINUTES countdown) and the price line reads '$27.99 with 30 percent savings -30%' against 'List Price: $39.99' -> a timeboxed event promo, so per policy no edit; stored $44.89 held. Zero hits for 'Currently unavailable'/'No featured offers'/'See All Buying Options', so the PDP is healthy. FLAG: stored $44.89 sits ABOVE the $39.99 List Price (list is -10.9% vs stored, a hair over the 10% line); revisit once the Black Friday event ends and decide the regular price then - do not price off the $27.99 promo."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars, 3,459 ratings): firecrawl failed, jina route, buybox $26.58 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $26.58. Keep, no edit."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars, 418 ratings): firecrawl failed, jina route, buybox $24.99 (buybox_json), In Stock, prime, no ship block. +4.12% vs stored $24.00 -> under 10% -> keep, no edit. 5th consecutive cycle at $24.99; stored $24.00 is the odd value, normalise $24.00 -> $24.99 on the next edit that touches this row."
+    }
+   ],
+   "note": "Cycle 10 day 3. 0 price changes -> data.mjs was NOT edited -> git status clean (verified: `git status --porcelain` empty), NO astro build and NO systemctl restart this run. The headline is that TWO of the five readings crossed the 10% line on a promo price and both are correctly held: fox-in-the-forest B06XP7ZDH1 $11.19 (-30.02% vs stored $15.99: 'Limited time deal' badge + countdown, '$11.19 with 30 percent savings' off 'List Price: $15.99', and asin_confirmed false) and horrified B07QQHTD4Q $27.99 (-37.65% vs stored $44.89: 'Early Black Friday Deal' badge on the main PDP, 30 percent savings off 'List Price: $39.99'). Black Friday is Nov 27, so the whole Amazon catalog is running early event promos this week - expect more of these over the next few runs. Neither is a regular-price move, so neither edits. POLICY REFINED in this file: a deal badge on the MAIN PDP means the visible buybox is a promo, do not edit off it, record the List Price and hold the stored value until the promo ends. Clean readings: herd-mentality B093HBBMPT $24.99 exact (5th cycle at this value), jaipur B07SRMXRZB $26.58 exact. Within band: just-one B0FB6MQ3WB $24.99 (+4.12% vs the odd stored $24.00, 5th cycle at $24.99, normalise on the next edit). No dead/wrong-product ASIN, no OOS, no no-featured-offer render, no new re-ASIN case in today's block. OPEN FLAG CARRIED: horrified stored $44.89 is above its $39.99 List Price (-10.9%, just past the line) - decide the regular price after the Black Friday event rather than off the $27.99 promo. SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) failed for ALL FIVE ASIN fetches this run - FOURTH consecutive run with a total firecrawl outage - so every reading came from the automatic jina fallback (route 2), which served clean first-try renders for all five. The firecrawl host (192.168.18.4:3002) needs a look; a curl health check from cron needs an approval gate, so the outage could not be probed directly from this run - the script's own retry evidence (4 tries per ASIN, all failed) is the record. Carry-forward flags (none in today's block): under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> OPEN decision item (price the buy link from the live offer range or pull the Amazon buy link) - cycle 10 day 7 block; sprawlopolis B0DP3H8S4N unbuyable 7 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found) - cycle 10 day 6 block; castle-combo B0DHWGS11S flagged NEW on cycle 10 day 1 (no featured offer on two renders, asin_confirmed true) -> recheck in the cycle 10 day 1 block; azul B0719HFT6H (9+ cycles bot-walled) -> repoint to B077MZ2MPW on the next edit; cascadia B08ZLBJ45S (9+ cycles bot-walled) -> repoint to B093H8RGXX plus normalise $39.99 -> $37.05 on the next edit; final-girl B09N8R6296 normalise $24.75 -> $24.99 on the next edit; quake $39.40 -> $39.99 and love-letter $12.99 -> $11.86 normalise on the next edit. Next run: cycle 10 day 4 (kingdomino, lost-cities, love-letter, mysterium, patchwork)."
+  },
   {
    "day": 2,
    "cycle": 10,
