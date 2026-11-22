@@ -1,19 +1,20 @@
 {
- "day": 6,
+ "day": 7,
  "cycle": 10,
- "last_updated": "2026-11-21",
+ "last_updated": "2026-11-22",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. A deal badge ON THE MAIN PDP (Early Black Friday Deal / Limited time deal + countdown + 'with N percent savings' off a List Price) means the visible buybox is a PROMO: do NOT edit off it - record the List Price in the log and hold the stored value until the promo ends, then decide the regular price. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 6,
+  "day": 7,
   "cycle": 10,
   "games": [
-   "splendor",
-   "sprawlopolis",
-   "star-realms",
-   "sushi-go",
-   "the-crew"
+   "ticket-to-ride",
+   "under-falling-skies",
+   "uno",
+   "wavelength",
+   "wingspan",
+   "wingspan-solo"
   ]
  },
  "schedule": {
@@ -69,6 +70,54 @@
   ]
  },
  "log": [
+  {
+   "day": 6,
+   "cycle": 10,
+   "date": "2026-11-22",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 22.49,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): FIRST Firecrawl attempt, buybox $22.49 (buybox_json, offerListingId present), In Stock, no ship block. -29.70% vs stored $31.99 would trip the 10% rule, BUT the main PDP buybox carries a 'Black Friday Deal' badge (countdown placeholders NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS, x5) immediately followed by '$22.49 with 44 percent savings' and 'List Price: $39.99' -> timeboxed event promo, so per policy no edit; stored $31.99 held. Confirmed on TWO independent x-no-cache jina renders (70,332 and 70,201 chars, identical structure): badge + 44% savings line on the PDP's own offer, zero hits for 'Limited time deal'/'Typical price'/'Was:'; both renders lacked the lp_asin guard (asin_confirmed false there) but the Firecrawl render that produced the price had asin_confirmed true. Recorded List Price $39.99. WATCH: after the event ends, decide the regular price between the $39.99 list and the promo - the old $31.99 was itself a discount off list."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "UNBUYABLE AGAIN (8th consecutive cycle). Firecrawl /gp/aw/d/B0DP3H8S4N: no price parsed, asin_confirmed false, [WARN not in stock]. Script's automatic jina retry also produced no parsable price. Independent x-no-cache jina render (42,903 chars) confirms the PDP still resolves to the right product (title 'Amazon.com: Sprawlopolis Button Shy Wallet Game', 4.3 stars) but there is no featured offer: 'Currently unavailable' x1, ZERO 'In Stock', ZERO displayPrice, ZERO percent-savings line, ZERO 'See All Buying Options'. Nothing valid to read -> price held at $12.99 per policy, NOT edited, NOT carried forward as confirmed. FLAG: re-ASIN decision, 8th cycle running - only the Button Shy storefront, no live Amazon ASIN found."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, buybox $17.95 (buybox_json), In Stock, no ship block. Exact match vs stored $17.95 -> keep, no edit."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): FIRST Firecrawl attempt, buybox $11.99 (buybox_json), In Stock, no ship block. Exact match vs stored $11.99 -> keep, no edit."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 14.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): FIRST Firecrawl attempt, buybox $14.95 (buybox_json), In Stock, no ship block. Exact match vs stored $14.95 -> keep, no edit. Second consecutive cycle at $14.95 after the cycle 8 day 6 $15.95 blip, so no normalize needed on this row."
+    }
+   ],
+   "note": "Cycle 10 day 6. 0 price changes -> data.mjs was NOT edited -> NO astro build and NO systemctl restart this run. HEADLINE: splendor B00IZEUFIA read $22.49, a -29.70% drop vs stored $31.99, and it was correctly HELD as a Black Friday promo rather than edited: the main PDP buybox carries a 'Black Friday Deal' badge (countdown placeholders x5) directly followed by '$22.49 with 44 percent savings' and 'List Price: $39.99'. Two independent x-no-cache jina renders (70,332 / 70,201 chars) reproduced the same badge and the same 44%-off-list line, with zero 'Limited time deal'/'Typical price'/'Was:' hits, so this is the event price, not a regular-price move. List Price $39.99 recorded; stored $31.99 stays until the promo ends - and note $31.99 was itself already a discount off that list, so the post-event regular price needs a real decision, not a copy of either number. Other three are byte-exact holds, all first-try Firecrawl with asin_confirmed true and In Stock: star-realms $17.95, sushi-go $11.99, the-crew $14.95 (2nd cycle at $14.95, normalize note dropped). sprawlopolis B0DP3H8S4N is unbuyable for the 8TH CONSECUTIVE CYCLE: no price on either route, and an independent jina render (42,903 chars) shows the right product ('Sprawlopolis Button Shy Wallet Game', 4.3 stars) but 'Currently unavailable' with zero In Stock / zero displayPrice / zero savings line -> held at $12.99, nothing invented, nothing carried forward as confirmed. That is now the longest-running open item and stays a re-ASIN decision (only the Button Shy storefront exists, no live Amazon ASIN found). SYSTEM NOTE: firecrawl LAN was healthy again - all five ASINs fetched on the FIRST Firecrawl attempt, no jina fallback, no retries, second clean run in a row after the four-run outage. Carry-forward flags (none of the others in today's block): horrified B07QQHTD4Q stored $44.89 sits above its $39.99 List Price -> decide the regular price once the Black Friday event ends, do not price off the $27.99 promo; under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> open decision (price the buy link from the live offer range or pull the Amazon buy link) - IN TOMORROW'S BLOCK; skull-king B00CK1EJG8 promo $15.99 held at $19.99 -> recheck after the event; azul B0719HFT6H / cascadia B08ZLBJ45S dead primaries -> repoint on the next edit of those rows; castle-combo B0DHWGS11S flagged cycle 10 day 1 -> recheck when its day comes."
+  },
   {
    "day": 5,
    "cycle": 10,
