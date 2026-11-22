@@ -1,19 +1,19 @@
 {
- "day": 5,
+ "day": 6,
  "cycle": 10,
- "last_updated": "2026-11-20",
+ "last_updated": "2026-11-21",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. A deal badge ON THE MAIN PDP (Early Black Friday Deal / Limited time deal + countdown + 'with N percent savings' off a List Price) means the visible buybox is a PROMO: do NOT edit off it - record the List Price in the log and hold the stored value until the promo ends, then decide the regular price. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 5,
+  "day": 6,
   "cycle": 10,
   "games": [
-   "pandemic",
-   "quake",
-   "sequence",
-   "skull-king",
-   "spirit-island"
+   "splendor",
+   "sprawlopolis",
+   "star-realms",
+   "sushi-go",
+   "the-crew"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 5,
+   "cycle": 10,
+   "date": "2026-11-21",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 44.43,
+     "new_price": 49.99,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, route 1, buybox $49.99 (buybox_json), 'Buy New' with Ships from Amazon.com / Sold by Amazon.com, In Stock ('Only 1 left in stock - order soon'), no ship block. +12.51% vs stored $44.43 -> ABOVE 10% -> data.mjs EDITED 44.43 -> 49.99. Promo audit before editing (two independent x-no-cache jina renders, 171,758 and 188,401 chars, both lp_asin true): both show the featured NEW offer at $49.99 with an offerListingId and buyingOptionType NEW; ZERO hits for 'Limited time deal'/'Typical price'/'Was:'/'List Price' on this PDP's own offer; the 7 'Black Friday Deal' strings all belong to related-item carousels (pd_rd_i=B014DMSTXK/B08F65MX4L/B077MZ2MPW/B00IZEUFIA/B0BGXPZG4B/B08J8BQN82, pd_sim_cpf_related_desktop + pb_allspark blocks), not to Pandemic; the single savings string ('$34.03 with 32 percent savings', 'New Condition Price: $49.99') belongs to the Used - Like New offer from Amazon Resale, i.e. 32% off the $49.99 new featured offer, which corroborates $49.99 as the real regular price. Genuine regular-price increase, not a timeboxed promo."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): FIRST Firecrawl attempt, buybox $39.99 (buybox_json), In Stock, no ship block. +1.50% vs stored $39.40 -> under 10% -> keep, no edit. 7th consecutive cycle at $39.99 vs the odd stored $39.40; standing normalize $39.40 -> $39.99 applies only on the next edit that touches this row."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 14.97,
+     "new_price": 14.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, buybox $14.97 (buybox_json), In Stock, no ship block. Exact match vs the $14.97 written on cycle 9 day 5 -> hold verified, no edit."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 15.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B00CK1EJG8 (4.9 stars): FIRST Firecrawl attempt, buybox $15.99, In Stock. -20.01% vs stored $19.99 would trip the 10% rule, BUT an independent x-no-cache jina render carries a 'Black Friday Deal' badge with a NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS countdown on the main PDP plus '$15.99 with 20 percent savings' against 'List Price: $19.99' (the list price exactly equals stored) -> timeboxed event promo, so per policy no edit and stored $19.99 is held. The jina render was also only 43,521 chars with asin_confirmed FALSE (no lp_asin guard), so the promo price is not positively tied to the ASIN either. WATCH NEXT CYCLE: if $15.99 outlives the Black Friday event it becomes a real edit."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 44.99,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars, Greater Than Games storefront): FIRST Firecrawl attempt, buybox $44.99 (buybox_json), In Stock, no ship block. Exact match vs the $44.99 written on cycle 9 day 5 (when stored moved $64.99 -> $44.99) -> second consecutive cycle at $44.99, the edit holds."
+    }
+   ],
+   "note": "Cycle 10 day 5. 1 price change -> data.mjs WAS edited (pandemic $44.43 -> $49.99, +12.51%), so `./node_modules/.bin/astro build` was run (104 pages, 5.48s), dist/ refreshed, boardgamesdb restarted (active) and the change verified live: /game/pandemic serves $49.99 through https://tabletoppicks.com, and the related-game rows on the other cooperative pages picked it up. HEADLINE: firecrawl LAN is BACK - all five ASINs fetched on the FIRST Firecrawl attempt with no jina fallback, after four consecutive runs of total outage, so the 192.168.18.4:3002 host recovered on its own; nothing was changed on our side. The one real move is PANDEMIC B00A2HD40E +12.51% ($49.99, featured offer is Buy New from Amazon.com itself, In Stock, only 1 left). Because this is Black Friday week and promo prices were the trap on days 3 and 4, the edit was held until a promo audit cleared it: two independent x-no-cache jina renders (171,758 / 188,401 chars) both show the same $49.99 NEW featured offer with an offerListingId; all 7 'Black Friday Deal' strings belong to related-item carousels; there is no List Price, no 'Typical price', no 'Was:' and no percent-savings line on Pandemic's own offer; the one savings string ($34.03 with 32 percent savings, 'New Condition Price: $49.99') is the Used - Like New Amazon Resale offer, which itself confirms $49.99 as the new-condition price. So the regular price genuinely rose a seventh. The opposite case behaved as expected: SKULL KING B00CK1EJG8 read $15.99 (-20.01%) but carries a Black Friday Deal badge with countdown and '20 percent savings off List Price $19.99' -> held at $19.99, no edit (and that render had asin_confirmed false). Clean holds: sequence $14.97 exact (verifies the cycle 9 day 5 edit), spirit-island $44.99 exact (2nd cycle). Within band: quake $39.99 (+1.50% vs the odd stored $39.40, 7th cycle at $39.99, standing normalize only on the next edit of that row). No dead/wrong-product ASIN, no OOS, no no-featured-offer render, no new re-ASIN case in today's block. Carry-forward flags (none in today's block): sprawlopolis B0DP3H8S4N unbuyable 7+ cycles -> re-ASIN decision - IN TOMORROW'S BLOCK (cycle 10 day 6); under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> open decision item (price the buy link from the live offer range or pull the Amazon buy link) - cycle 10 day 7; horrified B07QQHTD4Q stored $44.89 sits above its $39.99 List Price -> re-price after the Black Friday event ends, do not price off the promo; azul B0719HFT6H and cascadia B08ZLBJ45S chronically bot-walled -> repoint to B077MZ2MPW / B093H8RGXX on the next edit of those rows. Next run: cycle 10 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew)."
+  },
   {
    "day": 4,
    "cycle": 10,
