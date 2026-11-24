@@ -1,0 +1,1298 @@
+{
+ "day": 7,
+ "cycle": 10,
+ "last_updated": "2026-11-22",
+ "total_games": 36,
+ "games_per_day": 5,
+ "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. A deal badge ON THE MAIN PDP (Early Black Friday Deal / Limited time deal + countdown + 'with N percent savings' off a List Price) means the visible buybox is a PROMO: do NOT edit off it - record the List Price in the log and hold the stored value until the promo ends, then decide the regular price. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
+ "next": {
+  "day": 7,
+  "cycle": 10,
+  "games": [
+   "ticket-to-ride",
+   "under-falling-skies",
+   "uno",
+   "wavelength",
+   "wingspan",
+   "wingspan-solo"
+  ]
+ },
+ "schedule": {
+  "day1": [
+   "7-wonders-duel",
+   "azul",
+   "blank-slate",
+   "cascadia",
+   "castle-combo"
+  ],
+  "day2": [
+   "castle-panic",
+   "catan",
+   "codenames",
+   "final-girl",
+   "forbidden-island"
+  ],
+  "day3": [
+   "fox-in-the-forest",
+   "herd-mentality",
+   "horrified",
+   "jaipur",
+   "just-one"
+  ],
+  "day4": [
+   "kingdomino",
+   "lost-cities",
+   "love-letter",
+   "mysterium",
+   "patchwork"
+  ],
+  "day5": [
+   "pandemic",
+   "quake",
+   "sequence",
+   "skull-king",
+   "spirit-island"
+  ],
+  "day6": [
+   "splendor",
+   "sprawlopolis",
+   "star-realms",
+   "sushi-go",
+   "the-crew"
+  ],
+  "day7": [
+   "ticket-to-ride",
+   "under-falling-skies",
+   "uno",
+   "wavelength",
+   "wingspan",
+   "wingspan-solo"
+  ]
+ },
+ "log": [
+  {
+   "day": 6,
+   "cycle": 10,
+   "date": "2026-11-22",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 22.49,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): FIRST Firecrawl attempt, buybox $22.49 (buybox_json, offerListingId present), In Stock, no ship block. -29.70% vs stored $31.99 would trip the 10% rule, BUT the main PDP buybox carries a 'Black Friday Deal' badge (countdown placeholders NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS, x5) immediately followed by '$22.49 with 44 percent savings' and 'List Price: $39.99' -> timeboxed event promo, so per policy no edit; stored $31.99 held. Confirmed on TWO independent x-no-cache jina renders (70,332 and 70,201 chars, identical structure): badge + 44% savings line on the PDP's own offer, zero hits for 'Limited time deal'/'Typical price'/'Was:'; both renders lacked the lp_asin guard (asin_confirmed false there) but the Firecrawl render that produced the price had asin_confirmed true. Recorded List Price $39.99. WATCH: after the event ends, decide the regular price between the $39.99 list and the promo - the old $31.99 was itself a discount off list."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "UNBUYABLE AGAIN (8th consecutive cycle). Firecrawl /gp/aw/d/B0DP3H8S4N: no price parsed, asin_confirmed false, [WARN not in stock]. Script's automatic jina retry also produced no parsable price. Independent x-no-cache jina render (42,903 chars) confirms the PDP still resolves to the right product (title 'Amazon.com: Sprawlopolis Button Shy Wallet Game', 4.3 stars) but there is no featured offer: 'Currently unavailable' x1, ZERO 'In Stock', ZERO displayPrice, ZERO percent-savings line, ZERO 'See All Buying Options'. Nothing valid to read -> price held at $12.99 per policy, NOT edited, NOT carried forward as confirmed. FLAG: re-ASIN decision, 8th cycle running - only the Button Shy storefront, no live Amazon ASIN found."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, buybox $17.95 (buybox_json), In Stock, no ship block. Exact match vs stored $17.95 -> keep, no edit."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): FIRST Firecrawl attempt, buybox $11.99 (buybox_json), In Stock, no ship block. Exact match vs stored $11.99 -> keep, no edit."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 14.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): FIRST Firecrawl attempt, buybox $14.95 (buybox_json), In Stock, no ship block. Exact match vs stored $14.95 -> keep, no edit. Second consecutive cycle at $14.95 after the cycle 8 day 6 $15.95 blip, so no normalize needed on this row."
+    }
+   ],
+   "note": "Cycle 10 day 6. 0 price changes -> data.mjs was NOT edited -> NO astro build and NO systemctl restart this run. HEADLINE: splendor B00IZEUFIA read $22.49, a -29.70% drop vs stored $31.99, and it was correctly HELD as a Black Friday promo rather than edited: the main PDP buybox carries a 'Black Friday Deal' badge (countdown placeholders x5) directly followed by '$22.49 with 44 percent savings' and 'List Price: $39.99'. Two independent x-no-cache jina renders (70,332 / 70,201 chars) reproduced the same badge and the same 44%-off-list line, with zero 'Limited time deal'/'Typical price'/'Was:' hits, so this is the event price, not a regular-price move. List Price $39.99 recorded; stored $31.99 stays until the promo ends - and note $31.99 was itself already a discount off that list, so the post-event regular price needs a real decision, not a copy of either number. Other three are byte-exact holds, all first-try Firecrawl with asin_confirmed true and In Stock: star-realms $17.95, sushi-go $11.99, the-crew $14.95 (2nd cycle at $14.95, normalize note dropped). sprawlopolis B0DP3H8S4N is unbuyable for the 8TH CONSECUTIVE CYCLE: no price on either route, and an independent jina render (42,903 chars) shows the right product ('Sprawlopolis Button Shy Wallet Game', 4.3 stars) but 'Currently unavailable' with zero In Stock / zero displayPrice / zero savings line -> held at $12.99, nothing invented, nothing carried forward as confirmed. That is now the longest-running open item and stays a re-ASIN decision (only the Button Shy storefront exists, no live Amazon ASIN found). SYSTEM NOTE: firecrawl LAN was healthy again - all five ASINs fetched on the FIRST Firecrawl attempt, no jina fallback, no retries, second clean run in a row after the four-run outage. Carry-forward flags (none of the others in today's block): horrified B07QQHTD4Q stored $44.89 sits above its $39.99 List Price -> decide the regular price once the Black Friday event ends, do not price off the $27.99 promo; under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> open decision (price the buy link from the live offer range or pull the Amazon buy link) - IN TOMORROW'S BLOCK; skull-king B00CK1EJG8 promo $15.99 held at $19.99 -> recheck after the event; azul B0719HFT6H / cascadia B08ZLBJ45S dead primaries -> repoint on the next edit of those rows; castle-combo B0DHWGS11S flagged cycle 10 day 1 -> recheck when its day comes."
+  },
+  {
+   "day": 5,
+   "cycle": 10,
+   "date": "2026-11-21",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 44.43,
+     "new_price": 49.99,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, route 1, buybox $49.99 (buybox_json), 'Buy New' with Ships from Amazon.com / Sold by Amazon.com, In Stock ('Only 1 left in stock - order soon'), no ship block. +12.51% vs stored $44.43 -> ABOVE 10% -> data.mjs EDITED 44.43 -> 49.99. Promo audit before editing (two independent x-no-cache jina renders, 171,758 and 188,401 chars, both lp_asin true): both show the featured NEW offer at $49.99 with an offerListingId and buyingOptionType NEW; ZERO hits for 'Limited time deal'/'Typical price'/'Was:'/'List Price' on this PDP's own offer; the 7 'Black Friday Deal' strings all belong to related-item carousels (pd_rd_i=B014DMSTXK/B08F65MX4L/B077MZ2MPW/B00IZEUFIA/B0BGXPZG4B/B08J8BQN82, pd_sim_cpf_related_desktop + pb_allspark blocks), not to Pandemic; the single savings string ('$34.03 with 32 percent savings', 'New Condition Price: $49.99') belongs to the Used - Like New offer from Amazon Resale, i.e. 32% off the $49.99 new featured offer, which corroborates $49.99 as the real regular price. Genuine regular-price increase, not a timeboxed promo."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): FIRST Firecrawl attempt, buybox $39.99 (buybox_json), In Stock, no ship block. +1.50% vs stored $39.40 -> under 10% -> keep, no edit. 7th consecutive cycle at $39.99 vs the odd stored $39.40; standing normalize $39.40 -> $39.99 applies only on the next edit that touches this row."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 14.97,
+     "new_price": 14.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, buybox $14.97 (buybox_json), In Stock, no ship block. Exact match vs the $14.97 written on cycle 9 day 5 -> hold verified, no edit."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 15.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B00CK1EJG8 (4.9 stars): FIRST Firecrawl attempt, buybox $15.99, In Stock. -20.01% vs stored $19.99 would trip the 10% rule, BUT an independent x-no-cache jina render carries a 'Black Friday Deal' badge with a NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS countdown on the main PDP plus '$15.99 with 20 percent savings' against 'List Price: $19.99' (the list price exactly equals stored) -> timeboxed event promo, so per policy no edit and stored $19.99 is held. The jina render was also only 43,521 chars with asin_confirmed FALSE (no lp_asin guard), so the promo price is not positively tied to the ASIN either. WATCH NEXT CYCLE: if $15.99 outlives the Black Friday event it becomes a real edit."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 44.99,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars, Greater Than Games storefront): FIRST Firecrawl attempt, buybox $44.99 (buybox_json), In Stock, no ship block. Exact match vs the $44.99 written on cycle 9 day 5 (when stored moved $64.99 -> $44.99) -> second consecutive cycle at $44.99, the edit holds."
+    }
+   ],
+   "note": "Cycle 10 day 5. 1 price change -> data.mjs WAS edited (pandemic $44.43 -> $49.99, +12.51%), so `./node_modules/.bin/astro build` was run (104 pages, 5.48s), dist/ refreshed, boardgamesdb restarted (active) and the change verified live: /game/pandemic serves $49.99 through https://tabletoppicks.com, and the related-game rows on the other cooperative pages picked it up. HEADLINE: firecrawl LAN is BACK - all five ASINs fetched on the FIRST Firecrawl attempt with no jina fallback, after four consecutive runs of total outage, so the 192.168.18.4:3002 host recovered on its own; nothing was changed on our side. The one real move is PANDEMIC B00A2HD40E +12.51% ($49.99, featured offer is Buy New from Amazon.com itself, In Stock, only 1 left). Because this is Black Friday week and promo prices were the trap on days 3 and 4, the edit was held until a promo audit cleared it: two independent x-no-cache jina renders (171,758 / 188,401 chars) both show the same $49.99 NEW featured offer with an offerListingId; all 7 'Black Friday Deal' strings belong to related-item carousels; there is no List Price, no 'Typical price', no 'Was:' and no percent-savings line on Pandemic's own offer; the one savings string ($34.03 with 32 percent savings, 'New Condition Price: $49.99') is the Used - Like New Amazon Resale offer, which itself confirms $49.99 as the new-condition price. So the regular price genuinely rose a seventh. The opposite case behaved as expected: SKULL KING B00CK1EJG8 read $15.99 (-20.01%) but carries a Black Friday Deal badge with countdown and '20 percent savings off List Price $19.99' -> held at $19.99, no edit (and that render had asin_confirmed false). Clean holds: sequence $14.97 exact (verifies the cycle 9 day 5 edit), spirit-island $44.99 exact (2nd cycle). Within band: quake $39.99 (+1.50% vs the odd stored $39.40, 7th cycle at $39.99, standing normalize only on the next edit of that row). No dead/wrong-product ASIN, no OOS, no no-featured-offer render, no new re-ASIN case in today's block. Carry-forward flags (none in today's block): sprawlopolis B0DP3H8S4N unbuyable 7+ cycles -> re-ASIN decision - IN TOMORROW'S BLOCK (cycle 10 day 6); under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> open decision item (price the buy link from the live offer range or pull the Amazon buy link) - cycle 10 day 7; horrified B07QQHTD4Q stored $44.89 sits above its $39.99 List Price -> re-price after the Black Friday event ends, do not price off the promo; azul B0719HFT6H and cascadia B08ZLBJ45S chronically bot-walled -> repoint to B077MZ2MPW / B093H8RGXX on the next edit of those rows. Next run: cycle 10 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew)."
+  },
+  {
+   "day": 4,
+   "cycle": 10,
+   "date": "2026-11-20",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01N3A4070 (lp_asin confirmed, 4.8 stars): firecrawl failed, jina route, buybox $19.95 (buybox_json), In Stock, no ship block. -0.20% vs stored $19.99 -> under 10% -> keep, no edit. Same reading as cycle 9 day 4 ($19.95); the old no-featured-offer flag stays CLEARED."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 25.33,
+     "new_price": 20.38,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF (lp_asin confirmed via Thames & Kosmos store logo, 4.8 stars, title 'Lost Cities Card Game - with 6th Expedition'): firecrawl failed, jina route, buybox $20.38 (desktop_buybox_group_1 displayPrice + priceAmount 20.38, offerListingId present, buyingOptionType NEW), In Stock, FREE delivery Tuesday November 24, no ship block. -19.54% vs stored $25.33 -> ABOVE 10% -> data.mjs EDITED 25.33 -> 20.38. Promo audit before editing (Black Friday week): TWO independent x-no-cache jina renders (22,203 and 22,188 chars) both returned $20.38; zero hits for 'Limited time deal'/'Early Black Friday'/'Prime Deal'/'lightning'/'Deal of the Day'/'Best Deal'; no 'with N percent savings' line; no 'List Price' present at all; price block renders '$$20.38 20.38' with no strikethrough/was price; the only 'Black Friday' string is the nav link. Genuine regular price move, not a timeboxed promo."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 11.86,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F2J8DVHH (lp_asin confirmed, 4.8 stars): firecrawl failed, jina route, buybox $11.86 (buybox_json), In Stock, no ship block. -8.70% vs stored $12.99 -> under 10% -> keep, no edit. Idle at the same $11.86 as cycle 9 day 4; standing normalize $12.99 -> $11.86 on the next edit that touches this row."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 46.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed, 4.1 stars): firecrawl failed, jina route, buybox $46.99 (buybox_json, so a featured offer does exist), no ship block, BUT the render tripped '[WARN not in stock]'. -2.08% vs stored $47.99 -> under 10% -> keep, no edit regardless. The stock warning is most likely the usual false negative ('only N left in stock' instead of the literal 'In Stock'); no edit is due either way, recheck next cycle before reading anything into it."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 29.85,
+     "new_price": 29.8,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 (lp_asin confirmed, 4.5 stars): firecrawl failed, jina route, buybox $29.80 (buybox_json), In Stock, no ship block. -0.17% vs stored $29.85 -> under 10% -> keep, no edit."
+    }
+   ],
+   "note": "Cycle 10 day 4. 1 price change -> data.mjs WAS edited (lost-cities $25.33 -> $20.38, -19.54%) -> `./node_modules/.bin/astro build` run (104 pages, 3.97s), dist/ refreshed, and boardgamesdb restarted (verified live: /game/lost-cities and /games/two-player both render $20.38 through the 8083 static server). HEADLINE: lost-cities B07KLWPHFF dropped a genuine -19.54% to $20.38. Checked hard for a promo before editing, because two of the five games last cycle came back on timeboxed Black Friday prices: two independent x-no-cache jina renders (22,203 and 22,188 chars) both show the same desktop_buybox_group_1 displayPrice $20.38 with an offerListingId, buyingOptionType NEW, In Stock, FREE delivery Tue Nov 24, asin_confirmed true (lp_asin on the Thames & Kosmos store logo), zero hits for 'Limited time deal'/'Early Black Friday'/'Prime Deal'/'lightning'/'Deal of the Day', no 'with N percent savings' line, no 'List Price' at all, and the price block renders as '$$20.38 20.38' (doubled screen-reader text, NO strikethrough or was-price). The single 'Black Friday' hit is the site nav link (nav_cs_td_bf_dt_cr), not a PDP badge. So the visible buybox is the regular street price and the 10% rule applies: 25.33 -> 20.38 written to data.mjs. The other four are inside the band: kingdomino $19.95 (-0.20% vs $19.99, asin_confirmed true, In Stock, 4.8 stars - essentially unchanged from the cycle-9-day-4 $19.95, flag stays CLEARED), patchwork $29.80 (-0.17% vs $29.85), love-letter $11.86 (-8.70% vs $12.99, same reading as last cycle - standing normalize $12.99 -> $11.86 on the next edit of that row), mysterium $46.99 (-2.08% vs $47.99, price parsed from buybox_json so a featured offer exists, but the render tripped '[WARN not in stock]' -> most likely the usual 'only N left in stock' false negative on the mobile render; no edit is due anyway, recheck it next cycle before treating it as anything). SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) failed for ALL FIVE ASINs for the FIFTH consecutive run - every reading came from the automatic jina fallback (route 2), which served clean first-try renders for all five. The firecrawl host 192.168.18.4:3002 still needs a look; a curl health check from cron needs an approval gate so it could not be probed directly. Carry-forward flags (none of them in today's block): horrified stored $44.89 sits above its $39.99 List Price and the PDP is running an 'Early Black Friday Deal' at $27.99 -> decide the regular price AFTER Black Friday (Nov 27), do not price off the promo; fox-in-the-forest $15.99 held against a $11.19 'Limited time deal' -> if $11.19 outlives the promo it becomes a real edit; azul B0719HFT6H -> repoint to B077MZ2MPW and cascadia B08ZLBJ45S -> B093H8RGXX on the next edit (both primaries bot-walled ~9 cycles); sprawlopolis B0DP3H8S4N unbuyable -> re-ASIN decision, in TOMORROW's block; under-falling-skies B08HGS1QYT no-featured-offer -> price the buy link from the live offer range or pull it, also TOMORROW's block; castle-combo B0DHWGS11S no-featured-offer flag -> recheck in the day-1 block. Normalize on the next edit that touches them: love-letter $12.99->$11.86, just-one $24.00->$24.99, quake $39.40->$39.99, final-girl $24.75->$24.99. Next run: cycle 10 day 5 (pandemic, quake, sequence, skull-king, spirit-island)."
+  },
+  {
+   "day": 3,
+   "cycle": 10,
+   "date": "2026-11-19",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 11.19,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B06XP7ZDH1 (title 'Renegade Game Studios Fox in the Forest, 2 Player Card Games, Trick-Taking Strategy Game', 4.6 stars): firecrawl failed, jina route (independent x-no-cache re-fetch), buybox $11.19 (desktop_buybox_group_1 displayPrice + offerListingId), In Stock, prime, no ship block. -30.02% vs stored $15.99 would trip the 10% rule, BUT the main PDP carries a 'Limited time deal' badge with a countdown plus '$11.19 with 30 percent savings' off 'List Price: $15.99' -> the visible price is a timeboxed promo, not the regular street price, and the List Price ($15.99) exactly equals stored. asin_confirmed FALSE on this render (no lp_asin guard; the render was only 46k chars vs the usual 150k+), so the price is not positively tied to the ASIN either. Per policy: no edit, stored $15.99 held. WATCH NEXT CYCLE: if $11.19 outlives the promo it becomes a real edit."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars, 5,716 ratings): firecrawl failed, jina route, buybox $24.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $24.99 (5th consecutive cycle at this value). Keep, no edit."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 27.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed, title 'Ravensburger Horrified Games - Universal Monsters', 4.8 stars, 4,252 ratings): firecrawl failed, jina route plus an independent x-no-cache re-fetch (196,517 chars), buybox $27.99 (desktop_buybox_group_1 displayPrice with offerListingId), In Stock, prime, no ship block. -37.65% vs stored $44.89 would trip the 10% rule, BUT the main PDP carries an 'Early Black Friday Deal' badge (line 421, with NO_OF_HOURS/NO_OF_MINUTES countdown) and the price line reads '$27.99 with 30 percent savings -30%' against 'List Price: $39.99' -> a timeboxed event promo, so per policy no edit; stored $44.89 held. Zero hits for 'Currently unavailable'/'No featured offers'/'See All Buying Options', so the PDP is healthy. FLAG: stored $44.89 sits ABOVE the $39.99 List Price (list is -10.9% vs stored, a hair over the 10% line); revisit once the Black Friday event ends and decide the regular price then - do not price off the $27.99 promo."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars, 3,459 ratings): firecrawl failed, jina route, buybox $26.58 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $26.58. Keep, no edit."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars, 418 ratings): firecrawl failed, jina route, buybox $24.99 (buybox_json), In Stock, prime, no ship block. +4.12% vs stored $24.00 -> under 10% -> keep, no edit. 5th consecutive cycle at $24.99; stored $24.00 is the odd value, normalise $24.00 -> $24.99 on the next edit that touches this row."
+    }
+   ],
+   "note": "Cycle 10 day 3. 0 price changes -> data.mjs was NOT edited -> git status clean (verified: `git status --porcelain` empty), NO astro build and NO systemctl restart this run. The headline is that TWO of the five readings crossed the 10% line on a promo price and both are correctly held: fox-in-the-forest B06XP7ZDH1 $11.19 (-30.02% vs stored $15.99: 'Limited time deal' badge + countdown, '$11.19 with 30 percent savings' off 'List Price: $15.99', and asin_confirmed false) and horrified B07QQHTD4Q $27.99 (-37.65% vs stored $44.89: 'Early Black Friday Deal' badge on the main PDP, 30 percent savings off 'List Price: $39.99'). Black Friday is Nov 27, so the whole Amazon catalog is running early event promos this week - expect more of these over the next few runs. Neither is a regular-price move, so neither edits. POLICY REFINED in this file: a deal badge on the MAIN PDP means the visible buybox is a promo, do not edit off it, record the List Price and hold the stored value until the promo ends. Clean readings: herd-mentality B093HBBMPT $24.99 exact (5th cycle at this value), jaipur B07SRMXRZB $26.58 exact. Within band: just-one B0FB6MQ3WB $24.99 (+4.12% vs the odd stored $24.00, 5th cycle at $24.99, normalise on the next edit). No dead/wrong-product ASIN, no OOS, no no-featured-offer render, no new re-ASIN case in today's block. OPEN FLAG CARRIED: horrified stored $44.89 is above its $39.99 List Price (-10.9%, just past the line) - decide the regular price after the Black Friday event rather than off the $27.99 promo. SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) failed for ALL FIVE ASIN fetches this run - FOURTH consecutive run with a total firecrawl outage - so every reading came from the automatic jina fallback (route 2), which served clean first-try renders for all five. The firecrawl host (192.168.18.4:3002) needs a look; a curl health check from cron needs an approval gate, so the outage could not be probed directly from this run - the script's own retry evidence (4 tries per ASIN, all failed) is the record. Carry-forward flags (none in today's block): under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> OPEN decision item (price the buy link from the live offer range or pull the Amazon buy link) - cycle 10 day 7 block; sprawlopolis B0DP3H8S4N unbuyable 7 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found) - cycle 10 day 6 block; castle-combo B0DHWGS11S flagged NEW on cycle 10 day 1 (no featured offer on two renders, asin_confirmed true) -> recheck in the cycle 10 day 1 block; azul B0719HFT6H (9+ cycles bot-walled) -> repoint to B077MZ2MPW on the next edit; cascadia B08ZLBJ45S (9+ cycles bot-walled) -> repoint to B093H8RGXX plus normalise $39.99 -> $37.05 on the next edit; final-girl B09N8R6296 normalise $24.75 -> $24.99 on the next edit; quake $39.40 -> $39.99 and love-letter $12.99 -> $11.86 normalise on the next edit. Next run: cycle 10 day 4 (kingdomino, lost-cities, love-letter, mysterium, patchwork)."
+  },
+  {
+   "day": 2,
+   "cycle": 10,
+   "date": "2026-11-18",
+   "games": [
+    {
+     "slug": "castle-panic",
+     "name": "Castle Panic",
+     "old_price": 34.95,
+     "new_price": 34.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0B3LGW2KH (lp_asin confirmed, 4.8 stars, 434 ratings): jina route (firecrawl failed for every ASIN this run), buybox $34.95 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $34.95 (4th consecutive cycle at this value). Keep, no edit."
+    },
+    {
+     "slug": "catan",
+     "name": "Catan (6th Edition)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DYK1ZH2D (lp_asin confirmed, 4.6 stars, 1,704 ratings): jina route, buybox $39.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $39.99 (4th consecutive cycle at this value). Keep, no edit."
+    },
+    {
+     "slug": "codenames",
+     "name": "Codenames",
+     "old_price": 24.97,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FJMQB63N (2nd Edition, lp_asin confirmed, 4.8 stars, 394 ratings): jina route, buybox $24.97 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $24.97 (4th consecutive cycle at this value). Keep, no edit."
+    },
+    {
+     "slug": "final-girl",
+     "name": "Final Girl",
+     "old_price": 24.75,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B09N8R6296 (lp_asin confirmed, 4.8 stars, 423 ratings): jina route, buybox $24.99 (buybox_json), In Stock, no ship block. +0.97% vs stored $24.75 -> under 10% -> keep, no edit. Second consecutive clean buybox after the flag was cleared (was $24.97 last cycle) -> the no-featured-offer flag stays CLEARED; the stored $24.75 is ~$0.24 under the live $24.99, so normalise $24.75 -> $24.99 on the next edit that touches this row."
+    },
+    {
+     "slug": "forbidden-island",
+     "name": "Forbidden Island",
+     "old_price": 20.99,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "RESOLVED after 5 consecutive cycles OOS - the featured offer is BACK. Amazon /gp/aw/d/B003D7F4YY (lp_asin confirmed, 4.8 stars, 10,507 ratings): jina route, buybox $20.99 (buybox_json) with an offerListingId, In Stock, no ship block. Independently re-fetched the PDP via jina (157,557 chars) to confirm before clearing the flag: buybox displayPrice $20.99, offerListingId present, 'In Stock' x2, and ZERO hits for 'No featured offers' / 'Currently unavailable' / 'See All Buying Options' / 'High price' (vs 4+2+1+2 hits on the cycle-9-day-2 empty render). Exact match vs stored $20.99 -> keep, no edit. The long-running TOP-PRIORITY re-ASIN flag is CLEARED - the Gamewright/DEVIR buy link stays as-is."
+    }
+   ],
+   "note": "Cycle 10 day 2. 0 price changes - all five readings sit inside the 10% band (four are exact matches), so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. HEADLINE: forbidden-island B003D7F4YY is FIXED - after 5 consecutive cycles of 'Currently unavailable / No featured offers', the PDP now carries a real buybox at $20.99 with an offerListingId and In Stock, verified independently on a second jina render (zero 'No featured offers' hits, vs 4 on the empty render). Exact match vs stored $20.99, so no price edit; the TOP-PRIORITY re-ASIN decision is CLEARED. That leaves the stale buy link untouched. Cleanest block in a while on the readable side: four exact matches - castle-panic $34.95 (4th consecutive cycle), catan $39.99 (4th), codenames $24.97 (4th), forbidden-island $20.99 - plus final-girl $24.99 (+0.97% vs stored $24.75, its 2nd consecutive clean buybox, flag stays CLEARED; normalize $24.75 -> $24.99 on the next edit of that row). SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) failed for ALL FIVE ASIN fetches this run - THIRD consecutive run with a total firecrawl outage - so every reading came from the automatic jina fallback (route 2). Jina produced clean first-try renders for all 5 games, so the results are valid, but the firecrawl server (192.168.18.4:3002) should be checked before the next run. No dead/wrong-product ASIN, no OOS, no NEW re-ASIN case in today's block. Carry-forward flags (none of the others in today's block): under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> OPEN decision item (price the buy link from the live offer range or pull the Amazon buy link) - IN THE CYCLE 10 DAY 7 BLOCK; sprawlopolis B0DP3H8S4N unbuyable 7 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found) - IN THE CYCLE 10 DAY 6 BLOCK; castle-combo B0DHWGS11S flagged NEW on cycle 10 day 1 (no featured offer on two renders, asin_confirmed true) -> recheck when its block comes round again (cycle 11 day 1); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on the next edit of those rows. Normalize on the next edit that touches a row: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, final-girl $24.75->$24.99, uno $11.82->$11.61, 7-wonders-duel $29.99->$29.59. Next run: cycle 10 day 3 (fox-in-the-forest, herd-mentality, horrified, jaipur, just-one)."
+  },
+  {
+   "day": 1,
+   "cycle": 10,
+   "date": "2026-11-17",
+   "games": [
+    {
+     "slug": "7-wonders-duel",
+     "name": "7 Wonders Duel",
+     "old_price": 29.99,
+     "new_price": 29.59,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B014DMSTXK: firecrawl failed, jina route, buybox $29.59 (buybox_json), In Stock, prime, no ship block, 4.8 stars. -1.33% vs stored $29.99 -> under 10% -> keep, no edit. CAVEAT: asin_confirmed false on this render (no lp_asin guard present), so the price is not positively tied to the ASIN; as no edit is due, stored $29.99 stands. 4th consecutive cycle reading $29.59."
+    },
+    {
+     "slug": "azul",
+     "name": "Azul",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "UNVERIFIED on primary B0719HFT6H (9th consecutive cycle): firecrawl failed AND the script's automatic jina retry failed -> no page at all on either route. Read the long-standing alternate instead: B077MZ2MPW -> buybox $31.99 (buybox_json), In Stock, prime, no ship block, 4.8 stars, jina route; exact match vs stored $31.99 -> no edit. Alternate read lacked the lp_asin guard (asin_confirmed false), so it is corroborating context, not an edit trigger; no edit due anyway. FLAG: primary ASIN is effectively dead/bot-walled; repoint data.mjs azul asin B0719HFT6H -> B077MZ2MPW on the next edit of that row."
+    },
+    {
+     "slug": "blank-slate",
+     "name": "Blank Slate",
+     "old_price": 22.69,
+     "new_price": 22.69,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07G2VHPRW (lp_asin confirmed, 4.8 stars, 13,539 ratings): firecrawl failed, jina route, buybox $22.69 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $22.69 -> keep, no edit."
+    },
+    {
+     "slug": "cascadia",
+     "name": "Cascadia",
+     "old_price": 39.99,
+     "new_price": 37.05,
+     "changed": false,
+     "source": "UNVERIFIED on primary B08ZLBJ45S (9th consecutive cycle): firecrawl failed AND the automatic jina retry failed -> no page on either route. Read the long-standing alternate instead: B093H8RGXX -> buybox $37.05 (buybox_json), asin_confirmed true (lp_asin, 4.9 stars, 2,313 ratings), In Stock, prime, no ship block, jina route. -7.35% vs stored $39.99 -> under 10% -> keep, no edit. This matches the standing normalize note ($39.99 -> $37.05); apply it on the next edit together with the ASIN repoint B08ZLBJ45S -> B093H8RGXX."
+    },
+    {
+     "slug": "castle-combo",
+     "name": "Castle Combo",
+     "old_price": 25.99,
+     "new_price": 25.99,
+     "changed": false,
+     "source": "UNVERIFIED - no featured offer (2 renders this run). Firecrawl /gp/aw/d/B0DHWGS11S: no price parsed; script's jina retry: no price parsed, [WARN not in stock]. asin_confirmed true on both (lp_asin, 4.8 stars) so the PDP resolves to the right product, and there is no 'in stock' buybox price to read. Nothing valid to read -> price held at $25.99 per policy, NOT edited, NOT carried forward as confirmed (last verified reading $25.99). FLAG: NEW no-featured-offer / potential OOS case for castle-combo - recheck next cycle; if it persists, price the buy link from the live offer range or re-ASIN."
+    }
+   ],
+   "note": "Cycle 10 day 1 - start of cycle 10. 0 price changes -> data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) failed for ALL SEVEN ASIN fetches this run - second consecutive run with a total firecrawl outage - so every reading came from the automatic jina fallback (route 2). The jina fallback still produced clean renders for 4 of the 5 games, so those results are valid; the firecrawl server should be checked before the next run. Readings: 7-wonders-duel B014DMSTXK $29.59 (-1.33% vs stored $29.99, 4th cycle at this value; asin guard absent but no edit due), blank-slate B07G2VHPRW $22.69 exact (asin_confirmed true, 13,539 ratings). The two chronic bot-walled primaries failed outright again on BOTH routes: azul B0719HFT6H (9th cycle) and cascadia B08ZLBJ45S (9th cycle); both priced off their known live alternates - azul via B077MZ2MPW $31.99 (exact match) and cascadia via B093H8RGXX $37.05 (-7.35%, asin_confirmed true). Neither alternate crosses 10%, so data.mjs was left alone including the ASIN fields; the repoints (azul B0719HFT6H -> B077MZ2MPW, cascadia B08ZLBJ45S -> B093H8RGXX) plus the cascadia normalize ($39.99 -> $37.05) go in on the next edit. The one NEW problem is castle-combo B0DHWGS11S: no featured offer on two independent renders (firecrawl no-price, jina no-price + [WARN not in stock]), asin_confirmed true both times -> price held at $25.99, nothing invented, nothing carried forward as confirmed; NEW flag, recheck next cycle. No dead/wrong-product ASIN, no confirmed OOS beyond castle-combo's flag, no other new re-ASIN case in today's block. Carry-forward flags (none of the others in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 5 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing) - IN TOMORROW'S BLOCK; sprawlopolis B0DP3H8S4N unbuyable 8 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> OPEN DECISION item (price the buy link from the live offer range or pull the Amazon buy link). CLEARED: final-girl B09N8R6296 (real buybox $24.97, pending normalise $24.75 -> $24.97 on the next edit of that row). Normalize on next edit when they move: cascadia $39.99 -> $37.05, horrified $44.89 -> $44.99, just-one $24.00 -> $24.99, quake $39.40 -> $39.99, love-letter $12.99 -> $11.86, uno $11.82 -> $11.61, final-girl $24.75 -> $24.97. Next run: cycle 10 day 2 (castle-panic, catan, codenames, final-girl, forbidden-island) - forbidden-island is the top-priority re-ASIN decision."
+  },
+  {
+   "day": 7,
+   "cycle": 9,
+   "date": "2026-11-16",
+   "games": [
+    {
+     "slug": "ticket-to-ride",
+     "name": "Ticket to Ride (2025 Refresh)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F8PKN4B7 (lp_asin confirmed, 4.9 stars): jina route (firecrawl failed for every ASIN this run), buybox $39.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $39.99 (5th consecutive cycle at this value). Keep."
+    },
+    {
+     "slug": "under-falling-skies",
+     "name": "Under Falling Skies",
+     "old_price": 29.99,
+     "new_price": 29.99,
+     "changed": false,
+     "source": "UNVERIFIED, 5th CONSECUTIVE CYCLE - decision item still open. firecrawl failed; jina fallback returned no parsable price with [WARN not in stock], asin_confirmed true (lp_asin=B08HGS1QYT, right product, 4.8 stars). Independent jina render (146,339 chars) reconfirms the same state: 'No featured offers' x1, 'See All Buying Options' x2, 'High price' badge x2, ZERO hits for 'In Stock'/'displayPrice'/'percent savings'/'Currently unavailable'; every dollar amount belongs to the recommendation carousel, not this product. Nothing valid to read -> price held at $29.99 per policy, NOT edited, NOT carried forward as confirmed. PDP still resolves correctly, so NOT an asin-dead case. OPEN DECISION: price the buy link from the live offer range or pull the Amazon buy link."
+    },
+    {
+     "slug": "uno",
+     "name": "Uno",
+     "old_price": 11.82,
+     "new_price": 11.61,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07P6MZPK3 (lp_asin confirmed, 4.8 stars, 61,149 ratings): jina route, buybox $11.61 (buybox_json), In Stock, prime, no ship block. -1.78% vs stored $11.82 -> under 10% -> keep, no edit. 4th consecutive cycle in the $11.5-11.6 band ($11.55 last cycle, $11.46 before that, $11.54 before that); stored $11.82 is the odd value, normalize to ~$11.61 on the next edit."
+    },
+    {
+     "slug": "wavelength",
+     "name": "Wavelength",
+     "old_price": 32.0,
+     "new_price": 32.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07T446163 (lp_asin confirmed, 4.8 stars): jina route, buybox $32.00 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $32.00 (3rd consecutive cycle back at the stored value). Keep."
+    },
+    {
+     "slug": "wingspan",
+     "name": "Wingspan",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07YQ641NQ (Stonemaier): jina route, buybox $55.00 (buybox_json), In Stock, prime, no ship block, 4.8 stars. Exact match vs stored $55.00 -> keep, no edit. CAVEAT: asin_confirmed false on this render (the brand-store lp_asin link was not present), so the price is not positively tied to the ASIN by the guard; since it is an exact match vs stored and no edit is needed, the stored $55.00 is held as-is."
+    },
+    {
+     "slug": "wingspan-solo",
+     "name": "Wingspan (Solo Mode)",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Same product/ASIN as wingspan (B07YQ641NQ) -> $55.00 carried over. No separate listing. Keep."
+    }
+   ],
+   "note": "Cycle 9 day 7 - FINAL day of cycle 9. 0 price changes - all four readable readings sit inside the 10% band (three are exact matches), so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) failed for ALL FIVE ASINs this run, so every reading came from the automatic jina fallback (route 2). That fallback still produced clean, first-try renders for 4 of 5 games, so the results are valid; worth watching whether the firecrawl server is down next run. Exact matches: ticket-to-ride $39.99 (5th cycle), wavelength $32.00 (3rd cycle), wingspan $55.00 (also wingspan-solo, carried from the same ASIN) - the wingspan render lacked the lp_asin guard so asin_confirmed was false, but as the price is an exact match vs stored and no edit is due, the stored $55.00 stands. Within band: uno $11.61 (-1.78% vs stored $11.82 - 4th cycle in the $11.5-11.6 band, stored $11.82 is the odd value to normalize on the next edit). The one open problem is under-falling-skies B08HGS1QYT: no price on either route, and an independent jina render showing 'No featured offers' + 'See All Buying Options' only + 'High price' badge with zero In Stock/displayPrice -> 5th consecutive cycle empty, held at $29.99, nothing invented, nothing carried forward as confirmed. That keeps it an OPEN DECISION item: price the buy link from the live offer range or pull the Amazon buy link (PDP still resolves correctly, so it is NOT an asin-dead case). No dead ASINs, no NEW OOS, no new re-ASIN case in today's block. Carry-forward flags (none of the others in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 4 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 7 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 5 cycles -> OPEN DECISION item (as above). CLEARED: final-girl B09N8R6296 (real buybox $24.97, pending normalise $24.75 -> $24.97 on the next edit of that row). Next edit housekeeping: azul B0719HFT6H -> B077MZ2MPW, cascadia B08ZLBJ45S -> B093H8RGXX (repoint); cascadia $39.99 -> $37.05, horrified $44.89 -> $44.99, just-one $24.00 -> $24.99, quake $39.40 -> $39.99, love-letter $12.99 -> $11.86, the-crew $14.95 -> $14.95 (back at stored, drop), uno $11.82 -> $11.61, final-girl $24.75 -> $24.97. Cycle 9 COMPLETE (7 days, 35 games checked). Next run: cycle 10 day 1 (7-wonders-duel, azul, blank-slate, cascadia, castle-combo)."
+  },
+  {
+   "day": 6,
+   "cycle": 9,
+   "date": "2026-11-14",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): buybox $31.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $31.99 (4th consecutive cycle at this value). Keep."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "UNBUYABLE AGAIN (7th consecutive cycle). Firecrawl /gp/aw/d/B0DP3H8S4N: no price parsed, asin_confirmed false, [WARN not in stock], degraded stub render (rating 5.0 only). Script's automatic jina retry also produced no parsable price. Nothing valid to read -> price held at $12.99 per policy, NOT edited, NOT carried forward as confirmed. FLAGGED for re-ASIN decision: B0DP3H8S4N still yields no buyable PDP (only the Button Shy storefront, no live Amazon ASIN found)."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): buybox $17.95 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $17.95. Keep."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): buybox $11.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $11.99. Keep."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 14.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): buybox $14.95 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $14.95 - back at the stored value after the single $15.95 blip on cycle 8 day 6, so no normalize needed. Keep."
+    }
+   ],
+   "note": "Cycle 9 day 6. 0 price changes - all four readable readings are EXACT matches vs stored and the fifth (sprawlopolis) is unverifiable, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. Cleanest kind of run: 4 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls, and every price came back byte-identical to what is stored in data.mjs: splendor $31.99 (4th consecutive cycle at this value), star-realms $17.95 exact, sushi-go $11.99 exact, the-crew $14.95 exact - the-crew is back at the stored $14.95 after the single $15.95 blip last cycle (cycle 8 day 6), so no normalize is needed on that row any more; drop the-crew from the pending-normalize list. The one problem is the chronic sprawlopolis B0DP3H8S4N: firecrawl parsed no price, asin_confirmed false, [WARN not in stock], degraded stub render (rating 5.0 only), and the script's automatic jina retry was empty too -> 7th consecutive cycle unbuyable, price held at $12.99 per policy, nothing invented, nothing carried forward as confirmed. Still the top-priority re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found via web_search). No dead ASINs, no new OOS, no new re-ASIN case in today's block. Carry-forward flags (none of the others in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 4 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 7 cycles running -> re-ASIN decision (as above); under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED decision item (price the buy link from the live offer range or pull the Amazon buy link) - IN TOMORROW'S BLOCK; final-girl B09N8R6296 flag CLEARED on cycle 9 day 2 (real buybox $24.97; pending normalise $24.75 -> $24.97 on the next edit of that row); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, final-girl $24.75->$24.97. Next run: cycle 9 day 7 (ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo - 6 games) - watch the under-falling-skies escalation and decide the buy link if it is still empty."
+  },
+  {
+   "day": 5,
+   "cycle": 9,
+   "date": "2026-11-13",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 44.43,
+     "new_price": 42.33,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed, 4.8 stars): buybox $42.33 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -4.73% vs stored $44.43 -> under 10% -> keep, no edit."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. +1.50% vs stored $39.40 -> under 10% -> keep. 6th consecutive cycle at $39.99 vs the odd stored $39.40; normalize to $39.99 on the next edit."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 13.29,
+     "new_price": 14.97,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): buybox $14.97 (buybox_json + mobile_buybox_group_1 displayPrice), Ships from Amazon.com, Sold by Amazon.com, In Stock, prime, no ship block, FIRST Firecrawl attempt. +12.64% vs stored $13.29 -> ABOVE 10% -> data.mjs EDITED 13.29 -> 14.97. Re-fetched the PDP independently to double-check: $14.97 buybox, sold by Amazon.com, In Stock, no promo badge; 1 stray 'Currently unavailable' string belongs to the 'other options' block, not the featured offer."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed, 4.9 stars): buybox $19.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $19.99. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 44.99,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars, Greater Than Games storefront): buybox $44.99 (buybox_json + mobile_buybox_group_1 displayPrice with offerListingId), In Stock, prime, no ship block, FIRST Firecrawl attempt. -30.77% vs stored $64.99 -> ABOVE 10% -> data.mjs EDITED 64.99 -> 44.99. Re-fetched the PDP independently: Style 'Base Game' $44.99 'with 31 percent savings', List Price $64.99, offerListingId present, In Stock; zero hits for 'Limited time deal'/'Prime Deal'/'lightning'/'Black Friday'/'Deal of the Day', so this is the ongoing Amazon discount off list, not a timeboxed event promo. Stored $64.99 was the list price."
+    }
+   ],
+   "note": "Cycle 9 day 5. 2 price changes -> data.mjs WAS edited (sequence $13.29->$14.97, spirit-island $64.99->$44.99), so an astro build WAS run (`./node_modules/.bin/astro build`, 102 pages, 1.77s) and dist/ was refreshed; NO systemctl restart was needed because boardgamesdb runs `astro preview` and serves dist straight from disk (verified live: /game/sequence.html and /games/family.html now render $14.97, /game/spirit-island.html and /games/solo.html render $44.99). Both edits are real: SEQUENCE B00000IVAK +12.64% ($14.97 buybox, Ships from Amazon.com, Sold by Amazon.com, In Stock) - a genuine move up from the long-stable $13.29, so it gets a real price edit rather than a normalize note. SPIRIT ISLAND B01MUHP51S -30.77% ($44.99 buybox with 31% savings off the $64.99 List Price, offerListingId present, In Stock) - checked for promo/deal badges and found none, so the base game's effective street price has fallen a third and the stored $64.99 (the old list price) had to move. The other three all fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls: skull-king $19.99 exact match; quake $39.99 (+1.50% vs the odd stored $39.40, now the 6th consecutive cycle at $39.99 - normalize $39.40->$39.99 on the next edit); pandemic $42.33 (-4.73% vs stored $44.43, drifting back down off the cycle-8-day-5 reading of $45.13, still inside band). No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (none of them in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 3 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found) - IN TOMORROW'S BLOCK; under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED decision item (price the buy link from the live offer range or pull the Amazon buy link; recheck cycle 9 day 7); final-girl B09N8R6296 flag CLEARED on cycle 9 day 2 (real buybox $24.97; pending normalise $24.75 -> $24.97 on the next edit of that row); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95, final-girl $24.75->$24.97. Next run: cycle 9 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew) - watch the sprawlopolis unbuyable case."
+  },
+  {
+   "day": 4,
+   "cycle": 9,
+   "date": "2026-11-12",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01N3A4070 (lp_asin confirmed, 4.8 stars): buybox $19.95 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -0.20% vs stored $19.99 -> under 10% -> keep, no edit."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 25.33,
+     "new_price": 25.33,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF (lp_asin confirmed, 4.8 stars): buybox $25.68 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. +1.38% vs stored $25.33 -> under 10% -> keep, no edit."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F2J8DVHH (lp_asin confirmed, 4.8 stars): buybox $11.86 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -8.70% vs stored $12.99 -> under 10% -> keep, no edit."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 47.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed, 4.1 stars): buybox $47.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $47.99 -> keep."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 29.85,
+     "new_price": 29.85,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 (lp_asin confirmed, 4.5 stars): buybox $29.30 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -1.84% vs stored $29.85 -> under 10% -> keep, no edit."
+    }
+   ],
+   "note": "Cycle 9 day 4. 0 price changes - all five readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. Cleanest kind of run: all 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls. Exact matches: mysterium $47.99. Within band: kingdomino $19.95 (-0.20% vs stored $19.99), lost-cities $25.68 (+1.38% vs $25.33), love-letter $11.86 (-8.70% vs $12.99, closest to the threshold this cycle), patchwork $29.30 (-1.84% vs $29.85). kingdomino's no-featured-offer flag stays CLEARED (clean $19.95 buybox, 2nd consecutive cycle). No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (none of them in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 3 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED decision item (next cycle price the buy link from the live offer range or pull the Amazon buy link; recheck cycle 9 day 7); final-girl B09N8R6296 flag CLEARED on cycle 9 day 2 (real buybox $24.97; pending normalise $24.75 -> $24.97 on the next edit of that row); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95, final-girl $24.75->$24.97. Next run: cycle 9 day 5 (pandemic, quake, sequence, skull-king, spirit-island)."
+  },
+  {
+   "day": 3,
+   "cycle": 9,
+   "date": "2026-11-11",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 15.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B06XP7ZDH1 (lp_asin confirmed, 4.6 stars): buybox $15.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. +0.00% vs stored $15.99 (vs the cycle-8-day-3 reading of $15.97) -> under 10% -> keep."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $24.99 (4th consecutive cycle at this value). Keep."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed, 4.8 stars): buybox $44.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. +0.22% vs stored $44.89 -> under 10% -> keep. 5th consecutive cycle at $44.99; stored $44.89 is the odd value, normalize to $44.99 on the next edit that touches this row."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars): buybox $26.58 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $26.58 (4th consecutive cycle at this value). Keep."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. +4.12% vs stored $24.00 -> under 10% -> keep. 5th consecutive cycle at $24.99; reconcile $24.00 -> $24.99 on the next edit to this row."
+    }
+   ],
+   "note": "Cycle 9 day 3. 0 price changes - all five readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. Cleanest kind of run: all 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls. 3 exact matches (fox-in-the-forest $15.99, herd-mentality $24.99, jaipur $26.58); horrified $44.99 (+0.22% vs the odd stored $44.89, 5th cycle at $44.99); just-one $24.99 (+4.12% vs stored $24.00, 5th cycle at $24.99). Identical readings to cycle 8 day 3 for four of the five games - a stable run, no movement. No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (none of them in today's block): forbidden-island B003D7F4YY 'Currently unavailable'/'No featured offers' 3 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at the Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED decision item (next cycle price the buy link from the live offer range or pull the Amazon buy link; recheck cycle 9 day 7); final-girl B09N8R6296 flag CLEARED on cycle 9 day 2 (real buybox $24.97; pending normalise $24.75 -> $24.97 on the next edit of that row); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95, final-girl $24.75->$24.97. Next run: cycle 9 day 4 (kingdomino, lost-cities, love-letter, mysterium, patchwork)."
+  },
+  {
+   "day": 2,
+   "cycle": 9,
+   "date": "2026-11-10",
+   "games": [
+    {
+     "slug": "castle-panic",
+     "name": "Castle Panic",
+     "old_price": 34.95,
+     "new_price": 34.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0B3LGW2KH (lp_asin confirmed, 4.8 stars): buybox $34.95 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $34.95 (3rd cycle running at this value). Keep."
+    },
+    {
+     "slug": "catan",
+     "name": "Catan (6th Edition)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DYK1ZH2D (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $39.99 (3rd cycle running). Keep."
+    },
+    {
+     "slug": "codenames",
+     "name": "Codenames",
+     "old_price": 24.97,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FJMQB63N (2nd Edition, lp_asin confirmed, 4.8 stars): buybox $24.97 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $24.97 (3rd cycle running). Keep."
+    },
+    {
+     "slug": "final-girl",
+     "name": "Final Girl",
+     "old_price": 24.75,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "RESOLVED after 2 cycles of no-featured-offer - the offer is BACK. Firecrawl /gp/aw/d/B09N8R6296: buybox $24.97 (buybox_json), asin_confirmed true (lp_asin, 4.8 stars), no ship block; the only negative was the stock-string check (mobile render says 'Only 16 left in stock - order soon', not the literal 'In Stock', so firecrawl's [WARN not in stock] is a false negative, not a real OOS). Independently confirmed on the jina US-destination render (196,665 chars): desktop_buybox_group_1 displayPrice $24.97 with an offerListingId, 'Only 16 left in stock - order soon', 'Ships from Amazon / Sold by Buckeye Trading', FREE delivery Nov 17-20, Add to cart + Buy Now present, and ZERO hits for 'No featured offers'/'Currently unavailable'/'High price' (vs 2+4+2 hits on the failed cycles). Genuine live third-party buybox. +0.89% vs stored $24.75 -> under 10% -> keep, no edit. The long-running no-featured-offer flag is CLEARED; the stored $24.75 sits ~$0.22 under the live $24.97, so normalise to $24.97 on the next edit that touches this row."
+    },
+    {
+     "slug": "forbidden-island",
+     "name": "Forbidden Island",
+     "old_price": 20.99,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "UNVERIFIED, GENUINELY OOS (3rd consecutive cycle, still the top-priority re-ASIN decision). Firecrawl /gp/aw/d/B003D7F4YY: asin_confirmed true (lp_asin, 4.7 stars) but NO price parsed and [WARN not in stock]; the script's automatic jina retry also produced no parsable price. Independent jina US-destination render (175,101 chars) reconfirms the same state: 'Currently unavailable' x2, 'No featured offers' x4, 'See All Buying Options' x1, ZERO hits for 'In Stock'/'displayPrice'/'percent savings'. Nothing valid to read -> price held at $20.99 per policy, NOT edited, NOT carried forward as confirmed. PDP still resolves to the right product, so it is not an asin-dead case; the previous cycle already test-fetched candidate alternate B007XDQX1C (Devir edition) which is also 'Currently unavailable', so no live Amazon ASIN found on either route -> point the buy link at the Gamewright storefront or a live listing."
+    }
+   ],
+   "note": "Cycle 9 day 2. 0 price changes - ALL FIVE readings either sit inside the 10% band or are unverifiable, so data.mjs was NOT edited -> git status clean (only untracked temp files from the run), NO astro build and NO systemctl restart this run. Cleanest kind of run apart from forbidden-island: 3 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, and are exact matches: castle-panic $34.95 (3rd cycle), catan $39.99 (3rd cycle), codenames $24.97 (3rd cycle). HEADLINE: final-girl B09N8R6296 is FIXED - after 2 consecutive cycles of 'No featured offers / See All Buying Options only / High price badge', the PDP now carries a real buybox at $24.97 (Ships from Amazon, Sold by Buckeye Trading, 'Only 16 left in stock - order soon', delivery Nov 17-20), confirmed independently on firecrawl (buybox_json) and jina (desktop_buybox_group_1 + offerListingId). The +0.89% move vs stored $24.75 is inside the band so no edit, and the long-standing no-featured-offer flag is CLEARED; the pending normalise is $24.75 -> $24.97 on the next edit of that row. The one remaining problem is forbidden-island B003D7F4YY: firecrawl no-price and an independent jina US render showing 'Currently unavailable' x2 + 'No featured offers' x4 -> 3rd consecutive cycle genuinely OOS, price held at $20.99, nothing invented, nothing carried forward as confirmed. No dead/wrong-product ASIN, no new OOS, no new re-ASIN case in today's block. Carry-forward flags (none of the others in today's block): forbidden-island B003D7F4YY OOS 3 cycles -> TOP-PRIORITY re-ASIN decision (Gamewright storefront or a live listing); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED decision item (price the buy link from the live offer range or pull the Amazon buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95, uno $11.82->~$11.55, final-girl $24.75->$24.97. Next run: cycle 9 day 3 (fox-in-the-forest, herd-mentality, horrified, jaipur, just-one)."
+  },
+  {
+   "day": 1,
+   "cycle": 9,
+   "date": "2026-11-09",
+   "games": [
+    {
+     "slug": "7-wonders-duel",
+     "name": "7 Wonders Duel",
+     "old_price": 29.99,
+     "new_price": 29.59,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B014DMSTXK (lp_asin confirmed, 4.8 stars): buybox $29.59 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -1.33% vs stored $29.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "azul",
+     "name": "Azul",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "Bot-walled primary B0719HFT6H AGAIN (firecrawl failed, jina fallback failed on both the first fetch and a 90s-later retry). Read the alternate listing instead: B077MZ2MPW -> buybox $31.99 (buybox_json), asin_confirmed true, In Stock, prime, no ship block, 4.8 stars, FIRST Firecrawl attempt. Exact match vs stored $31.99 -> keep. Alternate ASIN validated again; repoint data.mjs to B077MZ2MPW on the next edit (no price change today)."
+    },
+    {
+     "slug": "blank-slate",
+     "name": "Blank Slate",
+     "old_price": 22.69,
+     "new_price": 22.69,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07G2VHPRW (lp_asin confirmed, 4.8 stars): buybox $22.69 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $22.69. Keep."
+    },
+    {
+     "slug": "cascadia",
+     "name": "Cascadia",
+     "old_price": 39.99,
+     "new_price": 37.05,
+     "changed": false,
+     "source": "Bot-walled primary B08ZLBJ45S AGAIN (firecrawl failed, jina fallback failed on both the first fetch and a 90s-later retry). Read the alternate listing instead: B093H8RGXX -> buybox $37.05 (buybox_json), asin_confirmed true, In Stock, prime, no ship block, 4.9 stars, FIRST Firecrawl attempt. -7.35% vs stored $39.99 -> under 10% -> keep. This matches the long-standing normalize note ($39.99 -> $37.05); apply it on the next edit together with the ASIN repoint B08ZLBJ45S -> B093H8RGXX."
+    },
+    {
+     "slug": "castle-combo",
+     "name": "Castle Combo",
+     "old_price": 25.99,
+     "new_price": 25.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DHWGS11S (lp_asin confirmed, 4.8 stars): buybox $25.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $25.99. Keep."
+    }
+   ],
+   "note": "Cycle 9 day 1 - start of cycle 9. 0 price changes - all readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 3 of 5 primaries fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries: 7-wonders-duel $29.59 (-1.33% vs stored $29.99), blank-slate $22.69 exact, castle-combo $25.99 exact. The other two are the chronic bot-walled pair, which failed on the primary ASIN on BOTH the first fetch and a 90s-later retry (firecrawl + automatic jina fallback both empty): azul B0719HFT6H and cascadia B08ZLBJ45S. Both were resolved by reading their long-standing alternates on the first Firecrawl attempt: azul alternate B077MZ2MPW = $31.99 (exact match vs stored $31.99, so no change needed) and cascadia alternate B093H8RGXX = $37.05 (-7.35% vs stored $39.99, inside band). Because neither alternate crosses 10%, data.mjs was left alone including the ASIN fields; the repoint (azul B0719HFT6H -> B077MZ2MPW, cascadia B08ZLBJ45S -> B093H8RGXX) and the cascadia normalize ($39.99 -> $37.05) are to be applied together on the next edit. Carry-forward flags (none of the others in today's block): forbidden-island B003D7F4YY OOS/'Currently unavailable' since cycle 7 day 2 -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing); final-girl B09N8R6296 no-featured-offer -> decide the buy link (recheck cycle 9 day 2, TOMORROW); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED to a decision item (next cycle price the buy link from the live offer range or pull the Amazon buy link); kingdomino B01N3A4070 no-featured-offer flag CLEARED on cycle 8 day 4. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, the-crew $14.95->$15.95, cascadia $39.99->$37.05, uno $11.82->~$11.55. Next run: cycle 9 day 2 (castle-panic, catan, codenames, final-girl, forbidden-island) - watch the final-girl buy-link decision and the forbidden-island re-ASIN."
+  },
+  {
+   "day": 7,
+   "cycle": 8,
+   "date": "2026-11-08",
+   "games": [
+    {
+     "slug": "ticket-to-ride",
+     "name": "Ticket to Ride (2025 Refresh)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F8PKN4B7 (lp_asin confirmed, 4.9 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $39.99 (4th consecutive cycle at this value). Keep."
+    },
+    {
+     "slug": "under-falling-skies",
+     "name": "Under Falling Skies",
+     "old_price": 29.99,
+     "new_price": 29.99,
+     "changed": false,
+     "source": "UNVERIFIED, 4th CONSECUTIVE CYCLE - flag now escalated to a re-link decision. Firecrawl /gp/aw/d/B08HGS1QYT: asin_confirmed true (lp_asin, right product, 4.8 stars) but NO price parsed and [WARN not in stock]; script's automatic jina retry also produced no parsable price. Independent jina US-destination render (160,838 chars) re-confirms the same state: 'No featured offers' x1, 'See All Buying Options' x2, 'High price' badge x2, zero hits for 'displayPrice'/'buybox price'/'In Stock'/'Currently unavailable'/'percent savings'/'Add to Cart'; every dollar amount on the page belongs to the recommendation carousel ($44.99, $24.95, $24.99, $143.99, ...), not this product. Nothing valid to read -> price held at $29.99 per policy, NOT edited, NOT carried forward as confirmed (last verified $29.99 on 2026-10-08). Not an asin-dead case (PDP resolves correctly). NOW A DECISION ITEM: the no-featured-offer state has survived the 4th-cycle recheck, so next cycle price the buy link from the live offer range or pull the Amazon buy link."
+    },
+    {
+     "slug": "uno",
+     "name": "Uno",
+     "old_price": 11.82,
+     "new_price": 11.55,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07P6MZPK3 (lp_asin confirmed, 4.8 stars): buybox $11.55 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. -2.28% vs stored $11.82 -> under 10% -> keep. Street still in the same band ($11.54 last cycle, $11.46 before that); stored $11.82 is the odd value, normalize to ~$11.55 on the next edit."
+    },
+    {
+     "slug": "wavelength",
+     "name": "Wavelength",
+     "old_price": 32.0,
+     "new_price": 32.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07T446163 (lp_asin confirmed, 4.8 stars): buybox $32.00 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $32.00 (2nd consecutive cycle back at the stored value after the three-cycle $34.99 spell). Keep."
+    },
+    {
+     "slug": "wingspan",
+     "name": "Wingspan",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07YQ641NQ (Stonemaier, lp_asin confirmed, 4.8 stars): buybox $55.00 (buybox_json), In Stock, prime, no ship block, FIRST Firecrawl attempt. Exact match vs stored $55.00. Keep."
+    },
+    {
+     "slug": "wingspan-solo",
+     "name": "Wingspan (Solo Mode)",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Same product/ASIN as wingspan (B07YQ641NQ) -> $55.00 carried over. No separate listing. Keep."
+    }
+   ],
+   "note": "Cycle 8 day 7 - FINAL day of cycle 8. 0 price changes - all four readable readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 4 of the 5 distinct ASINs fetched cleanly on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries: ticket-to-ride $39.99 exact, wavelength $32.00 exact, wingspan $55.00 exact (wingspan-solo carried from the same ASIN), uno $11.55 (-2.28% vs stored $11.82 - street holding in the same $11.5 band, stored $11.82 is the odd value to normalize on the next edit). The one problem is the long-running under-falling-skies B08HGS1QYT: firecrawl no-price/[WARN not in stock] and the independent jina US render (160,838 chars) again shows no featured offer at all ('No featured offers' + 'See All Buying Options' only, 'High price' badge, every dollar amount belongs to the recommendation carousel) -> held at $29.99, nothing invented, nothing carried forward as confirmed. That is now the 4th consecutive cycle empty, so per the standing flag it is ESCALATED to a decision item: next cycle price the buy link from the live offer range or pull the Amazon buy link (PDP still resolves correctly, so it is NOT an asin-dead case). Carry-forward flags (unchanged; none of the others in today's block): forbidden-island B003D7F4YY OOS/'Currently unavailable' since cycle 7 day 2 -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing); final-girl B09N8R6296 no-featured-offer -> decide the buy link next cycle (recheck cycle 9 day 2); sprawlopolis B0DP3H8S4N unbuyable 6 cycles running -> re-ASIN decision (only the Button Shy storefront, no live Amazon ASIN found); under-falling-skies B08HGS1QYT no-featured-offer 4 cycles -> ESCALATED as above; azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, uno $11.82->~$11.55. Next run: cycle 9 day 1 (7-wonders-duel, azul, blank-slate, cascadia, castle-combo) - start of cycle 9; watch the azul and cascadia bot-walled alternates."
+  },
+  {
+   "day": 6,
+   "cycle": 8,
+   "date": "2026-11-07",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): buybox $31.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $31.99 (3rd cycle running at this value). Keep."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "UNBUYABLE AGAIN (6th consecutive cycle). Firecrawl /gp/aw/d/B0DP3H8S4N: no price parsed, asin_confirmed false, [WARN not in stock], degraded stub render (rating 5.0 only). Script's automatic jina retry also produced no parsable price. Nothing valid to read -> price held at $12.99 per policy, NOT edited, NOT carried forward as confirmed. FLAGGED for re-ASIN decision: B0DP3H8S4N still yields no buyable PDP (prior web_search found no live Amazon ASIN - only the Button Shy storefront buttonshygames.com/products/sprawlopolis)."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): buybox $17.95 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $17.95. Keep."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): buybox $11.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $11.99. Keep."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 15.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): buybox $15.95 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. +6.69% vs stored $14.95 -> under 10% -> keep. First move off the long-stable $14.95; normalize $14.95 -> $15.95 on the next edit to this row."
+    }
+   ],
+   "note": "Cycle 8 day 6. 0 price changes - all four readable readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 4 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no retries, no jina fallback: splendor $31.99 exact (3rd cycle), star-realms $17.95 exact, sushi-go $11.99 exact, the-crew $15.95 (+6.69% vs stored $14.95 - first move off that value, still inside band). The one problem is the chronic sprawlopolis B0DP3H8S4N: firecrawl parsed no price (asin_confirmed false, not in stock, degraded stub) and the automatic jina retry was empty too -> 6th consecutive cycle unbuyable, price held at $12.99, nothing invented, still the top re-ASIN decision. No dead/wrong-product ASIN, no new OOS, no new re-ASIN case in today's block. Carry-forward flags (none of them in today's block except sprawlopolis): forbidden-island B003D7F4YY OOS/'Currently unavailable' 2 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing or live listing); final-girl B09N8R6296 no-featured-offer 2 cycles -> decide the buy link next cycle (not in cycle 8 schedule again, recheck cycle 9 day 2); under-falling-skies B08HGS1QYT no-featured-offer 3 cycles running (recheck TOMORROW cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05, the-crew $14.95->$15.95. Next run: cycle 8 day 7 (ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo - 6 games) - watch the under-falling-skies no-featured-offer recheck and decide the buy link if it is still empty."
+  },
+  {
+   "day": 5,
+   "cycle": 8,
+   "date": "2026-11-06",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 44.43,
+     "new_price": 45.13,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (lp_asin confirmed, 4.8 stars): buybox $45.13 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. +1.58% vs stored $44.43 -> under 10% -> keep. Stored $44.43 is the cycle-7-day-5 edit value; price has drifted back up $0.70 with no promo badge."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. +1.50% vs stored $39.40 -> under 10% -> keep. Fifth consecutive cycle at $39.99 vs the odd stored $39.40; normalize to $39.99 on next edit."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 13.29,
+     "new_price": 13.29,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): buybox $13.29 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $13.29. Keep."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed, 4.9 stars): buybox $19.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $19.99. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 64.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars): buybox $64.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $64.99. Keep."
+    }
+   ],
+   "note": "Cycle 8 day 5. 0 price changes - all five readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. Cleanest kind of run: all 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls. 3 exact matches (sequence $13.29, skull-king $19.99, spirit-island $64.99); pandemic $45.13 (+1.58% vs the cycle-7-day-5 edit value $44.43, drifted back up with no promo badge); quake $39.99 (+1.50% vs the odd stored $39.40, 5th consecutive cycle at $39.99). No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (none of them in today's block except quake's normalize note): forbidden-island B003D7F4YY OOS/'Currently unavailable' 2 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing or live listing); final-girl B09N8R6296 no-featured-offer 2 cycles -> decide the buy link next cycle (not in cycle 8 schedule again, recheck cycle 9 day 2); sprawlopolis B0DP3H8S4N unbuyable 5 cycles running (Button Shy storefront or a live /dp/, no live Amazon ASIN found via web_search) - in tomorrow's block; under-falling-skies B08HGS1QYT no-featured-offer 3 cycles running (recheck cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. kingdomino B01N3A4070 no-featured-offer flag CLEARED (day 4 read back a clean $19.95 buybox). Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05. Next run: cycle 8 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew) - watch the sprawlopolis unbuyable case."
+  },
+  {
+   "day": 3,
+   "cycle": 8,
+   "date": "2026-11-04",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 15.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B06XP7ZDH1 (lp_asin confirmed, 4.6 stars): buybox $15.97 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. -0.13% vs stored $15.99 -> under 10% -> keep."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $24.99 (3rd cycle running). Keep."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed, 4.8 stars): buybox $44.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. +0.22% vs stored $44.89 -> under 10% -> keep. 4th consecutive cycle at $44.99; stored $44.89 is the odd value, normalize to $44.99 on next edit."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars): buybox $26.58 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $26.58 (3rd cycle running). Keep."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. +4.12% vs stored $24.00 -> under 10% -> keep. 4th cycle running at $24.99 vs stored $24.00; reconcile to $24.99 on next edit."
+    }
+   ],
+   "note": "Cycle 8 day 3. 0 price changes - all five readings sit inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. Cleanest kind of run: all 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls. 2 exact matches (herd-mentality $24.99, jaipur $26.58); fox-in-the-forest $15.97 (-0.13% vs stored $15.99, a 2-cent drift, well inside band); horrified $44.99 (+0.22% vs odd stored $44.89, 4th cycle at $44.99); just-one $24.99 (+4.12% vs stored $24.00, 4th cycle at $24.99). Identical readings to cycle 7 day 3 for all five games - a stable week, no movement. No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (none of them in today's block): forbidden-island B003D7F4YY OOS/'Currently unavailable' 2 cycles -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing or live listing); final-girl B09N8R6296 no-featured-offer 2 cycles -> decide the buy link next cycle; sprawlopolis B0DP3H8S4N unbuyable 5 cycles running (Button Shy storefront or a live /dp/, no live Amazon ASIN found via web_search); kingdomino B01N3A4070 no-featured-offer (recheck cycle 8 day 4 - TOMORROW); under-falling-skies B08HGS1QYT no-featured-offer 3 cycles running (recheck cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05. Next run: cycle 8 day 4 (kingdomino, lost-cities, love-letter, mysterium, patchwork) - watch the kingdomino no-featured-offer recheck and the love-letter/cascadia normalize notes."
+  },
+  {
+   "day": 2,
+   "cycle": 8,
+   "date": "2026-11-03",
+   "games": [
+    {
+     "slug": "castle-panic",
+     "name": "Castle Panic",
+     "old_price": 34.95,
+     "new_price": 34.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0B3LGW2KH (lp_asin confirmed, 4.8 stars): buybox $34.95 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $34.95 (2nd cycle running at this value). Keep."
+    },
+    {
+     "slug": "catan",
+     "name": "Catan (6th Edition)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DYK1ZH2D (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $39.99. Keep."
+    },
+    {
+     "slug": "codenames",
+     "name": "Codenames",
+     "old_price": 24.97,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FJMQB63N (2nd Edition, lp_asin confirmed, 4.8 stars): buybox $24.97 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $24.97 (2nd cycle running). Keep."
+    },
+    {
+     "slug": "final-girl",
+     "name": "Final Girl",
+     "old_price": 24.75,
+     "new_price": 24.75,
+     "changed": false,
+     "source": "UNVERIFIED (2nd consecutive cycle - scheduled recheck). Firecrawl /gp/aw/d/B09N8R6296: asin_confirmed true (lp_asin, 4.7/420) but NO price parsed, [WARN not in stock], no ship block. Independent US-destination jina render (153,522 chars) confirms the same state: 'No featured offers' x1, 'See All Buying Options' x2, 'High price' badge x2, zero hits for 'Currently unavailable'/'In Stock'/'displayPrice'/'percent savings'/'buybox_json'. Nothing valid to read -> price held at $24.75 per policy, NOT edited, NOT carried forward as confirmed (last verified $24.28 third-party on 2026-10-20). Not a re-ASIN case (PDP resolves correctly). FLAG: the no-featured-offer state survived the recheck, so next cycle decide - price the buy link from the live offer range or pull the Amazon buy link."
+    },
+    {
+     "slug": "forbidden-island",
+     "name": "Forbidden Island",
+     "old_price": 20.99,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "UNBUYABLE, STILL FLAGGED FOR RE-ASIN (2nd consecutive cycle confirmed OOS). Firecrawl /gp/aw/d/B003D7F4YY: asin_confirmed true (lp_asin, 4.6/10,504) but NO price parsed, [WARN not in stock], no ship block. Independent US-destination jina render (174,316 chars): 'Currently unavailable' x2, 'No featured offers' x4, zero 'In Stock'/'displayPrice'/'percent savings'. Genuine OOS. Test-fetched a candidate alternate this run: B007XDQX1C (Devir 'The Forbidden Island') also renders 'Currently unavailable' (1 hit, no price, asin_confirmed true) -> no live Amazon ASIN for Forbidden Island found on either route. Price held at $20.99, NOT edited. Re-ASIN decision remains TOP PRIORITY: point the buy link at the Gamewright storefront or a live listing rather than guessing a price."
+    }
+   ],
+   "note": "Cycle 8 day 2. 0 price changes - 3 exact matches, 2 unverifiable, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 3 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, exact price match: castle-panic $34.95, catan $39.99, codenames $24.97. The two problems are the known carry-forward pair, both rechecked this run: final-girl B09N8R6296 (firecrawl no-price, independent jina = no featured offer / See All Buying Options only / High price badge) -> held at $24.75, nothing invented; forbidden-island B003D7F4YY (firecrawl no-price, jina = 'Currently unavailable' x2 + no featured offers) -> genuinely OOS, held at $20.99. Candidate alternate ASIN B007XDQX1C (Devir edition) test-fetched and is also 'Currently unavailable', so no live Amazon replacement found this cycle. No dead/wrong-product ASIN in today's block. Carry-forward flags: forbidden-island B003D7F4YY OOS 2 cycles -> TOP-PRIORITY re-ASIN decision (Gamewright storefront or live listing); final-girl B09N8R6296 no-featured-offer 2 cycles -> decide the buy link next cycle; sprawlopolis B0DP3H8S4N unbuyable 5 cycles running (Button Shy storefront or a live /dp/, no live Amazon ASIN found via web_search); kingdomino B01N3A4070 no-featured-offer (recheck cycle 8 day 4); under-falling-skies B08HGS1QYT no-featured-offer 3 cycles running (recheck cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05. Next run: cycle 8 day 3 (fox-in-the-forest, herd-mentality, horrified, jaipur, just-one)."
+  },
+  {
+   "day": 1,
+   "cycle": 8,
+   "date": "2026-11-02",
+   "games": [
+    {
+     "slug": "7-wonders-duel",
+     "name": "7 Wonders Duel",
+     "old_price": 29.99,
+     "new_price": 29.59,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B014DMSTXK (lp_asin confirmed, 4.8 stars): buybox $29.59 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. -1.33% vs stored $29.99 -> under 10% -> keep. Third cycle running at exactly $29.59; the stored $29.99 is a stable round-number anchor, not a drift."
+    },
+    {
+     "slug": "azul",
+     "name": "Azul",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "STORED ASIN B0719HFT6H FAILED on both routes again (firecrawl exhausted 4 tries, jina 3 tries, no page) - recurring Amazon bot wall on /gp/aw/d for this ASIN, 4th cycle running. Verified via the known live first-party listing B077MZ2MPW (lp_asin confirmed, 4.8 stars): buybox $31.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $31.99 -> keep, no edit. STILL FLAGGED: repoint data.mjs asin B0719HFT6H -> B077MZ2MPW on the next edit of this row (ASIN hygiene, not a price change)."
+    },
+    {
+     "slug": "blank-slate",
+     "name": "Blank Slate",
+     "old_price": 22.69,
+     "new_price": 22.69,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07G2VHPRW (lp_asin confirmed, 4.8 stars): buybox $22.69 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $22.69. Keep."
+    },
+    {
+     "slug": "cascadia",
+     "name": "Cascadia",
+     "old_price": 39.99,
+     "new_price": 37.05,
+     "changed": false,
+     "source": "STORED ASIN B08ZLBJ45S FAILED on both routes again (firecrawl 4 tries + jina 3 tries, nothing) - same recurring bot wall as azul, 4th cycle running. Verified via the live AEG listing B093H8RGXX (lp_asin confirmed, 4.9 stars): buybox $37.05 (buybox_json), In Stock, prime, no ship block. -7.35% vs stored $39.99 -> under 10% -> keep, no edit. ($37.40 last cycle, $37.30 cycle 7 day 1, $37.05 today - slow drift, still $2.95 under the threshold.) STILL FLAGGED: repoint data.mjs asin B08ZLBJ45S -> B093H8RGXX on the next edit, and normalize $39.99 -> ~$37.05 at the same time."
+    },
+    {
+     "slug": "castle-combo",
+     "name": "Castle Combo",
+     "old_price": 25.99,
+     "new_price": 25.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DHWGS11S (lp_asin confirmed, 4.8 stars): buybox $25.99 (buybox_json), In Stock, prime, no ship block, first Firecrawl attempt. Exact match vs stored $25.99 (4th cycle running at this value). Keep."
+    }
+   ],
+   "note": "Cycle 8 day 1 (start of cycle 8). 0 price changes - all five readings inside the 10% band, so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 3 of 5 stored ASINs fetched cleanly on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block: 7-wonders-duel $29.59 (-1.33%, third cycle at the exact same value; stored $29.99 is a stable round anchor), blank-slate $22.69 exact, castle-combo $25.99 exact. The two chronic bot-walled ASINs failed again exactly as flagged (4th consecutive cycle): azul B0719HFT6H and cascadia B08ZLBJ45S returned no page on firecrawl (4 retries each) or jina (3 retries each); both were priced off their known live alternates - azul via B077MZ2MPW $31.99 (exact match) and cascadia via B093H8RGXX $37.05 (-7.35%, was $37.40, $37.30 before that - slow downward drift). Both alternates had asin_confirmed true, In Stock, prime, no ship block, so these are real readings, not carries. No dead ASINs beyond the two known walls, no OOS, no new re-ASIN case in today's block. Carry-forward flags: forbidden-island B003D7F4YY OOS/'Currently unavailable' since cycle 7 day 2 -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing) - in tomorrow's block; final-girl B09N8R6296 no-featured-offer (also tomorrow, third recheck); kingdomino B01N3A4070 no-featured-offer (recheck cycle 8 day 4); sprawlopolis B0DP3H8S4N unbuyable 5 cycles running (Button Shy storefront or a live /dp/, no live Amazon ASIN found via web_search); under-falling-skies B08HGS1QYT no-featured-offer 3 cycles running (recheck cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.05. Wavelength flag RETIRED on cycle 7 day 7 (it read back exactly $32.00, matching stored, confirmed regular buybox on both routes). Next run: cycle 8 day 2 (castle-panic, catan, codenames, final-girl, forbidden-island)."
+  },
+  {
+   "day": 7,
+   "cycle": 7,
+   "date": "2026-11-01",
+   "games": [
+    {
+     "slug": "ticket-to-ride",
+     "name": "Ticket to Ride (2025 Refresh)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F8PKN4B7 (lp_asin confirmed, 4.9 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $39.99 (third cycle running after the Oct promo $29.99 ended). Keep."
+    },
+    {
+     "slug": "under-falling-skies",
+     "name": "Under Falling Skies",
+     "old_price": 29.99,
+     "new_price": 29.99,
+     "changed": false,
+     "source": "UNVERIFIED (3rd consecutive cycle). Firecrawl /gp/aw/d/B08HGS1QYT: asin_confirmed true (lp_asin, right product, rating 4.1/777) but NO price parsed and [WARN not in stock]. Independent jina US-destination render (146,634 chars) confirms the same state: 'No featured offers available' x1, 'See All Buying Options' x2, 'High price' badge x2, zero hits for buybox/displayPrice/priceAmount/'In Stock'/'Currently unavailable'/'percent savings'. The only dollar amounts on the page belong to the recommendation carousel (B08J8BQN82, B085NQXTBX, ...), not this product. Nothing valid to read -> price held at $29.99 per policy, NOT edited, NOT carried forward as confirmed (last verified $29.99 on 2026-10-08). Not a re-ASIN case (PDP resolves correctly). FLAG persists: if the no-featured-offer state survives a 4th cycle, price the buy link from the live offer range or pull the Amazon buy link."
+    },
+    {
+     "slug": "uno",
+     "name": "Uno",
+     "old_price": 11.82,
+     "new_price": 11.54,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07P6MZPK3 (lp_asin confirmed, 4.8 stars): buybox $11.54 (buybox_json), In Stock, prime, no ship block. -2.37% vs stored $11.82 -> under 10% -> keep. Street still in the $11.4-11.8 band ($11.46 last cycle, $11.36 on cycle 5)."
+    },
+    {
+     "slug": "wavelength",
+     "name": "Wavelength",
+     "old_price": 32.0,
+     "new_price": 32.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07T446163 (lp_asin confirmed, 4.8 stars, 5,089 ratings): buybox $32.00 (buybox_json), In Stock, no ship block. +0.00% vs stored $32.00 -> keep. NOTE the reversal: this read $34.99 (+9.34%, borderline) for three straight cycles and has now walked back to exactly the stored $32.00. Cross-checked on the independent jina route (150,102 chars): same $32.00 buybox, In Stock, and zero hits for 'Deal price' / 'Lightning Deal' / 'Limited time deal' -> a genuine regular-price move back, not a timeboxed promo. No edit needed; the old normalize-to-$34.99 note is now moot."
+    },
+    {
+     "slug": "wingspan",
+     "name": "Wingspan",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07YQ641NQ (Stonemaier, lp_asin confirmed, 4.8 stars): buybox $55.00 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $55.00. Keep."
+    },
+    {
+     "slug": "wingspan-solo",
+     "name": "Wingspan (Solo Mode)",
+     "old_price": 55.0,
+     "new_price": 55.0,
+     "changed": false,
+     "source": "Same product/ASIN as wingspan (B07YQ641NQ) -> $55.00 carried over. No separate listing. Keep."
+    }
+   ],
+   "note": "Cycle 7 day 7 - FINAL day of cycle 7. 0 price changes (every reading inside the 10% band), so data.mjs was NOT edited -> git status clean, NO astro build and NO systemctl restart this run. 4 of 6 games fetched cleanly on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no retries: ticket-to-ride $39.99 exact, uno $11.54 (-2.37%), wavelength $32.00 exact, wingspan $55.00 exact (wingspan-solo carried from the same ASIN). Wavelength is the notable read: it sat at $34.99 (+9.34%, 0.66pp under threshold) for three consecutive cycles and has now dropped back to exactly the stored $32.00, confirmed as a regular buybox on both routes with no deal/lightning badge - so the long-standing 'normalize 32.00 -> 34.99' flag is retired. under-falling-skies B08HGS1QYT is UNVERIFIED for the 3rd cycle running: firecrawl no-price/[WARN not in stock], and the independent jina US render shows no featured offer at all ('No featured offers available' + 'See All Buying Options' only, 'High price' badge, no price anywhere on the PDP) -> held at $29.99, nothing invented, nothing carried forward as confirmed. Carry-forward flags (none of the remaining ones were in today's block): forbidden-island B003D7F4YY OOS/'Currently unavailable' on cycle 7 day 2 -> TOP-PRIORITY re-ASIN decision (point the buy link at a live Gamewright listing); sprawlopolis B0DP3H8S4N unbuyable 5 cycles running (Button Shy storefront or a live /dp/); final-girl B09N8R6296 no-featured-offer (recheck cycle 8 day 2); kingdomino B01N3A4070 no-featured-offer (recheck cycle 8 day 4); under-falling-skies B08HGS1QYT no-featured-offer (next up cycle 8 day 7 - if still empty, decide the buy link); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30 (wavelength removed - resolved). Next run: cycle 8 day 1 (7-wonders-duel, azul, blank-slate, cascadia, castle-combo)."
+  },
+  {
+   "day": 6,
+   "cycle": 7,
+   "date": "2026-10-31",
+   "games": [
+    {
+     "slug": "splendor",
+     "name": "Splendor",
+     "old_price": 31.99,
+     "new_price": 31.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00IZEUFIA (lp_asin confirmed, 4.9 stars): buybox $31.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $31.99. Keep."
+    },
+    {
+     "slug": "sprawlopolis",
+     "name": "Sprawlopolis",
+     "old_price": 12.99,
+     "new_price": 12.99,
+     "changed": false,
+     "source": "UNBUYABLE AGAIN (5th cycle running). Firecrawl /gp/aw/d/B0DP3H8S4N: no price parsed, asin_confirmed false, [WARN not in stock] - the degraded 'continue shopping' stub render again. Script's automatic jina retry also produced no parsable price. Nothing valid to read -> price held at $12.99 per policy, NOT edited. FLAGGED for re-ASIN decision: B0DP3H8S4N is not yielding a buyable PDP. Rechecked via web_search this run: only results are the Amazon search page, the Button Shy storefront (buttonshygames.com/products/sprawlopolis), and Circle the Wagons B0DYKWBQS9 (a different game). No live Amazon ASIN for Sprawlopolis found; needs manual re-ASIN or removal of the Amazon buy link."
+    },
+    {
+     "slug": "star-realms",
+     "name": "Star Realms",
+     "old_price": 17.95,
+     "new_price": 17.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00HRGMPIU (lp_asin confirmed, 4.8 stars): buybox $17.95 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $17.95. Keep."
+    },
+    {
+     "slug": "sushi-go",
+     "name": "Sushi Go!",
+     "old_price": 11.99,
+     "new_price": 11.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00J57VU44 (lp_asin confirmed, 4.7 stars): buybox $11.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $11.99. Keep."
+    },
+    {
+     "slug": "the-crew",
+     "name": "The Crew: The Quest for Planet Nine",
+     "old_price": 14.95,
+     "new_price": 14.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B084GP7X3P (lp_asin confirmed, 4.7 stars): buybox $14.95 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $14.95. Keep."
+    }
+   ],
+   "note": "Cycle 7 day 6. 0 price changes - 4 exact matches on the first Firecrawl attempt (splendor $31.99, star-realms $17.95, sushi-go $11.99, the-crew $14.95), so data.mjs was NOT edited -> NO astro build and NO systemctl restart this run. 1 unverifiable: sprawlopolis B0DP3H8S4N gave the degraded stub again (no price, asin_confirmed false, not in stock; jina retry also empty) - 5th consecutive cycle unbuyable, price held at $12.99, still the top re-ASIN decision. Recheck via web_search found no live Amazon ASIN (only Button Shy's own storefront and Circle the Wagons B0DYKWBQS9, a different game). Carry-forward flags unchanged: forbidden-island B003D7F4YY OOS/'Currently unavailable' -> re-ASIN; final-girl B09N8R6296 no-featured-offer -> recheck; kingdomino B01N3A4070 no-featured-offer -> recheck; under-falling-skies B08HGS1QYT no-featured-offer -> recheck cycle 7 day 7; azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30. Next run: cycle 7 day 7 (ticket-to-ride, under-falling-skies, uno, wavelength, wingspan, wingspan-solo - 6 games)."
+  },
+  {
+   "day": 5,
+   "cycle": 7,
+   "date": "2026-10-30",
+   "games": [
+    {
+     "slug": "pandemic",
+     "name": "Pandemic",
+     "old_price": 49.99,
+     "new_price": 44.43,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B00A2HD40E (Z-Man Games, lp_asin confirmed, 4.8 stars, 18,848 ratings): buybox $44.43 (buybox_json), In Stock, prime, no ship block, '400+ bought in past month'. -11.12% vs stored $49.99 -> >=10% -> UPDATE. Cross-checked independently on the jina route (190,163-char US render): same $44.43 buybox, In Stock, prime; price line reads '$44.43 with 11 percent savings' off List Price $49.99 and 'One-time purchase: $44.43 11% Savings / List Price: $49.99' -> this is the standard savings-vs-list line (regular street price), NOT a timeboxed event promo: zero hits for 'Deal price' / 'Lightning Deal' / 'Limited time deal'. Also synced stale on-site copy: blog/best-cooperative-board-games.astro ('$49.99 on Amazon' -> '$44.43'; twist-box 'most expensive game on this list is $49.99' -> '$44.89', now Horrified, since Pandemic is no longer the max) and blog/how-to-play-sky-team.astro (table row $49.99 -> $44.43, and 'Pandemic at $49.99' -> '$44.43')."
+    },
+    {
+     "slug": "quake",
+     "name": "Quacks Board Game",
+     "old_price": 39.4,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4SRMRG9 (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, prime, no ship block. +1.50% vs stored $39.40 -> under 10% -> keep. Fourth consecutive cycle at $39.99 vs the odd stored $39.40; normalize to $39.99 on next edit."
+    },
+    {
+     "slug": "sequence",
+     "name": "Sequence",
+     "old_price": 13.29,
+     "new_price": 13.29,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00000IVAK (lp_asin confirmed, 4.8 stars): buybox $13.29 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $13.29 (cycle-5 update value holding). Keep."
+    },
+    {
+     "slug": "skull-king",
+     "name": "Skull King",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B00CK1EJG8 (lp_asin confirmed, 4.9 stars): buybox $19.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $19.99. Keep."
+    },
+    {
+     "slug": "spirit-island",
+     "name": "Spirit Island",
+     "old_price": 64.99,
+     "new_price": 64.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01MUHP51S (lp_asin confirmed, 4.8 stars): buybox $64.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $64.99. Keep."
+    }
+   ],
+   "note": "Cycle 7 day 5. 1 price change: pandemic 49.99 -> 44.43 (-11.12%, confirmed on two independent routes as a regular savings-vs-list price with no deal/lightning badge) -> data.mjs edited, node gen_gamesjson.mjs (60 games), astro build (96 pages), cp public/data/games.json dist/data/games.json. No systemctl restart needed: boardgamesdb runs `astro preview` off dist and served the new content immediately (HTTP 200 /game/pandemic, schema price 44.43; blog/how-to-play-sky-team shows $44.43 twice and zero '$49.99'; /data/games.json 60 games, pandemic 44.43). All 5 ASINs fetched on the FIRST Firecrawl attempt, asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries. 3 exact matches (sequence $13.29, skull-king $19.99, spirit-island $64.99); quake $39.99 (+1.50% vs odd stored $39.40, fourth cycle at $39.99). No unwalled/dead ASIN, no OOS, no re-ASIN case in today's block. NOTE: repo carries a sibling agent's commit 1074b8d (Calico vs Cascadia article, +Calico/+Knitting Circle -> 60 games), so the fresh build regenerated those dist pages too. Carry-forward flags (unchanged, none in today's block beyond pandemic's copy sync): forbidden-island B003D7F4YY OOS/'Currently unavailable' on cycle 7 day 2 -> top-priority re-ASIN decision; final-girl B09N8R6296 no-featured-offer (cycle 7 day 2) -> recheck cycle 8 day 2; kingdomino B01N3A4070 no-featured-offer (cycle 7 day 4, new) -> recheck cycle 8 day 4; sprawlopolis B0DP3H8S4N unbuyable 4 cycles running (Button Shy storefront or a live /dp/); under-falling-skies B08HGS1QYT no-featured-offer -> recheck cycle 7 day 7; azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30. Next run: cycle 7 day 6 (splendor, sprawlopolis, star-realms, sushi-go, the-crew)."
+  },
+  {
+   "day": 4,
+   "cycle": 7,
+   "date": "2026-10-29",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.99,
+     "changed": false,
+     "source": "UNVERIFIED. Firecrawl /gp/aw/d/B01N3A4070: resolved the right PDP (title 'Blue Orange Games Kingdomino Award Winning Family Strategy Board Game') but NO price parsed and [WARN not in stock], no buybox JSON. Independent jina probe on the same ASIN returned a 52,418-char render whose first content block is a 'High price / Learn more' badge with NO featured offer at all: zero hits for buybox/displayPrice/priceAmount/'Add to Cart'/'See All Buying Options', and no 'Currently unavailable' string either. Nothing to read -> price held at $19.99 per policy, NOT edited, NOT carried forward as confirmed (last verified reading $19.96 on 2026-10-13). Not a re-ASIN case: the PDP resolves to the correct product. Same no-featured-offer pattern already carried by under-falling-skies and final-girl; the stored Amazon buy link should be reviewed if this persists next cycle."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 19.95,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF (lp_asin confirmed, 4.8 stars): buybox $19.95 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $19.95. Keep."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 11.86,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F2J8DVHH (2025 Refresh, lp_asin confirmed, 4.7 stars): buybox $11.86 (buybox_json), In Stock, prime, no ship block. -8.70% vs stored $12.99 -> under 10% -> keep. Same $11.86 as the cycle-5 day-4 re-ASIN reading, so the live listing is stable; normalize $12.99 -> $11.86 on the next edit to this row."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 47.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed, 4.1 stars): buybox $47.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $47.99. Keep."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 34.95,
+     "new_price": 29.85,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 ('Patchwork Board Game (Revised Edition)', Lookout Games brand-store lp_asin confirmed, 4.5 stars): buybox $29.85 (buybox_json), In Stock, prime, no ship block. -14.59% vs stored $34.95 -> >=10% -> UPDATE. Cross-checked independently on the jina route: same $29.85 buybox, In Stock, prime, and NO 'Deal price' / lightning badge and NO 'percent savings' promo line -> this is the regular buybox, not a timeboxed event promo. Natural walk-back from the Oct 13 $34.95 (which had been +18.88% up from $29.40 that same cycle); $29.85 is right at the old $29.40 street level. Also synced stale on-site copy: blog/best-2-player-board-games.astro ($34.95 -> $29.85 in two spots, combo '$51' -> '$46' = $29.85 + $15.99 Fox in the Forest)."
+    }
+   ],
+   "note": "Cycle 7 day 4. 1 price change: patchwork 34.95 -> 29.85 (-14.59%, confirmed on two independent routes, no promo badge) -> data.mjs edited, node gen_gamesjson.mjs (58 games), astro build (93 pages via ./node_modules/.bin/astro build, index.html 06:02), cp public/data/games.json dist/data/games.json. No systemctl restart was needed: boardgamesdb runs `astro preview`, which serves dist straight from disk, and the live server returned the new content immediately (HTTP 200 /game/patchwork, schema price 29.85; blog page shows $29.85 twice and zero '$34.95'; /data/games.json 58 games, patchwork 29.85). git commit d38f06a pushed. 4 of 5 games read cleanly on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block: lost-cities $19.95 exact, mysterium $47.99 exact, love-letter $11.86 (-8.70%, inside band), patchwork $29.85 (edited). kingdomino B01N3A4070 is the one UNVERIFIED row: firecrawl parsed no price, and the independent jina render shows a 'High price' badge with no featured offer at all -> held at $19.99, nothing invented; NEW no-featured-offer flag, different from the usual azul/cascadia bot-wall pair. Carry-forward flags (unchanged, none in today's block beyond kingdomino): forbidden-island B003D7F4YY OOS/'Currently unavailable' -> top-priority re-ASIN decision; sprawlopolis B0DP3H8S4N unbuyable 4 cycles running (Button Shy storefront or a live /dp/); final-girl B09N8R6296 and under-falling-skies B08HGS1QYT no-featured-offer (recheck when they next come up: final-girl cycle 8 day 2, under-falling-skies cycle 7 day 7); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit. Normalize on next edit when they move: horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30. Next run: cycle 7 day 5 (pandemic, quake, sequence, skull-king, spirit-island)."
+  },
+  {
+   "day": 3,
+   "cycle": 7,
+   "date": "2026-10-28",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 15.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B06XP7ZDH1 (lp_asin confirmed, 4.6 stars): buybox $15.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $15.99 (2nd cycle running at this value). Keep."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $24.99. Keep."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 44.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed, 4.8 stars): buybox $44.99 (buybox_json), In Stock, prime, no ship block. +0.22% vs stored $44.89 -> under 10% -> keep. Third consecutive cycle at $44.99; stored $44.89 is the odd value, normalize to $44.99 on next edit."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 26.58,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars): buybox $26.58 (buybox_json), In Stock, prime, no ship block. Exact match vs stored $26.58 (2nd cycle running). Keep."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 24.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars): buybox $24.99 (buybox_json), In Stock, prime, no ship block. +4.12% vs stored $24.00 -> under 10% -> keep. Third cycle running at $24.99 vs stored $24.00; reconcile to $24.99 on next edit."
+    }
+   ],
+   "note": "Cycle 7 day 3. 0 price changes - all five readings sit inside the 10% band, so data.mjs was NOT edited (git status clean before and after; NO astro build and NO systemctl restart this run). Cleanest run in weeks: all 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, prime, no ship block, no jina fallback, no retries, no bot walls. 3 exact matches (fox-in-the-forest $15.99, herd-mentality $24.99, jaipur $26.58); horrified $44.99 (+0.22% vs odd stored $44.89, third cycle at $44.99); just-one $24.99 (+4.12% vs stored $24.00, third cycle at $24.99). No dead ASINs, no OOS, no re-ASIN case in today's block. Carry-forward flags (unchanged, none in today's block): forbidden-island B003D7F4YY was OOS/'Currently unavailable' on cycle 7 day 2 -> top-priority re-ASIN decision (point the buy link at a live listing); sprawlopolis B0DP3H8S4N unbuyable 3 cycles running (Button Shy storefront or a live /dp/); final-girl B09N8R6296 lost its featured offer on cycle 7 day 2 -> recheck the offer state when it comes up on cycle 8 day 2; azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit; under-falling-skies B08HGS1QYT no-featured-offer (recheck cycle 8 day 7, next cycle); normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30 when they next move. Next run: cycle 7 day 4 (kingdomino, lost-cities, love-letter, mysterium, patchwork)."
+  },
+  {
+   "day": 2,
+   "cycle": 7,
+   "date": "2026-10-27",
+   "games": [
+    {
+     "slug": "castle-panic",
+     "name": "Castle Panic",
+     "old_price": 34.95,
+     "new_price": 34.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0B3LGW2KH (lp_asin confirmed, 4.8 stars): buybox $34.95 (buybox_json), In Stock, no ship block. Exact match vs stored $34.95 (the cycle-6 update value holding). Keep."
+    },
+    {
+     "slug": "catan",
+     "name": "Catan (6th Edition)",
+     "old_price": 39.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0DYK1ZH2D (lp_asin confirmed, 4.6 stars): buybox $39.99 (buybox_json), In Stock, no ship block. Exact match vs stored $39.99. Keep."
+    },
+    {
+     "slug": "codenames",
+     "name": "Codenames",
+     "old_price": 24.97,
+     "new_price": 24.97,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FJMQB63N (2nd Edition, lp_asin confirmed, 4.8 stars): buybox $24.97 (buybox_json), In Stock, no ship block. Exact match vs stored $24.97. Keep."
+    },
+    {
+     "slug": "final-girl",
+     "name": "Final Girl",
+     "old_price": 24.75,
+     "new_price": 24.75,
+     "changed": false,
+     "source": "UNVERIFIED. Firecrawl /gp/aw/d/B09N8R6296: asin_confirmed true (lp_asin, 4.7/419) but NO price parsed, [WARN not in stock], no ship block. Independent US-destination jina route ('Delivering to The Dalles 97058', full 153,601-char render) resolves the same ASIN but shows NO featured offer: 'No featured offers available' + a bare 'See All Buying Options' link (unqualifiedBuyBox) and no buybox JSON, no price, no price line at all. Nothing to read -> price held at $24.75 per policy, NOT edited, NOT carried forward as confirmed (last verified reading was $24.28 third-party on 2026-10-20). Not a re-ASIN case - the PDP resolves correctly. FLAG: the Buckeye Trading third-party offer that supplied cycle 6's $24.28 is gone; if the no-featured-offer state persists next cycle, price the buy link from the offer range or pull the Amazon buy link."
+    },
+    {
+     "slug": "forbidden-island",
+     "name": "Forbidden Island",
+     "old_price": 20.99,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "UNBUYABLE, FLAGGED FOR RE-ASIN. Firecrawl /gp/aw/d/B003D7F4YY: asin_confirmed true (lp_asin, 4.7) but [WARN delivery-location ship block] + [WARN not in stock], no price. Independent US-destination jina route (175,449-char render, 'Delivering to The Dalles 97058') reads 'Currently unavailable. We don't know when or if this item will be back in stock.' plus 'No featured offers available' and no buybox JSON / no price. Genuine OOS (cycle 6 day 2 was 'Only 1 left in stock'). Price held at $20.99, NOT edited. This is now a re-ASIN decision: the Gamewright B003D7F4YY listing is out of stock, so point the buy link at a live listing (Gamewright storefront or another Amazon ASIN) rather than guessing a price."
+    }
+   ],
+   "note": "Cycle 7 day 2. 0 price changes - 3 exact matches, 2 unverifiable, so data.mjs was NOT edited (git status clean; NO astro build and NO systemctl restart this run). 3 of 5 ASINs fetched on the FIRST Firecrawl attempt with asin_confirmed true, In Stock, no ship block, exact price match: castle-panic $34.95, catan $39.99, codenames $24.97. The two problem rows are NEW this cycle, not the usual bot-wall pair: final-girl B09N8R6296 lost its featured offer (firecrawl no-price, jina US render = 'No featured offers available' + See All Buying Options only) -> UNVERIFIED, held at $24.75, nothing invented; forbidden-island B003D7F4YY is now genuinely UNBUYABLE ('Currently unavailable... don't know when or if it will be back in stock' on the US-destination jina render) after sitting at 1 unit left on cycle 6 day 2 -> FLAGGED as a re-ASIN decision, price held at $20.99. Neither is a dead-ASIN/wrong-product case: both PDPs resolve to the correct ASIN via lp_asin. Carry-forward flags: forbidden-island B003D7F4YY re-ASIN (new, top priority - OOS); final-girl B09N8R6296 recheck the offer state next cycle; sprawlopolis B0DP3H8S4N unbuyable (3 cycles running, still top re-ASIN, Button Shy storefront or a live /dp/); azul B0719HFT6H and cascadia B08ZLBJ45S bot-walled every cycle, repoint to B077MZ2MPW / B093H8RGXX on next edit; under-falling-skies B08HGS1QYT no-featured-offer (recheck cycle 7 day 7); normalize horrified $44.89->$44.99, just-one $24.00->$24.99, wavelength $32.00->$34.99, quake $39.40->$39.99, love-letter $12.99->$11.86, cascadia $39.99->$37.30 when they next move. Next run: cycle 7 day 3 (fox-in-the-forest, herd-mentality, horrified, jaipur, just-one)."
+  }
+ ]
+}
