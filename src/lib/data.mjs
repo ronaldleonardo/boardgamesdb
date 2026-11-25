@@ -229,7 +229,7 @@ export const games = [
   { slug: "mysterium", name: "Mysterium", category: "cooperative", players: "2-7", playtime: 45, age: 10, rating: 7.5, complexity: 1.8, price: 47.99, asin: "B0F4YNPYQM", images: ["/images/mysterium.jpg"], tag: "award-winner",
     desc: "One player is a ghost communicating through surreal dream cards. The others are psychics trying to solve a murder. Beautiful art, unique mechanics, no two games are alike.",
     why: "The cooperative Clue. Gorgeous components, great for creative groups." },
-  { slug: "castle-panic", name: "Castle Panic", category: "cooperative", players: "1-6", playtime: 45, age: 7, rating: 7.0, complexity: 1.8, price: 34.95, asin: "B0B3LGW2KH", images: ["/images/castle-panic.jpg"], tag: "budget",
+  { slug: "castle-panic", name: "Castle Panic", category: "cooperative", players: "1-6", playtime: 45, age: 7, rating: 7.0, complexity: 1.8, price: 24.47, asin: "B0B3LGW2KH", images: ["/images/castle-panic.jpg"], tag: "budget",
     desc: "Defend your castle against waves of monsters. Play cards to hit, arrow, and bash approaching threats before they destroy your walls. Made for kids and adults to play together.",
     why: "Great with kids. Co-op so no one gets eliminated. Real tension." },
   { slug: "the-grizzled", name: "The Grizzled", category: "cooperative", players: "2-5", playtime: 30, age: 14, rating: 7.2, complexity: 2.0, price: 24.98, asin: "B013PZYV3S", images: ["/images/grizzled.jpg"], tag: "budget",
