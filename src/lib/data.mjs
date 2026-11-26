@@ -211,6 +211,9 @@ export const games = [
     why: "The ultimate bluffing game. Pocket-sized, fast, and every round ends in betrayal." },
 
   // === COOPERATIVE ===
+  { slug: "5-minute-dungeon", name: "5-Minute Dungeon", category: "cooperative", players: "2-5", playtime: 25, age: 8, rating: 7.0, complexity: 1.3, price: 29.74, asin: "B09HV7H5D2", images: [], tag: "budget",
+    desc: "A real-time cooperative card game where the whole dungeon runs on a five minute timer. Everyone plays a hero with a small deck, slapping down matching symbols to beat monsters while a free timer app calls out events. Run out of time and the table loses together.",
+    why: "No turn order, so nobody waits. The fastest way to show a new group what a co-op game feels like." },
   { slug: "sky-team", name: "Sky Team", category: "cooperative", players: "2", playtime: 20, age: 12, rating: 7.9, complexity: 2.0, price: 32.99, asin: "B0CHD8RCSJ", images: [], tag: "award-winner",
     desc: "A two-player cooperative dice game about landing an airliner. Pilot and co-pilot each roll four dice behind a screen, then place them in silence on a cockpit panel: axis, engines, flaps, gear, radio and brakes. Seven rounds, twenty airports.",
     why: "Spiel des Jahres 2024 and the first strictly two-player winner. Tense, quick, and it teaches you to read a partner instead of talking over them." },
