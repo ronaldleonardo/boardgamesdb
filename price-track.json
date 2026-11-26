@@ -1,19 +1,19 @@
 {
- "day": 2,
+ "day": 3,
  "cycle": 11,
- "last_updated": "2026-11-25",
+ "last_updated": "2026-11-26",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. A deal badge ON THE MAIN PDP (Early Black Friday Deal / Limited time deal + countdown + 'with N percent savings' off a List Price) means the visible buybox is a PROMO: do NOT edit off it - record the List Price in the log and hold the stored value until the promo ends, then decide the regular price. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 3,
+  "day": 4,
   "cycle": 11,
   "games": [
-   "fox-in-the-forest",
-   "herd-mentality",
-   "horrified",
-   "jaipur",
-   "just-one"
+   "kingdomino",
+   "lost-cities",
+   "love-letter",
+   "mysterium",
+   "patchwork"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 3,
+   "cycle": 11,
+   "date": "2026-11-26",
+   "games": [
+    {
+     "slug": "fox-in-the-forest",
+     "name": "Fox in the Forest",
+     "old_price": 15.99,
+     "new_price": 14.99,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B06XP7ZDH1 (lp_asin confirmed, 4.6 stars): FIRST Firecrawl attempt, buybox $14.99 (buybox_json), In Stock, no ship block. -6.25% vs stored $15.99 -> under 10% -> keep, no edit. The cycle 10 day 3 'Limited time deal' promo at $11.19 (30% off a $15.99 list) has expired and the price is back to a near-list street price, which confirms that reading was indeed a timeboxed promo and the hold was correct."
+    },
+    {
+     "slug": "herd-mentality",
+     "name": "Herd Mentality",
+     "old_price": 24.99,
+     "new_price": 17.49,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B093HBBMPT (lp_asin confirmed, 4.7 stars, 10K+ bought in past month): FIRST Firecrawl attempt, buybox $17.49 (buybox_json), In Stock x8, no ship block. -30.01% vs stored $24.99 would trip the 10% rule, BUT an independent x-no-cache jina render (203,917 chars, lp_asin true) shows the main PDP offer carrying a 'Black Friday Deal' badge with NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS countdown placeholders, the price line '$17.49 with 30 percent savings -30%', a 'Typical price: $24.99' (exactly the stored value) and a 'Deal ends' field, plus the Product Summary 'One-time purchase: $17.49  30% Savings' -> timeboxed event promo, so per policy no edit; stored $24.99 held. Recorded Typical price $24.99."
+    },
+    {
+     "slug": "horrified",
+     "name": "Horrified",
+     "old_price": 44.89,
+     "new_price": 33.99,
+     "changed": true,
+     "source": "Amazon /gp/aw/d/B07QQHTD4Q (lp_asin confirmed via the Ravensburger Store link, 4.8 stars, 4,253 ratings): Firecrawl mobile render came back degraded (8,144 chars, only 'See All Buying Options', no price), so the script's automatic jina retry priced it: buybox $33.99 (buybox_json, desktop_buybox_group_1, offerListingId present, buyingOptionType present), In Stock x4 ('left in stock' x1), FREE delivery, no ship block. -24.28% vs stored $44.89 -> ABOVE 10% -> data.mjs EDITED 44.89 -> 33.99. Promo audit before editing, on TWO independent x-no-cache jina renders (174,783 and 167,372 chars, both lp_asin true, both identical price block): the PDP's own offer reads '$33.99 with 15 percent savings -15%' against 'List Price: $39.99' with NO deal badge and NO NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS countdown anywhere on the listing - all 6 'Black Friday Deal' strings in the render belong to related-item carousels (pd_rd_i=B09FYRVM7X, B0F2GVHLV2, B0H8YNG1QQ, B0BGXPZG4B, B0C1C1STN1), verified by dumping the context around every hit. Control that makes the absence meaningful: the SAME route in the SAME run rendered 'Black Friday Deal' badges + countdown on herd-mentality, jaipur and just-one, so the badge slot is demonstrably captured when present. Discount off list with no badge = real street-price move (same reasoning as castle-panic on cycle 11 day 2) -> edit stands. This also RESOLVES the standing flag that stored $44.89 sat ABOVE the $39.99 List Price: $33.99 is now below list, so no post-event decision is outstanding for this row."
+    },
+    {
+     "slug": "jaipur",
+     "name": "Jaipur",
+     "old_price": 26.58,
+     "new_price": 20.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B07SRMXRZB (lp_asin confirmed, 4.8 stars, 3,463 ratings): firecrawl failed, jina route, buybox $20.99 (buybox_json, desktop_buybox_group_1, offerListingId present), In Stock, no ship block. -21.03% vs stored $26.58 would trip the 10% rule, BUT an independent x-no-cache jina render (200,502 chars, lp_asin true) shows the main PDP offer carrying a 'Black Friday Deal' badge with countdown placeholders, '$20.99 with 22 percent savings -22%', 'List Price: $26.99', a 'Deal ends' field and 'One-time purchase: $20.99  22% Savings' -> timeboxed event promo, so per policy no edit; stored $26.58 held. Recorded List Price $26.99 (stored is only $0.41 under it, so the post-event normalize is trivial)."
+    },
+    {
+     "slug": "just-one",
+     "name": "Just One (2025 Refresh)",
+     "old_price": 24.0,
+     "new_price": 18.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B0FB6MQ3WB (lp_asin confirmed, 4.6 stars, 2K+ bought in past month): FIRST Firecrawl attempt, buybox $18.99 (buybox_json), In Stock, no ship block. -20.88% vs the odd stored $24.00 would trip the 10% rule, BUT an independent x-no-cache jina render (66,276 chars, lp_asin true) shows the main PDP offer carrying a 'Black Friday Deal' badge with countdown placeholders and '$18.99 with 24 percent savings -24%' against 'Typical price: $24.99' -> timeboxed event promo, so per policy no edit; stored $24.00 held. 6th consecutive cycle reading $24.99 as the reference price, so the standing normalize $24.00 -> $24.99 still applies on the next edit that touches this row (NOT off the $18.99 promo)."
+    }
+   ],
+   "note": "Cycle 11 day 3. 1 price change -> data.mjs WAS edited (horrified $44.89 -> $33.99, -24.28%), so `./node_modules/.bin/astro build` was run (106 pages, 2.70s), dist/ refreshed, boardgamesdb restarted (active) and the change verified live: https://tabletoppicks.com/game/horrified serves $33.99 and $44.89 is gone. HEADLINE: four of the five readings crossed the 10% line and THREE of them are pure Black Friday event promos, correctly HELD - herd-mentality $17.49 (30% off a $24.99 typical price that equals stored, badge + countdown + 'Deal ends'), jaipur $20.99 (22% off $26.99 list, badge + countdown + 'Deal ends'), just-one $18.99 (24% off $24.99 typical, badge + countdown). The fourth, horrified at $33.99 (-24.28% vs $44.89), carries a 15%-off-list savings line but NO badge and NO countdown on two independent renders (all 6 'Black Friday Deal' strings belong to related-item carousels, checked hit by hit), while the same route rendered badges on the other three games in the same blocks, so the absence is real -> treated as a genuine street-price move and edited. That distinction remains the whole judgment of this run: badge + countdown = promo hold; discount off list with no badge = real price. horrified also closes the standing flag from cycle 10 day 3 where stored $44.89 sat above the $39.99 list - the new $33.99 is below list, so nothing is outstanding there. Only sub-threshold move: fox-in-the-forest $14.99 (-6.25% vs $15.99, asin_confirmed true, In Stock), and its arrival back near list is itself the proof that the cycle 10 day 3 $11.19 'Limited time deal' was a promo. SYSTEM NOTE: firecrawl LAN (/v1/scrape on the mobile PDP) served 3 of 5 ASINs on the FIRST attempt (fox-in-the-forest, herd-mentality, just-one) but returned a degraded 8,144-char render for horrified, which the script correctly failed over to jina for; jaipur also came via jina. Black Friday is tomorrow (Nov 27) and the promos here carry 'Deal ends' fields, so expect the next blocks to stay promo-heavy; do not edit off any badge/countdown price. Carry-forward flags (none of the others in today's block): sprawlopolis B0DP3H8S4N unbuyable 8+ cycles -> re-ASIN decision; under-falling-skies B08HGS1QYT no-featured-offer 6 cycles -> open decision item; azul B0719HFT6H -> B077MZ2MPW and cascadia B08ZLBJ45S -> B093H8RGXX repoints still open, due on the next edit that touches those rows. Cycle 11 day 3 of 7 complete; next up is cycle 11 day 4."
+  },
   {
    "day": 2,
    "cycle": 11,

@@ -226,7 +226,7 @@ export const games = [
   { slug: "forbidden-island", name: "Forbidden Island", category: "cooperative", players: "2-4", playtime: 30, age: 10, rating: 7.1, complexity: 1.7, price: 20.99, asin: "B003D7F4YY", images: ["/images/forbidden-island.jpg", "/images/forbidden-island-2.jpg", "/images/forbidden-island-3.jpg", "/images/forbidden-island-4.jpg"], tag: "budget",
     desc: "A cooperative race against time. Collect ancient treasures from a sinking island before it disappears. The island sinks more every turn, tension builds fast.",
     why: "Pandemic's little brother. Cheaper, faster, but just as tense." },
-  { slug: "horrified", name: "Horrified", category: "cooperative", players: "1-5", playtime: 60, age: 10, rating: 7.6, complexity: 2.3, price: 44.89, asin: "B07QQHTD4Q", images: ["/images/horrified.jpg"], tag: "award-winner",
+  { slug: "horrified", name: "Horrified", category: "cooperative", players: "1-5", playtime: 60, age: 10, rating: 7.6, complexity: 2.3, price: 33.99, asin: "B07QQHTD4Q", images: ["/images/horrified.jpg"], tag: "award-winner",
     desc: "A cooperative monster-fighting game where you team up against classic movie monsters. Dracula, Frankenstein, the Mummy, each has unique mechanics.",
     why: "The best entry-level co-op. Theme is perfect, difficulty scales well." },
   { slug: "mysterium", name: "Mysterium", category: "cooperative", players: "2-7", playtime: 45, age: 10, rating: 7.5, complexity: 1.8, price: 47.99, asin: "B0F4YNPYQM", images: ["/images/mysterium.jpg"], tag: "award-winner",
