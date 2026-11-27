@@ -1,19 +1,19 @@
 {
- "day": 3,
+ "day": 4,
  "cycle": 11,
- "last_updated": "2026-11-26",
+ "last_updated": "2026-11-27",
  "total_games": 36,
  "games_per_day": 5,
  "pricing_policy": "Track Amazon (Firecrawl LAN /gp/aw/d/<ASIN> mobile PDP, jina /gp/aw/d fallback) REGULAR/typical street price. Ignore timeboxed event promos (Prime Deal price, lightning deals) unless the regular price itself has moved >10% vs stored. A deal badge ON THE MAIN PDP (Early Black Friday Deal / Limited time deal + countdown + 'with N percent savings' off a List Price) means the visible buybox is a PROMO: do NOT edit off it - record the List Price in the log and hold the stored value until the promo ends, then decide the regular price. Update only on >10% move. Require asin_confirmed true. A 'no featured offer' / 'See All Buying Options only' render counts as UNVERIFIED, never as a price.",
  "next": {
-  "day": 4,
+  "day": 5,
   "cycle": 11,
   "games": [
-   "kingdomino",
-   "lost-cities",
-   "love-letter",
-   "mysterium",
-   "patchwork"
+   "pandemic",
+   "quake",
+   "sequence",
+   "skull-king",
+   "spirit-island"
   ]
  },
  "schedule": {
@@ -69,6 +69,54 @@
   ]
  },
  "log": [
+  {
+   "day": 4,
+   "cycle": 11,
+   "date": "2026-11-27",
+   "games": [
+    {
+     "slug": "kingdomino",
+     "name": "Kingdomino",
+     "old_price": 19.99,
+     "new_price": 19.95,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B01N3A4070 (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, buybox $19.95 (buybox_json), In Stock, no ship block. -0.20% vs stored $19.99 -> under 10% -> keep, no edit. Same reading as cycle 10 day 4 ($19.95); the no-featured-offer flag from cycle 9 stays CLEARED."
+    },
+    {
+     "slug": "lost-cities",
+     "name": "Lost Cities",
+     "old_price": 20.38,
+     "new_price": 20.98,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B07KLWPHFF (lp_asin confirmed, 4.8 stars): FIRST Firecrawl attempt, buybox $20.98 (buybox_json, so a featured offer does exist), no ship block, BUT the render tripped '[WARN not in stock]'. +2.94% vs stored $20.38 (the value written on cycle 10 day 4) -> under 10% -> keep, no edit whatever the stock state. FLAG: recheck the stock warning next cycle - the price block was healthy, so this is most likely the usual 'only N left in stock' false negative on the mobile render. Normalize $20.38 -> $20.98 only on the next edit that touches this row."
+    },
+    {
+     "slug": "love-letter",
+     "name": "Love Letter",
+     "old_price": 12.99,
+     "new_price": 10.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B0F2J8DVHH (4.7 stars, 1K+ bought in past month): firecrawl failed, jina route, buybox $10.99 (desktop_buybox_group_1 displayPrice $10.99, offerListingId present), In Stock, no ship block. -15.40% vs stored $12.99 would trip the 10% rule, BUT an independent x-no-cache jina render (44,680 chars) shows the main PDP offer carrying a 'Black Friday Deal' badge with NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS countdown placeholders immediately followed by '$10.99 with 31 percent savings' and 'List Price: $15.99' -> timeboxed event promo, so per policy no edit; stored $12.99 held. Recorded List Price $15.99 (stored sits $3.00 under it). asin_confirmed false on both renders (no lp_asin guard), though the PDP's own buybox link is /gp/aw/d/B0F2J8DVHH so the page is the right ASIN; no edit is due either way."
+    },
+    {
+     "slug": "mysterium",
+     "name": "Mysterium",
+     "old_price": 47.99,
+     "new_price": 39.99,
+     "changed": false,
+     "source": "PROMO, NO EDIT. Amazon /gp/aw/d/B0F4YNPYQM (lp_asin confirmed in the Firecrawl render, 4.1 stars, 700+ bought in past month, Style: New Edition): FIRST Firecrawl attempt, buybox $39.99 (buybox_json), In Stock, no ship block. -16.67% vs stored $47.99 would trip the 10% rule, BUT an independent x-no-cache jina render (48,273 chars) shows the main PDP offer carrying a 'Black Friday Deal' badge with countdown placeholders immediately followed by '$39.99 with 20 percent savings' and 'List Price: $49.99' -> timeboxed event promo, so per policy no edit; stored $47.99 held. $39.99 is exactly a 20%-off-list event price, not a street price. Recorded List Price $49.99 - stored $47.99 sits $2 under it, so no post-event normalize is urgent here (unlike catan/7-wonders-duel)."
+    },
+    {
+     "slug": "patchwork",
+     "name": "Patchwork",
+     "old_price": 29.85,
+     "new_price": 29.3,
+     "changed": false,
+     "source": "Amazon /gp/aw/d/B0FPXTLZ21 (4.8 stars): firecrawl failed, jina route, buybox $29.30 (desktop_buybox_group_1 displayPrice), In Stock, no ship block. -1.84% vs stored $29.85 -> under 10% -> keep, no edit. asin_confirmed false on this render (no lp_asin guard); no edit is due, so nothing is claimed beyond the read."
+    }
+   ],
+   "note": "Cycle 11 day 4 (Black Friday itself). 0 price changes -> data.mjs was NOT edited -> `git status --porcelain` verified empty, NO astro build and NO systemctl restart this run. HEADLINE: both readings that crossed the 10% line are Black Friday event promos and both were correctly HELD. love-letter B0F2J8DVHH read $10.99 (-15.40% vs stored $12.99) with a 'Black Friday Deal' badge + NO_OF_HOURS/NO_OF_MINUTES/NO_OF_SECONDS countdown on the PDP's own offer and '31 percent savings' off a $15.99 list. mysterium B0F4YNPYQM read $39.99 (-16.67% vs stored $47.99) with the same badge/countdown and '20 percent savings' off a $49.99 list - exactly a 20%-off-list event price, and stored $47.99 already sits $2 under that list, so nothing needs a post-event decision beyond watching. Both audits came from independent x-no-cache jina renders (44,680 / 48,273 chars) fetched separately from the Firecrawl pricing pass, and both showed the badge on the PDP's own offer rather than in a related-item carousel. LOST-CITIES FLAG: B07KLWPHFF priced fine at $20.98 (+2.94% vs the $20.38 written on cycle 10 day 4, comfortably under the line) but the render tripped '[WARN not in stock]', the same warning it showed on cycle 10 day 4 - the featured offer was present (buybox_json) so it is most likely 'only N left', but recheck next cycle and treat it as a stock problem if it persists another two. Clean: kingdomino $19.95 (-0.20%, asin_confirmed true, In Stock). Within band: patchwork $29.30 (-1.84%, asin_confirmed false, no edit due). The event has been promo-heavy since Nov 19 and today is the peak, so the remaining blocks will likely keep showing event prices; the hold policy keeps data.mjs at regular street prices through it. Carry-forward flags: under-falling-skies B08HGS1QYT unverified 6 cycles running (day 7 - decide buy-link), sprawlopolis B0DP3H8S4N unbuyable 8 cycles (day 6 - re-ASIN), azul B0719HFT6H -> B077MZ2MPW and cascadia B08ZLBJ45S -> B093H8RGXX repoints open (day 1), final-girl stock warning (day 2), quake normalize $39.40 -> $39.99 (day 5), just-one normalize $24.00 -> $24.99 (day 3), catan post-event decision (stored $39.99 vs $49.99 list, day 2), herd-mentality $24.99 held vs 30% promo (day 3)."
+  },
   {
    "day": 3,
    "cycle": 11,
